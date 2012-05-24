@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nutr no:</b>
+  <%= @nutr_def.nutr_no %>
+</p>
+
+<p>
+  <b>Units:</b>
+  <%= @nutr_def.units %>
+</p>
+
+<p>
+  <b>Tagname:</b>
+  <%= @nutr_def.tagname %>
+</p>
+
+<p>
+  <b>Nutrdesc:</b>
+  <%= @nutr_def.nutrdesc %>
+</p>
+
+
+<%= link_to 'Edit', edit_nutr_def_path(@nutr_def) %> |
+<%= link_to 'Back', nutr_defs_path %>

@@ -1,0 +1,33 @@
+<%= form_for(@nutr_def) do |f| %>
+  <% if @nutr_def.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nutr_def.errors.count, "error") %> prohibited this nutr_def from being saved:</h2>
+
+      <ul>
+      <% @nutr_def.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nutr_no %><br />
+    <%= f.number_field :nutr_no %>
+  </div>
+  <div class="field">
+    <%= f.label :units %><br />
+    <%= f.text_field :units %>
+  </div>
+  <div class="field">
+    <%= f.label :tagname %><br />
+    <%= f.text_field :tagname %>
+  </div>
+  <div class="field">
+    <%= f.label :nutrdesc %><br />
+    <%= f.text_field :nutrdesc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

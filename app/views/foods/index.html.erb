@@ -1,0 +1,41 @@
+
+<form action="<%= foods_path %>" method ="get" id="foods_search"  >
+
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+</form>
+<%- model_class = Food.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+     
+      <th><%= model_class.human_attribute_name(:longdesc) %></th>
+    
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+ 
+        <td><%= food.longdesc %></td>
+    
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_food_path(food), :class => 'btn btn-mini' %>
+          <%= link_to t('show', :default => t("helpers.links.show")),
+                      food_path(food), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+    <%= paginate @foods %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_food_path,
+            :class => 'btn btn-primary' %>
+            

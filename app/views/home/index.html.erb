@@ -1,0 +1,61 @@
+ <div class="span9">
+ 
+
+     
+<div id="stats_chart" style="width: 100%; height: 300px;"></div>
+
+</div>
+<div class="span3" class ="pull right">
+ <form action="<%= foods_path %>" method ="get" id="foods_search"  >
+
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+  </form>
+</div>
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+
+$(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "stats_chart"
+      },
+      title: {
+        text: "Past 2 Months"
+      },
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          second: '%e. %b',
+          minute: '%e. %b',
+          hour: '%e. %B',
+          day: '%e. %b',
+          week: '%e. %b',
+          month: '%e. %b',
+          year: '%e. %b'
+        }
+    },
+      yAxis: {
+        title: {
+          text: "Weight"
+        }
+      },
+      tooltip:{
+        formatter: function(){
+          return Highcharts.dateFormat("%B %e %Y", this.x) + ':' +
+          Highcharts.numberFormat(this.y, 1);
+        }
+      },
+    series: [{
+          name: "Daily Weight",
+          pointInterval: <%= 1.day * 1000 %>,
+          data:[ [1331028000000, 5], [1331031600000, 6], [1331035200000, 4]  ]
+        }]
+    })
+  })
+</script>

@@ -1,0 +1,29 @@
+<h1>Listing nutr_defs</h1>
+
+<table>
+  <tr>
+    <th>Nutr no</th>
+    <th>Units</th>
+    <th>Tagname</th>
+    <th>Nutrdesc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @nutr_defs.each do |nutr_def| %>
+  <tr>
+    <td><%= nutr_def.nutr_no %></td>
+    <td><%= nutr_def.units %></td>
+    <td><%= nutr_def.tagname %></td>
+    <td><%= nutr_def.nutrdesc %></td>
+    <td><%= link_to 'Show', nutr_def %></td>
+    <td><%= link_to 'Edit', edit_nutr_def_path(nutr_def) %></td>
+    <td><%= link_to 'Destroy', nutr_def, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Nutr def', new_nutr_def_path %>

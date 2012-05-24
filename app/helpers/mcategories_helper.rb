@@ -1,0 +1,2 @@
+module McategoriesHelper
+end
