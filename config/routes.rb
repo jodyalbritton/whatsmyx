@@ -22,9 +22,8 @@ Whatsmyx::Application.routes.draw do
   end
 
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, :only => [:show, :index]
-  
 
   authenticated :user do
   root :to => 'home#index'
@@ -32,6 +31,7 @@ Whatsmyx::Application.routes.draw do
   
   devise_scope :user do
   root :to => "devise/registrations#new"
+  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
 
   # The priority is based upon order of creation:

@@ -41,6 +41,7 @@ gem "paperclip", "~> 3.0"
 gem "friendly_id", "~> 4.0.1"
 gem 'simple_form'
 gem 'rails3-jquery-autocomplete'
+gem 'omniauth-facebook'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
