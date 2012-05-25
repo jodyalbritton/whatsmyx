@@ -1,31 +1,14 @@
-<%= form_for [@user, @stat], :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.date_select :date, :class => 'date_select' %>
-    </div>
-   </div>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :stype, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :stype, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :value, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :value, :class => 'text_field' %>
-    </div>
-  </div>
-
+<%= simple_form_for @stat, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :stype %>
+  <%= f.input :value %>
+  <%= f.input :date %>
+  <%= f.input :category_id %>
+  <%= f.input :stype_id %>
+  <%= f.input :sunit %>
+  <%= f.input :user_id %>
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 stats_path, :class => 'btn' %>
   </div>

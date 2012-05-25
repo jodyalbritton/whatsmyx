@@ -1,0 +1,9 @@
+<%= simple_form_for @stat do |f| %>
+
+  <%= f.association :category %>
+  <%= f.input :name %>
+  <%= f.input :value %>
+  <%= f.input :date %>
+  
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

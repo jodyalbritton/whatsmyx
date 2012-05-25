@@ -1,3 +1,9 @@
 <div>
+<form action="<%= foods_path %>" method ="get" id="foods_search"  >
 
+  <p>  
+    <%= text_field_tag :search, params[:search] %>  
+    <%= submit_tag "Search", :name => nil %>  
+  </p>  
+  </form>
 </div>

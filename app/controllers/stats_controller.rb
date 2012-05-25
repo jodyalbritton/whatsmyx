@@ -44,7 +44,7 @@ class StatsController < ApplicationController
 
     respond_to do |format|
       if @stat.save
-        format.html { redirect_to stats_path, notice: 'Stat was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Stat was successfully created.' }
         format.json { render json: @stat, status: :created, location: @stat }
       else
         format.html { render action: "new" }

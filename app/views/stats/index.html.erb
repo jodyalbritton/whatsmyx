@@ -1,15 +1,34 @@
 <%- model_class = Stat.new.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-
-
 <table class="table table-striped">
-
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:stype) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:stype_id) %></th>
+      <th><%= model_class.human_attribute_name(:sunit) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @stats.each do |stat| %>
       <tr>
-       <td>
-       I Recorded a <%= link_to stat.name, stat_path(stat)%> of <%= stat.value %> <%= stat.stype %> on <%= stat.date %> 
-       </td>
+        <td><%= link_to stat.id, stat_path(stat) %></td>
+        <td><%= stat.name %></td>
+        <td><%= stat.stype %></td>
+        <td><%= stat.value %></td>
+        <td><%= stat.date %></td>
+        <td><%= stat.category_id %></td>
+        <td><%= stat.stype_id %></td>
+        <td><%= stat.sunit %></td>
+        <td><%= stat.user_id %></td>
+        <td><%=l stat.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_stat_path(stat), :class => 'btn btn-mini' %>
