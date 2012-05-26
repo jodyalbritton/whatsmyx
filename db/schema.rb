@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120524184909) do
+ActiveRecord::Schema.define(:version => 20120525210300) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(:version => 20120524184909) do
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
 
+  create_table "checklists", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.date     "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "dailylogs", :force => true do |t|
     t.string   "date"
     t.text     "notes"
@@ -110,6 +118,15 @@ ActiveRecord::Schema.define(:version => 20120524184909) do
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "notes", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.integer  "user_id"
+    t.date     "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "nutr_defs", :force => true do |t|

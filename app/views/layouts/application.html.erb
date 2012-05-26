@@ -48,5 +48,15 @@
     </div>
   </div>
 </body>
+<script>
+	
+      $("input.date_picker").datepicker()
+      .on('show', function(ev){                 
+      var today = new Date();
+      var t = today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
+      $('input.date_picker').data({date: t}).datepicker('update');
+  });
+
+</script>
 
 </html>

@@ -13,33 +13,47 @@
              </a>
             </li>
             <li>
-            	
-               <a data-toggle="modal" href="#myModal">
+                <a data-toggle="modal" href="#myModalStat">
                	<i class="icon-heart"></i>Track Stat</a>
             </li>
              <li>
-             <a href="#">
+               <a data-toggle="modal" href="#myModalFood">
              	<i class="icon-barcode"></i>Track Food</a>
              </li>
+              <li>
+                <a data-toggle="modal" href="#myModalList">
+               	<i class="icon-check"></i>Check List</a>
+            </li>
+             <li>
+                <a data-toggle="modal" href="#myModalNote">
+               	<i class="icon-pencil"></i>Add a Note</a>
+            </li>
               </ul>
           </div>
 <% end %>
 
-
-
-<div  id="myModal"  class="modal hide fade">
-  <div class="modal-header">
-  	<button class="close" data-dismiss="modal">×</button>
-  	<h2>Track your...</h2>
-    
-
-     </div>
-  <div class="modal-body">
+<div  id="myModalStat"  class="modal hide fade">
+  
       <%= render 'shared/stat_form' %>
-     </div>
-  <div class="modal-footer">
-   
-   
-   
-  </div>
+    
 </div>
+
+<div  id="myModalFood"  class="modal hide fade">
+  
+      <%= render 'shared/meal_form' %>
+     
+  
+</div>
+<div  id="myModalList"  class="modal hide fade">
+ 
+      <%= render 'shared/checklist_form' %>
+   
+</div>
+<div  id="myModalNote"  class="modal hide fade">
+
+      <%= render 'shared/note_form' %>
+   
+</div>
+
+
+

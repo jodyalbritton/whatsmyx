@@ -11,8 +11,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :avatar
   # attr_accessible :title, :body
-  
+  has_many :checklists, dependent: :destroy
+  has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
+  has_many :meals, dependent: :destroy
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
