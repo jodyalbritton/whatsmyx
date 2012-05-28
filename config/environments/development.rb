@@ -34,7 +34,7 @@ Whatsmyx::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  config.time_zone = 'UTC'
+  
   # setup mailer
   config.action_mailer.default_url_options = { :host => 'http://whatsmyx.com' } 
   config.action_mailer.perform_deliveries = true
