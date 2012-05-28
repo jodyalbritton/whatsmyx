@@ -5,7 +5,7 @@
   <div class="modal-body">
 <%= simple_form_for @note do |f| %>
 
- <%= f.input :name %>
+
  <%= f.input :content, :input_html => { :class => 'input-xlarge' } %>
  <%= f.input :date, :as => :date_picker, :input_html => {:value => DateTime.now.strftime('%m/%d/%Y')}%>
  

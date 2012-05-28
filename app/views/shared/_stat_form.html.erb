@@ -8,9 +8,12 @@
  <%= simple_form_for @stat do |f| %>
   <%= f.association :category %>
   <%= f.input :name %>
-  <%= f.input :value %>
+ 
+  <%= f.input :value, :input_html => { :class => "span1" }%>
+   <%= f.input :sunit, :label => 'Units', :input_html => { :class => "span1" }, :hint => "Units eg; lbs or inches"%>
+
   <%= f.input :date, :as => :date_picker, :input_html => {:value => DateTime.now.strftime('%m/%d/%Y')}%>
-</div>
+ </div>
 <div class="modal-footer">
    
     <%= f.submit "Post", class: "btn btn-large btn-primary" %>

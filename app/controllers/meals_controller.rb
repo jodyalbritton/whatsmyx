@@ -2,9 +2,11 @@ class MealsController < ApplicationController
  autocomplete :food, :longdesc, :full => true
   # GET /meals
   # GET /meals.json
+  
   def index
-    @meals = Meal.all
-
+    @user = User.find(current_user)
+    @meals_by_mcategory = @user.meals.find(:all).group_by { |m| m.mcategory}
+    @meals = @user.meals.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @meals }
@@ -41,7 +43,7 @@ class MealsController < ApplicationController
   # POST /meals
   # POST /meals.json
   def create
-    @meal = Meal.new(params[:meal])
+    @meal = current_user.meals.build(params[:meal])
 
     respond_to do |format|
       if @meal.save
@@ -81,4 +83,6 @@ class MealsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
 end

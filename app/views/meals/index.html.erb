@@ -1,33 +1,36 @@
 <%- model_class = Meal.new.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+
 <table class="table table-striped">
+ <% @meals_by_mcategory.each do |mcategory, meals| %>
   <thead>
+
+
+  	
     <tr>
-      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= mcategory.name %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:quanity) %></th>
       <th><%= model_class.human_attribute_name(:units) %></th>
     
-      <th><%= model_class.human_attribute_name(:mcategory_id) %></th>
+    
 
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @meals.each do |meal| %>
+   
+    <% meals.each do |meal| %>
+
       <tr>
-        <td><%= link_to meal.id, meal_path(meal) %></td>
-        <td><%= meal.date %></td>
-        <td><%= meal.name %></td>
+      	<td></td>
+        <td><%= link_to meal.name, meal_path(meal) %></td>
+       
+
 
         <td><%= meal.quanity %></td>
-       
-  
-        <td><%= meal.mcategory_id %></td>
         <td><%= meal.units %></td>
- 
-
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_meal_path(meal), :class => 'btn btn-mini' %>
@@ -37,11 +40,19 @@
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger' %>
         </td>
+        
+
+        
+        
       </tr>
+         <% end %>
     <% end %>
   </tbody>
+    
 </table>
-
+  
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_meal_path,
             :class => 'btn btn-primary' %>
+            
+

@@ -1,13 +1,24 @@
 class StatsController < ApplicationController
+ 
+
   # GET /stats
   # GET /stats.json
   def index
+     
    @user = User.find(current_user)
    @stats = @user.stats.order(:date)
+   @stats_by_category = @user.stats.find(:all).group_by { |s| s.category}
+   @stats_by_weight = @user.stats.where(:category_id => "1") 
+   @stats_by_bs = @user.stats.where(:category_id => "3")
+   @stats_by_bp = @user.stats.where(:category_id => "4") 
+   @stats_by_bf = @user.stats.where(:category_id => "5") 
+   @stats_by_ti = @user.stats.where(:category_id => "6") 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @stats }
     end
+    
+
   end
 
   # GET /stats/1
@@ -46,6 +57,7 @@ class StatsController < ApplicationController
       if @stat.save
         format.html { redirect_to root_path, notice: 'Stat was successfully created.' }
         format.json { render json: @stat, status: :created, location: @stat }
+        format.js #added
       else
         format.html { render action: "new" }
         format.json { render json: @stat.errors, status: :unprocessable_entity }
@@ -74,9 +86,10 @@ class StatsController < ApplicationController
   def destroy
     @stat = Stat.find(params[:id])
     @stat.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to stats_url }
+      format.js #added
       format.json { head :no_content }
     end
   end

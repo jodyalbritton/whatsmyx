@@ -17,3 +17,8 @@
 	height: 100px;
 }
 
+a.btn:visited { color: #333; }
+
+a.btn-danger:visited { color: #fff; }
+
+a.btn-primary:visited { color: #fff; }
