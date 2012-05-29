@@ -15,7 +15,7 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_stat_path,
             :class => 'btn btn-primary' %>
-
+<%= paginate @stats %>
  <script type="text/javascript">
  /**
  * Gray theme for Highcharts JS

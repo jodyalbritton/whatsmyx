@@ -6,7 +6,7 @@ class StatsController < ApplicationController
   def index
      
    @user = User.find(current_user)
-   @stats = @user.stats.order(:date)
+   @stats = @user.stats.order(:date).page(params[:page]).per(5)
    @stats_by_category = @user.stats.find(:all).group_by { |s| s.category}
    @stats_by_weight = @user.stats.where(:category_id => "1") 
    @stats_by_bs = @user.stats.where(:category_id => "3")
