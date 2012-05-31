@@ -9,6 +9,7 @@
   	
     <% @stats.each do |stat| %>
       <tr id="<%= dom_id(stat) %>">
+     <td></td>
         <td>I recorded a <%= link_to stat.category.name, stat_path(stat) %> of <%= stat.value %> <%= stat.sunit %> on <%= stat.date %> </td>
       
        

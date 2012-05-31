@@ -1,5 +1,5 @@
 class StatsController < ApplicationController
- 
+   before_filter :authenticate_user!
 
   # GET /stats
   # GET /stats.json

@@ -1,4 +1,5 @@
 class NutrDefsController < ApplicationController
+    before_filter :authenticate_user!
   # GET /nutr_defs
   # GET /nutr_defs.json
   def index

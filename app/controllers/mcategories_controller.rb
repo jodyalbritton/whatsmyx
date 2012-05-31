@@ -1,4 +1,5 @@
 class McategoriesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /mcategories
   # GET /mcategories.json
   def index

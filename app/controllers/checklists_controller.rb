@@ -1,4 +1,5 @@
 class ChecklistsController < ApplicationController
+    before_filter :authenticate_user!
   # GET /checklists
   # GET /checklists.json
   def index

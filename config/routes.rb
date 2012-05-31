@@ -1,25 +1,20 @@
 Whatsmyx::Application.routes.draw do
   resources :checklists
-
   resources :notes
-
- resources :meals do
+  resources :meals do
   get :autocomplete_food_longdesc, :on => :collection
- end
- resources :meals 
-  resources :nutrition
+  end
 
   resources :mcategories
-
-  
-
   resources :categories
 
   resources :stats
 
+  
+  resources :meals 
+  resources :nutrition
   resources :nutr_defs
-
- resources :foods do
+  resources :foods do
    resources :nutrients do
      resources :nutr_defs
    end
@@ -27,7 +22,7 @@ Whatsmyx::Application.routes.draw do
 
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:index]
 
   authenticated :user do
   root :to => 'home#index'
@@ -94,4 +89,8 @@ Whatsmyx::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  resources :users, :only => [:show], :path => '/' do
+   resource  :goals
+   resource  :settings
+  end
 end

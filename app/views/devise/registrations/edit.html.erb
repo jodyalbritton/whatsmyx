@@ -1,15 +1,68 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-<%= image_tag @user.avatar.url(:thumb) %>
+
+<ul id="myTab" class="nav nav-tabs">
+  <li><a href="#account" data-toggle="tab">Account</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+  <li><a href="#password" data-toggle="tab">Password</a></li>
+   <li><a href="#cancel" data-toggle="tab">Cancel Account</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane active" id="account">
+  	
+  	 <% resource.build_profile unless resource.profile%>
+  	  <% resource.build_settings unless resource.settings%>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-horizontal' }) do |f| %>
   <%= devise_error_messages! %>
 
-   <div class="control-group"><%= f.label :name %>
-  <%= f.text_field :name %></div>
-  <div class="control-group"><%= f.file_field :avatar %></div>
+  <div class="control-group"><%= f.label :username %>
+  <%= f.text_field :username %></div>
+
+  
+    
    <div class="control-group"><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 
- <div class="control-group"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+ 
+ 
+
+
+
+  	
+ </div>
+
+  <div class="tab-pane" id="profile">
+  	  <%= f.fields_for :profile do |profile_form| %>
+<div class= "row">
+   <div class="span3">	
+      <%= profile_form.label :fname %><br />
+      <%= profile_form.text_field :fname %>
+   
+  
+      <%= profile_form.label :lname %><br />
+      <%= profile_form.text_field :lname %>
+  </div>  
+
+  <div class="pull-right">
+  	<%= image_tag @user.profile.avatar.url(:medium) %></br>
+  	<%= profile_form.file_field :avatar %>
+  
+  </div>
+  </div>
+    <% end %>
+  </div>
+  <div class="tab-pane" id="settings">
+  	 <%= f.fields_for :settings do |settings_form| %>
+  	 <label class="checkbox">
+  	 <%= settings_form.check_box :acct_enabled%> Account Enabled?
+	 </label>
+   
+  	 	
+  	  <% end %>
+  </div>
+   <div class="tab-pane" id="password">
+<div class="control-group"><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
  <div class="control-group"><%= f.label :password_confirmation %><br />
@@ -18,14 +71,20 @@
  <div class="control-group"><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
   <%= f.password_field :current_password %></div>
 
-  <div class="form-actions">
-  <%= f.submit "Update", :class => 'btn btn-primary'  %>
-  </div>
-<% end %>
-<div class="control-group">
+</div>
+  <div class="tab-pane" id="cancel">
+ <div class="control-group">
 <h3>Cancel my account</h3>
 
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %>.</p>
 
-<%= link_to "Back", :back %>
+
+ 
 </div>
+
+</div>
+ 
+  <div class="form-actions">
+  <%= f.submit "Update", :class => 'btn btn-primary'  %> <%= link_to "Back", :back %>
+  </div>
+<% end %>

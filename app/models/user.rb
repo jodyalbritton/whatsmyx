@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :username, use: :slugged
 	validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
+  validates_uniqueness_of :username, :email, :case_sensitive => false
+  validate :username_format
 	rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -9,13 +12,20 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :avatar
+  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes   
+  
+ 
   # attr_accessible :title, :body
   has_many :checklists, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
   has_many :meals, dependent: :destroy
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_one :profile, dependent: :destroy
+  has_one :settings, dependent: :destroy
+  has_one :notifications, dependent: :destroy
+  has_one :goals, dependent: :destroy
+  
+ accepts_nested_attributes_for :profile, :settings
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
@@ -33,5 +43,31 @@ end
       end
     end
   end
+  def username_format
+  has_one_letter = username =~ /[a-zA-Z]/
+  all_valid_characters = username =~ /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
+  errors.add(:username, "must have at least one letter and contain only letters, digits, or underscores") unless (has_one_letter and all_valid_characters)
+  end
   
+  
+    def update_with_password(params={})
+        current_password = params.delete(:current_password)
+
+        if params[:password].blank?
+          params.delete(:password)
+          params.delete(:password_confirmation) if params[:password_confirmation].blank?
+        end 
+
+        result = if params[:password].blank? || valid_password?(current_password) 
+          update_attributes(params)
+        else
+          self.attributes = params
+          self.valid?
+          self.errors.add(:current_password, current_password.blank? ? :blank : :invalid)
+          false
+        end 
+
+        clean_up_passwords
+        result
+      end
 end

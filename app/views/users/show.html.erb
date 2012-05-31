@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div id="profileheader" class="row well">
+	<div id="profile_pic" class="pull-left">
+		<%= image_tag @user.profile.avatar.url(:medium) %>
+    </div>
+	<div id="profilename" class="span3 pull-left">
+	<h3><%= @user.username %></h3>
+	</div>
+	
+</div>
+<div id="profilebody">
+	
+
+</div>

@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+ before_filter :authenticate_user!
  autocomplete :food, :longdesc, :full => true
   # GET /meals
   # GET /meals.json
