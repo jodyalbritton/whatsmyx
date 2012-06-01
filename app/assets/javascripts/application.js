@@ -17,11 +17,11 @@
 //= require twitter/bootstrap
 //= require highcharts
 //= require autocomplete-rails
+//= require rails.validations
 //= require_tree .
 
 
  // Search form.  
 
 
-   
-
+  

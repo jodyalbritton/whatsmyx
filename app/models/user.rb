@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
-	validates_presence_of :name
+	validates_presence_of :name, :username
   validates_uniqueness_of :username, :email, :case_sensitive => false
   validate :username_format
 	rolify
@@ -9,11 +9,11 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes   
-  
+   validates_confirmation_of :password
  
   # attr_accessible :title, :body
   has_many :checklists, dependent: :destroy

@@ -43,6 +43,7 @@ gem 'simple_form'
 gem 'rails3-jquery-autocomplete'
 gem 'omniauth-facebook'
 gem 'american_date'
+gem 'client_side_validations', '3.2.0.beta.3'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

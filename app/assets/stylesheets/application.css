@@ -22,3 +22,13 @@ a.btn:visited { color: #333; }
 a.btn-danger:visited { color: #fff; }
 
 a.btn-primary:visited { color: #fff; }
+
+#user_profile_attributes_dob_1i {
+	width: 100px;
+}
+#user_profile_attributes_dob_2i {
+	width: 100px;
+}
+#user_profile_attributes_dob_3i {
+	width: 100px;
+}
