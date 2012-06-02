@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
   before_filter :authenticate_user!, :except => [:create]
-
+  protect_from_forgery :except => :create	
 def index
   # get all authentication services assigned to the current user
   @services = current_user.services.all
