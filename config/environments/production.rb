@@ -1,4 +1,30 @@
 Whatsmyx::Application.configure do
+  
+  
+  # Open ID Setup 
+     Rails.application.config.middleware.use OmniAuth::Builder do
+     # ALWAYS RESTART YOUR SERVER IF YOU MAKE CHANGES TO THESE SETTINGS!
+     
+     # you need a store for OpenID; (if you deploy on heroku you need Filesystem.new('./tmp') instead of Filesystem.new('/tmp'))
+     require 'openid/store/filesystem'
+
+    # load certificates
+    require "openid/fetchers"
+    OpenID.fetcher.ca_file = "#{Rails.root}/config/ca-bundle.crt"
+  
+     # generic openid
+     provider :openid, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'openid'
+     
+     # dedicated openid
+     provider :openid, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id'
+     # provider :google_apps, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'google_apps'
+     # /auth/google_apps; you can bypass the prompt for the domain with /auth/google_apps?domain=somedomain.com
+     
+     provider :openid, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'yahoo', :identifier => 'yahoo.com' 
+     provider :openid, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'aol', :identifier => 'openid.aol.com'
+     provider :openid, :store => OpenID::Store::Filesystem.new('./tmp'), :name => 'myopenid', :identifier => 'myopenid.com'
+  
+   end  
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
