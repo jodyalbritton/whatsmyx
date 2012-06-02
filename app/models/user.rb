@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   has_many :stats, dependent: :destroy
   has_many :meals, dependent: :destroy
   has_many :goals, dependent: :destroy
+   has_many :services, :dependent => :destroy
   has_one :profile, dependent: :destroy
   has_one :settings, dependent: :destroy
   has_one :notifications, dependent: :destroy

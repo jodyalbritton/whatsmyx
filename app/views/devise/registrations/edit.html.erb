@@ -5,7 +5,7 @@
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#account"data-toggle="tab">Account</a></li>
   <li><a href="#profile" data-toggle="tab">Profile</a></li>
-  <li><a href="#password" data-toggle="tab">Password</a></li>
+  <li><a href="#wordpass" data-toggle="tab">Password</a></li>
   <li><a href="#settings" data-toggle="tab">Settings</a></li>
   <li><a href="#cancel_account" data-toggle="tab">Cancel Account</a></li>
 </ul>
@@ -32,12 +32,14 @@
     <% end %>
   </div>
   </div>
-  <div class="tab-pane" id="password">
+  <div class="tab-pane" id="wordpass">
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
   </div>
-  <div class="tab-pane" id="settings">...</div>
+  <div class="tab-pane" id="settings">
+
+  </div>
   <div class="tab-pane" id="cancel_account">
   <h3>Cancel my account</h3>
 
@@ -51,6 +53,11 @@
   </div>
 <% end %>
 
+<script>                
 
-
+$(function () {
+   var activeTab = $('[href=' + location.hash + ']');
+   activeTab && activeTab.tab('show');
+});
+</script>
 

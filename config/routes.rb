@@ -22,7 +22,12 @@ Whatsmyx::Application.routes.draw do
      resources :nutr_defs
    end
   end
+devise_scope :user do
+  root :to => "devise/registrations#new"
+  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
 
+  match 'users/auth/:auth_service/callback' => 'auth_services#create'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, :only => [:index]
@@ -31,11 +36,8 @@ Whatsmyx::Application.routes.draw do
   root :to => 'home#index'
   end
   
-  devise_scope :user do
-  root :to => "devise/registrations#new"
-  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
-  end
-
+ 
+resources :services, :only => [:index, :create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
