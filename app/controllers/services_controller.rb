@@ -41,9 +41,9 @@ def create
       omniauth['uid'] ?  uid =  omniauth['uid'] : uid = ''
       omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
     elsif service_route == 'google'
-      omniauth['info']['email'] ? email[:email] = omniauth['info']['email'] : email  = ''
-      omniauth['info']['name'] ? name [:name] =  omniauth['info']['name'] : name  = ''
-      omniauth['uid'] ? uid = omniauth['uid'].to_s : uid = ''
+      omniauth['info']['email'] ? email = omniauth['info']['email'] : email  = ''
+      omniauth['info']['name'] ? name =  omniauth['info']['name'] : name  = ''
+      omniauth['uid'] ? uid = omniauth['uid'] : uid = ''
       omniauth['provider'] ? provider = omniauth['provider'] : provider = ''     
     else
       # we have an unrecognized service, just output the hash that has been returned
