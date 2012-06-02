@@ -42,6 +42,8 @@ gem "friendly_id", "~> 4.0.1"
 gem 'simple_form'
 gem 'rails3-jquery-autocomplete'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-openid'
 gem 'american_date'
 gem 'client_side_validations', '3.2.0.beta.3'
 # To use ActiveModel has_secure_password

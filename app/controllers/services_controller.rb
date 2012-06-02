@@ -26,14 +26,14 @@ def create
     
     # map the returned hashes to our variables first - the hashes differ for every service
     if service_route == 'facebook'
-      omniauth['extra']['user_hash']['email'] ? email =  omniauth['extra']['user_hash']['email'] : email = ''
-      omniauth['extra']['user_hash']['name'] ? name =  omniauth['extra']['user_hash']['name'] : name = ''
-      omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
+      omniauth['extra']['raw_info']['email'] ? email =  omniauth['extra']['raw_info']['email'] : email = ''
+      omniauth['extra']['raw_info']['name'] ? name =  omniauth['extra']['raw_info']['name'] : name = ''
+      omniauth['extra']['raw_info']['id'] ?  uid =  omniauth['extra']['raw_info']['id'] : uid = ''
       omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
     elsif service_route == 'github'
       omniauth['user_info']['email'] ? email =  omniauth['user_info']['email'] : email = ''
       omniauth['user_info']['name'] ? name =  omniauth['user_info']['name'] : name = ''
-      omniauth['extra']['user_hash']['id'] ?  uid =  omniauth['extra']['user_hash']['id'] : uid = ''
+      omniauth['extra']['raw_info']['id'] ?  uid =  omniauth['extra']['raw_info']['id'] : uid = ''
       omniauth['provider'] ? provider =  omniauth['provider'] : provider = ''
     elsif service_route == 'twitter'
       email = ''    # Twitter API never returns the email address
