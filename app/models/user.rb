@@ -20,10 +20,11 @@ class User < ActiveRecord::Base
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
   has_many :meals, dependent: :destroy
+  has_many :goals, dependent: :destroy
   has_one :profile, dependent: :destroy
   has_one :settings, dependent: :destroy
   has_one :notifications, dependent: :destroy
-  has_one :goals, dependent: :destroy
+ 
   
  accepts_nested_attributes_for :profile, :settings
   

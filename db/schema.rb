@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120531085849) do
+ActiveRecord::Schema.define(:version => 20120602042828) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -104,8 +104,10 @@ ActiveRecord::Schema.define(:version => 20120531085849) do
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "value"
+    t.integer  "category_id"
   end
 
   add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
