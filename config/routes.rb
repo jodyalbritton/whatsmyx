@@ -28,6 +28,8 @@ devise_scope :user do
   end
 
   match 'users/auth/:auth_service/callback' => 'auth_services#create'
+  match "/users/auth/:service/callback" => 'services#create'
+  match "/users/auth/:service/failure" => 'services#failure'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, :only => [:index]
