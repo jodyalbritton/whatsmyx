@@ -25,7 +25,8 @@ Whatsmyx::Application.routes.draw do
 
    match "users/auth/:service/callback" => 'services#create'
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users
+  #, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users, :only => [:index]
 
   authenticated :user do
@@ -33,7 +34,7 @@ Whatsmyx::Application.routes.draw do
   end
   devise_scope :user do
   root :to => "devise/registrations#new"
-  get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  #get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
  
 resources :services, :only => [:index, :create]
