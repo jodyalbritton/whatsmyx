@@ -12,7 +12,7 @@
                 <div class="line2">Email: <%= service.uemail != '' ? service.uemail : 'not set' %></div>
                 <div class="line3">
                     <% @services.count == 1 ? @msg = 'Removing the last account linked might lock you out of your account if you do not know the email/password sign-in of your local account!' : @msg = '' %>
-                   
+                   <%= link_to "Remove this service", service, :confirm => 'Are you sure you want to remove this authentication?', :method => :delete, :class => "remove" %>
                 </div>
               </div>
           </div>  
