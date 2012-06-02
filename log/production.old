@@ -1,0 +1,3509 @@
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 20:58:20 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (178.5ms)
+Completed 500 Internal Server Error in 420ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1035022643995235989_117226600'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 20:58:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (31.4ms)
+Completed 500 Internal Server Error in 35ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1035022643995235989_117226600'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:01:25 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.4ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1035022643995235989_117226600'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:01:28 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (75.1ms)
+Completed 500 Internal Server Error in 78ms
+
+ActionView::Template::Error (application.css isn't precompiled):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___1035022643995235989_117226600'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:01:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (153.0ms)
+Completed 500 Internal Server Error in 362ms
+
+ActionView::Template::Error (couldn't find file 'jquery.ui.core'
+  (in /var/src/whatsmyx/app/assets/stylesheets/application.css:10)):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2281013181767035144_84612780'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:05:20 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (21.8ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (couldn't find file 'jquery.ui.core'
+  (in /var/src/whatsmyx/app/assets/stylesheets/application.css:10)):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2281013181767035144_84612780'
+
+
+Compiled jquery.js  (2ms)  (pid 1581)
+Compiled jquery_ujs.js  (0ms)  (pid 1581)
+Compiled jquery.ui.core.js  (1ms)  (pid 1581)
+Compiled jquery.ui.widget.js  (0ms)  (pid 1581)
+Compiled jquery.ui.position.js  (0ms)  (pid 1581)
+Compiled jquery.ui.autocomplete.js  (27ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap.js  (259ms)  (pid 1581)
+Compiled highcharts.js  (4ms)  (pid 1581)
+Compiled autocomplete-rails.js  (0ms)  (pid 1581)
+Compiled rails.validations.js  (0ms)  (pid 1581)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 1581)
+Compiled bootstrap.js  (139ms)  (pid 1581)
+Compiled categories.js  (0ms)  (pid 1581)
+Compiled checklists.js  (0ms)  (pid 1581)
+Compiled cs_validates.js  (0ms)  (pid 1581)
+Compiled dailylogs.js  (0ms)  (pid 1581)
+Compiled foods.js  (0ms)  (pid 1581)
+Compiled home.js  (0ms)  (pid 1581)
+Compiled mcategories.js  (0ms)  (pid 1581)
+Compiled meals.js  (0ms)  (pid 1581)
+Compiled notes.js  (0ms)  (pid 1581)
+Compiled nutr_defs.js  (0ms)  (pid 1581)
+Compiled nutrient.js  (0ms)  (pid 1581)
+Compiled nutrition.js  (0ms)  (pid 1581)
+Compiled profiles.js  (0ms)  (pid 1581)
+Compiled settings.js  (0ms)  (pid 1581)
+Compiled stats.js  (0ms)  (pid 1581)
+Compiled users.js  (0ms)  (pid 1581)
+Compiled application.js  (838ms)  (pid 1581)
+Compiled jquery.ui.core.css  (1ms)  (pid 1581)
+Compiled jquery.ui.theme.css  (227ms)  (pid 1581)
+Compiled jquery.ui.autocomplete.css  (284ms)  (pid 1581)
+Compiled bootstrap_and_overrides.css  (1190ms)  (pid 1581)
+Compiled datepicker.css  (0ms)  (pid 1581)
+Compiled foods.css  (9ms)  (pid 1581)
+Compiled meals.css  (6ms)  (pid 1581)
+Compiled nutr_defs.css  (45ms)  (pid 1581)
+Compiled nutrient.css  (4ms)  (pid 1581)
+Compiled nutrition.css  (5ms)  (pid 1581)
+Compiled scaffolds.css  (5ms)  (pid 1581)
+Compiled stats.css  (4ms)  (pid 1581)
+Compiled users.css  (4ms)  (pid 1581)
+Compiled application.css  (1672ms)  (pid 1581)
+Compiled jquery.js  (30ms)  (pid 1581)
+Compiled jquery_ujs.js  (0ms)  (pid 1581)
+Compiled jquery.ui.core.js  (1ms)  (pid 1581)
+Compiled jquery.ui.widget.js  (0ms)  (pid 1581)
+Compiled jquery.ui.position.js  (0ms)  (pid 1581)
+Compiled jquery.ui.autocomplete.js  (10ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 1581)
+Compiled twitter/bootstrap.js  (89ms)  (pid 1581)
+Compiled highcharts.js  (4ms)  (pid 1581)
+Compiled autocomplete-rails.js  (0ms)  (pid 1581)
+Compiled rails.validations.js  (0ms)  (pid 1581)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 1581)
+Compiled bootstrap.js  (70ms)  (pid 1581)
+Compiled categories.js  (0ms)  (pid 1581)
+Compiled checklists.js  (0ms)  (pid 1581)
+Compiled cs_validates.js  (0ms)  (pid 1581)
+Compiled dailylogs.js  (0ms)  (pid 1581)
+Compiled foods.js  (0ms)  (pid 1581)
+Compiled home.js  (0ms)  (pid 1581)
+Compiled mcategories.js  (0ms)  (pid 1581)
+Compiled meals.js  (0ms)  (pid 1581)
+Compiled notes.js  (0ms)  (pid 1581)
+Compiled nutr_defs.js  (0ms)  (pid 1581)
+Compiled nutrient.js  (0ms)  (pid 1581)
+Compiled nutrition.js  (0ms)  (pid 1581)
+Compiled profiles.js  (0ms)  (pid 1581)
+Compiled settings.js  (0ms)  (pid 1581)
+Compiled stats.js  (0ms)  (pid 1581)
+Compiled users.js  (0ms)  (pid 1581)
+Compiled application.js  (369ms)  (pid 1581)
+Compiled jquery.ui.core.css  (1ms)  (pid 1581)
+Compiled jquery.ui.theme.css  (7ms)  (pid 1581)
+Compiled jquery.ui.autocomplete.css  (14ms)  (pid 1581)
+Compiled bootstrap_and_overrides.css  (740ms)  (pid 1581)
+Compiled datepicker.css  (0ms)  (pid 1581)
+Compiled foods.css  (5ms)  (pid 1581)
+Compiled meals.css  (4ms)  (pid 1581)
+Compiled nutr_defs.css  (6ms)  (pid 1581)
+Compiled nutrient.css  (6ms)  (pid 1581)
+Compiled nutrition.css  (6ms)  (pid 1581)
+Compiled scaffolds.css  (6ms)  (pid 1581)
+Compiled stats.css  (6ms)  (pid 1581)
+Compiled users.css  (5ms)  (pid 1581)
+Compiled application.css  (909ms)  (pid 1581)
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:07:21 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (66.4ms)
+Completed 500 Internal Server Error in 75ms
+
+ActionView::Template::Error (couldn't find file 'jquery.ui.core'
+  (in /var/src/whatsmyx/app/assets/stylesheets/application.css:10)):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2281013181767035144_84612780'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:07:22 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (32.7ms)
+Completed 500 Internal Server Error in 41ms
+
+ActionView::Template::Error (couldn't find file 'jquery.ui.core'
+  (in /var/src/whatsmyx/app/assets/stylesheets/application.css:10)):
+    5:   <!--[if lt IE 9]>
+    6:     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    7:   <![endif]-->
+    8:   <%= stylesheet_link_tag    "application", :media => "all" %>
+    9:   <%= javascript_include_tag "application" %>
+    10:   <%= csrf_meta_tags %>
+    11:   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2281013181767035144_84612780'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:07:42 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (155.4ms)
+  Rendered layouts/_navigation.html.erb (1.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 318ms (Views: 222.6ms | ActiveRecord: 2.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/dildo" for 76.6.74.184 at 2012-05-31 21:07:50 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"dildo"}
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-05-31 21:07:50 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in" for 76.6.74.184 at 2012-05-31 21:08:05 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CRU+mR1d8edVExTVEW+toVxEshaGXQDD1RPIr3WYd9A=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Redirected to http://whatsmyx.com/dildo
+Completed 302 Found in 348ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dildo" for 76.6.74.184 at 2012-05-31 21:08:06 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"dildo"}
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=dildo):
+  app/controllers/users_controller.rb:10:in `show'
+
+
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-05-31 21:08:22 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (15.9ms)
+  Rendered stats/index.html.erb within layouts/application (37.0ms)
+  Rendered layouts/_navigation.html.erb (170.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 347ms (Views: 208.8ms | ActiveRecord: 7.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutririon" for 76.6.74.184 at 2012-05-31 21:08:31 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"nutririon"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=nutririon):
+  app/controllers/users_controller.rb:10:in `show'
+
+
+
+
+Started GET "/nutritions" for 76.6.74.184 at 2012-05-31 21:08:37 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"nutritions"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=nutritions):
+  app/controllers/users_controller.rb:10:in `show'
+
+
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-05-31 21:08:40 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/foods?search=chocolate" for 76.6.74.184 at 2012-05-31 21:08:45 -0700
+Processing by FoodsController#index as HTML
+  Parameters: {"search"=>"chocolate"}
+  Rendered foods/index.html.erb within layouts/application (29.7ms)
+Completed 500 Internal Server Error in 39ms
+
+ActionView::Template::Error (Connection to 127.0.0.1 on 9312 failed. Connection refused - connect(2)):
+    18:     </tr>
+    19:   </thead>
+    20:   <tbody>
+    21:     <% @foods.each do |food| %>
+    22:       <tr>
+    23:  
+    24:         <td><%= food.longdesc %></td>
+  app/views/foods/index.html.erb:21:in `_app_views_foods_index_html_erb__355058891292529116_137715420'
+  app/controllers/foods_controller.rb:10:in `index'
+
+
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-05-31 21:08:55 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (8.4ms)
+  Rendered stats/index.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 18.2ms | ActiveRecord: 0.8ms | Sphinx: 2.5ms)
+
+
+Started GET "/stats/new" for 76.6.74.184 at 2012-05-31 21:08:57 -0700
+Processing by StatsController#new as HTML
+  Rendered stats/_form.html.erb (41.2ms)
+  Rendered stats/new.html.erb within layouts/application (42.7ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 46.6ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:09:09 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (11.2ms)
+  Rendered shared/_meal_form.html.erb (47.9ms)
+  Rendered shared/_checklist_form.html.erb (55.6ms)
+  Rendered shared/_note_form.html.erb (7.8ms)
+  Rendered home/index.html.erb within layouts/application (126.3ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 186ms (Views: 133.0ms | ActiveRecord: 4.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-05-31 21:09:19 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (10.3ms)
+  Rendered shared/_meal_form.html.erb (11.9ms)
+  Rendered shared/_checklist_form.html.erb (3.0ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (31.0ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-05-31 21:09:23 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.7ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-05-31 21:37:33 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-05-31 21:40:08 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (57.7ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-05-31 21:40:28 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-05-31 21:40:56 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (13.1ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 66.249.71.177 at 2012-06-01 08:00:57 -0700
+Processing by NutritionController#index as */*
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 66.249.71.177 at 2012-06-01 08:00:58 -0700
+Processing by Devise::SessionsController#new as */*
+  Rendered devise/shared/_links.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 66.249.72.40 at 2012-06-01 10:55:18 -0700
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 14:43:31 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (11.3ms)
+  Rendered shared/_meal_form.html.erb (13.4ms)
+  Rendered shared/_checklist_form.html.erb (63.3ms)
+  Rendered shared/_note_form.html.erb (5.6ms)
+  Rendered home/index.html.erb within layouts/application (95.1ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 106ms (Views: 102.0ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 76.6.74.184 at 2012-06-01 14:43:35 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CRU+mR1d8edVExTVEW+toVxEshaGXQDD1RPIr3WYd9A="}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 56ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 14:43:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (33.0ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-01 14:43:41 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in" for 76.6.74.184 at 2012-06-01 14:43:57 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jU7TraonTeuJTzQEY4vVZUvMq1KlEBye9/vkev2wLTc=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 110ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 14:43:57 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (7.3ms)
+  Rendered shared/_meal_form.html.erb (60.6ms)
+  Rendered shared/_checklist_form.html.erb (2.4ms)
+  Rendered shared/_note_form.html.erb (3.5ms)
+  Rendered home/index.html.erb within layouts/application (74.8ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 79.2ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/what" for 76.6.74.184 at 2012-06-01 14:44:02 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"what"}
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=what):
+  app/controllers/users_controller.rb:10:in `show'
+
+
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:44:10 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:46:03 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:49:37 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:49:42 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 16.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:50:18 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_navigation.html.erb (46.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 60ms (Views: 57.8ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:50:44 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:51:25 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:51:29 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 76.6.74.184 at 2012-06-01 14:51:31 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jU7TraonTeuJTzQEY4vVZUvMq1KlEBye9/vkev2wLTc="}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 14:51:32 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-01 14:51:37 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in" for 76.6.74.184 at 2012-06-01 14:51:45 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnzJTI0ugCUVI19xUP5PRE4/uHGYOyPExHvMXgMHBe4=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 142ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 14:51:45 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (52.2ms)
+  Rendered shared/_meal_form.html.erb (12.0ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (72.9ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:51:51 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:53:30 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:55:30 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 14:55:40 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (8.5ms)
+  Rendered stats/index.html.erb within layouts/application (49.3ms)
+  Rendered layouts/_navigation.html.erb (3.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 55.0ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:55:44 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:57:14 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 14:59:48 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 15:01:40 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 15:04:50 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (12.5ms)
+  Rendered layouts/_navigation.html.erb (4.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+Compiled jquery.js  (31ms)  (pid 32508)
+Compiled jquery_ujs.js  (0ms)  (pid 32508)
+Compiled jquery.ui.core.js  (1ms)  (pid 32508)
+Compiled jquery.ui.widget.js  (0ms)  (pid 32508)
+Compiled jquery.ui.position.js  (0ms)  (pid 32508)
+Compiled jquery.ui.autocomplete.js  (46ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap.js  (139ms)  (pid 32508)
+Compiled highcharts.js  (6ms)  (pid 32508)
+Compiled autocomplete-rails.js  (0ms)  (pid 32508)
+Compiled rails.validations.js  (0ms)  (pid 32508)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 32508)
+Compiled bootstrap.js  (133ms)  (pid 32508)
+Compiled categories.js  (0ms)  (pid 32508)
+Compiled checklists.js  (0ms)  (pid 32508)
+Compiled cs_validates.js  (0ms)  (pid 32508)
+Compiled dailylogs.js  (0ms)  (pid 32508)
+Compiled foods.js  (0ms)  (pid 32508)
+Compiled home.js  (0ms)  (pid 32508)
+Compiled mcategories.js  (0ms)  (pid 32508)
+Compiled meals.js  (0ms)  (pid 32508)
+Compiled notes.js  (0ms)  (pid 32508)
+Compiled nutr_defs.js  (0ms)  (pid 32508)
+Compiled nutrient.js  (0ms)  (pid 32508)
+Compiled nutrition.js  (0ms)  (pid 32508)
+Compiled profiles.js  (0ms)  (pid 32508)
+Compiled settings.js  (0ms)  (pid 32508)
+Compiled stats.js  (0ms)  (pid 32508)
+Compiled users.js  (0ms)  (pid 32508)
+Compiled application.js  (932ms)  (pid 32508)
+Compiled jquery.ui.core.css  (1ms)  (pid 32508)
+Compiled jquery.ui.theme.css  (133ms)  (pid 32508)
+Compiled jquery.ui.autocomplete.css  (175ms)  (pid 32508)
+Compiled bootstrap_and_overrides.css  (1029ms)  (pid 32508)
+Compiled datepicker.css  (0ms)  (pid 32508)
+Compiled foods.css  (6ms)  (pid 32508)
+Compiled meals.css  (5ms)  (pid 32508)
+Compiled nutr_defs.css  (63ms)  (pid 32508)
+Compiled nutrient.css  (6ms)  (pid 32508)
+Compiled nutrition.css  (4ms)  (pid 32508)
+Compiled scaffolds.css  (8ms)  (pid 32508)
+Compiled stats.css  (6ms)  (pid 32508)
+Compiled users.css  (6ms)  (pid 32508)
+Compiled application.css  (1546ms)  (pid 32508)
+Compiled jquery.js  (30ms)  (pid 32508)
+Compiled jquery_ujs.js  (0ms)  (pid 32508)
+Compiled jquery.ui.core.js  (1ms)  (pid 32508)
+Compiled jquery.ui.widget.js  (0ms)  (pid 32508)
+Compiled jquery.ui.position.js  (0ms)  (pid 32508)
+Compiled jquery.ui.autocomplete.js  (10ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 32508)
+Compiled twitter/bootstrap.js  (87ms)  (pid 32508)
+Compiled highcharts.js  (4ms)  (pid 32508)
+Compiled autocomplete-rails.js  (0ms)  (pid 32508)
+Compiled rails.validations.js  (0ms)  (pid 32508)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 32508)
+Compiled bootstrap.js  (102ms)  (pid 32508)
+Compiled categories.js  (0ms)  (pid 32508)
+Compiled checklists.js  (0ms)  (pid 32508)
+Compiled cs_validates.js  (0ms)  (pid 32508)
+Compiled dailylogs.js  (0ms)  (pid 32508)
+Compiled foods.js  (0ms)  (pid 32508)
+Compiled home.js  (0ms)  (pid 32508)
+Compiled mcategories.js  (0ms)  (pid 32508)
+Compiled meals.js  (0ms)  (pid 32508)
+Compiled notes.js  (0ms)  (pid 32508)
+Compiled nutr_defs.js  (0ms)  (pid 32508)
+Compiled nutrient.js  (0ms)  (pid 32508)
+Compiled nutrition.js  (0ms)  (pid 32508)
+Compiled profiles.js  (0ms)  (pid 32508)
+Compiled settings.js  (0ms)  (pid 32508)
+Compiled stats.js  (0ms)  (pid 32508)
+Compiled users.js  (0ms)  (pid 32508)
+Compiled application.js  (446ms)  (pid 32508)
+Compiled jquery.ui.core.css  (1ms)  (pid 32508)
+Compiled jquery.ui.theme.css  (7ms)  (pid 32508)
+Compiled jquery.ui.autocomplete.css  (15ms)  (pid 32508)
+Compiled bootstrap_and_overrides.css  (613ms)  (pid 32508)
+Compiled datepicker.css  (0ms)  (pid 32508)
+Compiled foods.css  (4ms)  (pid 32508)
+Compiled meals.css  (4ms)  (pid 32508)
+Compiled nutr_defs.css  (4ms)  (pid 32508)
+Compiled nutrient.css  (4ms)  (pid 32508)
+Compiled nutrition.css  (4ms)  (pid 32508)
+Compiled scaffolds.css  (5ms)  (pid 32508)
+Compiled stats.css  (4ms)  (pid 32508)
+Compiled users.css  (4ms)  (pid 32508)
+Compiled application.css  (743ms)  (pid 32508)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 15:08:54 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (110.5ms)
+  Rendered layouts/_navigation.html.erb (198.7ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 686ms (Views: 387.1ms | ActiveRecord: 65.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 15:34:38 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (53.6ms)
+  Rendered shared/_meal_form.html.erb (82.1ms)
+  Rendered shared/_checklist_form.html.erb (5.4ms)
+  Rendered shared/_note_form.html.erb (11.6ms)
+  Rendered home/index.html.erb within layouts/application (231.0ms)
+  Rendered layouts/_navigation.html.erb (126.1ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 647ms (Views: 394.1ms | ActiveRecord: 81.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 15:34:41 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/foods?search=cheese" for 76.6.74.184 at 2012-06-01 15:34:44 -0700
+Processing by FoodsController#index as HTML
+  Parameters: {"search"=>"cheese"}
+  Rendered foods/index.html.erb within layouts/application (105.2ms)
+Completed 500 Internal Server Error in 143ms
+
+ActionView::Template::Error (Connection to 127.0.0.1 on 9312 failed. Connection refused - connect(2)):
+    18:     </tr>
+    19:   </thead>
+    20:   <tbody>
+    21:     <% @foods.each do |food| %>
+    22:       <tr>
+    23:  
+    24:         <td><%= food.longdesc %></td>
+  app/views/foods/index.html.erb:21:in `_app_views_foods_index_html_erb__3013484098858497997_85270920'
+  app/controllers/foods_controller.rb:10:in `index'
+
+
+
+
+Started GET "/foods?search=cheese" for 76.6.74.184 at 2012-06-01 15:41:04 -0700
+Processing by FoodsController#index as HTML
+  Parameters: {"search"=>"cheese"}
+  Rendered foods/index.html.erb within layouts/application (132.3ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 142ms (Views: 71.1ms | ActiveRecord: 11.2ms | Sphinx: 59.1ms)
+
+
+Started GET "/foods/4" for 76.6.74.184 at 2012-06-01 15:41:10 -0700
+Processing by FoodsController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendered foods/show.html.erb within layouts/application (1310.3ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 1322ms (Views: 212.8ms | ActiveRecord: 1105.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 15:41:42 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 15:41:43 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (14.6ms)
+  Rendered stats/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 39.4ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats/77/edit" for 76.6.74.184 at 2012-06-01 15:41:48 -0700
+Processing by StatsController#edit as HTML
+  Parameters: {"id"=>"77"}
+  Rendered stats/_form.html.erb (61.0ms)
+  Rendered stats/edit.html.erb within layouts/application (70.7ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 84ms (Views: 80.7ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 15:41:52 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (13.8ms)
+  Rendered stats/index.html.erb within layouts/application (24.5ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 29.9ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 15:41:54 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (6.6ms)
+  Rendered shared/_meal_form.html.erb (7.4ms)
+  Rendered shared/_checklist_form.html.erb (2.1ms)
+  Rendered shared/_note_form.html.erb (3.0ms)
+  Rendered home/index.html.erb within layouts/application (19.9ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 16:05:17 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (62.5ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 78ms (Views: 71.5ms | ActiveRecord: 4.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 16:16:05 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (24.5ms)
+  Rendered shared/_meal_form.html.erb (47.1ms)
+  Rendered shared/_checklist_form.html.erb (3.2ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (113.9ms)
+  Rendered layouts/_navigation.html.erb (78.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 351ms (Views: 231.9ms | ActiveRecord: 7.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 16:16:09 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (138.8ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 150ms (Views: 138.8ms | ActiveRecord: 9.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 16:16:40 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 17ms (Views: 14.0ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:16:41 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (11.0ms)
+  Rendered stats/index.html.erb within layouts/application (24.3ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 85ms (Views: 29.7ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 16:16:44 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (10.4ms)
+  Rendered shared/_meal_form.html.erb (11.4ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (30.5ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:16:47 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (65.0ms)
+  Rendered stats/index.html.erb within layouts/application (75.7ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 94ms (Views: 81.5ms | ActiveRecord: 1.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:17:59 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (22.7ms)
+  Rendered stats/index.html.erb within layouts/application (39.2ms)
+  Rendered layouts/_navigation.html.erb (5.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 47.9ms | ActiveRecord: 2.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 16:18:01 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 16:18:03 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (9.7ms)
+  Rendered shared/_meal_form.html.erb (11.3ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (29.9ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 35.3ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:18:29 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (14.2ms)
+  Rendered stats/index.html.erb within layouts/application (68.3ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 73.8ms | ActiveRecord: 1.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats?page=2" for 76.6.74.184 at 2012-06-01 16:18:36 -0700
+Processing by StatsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendered stats/_stats.html.erb (4.3ms)
+  Rendered stats/index.html.erb within layouts/application (10.9ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:18:39 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (11.1ms)
+  Rendered stats/index.html.erb within layouts/application (19.3ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 23.7ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats?page=2" for 76.6.74.184 at 2012-06-01 16:18:42 -0700
+Processing by StatsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendered stats/_stats.html.erb (6.3ms)
+  Rendered stats/index.html.erb within layouts/application (16.3ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats/new" for 76.6.74.184 at 2012-06-01 16:18:54 -0700
+Processing by StatsController#new as HTML
+  Rendered stats/_form.html.erb (13.6ms)
+  Rendered stats/new.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats/new" for 76.6.74.184 at 2012-06-01 16:19:18 -0700
+Processing by StatsController#new as HTML
+  Rendered stats/_form.html.erb (10.8ms)
+  Rendered stats/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_navigation.html.erb (47.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 61.3ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:19:24 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (14.1ms)
+  Rendered stats/index.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 30.4ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 16:19:26 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (9.9ms)
+  Rendered shared/_meal_form.html.erb (11.7ms)
+  Rendered shared/_checklist_form.html.erb (2.8ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (30.3ms)
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started POST "/stats" for 76.6.74.184 at 2012-06-01 16:19:48 -0700
+Processing by StatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnzJTI0ugCUVI19xUP5PRE4/uHGYOyPExHvMXgMHBe4=", "stat"=>{"category_id"=>"1", "value"=>"168", "sunit"=>"lbs", "date"=>"06/01/2012"}, "commit"=>"Post"}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 22ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 16:19:48 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (10.0ms)
+  Rendered shared/_meal_form.html.erb (11.6ms)
+  Rendered shared/_checklist_form.html.erb (3.0ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (30.4ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:19:50 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (13.6ms)
+  Rendered stats/index.html.erb within layouts/application (24.6ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 42ms (Views: 28.7ms | ActiveRecord: 2.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats/old" for 76.6.74.184 at 2012-06-01 16:21:15 -0700
+Processing by StatsController#show as HTML
+  Parameters: {"id"=>"old"}
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find Stat with id=old):
+  app/controllers/stats_controller.rb:27:in `show'
+
+
+
+
+Started GET "/jodyalbritton" for 76.6.74.184 at 2012-06-01 16:21:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"jodyalbritton"}
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 16:21:53 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (54.5ms)
+  Rendered stats/index.html.erb within layouts/application (64.8ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 82ms (Views: 69.8ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 16:22:01 -0700
+Processing by HomeController#index as HTML
+  Rendered shared/_stat_form.html.erb (9.7ms)
+  Rendered shared/_meal_form.html.erb (11.2ms)
+  Rendered shared/_checklist_form.html.erb (2.8ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (29.4ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 76.6.74.184 at 2012-06-01 16:44:45 -0700
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/2" for 76.6.74.184 at 2012-06-01 16:44:47 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_navigation.html.erb (5.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 1.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/users" for 76.6.74.184 at 2012-06-01 16:44:52 -0700
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 15ms (Views: 8.7ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/4" for 76.6.74.184 at 2012-06-01 16:44:56 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/3" for 76.6.74.184 at 2012-06-01 16:45:04 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/jodyalbritton" for 76.6.74.184 at 2012-06-01 17:21:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"jodyalbritton"}
+  Rendered users/show.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.erb (6.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 51.6ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 17:30:14 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (8.8ms)
+  Rendered stats/index.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 19.2ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/foods" for 76.6.74.184 at 2012-06-01 17:37:50 -0700
+Processing by FoodsController#index as HTML
+  Rendered foods/index.html.erb within layouts/application (46.1ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 50.4ms | ActiveRecord: 1.8ms | Sphinx: 2.8ms)
+
+
+Started GET "/meals" for 76.6.74.184 at 2012-06-01 17:38:00 -0700
+Processing by MealsController#index as HTML
+  Rendered meals/index.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 31.7ms | ActiveRecord: 0.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 17:38:21 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (13.7ms)
+  Rendered stats/index.html.erb within layouts/application (24.6ms)
+  Rendered layouts/_navigation.html.erb (58.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 84.9ms | ActiveRecord: 2.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 20:37:33 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (10.8ms)
+  Rendered stats/index.html.erb within layouts/application (89.2ms)
+  Rendered layouts/_navigation.html.erb (45.1ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 439ms (Views: 173.2ms | ActiveRecord: 5.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 20:37:37 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (13.2ms)
+  Rendered stats/index.html.erb within layouts/application (22.9ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 41ms (Views: 28.2ms | ActiveRecord: 1.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 20:37:38 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:37:40 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (45.3ms)
+Completed 500 Internal Server Error in 137ms
+
+ActionView::Template::Error (Missing partial home/menu, application/menu with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/var/src/whatsmyx/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/kaminari-0.13.0/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.0/app/views"
+):
+    1: <div class="menu span3">
+    2: <%= render 'menu' %>
+    3: </div>
+    4: 
+    5: <div  id="myModalStat"  class="modal hide fade">
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb___2456430312926418355_104327060'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:37:43 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Missing partial home/menu, application/menu with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/var/src/whatsmyx/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/kaminari-0.13.0/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.0/app/views"
+):
+    1: <div class="menu span3">
+    2: <%= render 'menu' %>
+    3: </div>
+    4: 
+    5: <div  id="myModalStat"  class="modal hide fade">
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb___2456430312926418355_104327060'
+
+
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 20:37:51 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 20:37:53 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (141.3ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 153ms (Views: 148.9ms | ActiveRecord: 2.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:38:00 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (Missing partial home/menu, application/menu with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/var/src/whatsmyx/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/kaminari-0.13.0/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.0/app/views"
+):
+    1: <div class="menu span3">
+    2: <%= render 'menu' %>
+    3: </div>
+    4: 
+    5: <div  id="myModalStat"  class="modal hide fade">
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb___2456430312926418355_104327060'
+
+
+Compiled jquery.js  (1ms)  (pid 15682)
+Compiled jquery_ujs.js  (0ms)  (pid 15682)
+Compiled jquery.ui.core.js  (0ms)  (pid 15682)
+Compiled jquery.ui.widget.js  (0ms)  (pid 15682)
+Compiled jquery.ui.position.js  (0ms)  (pid 15682)
+Compiled jquery.ui.autocomplete.js  (10ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap.js  (120ms)  (pid 15682)
+Compiled highcharts.js  (4ms)  (pid 15682)
+Compiled autocomplete-rails.js  (0ms)  (pid 15682)
+Compiled rails.validations.js  (0ms)  (pid 15682)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 15682)
+Compiled bootstrap.js  (58ms)  (pid 15682)
+Compiled categories.js  (0ms)  (pid 15682)
+Compiled checklists.js  (0ms)  (pid 15682)
+Compiled cs_validates.js  (0ms)  (pid 15682)
+Compiled dailylogs.js  (0ms)  (pid 15682)
+Compiled foods.js  (0ms)  (pid 15682)
+Compiled home.js  (0ms)  (pid 15682)
+Compiled mcategories.js  (0ms)  (pid 15682)
+Compiled meals.js  (0ms)  (pid 15682)
+Compiled notes.js  (0ms)  (pid 15682)
+Compiled nutr_defs.js  (0ms)  (pid 15682)
+Compiled nutrient.js  (0ms)  (pid 15682)
+Compiled nutrition.js  (0ms)  (pid 15682)
+Compiled profiles.js  (0ms)  (pid 15682)
+Compiled settings.js  (0ms)  (pid 15682)
+Compiled stats.js  (0ms)  (pid 15682)
+Compiled users.js  (0ms)  (pid 15682)
+Compiled application.js  (353ms)  (pid 15682)
+Compiled jquery.ui.core.css  (1ms)  (pid 15682)
+Compiled jquery.ui.theme.css  (93ms)  (pid 15682)
+Compiled jquery.ui.autocomplete.css  (129ms)  (pid 15682)
+Compiled bootstrap_and_overrides.css  (655ms)  (pid 15682)
+Compiled datepicker.css  (0ms)  (pid 15682)
+Compiled foods.css  (5ms)  (pid 15682)
+Compiled meals.css  (4ms)  (pid 15682)
+Compiled nutr_defs.css  (23ms)  (pid 15682)
+Compiled nutrient.css  (4ms)  (pid 15682)
+Compiled nutrition.css  (4ms)  (pid 15682)
+Compiled scaffolds.css  (5ms)  (pid 15682)
+Compiled stats.css  (4ms)  (pid 15682)
+Compiled users.css  (4ms)  (pid 15682)
+Compiled application.css  (922ms)  (pid 15682)
+Compiled jquery.js  (1ms)  (pid 15682)
+Compiled jquery_ujs.js  (0ms)  (pid 15682)
+Compiled jquery.ui.core.js  (0ms)  (pid 15682)
+Compiled jquery.ui.widget.js  (0ms)  (pid 15682)
+Compiled jquery.ui.position.js  (0ms)  (pid 15682)
+Compiled jquery.ui.autocomplete.js  (9ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 15682)
+Compiled twitter/bootstrap.js  (132ms)  (pid 15682)
+Compiled highcharts.js  (4ms)  (pid 15682)
+Compiled autocomplete-rails.js  (0ms)  (pid 15682)
+Compiled rails.validations.js  (0ms)  (pid 15682)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 15682)
+Compiled bootstrap.js  (136ms)  (pid 15682)
+Compiled categories.js  (0ms)  (pid 15682)
+Compiled checklists.js  (0ms)  (pid 15682)
+Compiled cs_validates.js  (0ms)  (pid 15682)
+Compiled dailylogs.js  (0ms)  (pid 15682)
+Compiled foods.js  (0ms)  (pid 15682)
+Compiled home.js  (0ms)  (pid 15682)
+Compiled mcategories.js  (0ms)  (pid 15682)
+Compiled meals.js  (0ms)  (pid 15682)
+Compiled notes.js  (0ms)  (pid 15682)
+Compiled nutr_defs.js  (0ms)  (pid 15682)
+Compiled nutrient.js  (0ms)  (pid 15682)
+Compiled nutrition.js  (0ms)  (pid 15682)
+Compiled profiles.js  (0ms)  (pid 15682)
+Compiled settings.js  (0ms)  (pid 15682)
+Compiled stats.js  (0ms)  (pid 15682)
+Compiled users.js  (0ms)  (pid 15682)
+Compiled application.js  (427ms)  (pid 15682)
+Compiled jquery.ui.core.css  (1ms)  (pid 15682)
+Compiled jquery.ui.theme.css  (7ms)  (pid 15682)
+Compiled jquery.ui.autocomplete.css  (14ms)  (pid 15682)
+Compiled bootstrap_and_overrides.css  (752ms)  (pid 15682)
+Compiled datepicker.css  (0ms)  (pid 15682)
+Compiled foods.css  (5ms)  (pid 15682)
+Compiled meals.css  (4ms)  (pid 15682)
+Compiled nutr_defs.css  (46ms)  (pid 15682)
+Compiled nutrient.css  (4ms)  (pid 15682)
+Compiled nutrition.css  (5ms)  (pid 15682)
+Compiled scaffolds.css  (5ms)  (pid 15682)
+Compiled stats.css  (4ms)  (pid 15682)
+Compiled users.css  (4ms)  (pid 15682)
+Compiled application.css  (929ms)  (pid 15682)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:42:58 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (54.8ms)
+Completed 500 Internal Server Error in 292ms
+
+ActionView::Template::Error (Missing partial home/menu, application/menu with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/var/src/whatsmyx/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/kaminari-0.13.0/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.0/app/views"
+):
+    1: <div class="menu span3">
+    2: <%= render 'menu' %>
+    3: </div>
+    4: 
+    5: <div  id="myModalStat"  class="modal hide fade">
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb___3132522860222419651_98001660'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:47:03 -0700
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (Missing partial home/menu, application/menu with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder]}. Searched in:
+  * "/var/src/whatsmyx/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/kaminari-0.13.0/app/views"
+  * "/usr/local/rvm/gems/ruby-1.9.3-p194/gems/devise-2.1.0/app/views"
+):
+    1: <div class="menu span3">
+    2: <%= render 'menu' %>
+    3: </div>
+    4: 
+    5: <div  id="myModalStat"  class="modal hide fade">
+  app/views/home/index.html.erb:2:in `_app_views_home_index_html_erb___3132522860222419651_98001660'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:47:23 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.3ms)
+  Rendered shared/_stat_form.html.erb (51.3ms)
+  Rendered shared/_meal_form.html.erb (20.2ms)
+  Rendered shared/_checklist_form.html.erb (3.3ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (88.3ms)
+  Rendered layouts/_navigation.html.erb (82.2ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 355ms (Views: 210.6ms | ActiveRecord: 33.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 20:47:30 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (15.5ms)
+  Rendered stats/index.html.erb within layouts/application (35.0ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 107ms (Views: 42.2ms | ActiveRecord: 2.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:47:32 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (10.0ms)
+  Rendered shared/_meal_form.html.erb (11.4ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (30.2ms)
+  Rendered layouts/_navigation.html.erb (51.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 88ms (Views: 84.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 20:47:33 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 20:47:35 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (14.1ms)
+  Rendered stats/index.html.erb within layouts/application (24.7ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 30.3ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:47:37 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (6.7ms)
+  Rendered shared/_meal_form.html.erb (7.6ms)
+  Rendered shared/_checklist_form.html.erb (1.9ms)
+  Rendered shared/_note_form.html.erb (3.2ms)
+  Rendered home/index.html.erb within layouts/application (20.2ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 20:51:36 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (13.8ms)
+  Rendered stats/index.html.erb within layouts/application (24.1ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 92ms (Views: 78.9ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-01 20:52:30 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (13.9ms)
+  Rendered stats/index.html.erb within layouts/application (24.3ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 29.7ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-01 20:52:35 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 20:52:36 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (10.7ms)
+  Rendered shared/_meal_form.html.erb (11.9ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (31.3ms)
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/2" for 66.249.72.40 at 2012-06-01 21:56:43 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/2"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  railties (3.2.3) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.12) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-01 23:58:09 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.5ms)
+  Rendered shared/_stat_form.html.erb (39.0ms)
+  Rendered shared/_meal_form.html.erb (19.9ms)
+  Rendered shared/_checklist_form.html.erb (3.4ms)
+  Rendered shared/_note_form.html.erb (34.9ms)
+  Rendered home/index.html.erb within layouts/application (146.0ms)
+  Rendered layouts/_navigation.html.erb (51.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 429ms (Views: 247.0ms | ActiveRecord: 8.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-01 23:58:14 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (155.4ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 166ms (Views: 162.4ms | ActiveRecord: 1.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 00:06:13 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (9.8ms)
+  Rendered shared/_meal_form.html.erb (11.5ms)
+  Rendered shared/_checklist_form.html.erb (2.8ms)
+  Rendered shared/_note_form.html.erb (4.8ms)
+  Rendered home/index.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 00:11:07 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (9.9ms)
+  Rendered shared/_meal_form.html.erb (11.3ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (53.6ms)
+  Rendered home/index.html.erb within layouts/application (79.0ms)
+  Rendered layouts/_navigation.html.erb (3.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 85.1ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 00:11:28 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.5ms)
+  Rendered shared/_stat_form.html.erb (25.1ms)
+  Rendered shared/_meal_form.html.erb (19.1ms)
+  Rendered shared/_checklist_form.html.erb (3.1ms)
+  Rendered shared/_note_form.html.erb (38.3ms)
+  Rendered home/index.html.erb within layouts/application (125.3ms)
+  Rendered layouts/_navigation.html.erb (54.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 376ms (Views: 222.1ms | ActiveRecord: 6.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/goals" for 76.6.74.184 at 2012-06-02 00:12:40 -0700
+Processing by GoalsController#index as HTML
+  Rendered goals/index.html.erb within layouts/application (12.3ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 70ms (Views: 62.2ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-02 00:12:48 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (101.3ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 109ms (Views: 106.3ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 00:15:16 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (10.0ms)
+  Rendered shared/_meal_form.html.erb (11.2ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (30.1ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 00:15:23 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (9.9ms)
+  Rendered shared/_meal_form.html.erb (69.4ms)
+  Rendered shared/_checklist_form.html.erb (5.3ms)
+  Rendered shared/_note_form.html.erb (8.0ms)
+  Rendered home/index.html.erb within layouts/application (94.2ms)
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 106ms (Views: 102.5ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 00:16:18 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (6.9ms)
+  Rendered shared/_meal_form.html.erb (7.7ms)
+  Rendered shared/_checklist_form.html.erb (1.9ms)
+  Rendered shared/_note_form.html.erb (3.1ms)
+  Rendered home/index.html.erb within layouts/application (20.3ms)
+  Rendered layouts/_navigation.html.erb (2.3ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 66.249.72.40 at 2012-06-02 00:55:36 -0700
+
+
+Started GET "/" for 199.21.99.106 at 2012-06-02 02:16:06 -0700
+Processing by Devise::RegistrationsController#new as */*
+  Rendered devise/shared/_links.erb (3.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (84.1ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 95ms (Views: 93.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 173.194.99.19 at 2012-06-02 02:18:29 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.6ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/googlehostedservice.html" for 209.85.144.81 at 2012-06-02 02:21:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"googlehostedservice"}
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/" for 173.194.99.19 at 2012-06-02 02:21:30 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 66.249.72.40 at 2012-06-02 02:47:06 -0700
+Processing by Devise::RegistrationsController#new as */*
+  Rendered devise/shared/_links.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (20.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 03:35:22 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (226.9ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 433ms (Views: 278.2ms | ActiveRecord: 3.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 04:19:20 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (205.9ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 423ms (Views: 259.0ms | ActiveRecord: 2.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 04:19:44 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.7ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_up" for 76.6.74.184 at 2012-06-02 04:19:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.3ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-02 04:19:50 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.0ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 04:22:26 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.8ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:51:22 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (197.3ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 339ms (Views: 238.5ms | ActiveRecord: 2.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 06:51:26 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQD76_At_58O_w10iggG4t2EFMIQM3gdb2d1_0axDLQvfmBwxZWRCDf-lNdbrxsV0pglKysxbAWGVZGBj54YdRUbgz9pQyB4RmtKxk6dn-BacJ2pL_u_hjoaCygvK1nTsuayNpIzJ9XOh-9NcfV5B7w5bjERAgDWWxr12EjgB6tTuK9MZG7L83fMC7OJ9Ml1xbY" for 76.6.74.184 at 2012-06-02 06:51:27 -0700
+
+ActionController::RoutingError (uninitialized constant AuthServicesController):
+  activesupport (3.2.3) lib/active_support/inflector/methods.rb:229:in `block in constantize'
+  activesupport (3.2.3) lib/active_support/inflector/methods.rb:228:in `each'
+  activesupport (3.2.3) lib/active_support/inflector/methods.rb:228:in `constantize'
+  actionpack (3.2.3) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.3) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.3) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.3) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:392:in `call_app!'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:354:in `callback_phase'
+  omniauth-oauth2 (1.0.2) lib/omniauth/strategies/oauth2.rb:65:in `callback_phase'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:219:in `callback_call'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:175:in `call!'
+  omniauth (1.1.0) lib/omniauth/strategy.rb:157:in `call'
+  client_side_validations (3.2.0.beta.3) lib/client_side_validations/middleware.rb:16:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.3) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:467:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `_run__1941290822183055060__call__147585956121601398__callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.3) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.3) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  railties (3.2.3) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.12) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:09 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (179.0ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 317ms (Views: 221.0ms | ActiveRecord: 2.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 06:59:15 -0700
+Processing by ServicesController#index as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-02 06:59:15 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in" for 76.6.74.184 at 2012-06-02 06:59:30 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HzktvAAKy4nsTlFF0c82gD7/OixQAZn3Ba2JpbNeMXc=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Redirected to http://whatsmyx.com/services
+Completed 302 Found in 370ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 06:59:31 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 16ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:35 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:36 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:37 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:38 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:45 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:49 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 06:59:50 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:25 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (264.2ms)
+  Rendered layouts/_navigation.html.erb (1.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 491ms (Views: 331.6ms | ActiveRecord: 3.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-02 07:00:29 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.9ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in" for 76.6.74.184 at 2012-06-02 07:00:41 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y8uAAdNIRtSjWmOu1T4E7VFmDwLuoFY0RvDPyhSSkIg=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Completed 401 Unauthorized in 121ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y8uAAdNIRtSjWmOu1T4E7VFmDwLuoFY0RvDPyhSSkIg=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 8.8ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in" for 76.6.74.184 at 2012-06-02 07:00:46 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y8uAAdNIRtSjWmOu1T4E7VFmDwLuoFY0RvDPyhSSkIg=", "user"=>{"email"=>"jody.albritton@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 228ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:46 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:47 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:00:48 -0700
+Processing by Devise::RegistrationsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:03:19 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.3ms)
+  Rendered shared/_stat_form.html.erb (23.8ms)
+  Rendered shared/_meal_form.html.erb (47.9ms)
+  Rendered shared/_checklist_form.html.erb (3.1ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (128.6ms)
+  Rendered layouts/_navigation.html.erb (78.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 415ms (Views: 261.4ms | ActiveRecord: 8.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/ser" for 76.6.74.184 at 2012-06-02 07:03:27 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"ser"}
+Completed 500 Internal Server Error in 9ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=ser):
+  app/controllers/users_controller.rb:10:in `show'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:03:30 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:03:32 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started DELETE "/users/sign_out" for 76.6.74.184 at 2012-06-02 07:03:39 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y8uAAdNIRtSjWmOu1T4E7VFmDwLuoFY0RvDPyhSSkIg="}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 83ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:03:40 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (3.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (136.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 144ms (Views: 141.0ms | ActiveRecord: 1.7ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 07:03:43 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQBt1wfp9U-Denhq6pPG4MDNw4cTvGF3nZ6-9fwJHlgHuamLmSS9cdfpi47nOvX2EVQySQ4py2m9scYtgEddAhOBIS6-TEcFvWMp8U1oDyWHbg1XrhLNoxTns-BFSdD5spi_JCI9hUmgJz4lRiM5z2gCMj81CLuPn-CSqeUJiDAU8VUys0pHaFeNG4QonwDVD1c" for 76.6.74.184 at 2012-06-02 07:03:48 -0700
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBt1wfp9U-Denhq6pPG4MDNw4cTvGF3nZ6-9fwJHlgHuamLmSS9cdfpi47nOvX2EVQySQ4py2m9scYtgEddAhOBIS6-TEcFvWMp8U1oDyWHbg1XrhLNoxTns-BFSdD5spi_JCI9hUmgJz4lRiM5z2gCMj81CLuPn-CSqeUJiDAU8VUys0pHaFeNG4QonwDVD1c"}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 13ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:03:48 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (10.3ms)
+  Rendered shared/_meal_form.html.erb (11.3ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (30.3ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:04:26 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:04:28 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:04:44 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 224ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:04:47 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 07:19:31 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.3ms)
+  Rendered shared/_stat_form.html.erb (23.7ms)
+  Rendered shared/_meal_form.html.erb (52.8ms)
+  Rendered shared/_checklist_form.html.erb (3.2ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (124.7ms)
+  Rendered layouts/_navigation.html.erb (88.5ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 309ms (Views: 258.8ms | ActiveRecord: 6.8ms | Sphinx: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 07:19:38 -0700
+Processing by ServicesController#index as HTML
+Completed 500 Internal Server Error in 5ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+
+
+Started GET "/" for 173.135.101.80 at 2012-06-02 08:06:32 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (109.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 117ms (Views: 114.2ms | ActiveRecord: 1.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 08:17:18 -0700
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-02 08:17:18 -0700
+Processing by ServicesController#index as HTML
+Processing by Devise::RegistrationsController#edit as HTML
+Completed 500 Internal Server Error in 192ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:6:in `index'
+
+
+  Rendered devise/registrations/edit.html.erb within layouts/application (150.8ms)
+  Rendered layouts/_navigation.html.erb (114.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 462ms (Views: 312.2ms | ActiveRecord: 4.3ms | Sphinx: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 76.6.74.184 at 2012-06-02 08:17:21 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+mtcoHcJdQAWzJ82ZHQx6gLT0FeAUQEfADFVM2TfyFE="}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 08:17:21 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (42.3ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (29.7ms)
+Completed 200 OK in 76ms (Views: 74.4ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 08:17:23 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQDtFZf2ZVJjncorKWTmov3IgJMgMqJG0-eQ4cRdTPSS4IPvxKLryzpyHlXYBQdf1WbQdM504a2z4iqetPPSWobewRoU7e8Wp58oaMqoVRbFOzjUpBSpUnUVhRUfCsz7l4lPJRPYA61yKznWwAGJPMnj3C3U5ukMUuUzrNizgK_Hn3Th0-Z2Hby7_ocV5Yh500U" for 76.6.74.184 at 2012-06-02 08:17:24 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQDtFZf2ZVJjncorKWTmov3IgJMgMqJG0-eQ4cRdTPSS4IPvxKLryzpyHlXYBQdf1WbQdM504a2z4iqetPPSWobewRoU7e8Wp58oaMqoVRbFOzjUpBSpUnUVhRUfCsz7l4lPJRPYA61yKznWwAGJPMnj3C3U5ukMUuUzrNizgK_Hn3Th0-Z2Hby7_ocV5Yh500U", "service"=>"facebook"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/services_controller.rb:29:in `create'
+
+
+
+
+Started GET "/users/auth/facebook/" for 76.6.74.184 at 2012-06-02 08:17:42 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQBsgP7thqdBikz8Jm2D-Cz3KPFAC_b-YuBMvgeqt102COgnsoZnxtSZcz5b-q6VNe4vWe49AM-Mj9lsyq1yfinZIsy6S7mAIuwXmyLl7c3KanHYDMpKneJCj5297BUMll2YVc7taUXPr-ta8vsXPBk54P8TyyvIjlCtEnpvn4d3VnMX6W3b07ETEyurq6DEL5c" for 76.6.74.184 at 2012-06-02 08:17:42 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQBsgP7thqdBikz8Jm2D-Cz3KPFAC_b-YuBMvgeqt102COgnsoZnxtSZcz5b-q6VNe4vWe49AM-Mj9lsyq1yfinZIsy6S7mAIuwXmyLl7c3KanHYDMpKneJCj5297BUMll2YVc7taUXPr-ta8vsXPBk54P8TyyvIjlCtEnpvn4d3VnMX6W3b07ETEyurq6DEL5c", "service"=>"facebook"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/services_controller.rb:29:in `create'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 08:20:18 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (177.8ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 334ms (Views: 219.6ms | ActiveRecord: 2.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 08:20:21 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQCix469MopmdS3xj9LP9Wp8upf2PBvO4uDREcqqZ75qxt_la7wZG4MeAly5P4kyF29Wwb9LnugLQPWhuuP63ktdnrPIsk9YjW3IcHuc80h2LAoBzrbKXnaPY1vhyM3MuuIs8dkirJNecdbLB8_yasl2qBV2myAW5QifmNJATKNS-2TpObGtc-_zSDkhwNE3-9w" for 76.6.74.184 at 2012-06-02 08:20:22 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQCix469MopmdS3xj9LP9Wp8upf2PBvO4uDREcqqZ75qxt_la7wZG4MeAly5P4kyF29Wwb9LnugLQPWhuuP63ktdnrPIsk9YjW3IcHuc80h2LAoBzrbKXnaPY1vhyM3MuuIs8dkirJNecdbLB8_yasl2qBV2myAW5QifmNJATKNS-2TpObGtc-_zSDkhwNE3-9w", "service"=>"facebook"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/services_controller.rb:29:in `create'
+
+
+Compiled jquery.js  (2ms)  (pid 21690)
+Compiled jquery_ujs.js  (0ms)  (pid 21690)
+Compiled jquery.ui.core.js  (1ms)  (pid 21690)
+Compiled jquery.ui.widget.js  (0ms)  (pid 21690)
+Compiled jquery.ui.position.js  (0ms)  (pid 21690)
+Compiled jquery.ui.autocomplete.js  (19ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap.js  (123ms)  (pid 21690)
+Compiled highcharts.js  (4ms)  (pid 21690)
+Compiled autocomplete-rails.js  (0ms)  (pid 21690)
+Compiled rails.validations.js  (0ms)  (pid 21690)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 21690)
+Compiled bootstrap.js  (58ms)  (pid 21690)
+Compiled categories.js  (0ms)  (pid 21690)
+Compiled checklists.js  (0ms)  (pid 21690)
+Compiled cs_validates.js  (0ms)  (pid 21690)
+Compiled dailylogs.js  (0ms)  (pid 21690)
+Compiled foods.js  (0ms)  (pid 21690)
+Compiled goals.js  (0ms)  (pid 21690)
+Compiled home.js  (0ms)  (pid 21690)
+Compiled mcategories.js  (0ms)  (pid 21690)
+Compiled meals.js  (0ms)  (pid 21690)
+Compiled notes.js  (0ms)  (pid 21690)
+Compiled nutr_defs.js  (0ms)  (pid 21690)
+Compiled nutrient.js  (0ms)  (pid 21690)
+Compiled nutrition.js  (0ms)  (pid 21690)
+Compiled profiles.js  (0ms)  (pid 21690)
+Compiled services.js  (0ms)  (pid 21690)
+Compiled settings.js  (0ms)  (pid 21690)
+Compiled stats.js  (0ms)  (pid 21690)
+Compiled users.js  (0ms)  (pid 21690)
+Compiled application.js  (486ms)  (pid 21690)
+Compiled jquery.ui.core.css  (1ms)  (pid 21690)
+Compiled jquery.ui.theme.css  (138ms)  (pid 21690)
+Compiled jquery.ui.autocomplete.css  (147ms)  (pid 21690)
+Compiled bootstrap_and_overrides.css  (1099ms)  (pid 21690)
+Compiled datepicker.css  (0ms)  (pid 21690)
+Compiled foods.css  (8ms)  (pid 21690)
+Compiled meals.css  (7ms)  (pid 21690)
+Compiled nutr_defs.css  (7ms)  (pid 21690)
+Compiled nutrient.css  (7ms)  (pid 21690)
+Compiled nutrition.css  (5ms)  (pid 21690)
+Compiled scaffolds.css  (5ms)  (pid 21690)
+Compiled stats.css  (5ms)  (pid 21690)
+Compiled users.css  (4ms)  (pid 21690)
+Compiled application.css  (1392ms)  (pid 21690)
+Compiled jquery.js  (1ms)  (pid 21690)
+Compiled jquery_ujs.js  (0ms)  (pid 21690)
+Compiled jquery.ui.core.js  (0ms)  (pid 21690)
+Compiled jquery.ui.widget.js  (0ms)  (pid 21690)
+Compiled jquery.ui.position.js  (0ms)  (pid 21690)
+Compiled jquery.ui.autocomplete.js  (42ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 21690)
+Compiled twitter/bootstrap.js  (91ms)  (pid 21690)
+Compiled highcharts.js  (4ms)  (pid 21690)
+Compiled autocomplete-rails.js  (0ms)  (pid 21690)
+Compiled rails.validations.js  (0ms)  (pid 21690)
+Compiled bootstrap-datepicker.js  (0ms)  (pid 21690)
+Compiled bootstrap.js  (62ms)  (pid 21690)
+Compiled categories.js  (0ms)  (pid 21690)
+Compiled checklists.js  (0ms)  (pid 21690)
+Compiled cs_validates.js  (0ms)  (pid 21690)
+Compiled dailylogs.js  (0ms)  (pid 21690)
+Compiled foods.js  (0ms)  (pid 21690)
+Compiled goals.js  (0ms)  (pid 21690)
+Compiled home.js  (0ms)  (pid 21690)
+Compiled mcategories.js  (0ms)  (pid 21690)
+Compiled meals.js  (0ms)  (pid 21690)
+Compiled notes.js  (0ms)  (pid 21690)
+Compiled nutr_defs.js  (0ms)  (pid 21690)
+Compiled nutrient.js  (0ms)  (pid 21690)
+Compiled nutrition.js  (0ms)  (pid 21690)
+Compiled profiles.js  (0ms)  (pid 21690)
+Compiled services.js  (0ms)  (pid 21690)
+Compiled settings.js  (0ms)  (pid 21690)
+Compiled stats.js  (0ms)  (pid 21690)
+Compiled users.js  (0ms)  (pid 21690)
+Compiled application.js  (377ms)  (pid 21690)
+Compiled jquery.ui.core.css  (1ms)  (pid 21690)
+Compiled jquery.ui.theme.css  (7ms)  (pid 21690)
+Compiled jquery.ui.autocomplete.css  (14ms)  (pid 21690)
+Compiled bootstrap_and_overrides.css  (648ms)  (pid 21690)
+Compiled datepicker.css  (0ms)  (pid 21690)
+Compiled foods.css  (5ms)  (pid 21690)
+Compiled meals.css  (5ms)  (pid 21690)
+Compiled nutr_defs.css  (5ms)  (pid 21690)
+Compiled nutrient.css  (4ms)  (pid 21690)
+Compiled nutrition.css  (4ms)  (pid 21690)
+Compiled scaffolds.css  (6ms)  (pid 21690)
+Compiled stats.css  (4ms)  (pid 21690)
+Compiled users.css  (5ms)  (pid 21690)
+Compiled application.css  (780ms)  (pid 21690)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 09:52:03 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (163.8ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 341ms (Views: 237.0ms | ActiveRecord: 2.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-02 09:52:07 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.8ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 21ms (Views: 18.9ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 09:52:09 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQBGccDqlfPYgEcfo8ncVUcL2mkOyrht1GLgzOEkUvisOYPZTqqvml8VqvFV9Q9y5IFpeoFBXs_67wMGg1XVorF3auqap9MHHF-UwzkafDFLlpG1gCKC5n6idt55yFd6-YJWdJYQoG0TknyW0Z-kdxJEMn8RshySNGNROnE4YR45ktfv5tzCt0QCGhwyIOYqoSg" for 76.6.74.184 at 2012-06-02 09:52:14 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQBGccDqlfPYgEcfo8ncVUcL2mkOyrht1GLgzOEkUvisOYPZTqqvml8VqvFV9Q9y5IFpeoFBXs_67wMGg1XVorF3auqap9MHHF-UwzkafDFLlpG1gCKC5n6idt55yFd6-YJWdJYQoG0TknyW0Z-kdxJEMn8RshySNGNROnE4YR45ktfv5tzCt0QCGhwyIOYqoSg", "service"=>"facebook"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:57:in `create'
+
+
+
+
+Started GET "/users/auth/facebook/callback?code=AQBj-kb_mAIQXslEgNFXFwpxQO5Zys2p5n_uMlyV_yE5aUzCaf5zEvZQIMtqol1w09ZWPLKvXrX40vnCIaek-q6Z9XKfSH3WrqFfM1AUJsX0JJvA7afz_nd2xYf_2RE67jvKCMRCTNJXk0sVXUluUh7s_9h7dsWkP2FfbVx-LbimSfif1SgPADptT-J_5cBDIUk" for 76.6.74.184 at 2012-06-02 09:52:23 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQBj-kb_mAIQXslEgNFXFwpxQO5Zys2p5n_uMlyV_yE5aUzCaf5zEvZQIMtqol1w09ZWPLKvXrX40vnCIaek-q6Z9XKfSH3WrqFfM1AUJsX0JJvA7afz_nd2xYf_2RE67jvKCMRCTNJXk0sVXUluUh7s_9h7dsWkP2FfbVx-LbimSfif1SgPADptT-J_5cBDIUk", "service"=>"facebook"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:57:in `create'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 09:52:27 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-02 09:52:30 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (43.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (48.9ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 52ms (Views: 51.5ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 09:53:18 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.6ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 32.7ms | ActiveRecord: 0.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 09:53:21 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQBOQWkiDWiEORth3yx9jWUHXcsAoMJpsnY4SrMbcst7cm2mTIBAueLzBZ7SQlqVJVyDXersKnPBVrnoa8XAXeM6NmzVdeVx3_DlmQCgb2RO3BkQeqbjJomv7bkWwPngrsF8E6KMalHeSmVLiLP8vnXmYg_pMoVvbCR1PbkRx2DpCsNY8mz-5MV7jIWpwl8A52E" for 76.6.74.184 at 2012-06-02 09:53:24 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQBOQWkiDWiEORth3yx9jWUHXcsAoMJpsnY4SrMbcst7cm2mTIBAueLzBZ7SQlqVJVyDXersKnPBVrnoa8XAXeM6NmzVdeVx3_DlmQCgb2RO3BkQeqbjJomv7bkWwPngrsF8E6KMalHeSmVLiLP8vnXmYg_pMoVvbCR1PbkRx2DpCsNY8mz-5MV7jIWpwl8A52E", "service"=>"facebook"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:57:in `create'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 09:54:28 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (161.6ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 336ms (Views: 233.7ms | ActiveRecord: 2.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 09:54:30 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQAGY9zf8cFbZ0WD8hFRHC43_ujDY-Y98SJEYz6Lo4kFQsRAxsYsH-Z03oImsbRmFukgYzkhfiV9044rkwMd6EFp7ewyGICcljcgVPC5vb5ytLRC65KyG9b3lCrCh4kBtmv09FegNnMLywYCJedPAn6O0_Ih_ttOcOrFLTIXkS98I51Vj7aBjVmFT1QT9V-0BAc" for 76.6.74.184 at 2012-06-02 09:54:31 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQAGY9zf8cFbZ0WD8hFRHC43_ujDY-Y98SJEYz6Lo4kFQsRAxsYsH-Z03oImsbRmFukgYzkhfiV9044rkwMd6EFp7ewyGICcljcgVPC5vb5ytLRC65KyG9b3lCrCh4kBtmv09FegNnMLywYCJedPAn6O0_Ih_ttOcOrFLTIXkS98I51Vj7aBjVmFT1QT9V-0BAc", "service"=>"facebook"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'whatsmyx_production.services' doesn't exist: SHOW FULL FIELDS FROM `services`):
+  app/controllers/services_controller.rb:57:in `create'
+
+
+Migrating to DeviseCreateUsers (20120517184108)
+Migrating to RolifyCreateRoles (20120517184356)
+Migrating to AddNameToUsers (20120517184416)
+Migrating to CreateStats (20120521021744)
+Migrating to CreateCategories (20120522170722)
+Migrating to AddIndexToCategories (20120522182308)
+Migrating to AddDateToStats (20120522211532)
+Migrating to AddUserToStats (20120522213108)
+Migrating to AddDailylogToMeals (20120523182839)
+Migrating to AddNdbToMeals (20120523212050)
+Migrating to AddMtimeToMeals (20120524012724)
+Migrating to CreateMcategories (20120524013300)
+Migrating to CreateMeals (20120524081802)
+Migrating to AddAttachmentAvatarToUsers (20120524184909)
+Migrating to CreateNotes (20120525210219)
+Migrating to CreateChecklists (20120525210300)
+Migrating to CreateSettings (20120530055553)
+Migrating to CreateProfiles (20120530055803)
+Migrating to CreateNotifications (20120530055938)
+Migrating to CreateGoals (20120530063205)
+Migrating to AddUsernameToUsers (20120530065608)
+Migrating to AddAttachmentAvatarToProfiles (20120530071135)
+Migrating to AddIndexToUsers (20120530082612)
+Migrating to AddConfirmableToDevise (20120531075955)
+Migrating to AddReconfirmableToUsers (20120531085849)
+Migrating to AddCategoryToGoals (20120602042828)
+Migrating to CreateServices (20120602130028)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 09:59:10 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (165.2ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 344ms (Views: 239.3ms | ActiveRecord: 2.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 76.6.74.184 at 2012-06-02 09:59:12 -0700
+
+
+Started GET "/users/auth/facebook/callback?code=AQCm96nY38y55VkrNBGT5i2NXOGoDCbK4PgtNNP_xIM9xUnPfLQNdAAs5Qc3RkA1aD8YfnQUbaIIDAGxYreTyXfz7ZENU5X6X9GPtepKxs-O0DGjROtQJnGYIYsVSYTMRJf-Scz2q7q7pCrelR23SHyTqCC1CQsytEsI7KHf60BASuYblcFSjPMj83tayVvkkRg" for 76.6.74.184 at 2012-06-02 09:59:14 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"code"=>"AQCm96nY38y55VkrNBGT5i2NXOGoDCbK4PgtNNP_xIM9xUnPfLQNdAAs5Qc3RkA1aD8YfnQUbaIIDAGxYreTyXfz7ZENU5X6X9GPtepKxs-O0DGjROtQJnGYIYsVSYTMRJf-Scz2q7q7pCrelR23SHyTqCC1CQsytEsI7KHf60BASuYblcFSjPMj83tayVvkkRg", "service"=>"facebook"}
+Redirected to http://whatsmyx.com/
+Completed 302 Found in 129ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 09:59:15 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.4ms)
+  Rendered shared/_stat_form.html.erb (24.4ms)
+  Rendered shared/_meal_form.html.erb (57.8ms)
+  Rendered shared/_checklist_form.html.erb (3.1ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (93.9ms)
+  Rendered layouts/_navigation.html.erb (49.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 218ms (Views: 143.9ms | ActiveRecord: 8.0ms | Sphinx: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 09:59:22 -0700
+Processing by ServicesController#index as HTML
+  Rendered services/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 13.0ms | ActiveRecord: 0.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/google" for 76.6.74.184 at 2012-06-02 09:59:26 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/auth/google"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  railties (3.2.3) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.12) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/users/auth/twitter" for 76.6.74.184 at 2012-06-02 09:59:54 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/auth/twitter"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  railties (3.2.3) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.12) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 10:01:01 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (9.5ms)
+  Rendered shared/_meal_form.html.erb (11.5ms)
+  Rendered shared/_checklist_form.html.erb (2.8ms)
+  Rendered shared/_note_form.html.erb (5.6ms)
+  Rendered home/index.html.erb within layouts/application (30.6ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-02 10:01:05 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (20.5ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/edit" for 76.6.74.184 at 2012-06-02 10:01:12 -0700
+Processing by Devise::RegistrationsController#edit as HTML
+  Rendered devise/registrations/edit.html.erb within layouts/application (74.0ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 83ms (Views: 81.0ms | ActiveRecord: 0.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 10:01:20 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (7.0ms)
+  Rendered shared/_meal_form.html.erb (7.5ms)
+  Rendered shared/_checklist_form.html.erb (1.9ms)
+  Rendered shared/_note_form.html.erb (3.2ms)
+  Rendered home/index.html.erb within layouts/application (20.4ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/stats" for 76.6.74.184 at 2012-06-02 10:01:23 -0700
+Processing by StatsController#index as HTML
+  Rendered stats/_stats.html.erb (43.0ms)
+  Rendered stats/index.html.erb within layouts/application (56.1ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 73ms (Views: 60.7ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/nutrition" for 76.6.74.184 at 2012-06-02 10:01:26 -0700
+Processing by NutritionController#index as HTML
+  Rendered nutrition/index.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_navigation.html.erb (3.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 10:01:28 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (6.5ms)
+  Rendered shared/_meal_form.html.erb (7.3ms)
+  Rendered shared/_checklist_form.html.erb (1.9ms)
+  Rendered shared/_note_form.html.erb (3.0ms)
+  Rendered home/index.html.erb within layouts/application (19.5ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 10:01:28 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (6.4ms)
+  Rendered shared/_meal_form.html.erb (6.9ms)
+  Rendered shared/_checklist_form.html.erb (1.8ms)
+  Rendered shared/_note_form.html.erb (3.2ms)
+  Rendered home/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_navigation.html.erb (41.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 10:23:32 -0700
+Processing by ServicesController#index as HTML
+  Rendered services/index.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 76.6.74.184 at 2012-06-02 10:23:35 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/auth/twitter"):
+  actionpack (3.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.3) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.3) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.3) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.3) lib/rails/engine.rb:479:in `call'
+  railties (3.2.3) lib/rails/application.rb:220:in `call'
+  railties (3.2.3) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  passenger (3.0.12) lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'
+  passenger (3.0.12) lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:206:in `start_request_handler'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:171:in `block in handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/utils.rb:479:in `safe_fork'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:166:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:180:in `start'
+  passenger (3.0.12) lib/phusion_passenger/rack/application_spawner.rb:129:in `start'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:253:in `block (2 levels) in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:246:in `block in spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:82:in `block in synchronize'
+  <internal:prelude>:10:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+  passenger (3.0.12) lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+  passenger (3.0.12) helper-scripts/passenger-spawn-server:99:in `<main>'
+
+
+
+
+Started GET "/users/auth/twitter/callback" for 76.6.74.184 at 2012-06-02 10:23:43 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"service"=>"twitter"}
+Redirected to http://whatsmyx.com/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 76.6.74.184 at 2012-06-02 10:23:43 -0700
+Processing by Devise::SessionsController#new as HTML
+Redirected to http://whatsmyx.com/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 10:23:43 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.0ms)
+  Rendered shared/_stat_form.html.erb (11.2ms)
+  Rendered shared/_meal_form.html.erb (11.4ms)
+  Rendered shared/_checklist_form.html.erb (2.9ms)
+  Rendered shared/_note_form.html.erb (4.7ms)
+  Rendered home/index.html.erb within layouts/application (31.4ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 41ms (Views: 36.8ms | ActiveRecord: 1.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/" for 76.6.74.184 at 2012-06-02 10:28:33 -0700
+Processing by HomeController#index as HTML
+  Rendered home/_menu.html.erb (0.3ms)
+  Rendered shared/_stat_form.html.erb (53.6ms)
+  Rendered shared/_meal_form.html.erb (19.9ms)
+  Rendered shared/_checklist_form.html.erb (3.5ms)
+  Rendered shared/_note_form.html.erb (5.1ms)
+  Rendered home/index.html.erb within layouts/application (119.0ms)
+  Rendered layouts/_navigation.html.erb (89.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 420ms (Views: 246.7ms | ActiveRecord: 10.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/settings" for 76.6.74.184 at 2012-06-02 10:28:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"settings"}
+Completed 500 Internal Server Error in 5ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=settings):
+  app/controllers/users_controller.rb:10:in `show'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 10:28:47 -0700
+Processing by ServicesController#index as HTML
+  Rendered services/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 34ms (Views: 12.4ms | ActiveRecord: 1.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 76.6.74.184 at 2012-06-02 10:28:50 -0700
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=etWfoAQeA7hJXYUgzfKJtCuetHI4VnjAm39SxiCEdM&oauth_verifier=CzGiEOEZTFvt0MpePymxnkrdfWd24k6aizeupE2ZNxo" for 76.6.74.184 at 2012-06-02 10:28:59 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"oauth_token"=>"etWfoAQeA7hJXYUgzfKJtCuetHI4VnjAm39SxiCEdM", "oauth_verifier"=>"CzGiEOEZTFvt0MpePymxnkrdfWd24k6aizeupE2ZNxo", "service"=>"twitter"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/services_controller.rb:40:in `create'
+
+
+
+
+Started GET "/users/auth/twitter" for 76.6.74.184 at 2012-06-02 10:29:21 -0700
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=hTDMKb1N1MhroHOcu9IML4lgupOicg7lIi3x7A00FM&oauth_verifier=YfKRDdVo6tIf9qlFg00U1Ni26ZiT51CL8F9r6swvw" for 76.6.74.184 at 2012-06-02 10:29:58 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"oauth_token"=>"hTDMKb1N1MhroHOcu9IML4lgupOicg7lIi3x7A00FM", "oauth_verifier"=>"YfKRDdVo6tIf9qlFg00U1Ni26ZiT51CL8F9r6swvw", "service"=>"twitter"}
+Completed 500 Internal Server Error in 0ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/services_controller.rb:40:in `create'
+
+
+
+
+Started GET "/services" for 76.6.74.184 at 2012-06-02 10:30:15 -0700
+Processing by ServicesController#index as HTML
+  Rendered services/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.3ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/auth/twitter" for 76.6.74.184 at 2012-06-02 10:30:17 -0700
+
+
+Started GET "/users/auth/twitter/callback?oauth_token=fJvNmBHbLvEnKE7RClLaMCawz4CDmJh7j8josdh04&oauth_verifier=NJRJ9leGytno3cCeZpmIlAnpF9eEGST3r6RY1VayDk" for 76.6.74.184 at 2012-06-02 10:30:18 -0700
+Processing by ServicesController#create as HTML
+  Parameters: {"oauth_token"=>"fJvNmBHbLvEnKE7RClLaMCawz4CDmJh7j8josdh04", "oauth_verifier"=>"NJRJ9leGytno3cCeZpmIlAnpF9eEGST3r6RY1VayDk", "service"=>"twitter"}
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/services_controller.rb:40:in `create'
+
+
