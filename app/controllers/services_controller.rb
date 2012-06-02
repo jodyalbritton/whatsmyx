@@ -44,7 +44,7 @@ def create
       omniauth['info']['email'] ? email[:email] = omniauth['info']['email'] : email  = ''
       omniauth['info']['name'] ? name [:name] =  omniauth['info']['name'] : name  = ''
       omniauth['uid'] ? uid = omniauth['uid'].to_s : uid = ''
-     omniauth['provider'] ? provider [:provider] = omniauth['provider'] : provider = ''     
+      omniauth['provider'] ? provider = omniauth['provider'] : provider = ''     
     else
       # we have an unrecognized service, just output the hash that has been returned
       render :text => omniauth.to_yaml
