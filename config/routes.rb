@@ -37,7 +37,7 @@ Whatsmyx::Application.routes.draw do
   #get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
   end
  
-resources :services, :only => [:index, :create]
+resources :services, :only => [:index, :create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
