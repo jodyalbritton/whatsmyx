@@ -1,0 +1,29 @@
+<div class="menu span3">
+<%= render 'menu' %>
+</div>
+
+<div  id="myModalStat"  class="modal hide fade">
+  
+      <%= render 'shared/stat_form' %>
+    
+</div>
+
+<div  id="myModalFood"  class="modal hide fade">
+  
+      <%= render 'shared/meal_form' %>
+     
+  
+</div>
+<div  id="myModalList"  class="modal hide fade">
+ 
+      <%= render 'shared/checklist_form' %>
+   
+</div>
+<div  id="myModalNote"  class="modal hide fade">
+
+      <%= render 'shared/note_form' %>
+   
+</div>
+
+
+
