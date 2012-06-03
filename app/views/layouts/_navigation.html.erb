@@ -24,6 +24,9 @@
                      <li>
                     <%= link_to('Change Password', edit_user_registration_path(:anchor => "wordpass"))%>
                     </li>
+                     <li>
+                    <%= link_to('Auth Providers', services_path)%>
+                    </li>
                     <li>
                     <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>  
                     </li>
