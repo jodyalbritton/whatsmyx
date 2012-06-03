@@ -7,6 +7,11 @@
 
 
 <div>
+<br>
+<div id="paginator">
+<%= paginate @stats, :remote => true %>
+</div>  
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -23,9 +28,7 @@
 </table>
 </div>
 <br>
-<div id="paginator">
-<%= paginate @stats, :remote => true %>
-</div>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_stat_path,
             :class => 'btn btn-primary' %>

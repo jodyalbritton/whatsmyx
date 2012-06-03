@@ -10,7 +10,10 @@
 
 
 <% if page.current? %>
-<li class="active"><%= link_to page, url %></li>
+<li class="active"><%= link_to page, url,opts = {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil} %></li>
 <% else %>
-<li><%= link_to page, url %></li>
+<li><%= link_to page, url,opts = {:remote => remote, :rel => page.next? ? 'next' : page.prev? ? 'prev' : nil}    %></li>
 <% end %>
+
+
+        
