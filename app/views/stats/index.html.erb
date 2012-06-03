@@ -6,17 +6,30 @@
 <br>
 
 
-
 <div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+    </tr>
+  </thead>
+  <tbody id="stats" >
+  	
+   
 
-	<%= render :partial => "stats" %>
-	
+	<%= render @stats %>
+	        
+  </tbody>
+</table>
 </div>
-
+<br>
+<div id="paginator">
+<%= paginate @stats, :remote => true %>
+</div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_stat_path,
             :class => 'btn btn-primary' %>
-<%= paginate @stats %>
+
  
  
  

@@ -1,0 +1,21 @@
+
+
+      <tr id="<%= dom_id(stat) %>">
+     <td></td>
+        <td>I recorded a <%= link_to stat.category.name, stat_path(stat) %> of <%= stat.value %> <%= stat.sunit %> on <%= stat.date %> </td>
+      
+       
+  
+        
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_stat_path(stat), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      stat_path(stat),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger',
+                      :remote => true %>
+        </td>
+      </tr>
+  

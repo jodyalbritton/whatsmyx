@@ -15,6 +15,7 @@ class StatsController < ApplicationController
    @stats_by_ti = @user.stats.where(:category_id => "6") 
     respond_to do |format|
       format.html # index.html.erb
+      format.js #added
       format.json { render json: @stats }
     end
     
