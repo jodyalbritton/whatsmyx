@@ -1,3 +1,5 @@
+<div class="row">
+
 <div class="menu span3">
 <%= render 'menu' %>
 </div>
@@ -26,4 +28,27 @@
 </div>
 
 
+  <div class="span9" id="feed-body">
 
+  <div id="posts">
+  
+  <%= simple_form_for @new_post do |f| %>
+  <div class="row">
+  <div class="span5 controls">
+   <%= f.input :content, :input_html => { :class => 'input-xlarge'}  %>
+   </div>
+   <div class="span2">
+   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+   </div>
+   <% end %>
+   </div>
+   
+	<%= render @posts %>
+
+  </div>
+  <div id="paginator">
+      <%= paginate @posts, :remote => true %>
+  </div>
+
+</div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602130028) do
+ActiveRecord::Schema.define(:version => 20120603175859) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -175,6 +175,15 @@ ActiveRecord::Schema.define(:version => 20120602130028) do
     t.string  "Stat_cmt",      :limit => 10
     t.string  "CC",            :limit => 1
   end
+
+  create_table "posts", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"

@@ -13,9 +13,7 @@
  *= require_tree .
 */
 
-.input-xlarge {
-	height: 100px;
-}
+
 
 a.btn:visited { color: #333; }
 

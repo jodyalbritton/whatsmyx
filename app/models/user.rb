@@ -1,10 +1,14 @@
 class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
-	validates_presence_of :name, :username
+  
+  #validations 
+  validates_presence_of :name, :username
   validates_uniqueness_of :username, :email, :case_sensitive => false
   validate :username_format
 	rolify
+  
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -13,15 +17,16 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes   
-   validates_confirmation_of :password
+  validates_confirmation_of :password
  
-  # attr_accessible :title, :body
+ #assoications 
   has_many :checklists, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
   has_many :meals, dependent: :destroy
   has_many :goals, dependent: :destroy
-   has_many :services, :dependent => :destroy
+  has_many :posts, dependent: :destroy
+  has_many :services, :dependent => :destroy
   has_one :profile, dependent: :destroy
   has_one :settings, dependent: :destroy
   has_one :notifications, dependent: :destroy
