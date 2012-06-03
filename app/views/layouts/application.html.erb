@@ -51,7 +51,7 @@
       $("input.date_picker").datepicker()
       .on('show', function(ev){                 
       var today = new Date();
-      var t = today.getDate() + "-" + today.getMonth() + "-" + today.getFullYear();
+      var t = today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
       $('input.date_picker').data({date: t}).datepicker('update');
   });
 
