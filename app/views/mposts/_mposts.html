@@ -1,0 +1,17 @@
+  <% for mpost in @mposts %>
+    <div class="post-block">
+      <div class="span1">
+      <a href="#" rel="popover" title="<%= mpost.user.username %>" data-content="<%= render :partial => 'mposts/profile'%>"><%= image_tag mpost.user.profile.avatar.url(:thumb) %></a>
+      </div>
+      <div class="post-body">
+     
+      <%= mpost.user.username %></br>
+      <%= mpost.content %>
+      </div>
+      </br>
+      <div class="form-actions">
+      <%= link_to "Edit", edit_mpost_path(mpost), :remote => true %> <%= link_to "Destroy", mpost, :remote => true, :confirm => 'Are you sure?', :method => :delete %>
+     </div>
+
+    </div>
+  <% end %>

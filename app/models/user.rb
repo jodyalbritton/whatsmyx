@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_merit
+
   extend FriendlyId
   friendly_id :username, use: :slugged
   
@@ -25,7 +27,7 @@ class User < ActiveRecord::Base
   has_many :stats, dependent: :destroy
   has_many :meals, dependent: :destroy
   has_many :goals, dependent: :destroy
-  has_many :posts, dependent: :destroy
+  has_many :mposts, dependent: :destroy
   has_many :services, :dependent => :destroy
   has_one :profile, dependent: :destroy
   has_one :settings, dependent: :destroy

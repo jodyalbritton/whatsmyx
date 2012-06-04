@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120603175859) do
+ActiveRecord::Schema.define(:version => 20120604001845) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -57,6 +57,17 @@ ActiveRecord::Schema.define(:version => 20120603175859) do
     t.string "Src_Cd",     :limit => 2,  :null => false
     t.string "SrcCd_Desc", :limit => 60, :null => false
   end
+
+  create_table "badges_sashes", :id => false, :force => true do |t|
+    t.integer  "badge_id"
+    t.integer  "sash_id"
+    t.boolean  "notified_user", :default => false
+    t.datetime "created_at"
+  end
+
+  add_index "badges_sashes", ["badge_id", "sash_id"], :name => "index_badges_sashes_on_badge_id_and_sash_id"
+  add_index "badges_sashes", ["badge_id"], :name => "index_badges_sashes_on_badge_id"
+  add_index "badges_sashes", ["sash_id"], :name => "index_badges_sashes_on_sash_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -130,6 +141,28 @@ ActiveRecord::Schema.define(:version => 20120603175859) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "merit_actions", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "action_method"
+    t.integer  "action_value"
+    t.boolean  "had_errors"
+    t.string   "target_model"
+    t.integer  "target_id"
+    t.boolean  "processed",     :default => false
+    t.string   "log"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "mposts", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "mposts", ["user_id"], :name => "index_mposts_on_user_id"
+
   create_table "notes", :force => true do |t|
     t.string   "name"
     t.text     "content"
@@ -176,15 +209,6 @@ ActiveRecord::Schema.define(:version => 20120603175859) do
     t.string  "CC",            :limit => 1
   end
 
-  create_table "posts", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
-
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.string   "fname"
@@ -216,6 +240,11 @@ ActiveRecord::Schema.define(:version => 20120603175859) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "sashes", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "services", :force => true do |t|
     t.integer  "user_id"
@@ -269,6 +298,9 @@ ActiveRecord::Schema.define(:version => 20120603175859) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "sash_id"
+    t.integer  "points",                 :default => 0
+    t.integer  "level",                  :default => 0
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

@@ -13,7 +13,10 @@
  *= require_tree .
 */
 
-
+.input-xlarge {
+	height: 100px;
+	width: 300px;
+}
 
 a.btn:visited { color: #333; }
 
@@ -29,4 +32,47 @@ a.btn-primary:visited { color: #fff; }
 }
 #user_profile_attributes_dob_3i {
 	width: 100px;
+}
+
+#profile-header {
+background-color: #EBEDEE;
+padding: 20px;
+}
+#profile-merit ul {
+margin-top: 15px;
+}
+#profile-merit ul {
+list-style: none;
+width: 320px;
+}
+#profile-merit #name-box, #profile-header ul {
+float: left;
+}
+
+#profile-merit ul li {
+float: right;
+margin-left: 35px;
+font-size: 18px;
+text-align: center;
+color: #909B9F;
+}
+
+#profile-merit ul li strong {
+display: block;
+color: #2E393D;
+font-size: 28px;
+margin-bottom: 5px;
+}
+
+.male-icon {
+background-position: -775px -52px;
+width: 22px;
+left: 20px;
+}
+.male-icon, .female-icon {
+
+position: relative;
+display: block;
+height: 17px;
+top: 1px;
 }

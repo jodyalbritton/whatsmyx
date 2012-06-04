@@ -5,7 +5,7 @@ Whatsmyx::Application.routes.draw do
   
   resources :community
   resources :checklists
-  resources :posts
+  resources :mposts
   resources :notes
   resources :meals do
   get :autocomplete_food_longdesc, :on => :collection
