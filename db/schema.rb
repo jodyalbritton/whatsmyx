@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605014128) do
+ActiveRecord::Schema.define(:version => 20120605131811) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -56,6 +56,15 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
   create_table "SRC_CD", :id => false, :force => true do |t|
     t.string "Src_Cd",     :limit => 2,  :null => false
     t.string "SrcCd_Desc", :limit => 60, :null => false
+  end
+
+  create_table "activity_logs", :force => true do |t|
+    t.integer  "author_id"
+    t.integer  "actor_id"
+    t.integer  "action_id"
+    t.integer  "verb_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "badges_sashes", :id => false, :force => true do |t|
