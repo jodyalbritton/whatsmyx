@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605014128) do
+ActiveRecord::Schema.define(:version => 20120605131811) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -58,6 +58,15 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
     t.string "SrcCd_Desc", :limit => 60, :null => false
   end
 
+  create_table "activity_logs", :force => true do |t|
+    t.integer  "author_id"
+    t.integer  "actor_id"
+    t.integer  "action_id"
+    t.integer  "verb_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
     t.integer  "sash_id"
@@ -94,16 +103,6 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
-
-  create_table "dailylogs", :force => true do |t|
-    t.string   "date"
-    t.text     "notes"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "dailylogs", ["user_id"], :name => "index_dailylogs_on_user_id"
 
   create_table "foods", :force => true do |t|
     t.integer "ndb",                                                      :null => false
@@ -145,6 +144,7 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
     t.string   "units"
     t.date     "date"
     t.string   "mcategory_id"
+    t.string   "integer"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -280,11 +280,10 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
     t.string   "value"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.date     "date"
-    t.integer  "category_id"
-    t.integer  "stype_id"
     t.string   "sunit"
     t.integer  "user_id"
+    t.date     "date",        :null => false
+    t.integer  "category_id", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -301,6 +300,10 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.string   "username"
     t.string   "slug"
     t.string   "confirmation_token"
@@ -323,15 +326,5 @@ ActiveRecord::Schema.define(:version => 20120605014128) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
-
-  create_table "weight", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "seq",          :limit => 2,                                :null => false
-    t.decimal "amount",                     :precision => 5, :scale => 3, :null => false
-    t.string  "msre_desc",    :limit => 80,                               :null => false
-    t.decimal "gm_wgt",                     :precision => 7, :scale => 1, :null => false
-    t.integer "num_data_pts"
-    t.decimal "std_dev",                    :precision => 7, :scale => 3
-  end
 
 end
