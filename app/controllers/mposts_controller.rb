@@ -1,12 +1,10 @@
 class MpostsController < ApplicationController
 
-before_filter :load
+  before_filter :load
 
   def load
-    @mposts = Mpost.order("created_at DESC")
+    @mposts = Mpost.all
     @mpost = Mpost.new
-    
-
   end
 
   def index
