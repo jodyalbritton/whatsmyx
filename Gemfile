@@ -45,7 +45,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
 gem 'merit'
-
+gem 'social_stream'
 gem 'client_side_validations', '3.2.0.beta.3'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -61,3 +61,5 @@ gem 'client_side_validations', '3.2.0.beta.3'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+

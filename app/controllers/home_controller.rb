@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def load
     @mposts = Mpost.all
- 
+   
   end
    
     def index

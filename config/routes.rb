@@ -3,9 +3,15 @@ Whatsmyx::Application.routes.draw do
 
   
   
+  opinio_model
+  
   resources :community
+ 
   resources :checklists
-  resources :mposts
+  resources :mposts do
+  opinio
+end 
+ 
   resources :notes
   resources :meals do
   get :autocomplete_food_longdesc, :on => :collection

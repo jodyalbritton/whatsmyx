@@ -1,17 +1,32 @@
+  
   <% for mpost in @mposts %>
-    <div class="post-block">
-      <div class="span1">
-      <a href="#" rel="popover" title="<%= mpost.user.username %>" data-content="<%= render :partial => 'mposts/profile'%>"><%= image_tag mpost.user.profile.avatar.url(:thumb) %></a>
+ <div class="post-block">
+      <div class="row">
+            <div class="span3">
+               <%= image_tag mpost.user.profile.avatar.url(:thumb) %></br>
+                <h2><%= mpost.user.username %></h2></br>
+                 <%= time_ago_in_words(mpost.created_at) %> ago.
+            </div>
+            <div class="post-body">
+                <%= mpost.content %>
+            </div>
       </div>
-      <div class="post-body">
-     
-      <%= mpost.user.username %></br>
-      <%= mpost.content %>
-      </div>
-      </br>
-      <div class="form-actions">
-      <%= link_to "Edit", edit_mpost_path(mpost), :remote => true %> <%= link_to "Destroy", mpost, :remote => true, :confirm => 'Are you sure?', :method => :delete %>
-     </div>
+   <div class="row">
+         <div id="post-footer" class="pull-right"> 
+         <%= link_to "Edit", edit_mpost_path(mpost), :remote => true %> <%= link_to "Destroy", mpost, :remote => true, :confirm => 'Are you sure?', :method => :delete %>
+         </div>
+   </div>
 
-    </div>
-  <% end %>
+<%= render_comments @mpost, mpost: mpost %>
+<%= render_comments_form @mpost %>
+<% end %>
+  
+  <script type="text/javascript">
+  
+  // Example:
+$(document).ready(function(){
+    $('textarea').autosize();  
+});
+
+
+</script>

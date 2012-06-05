@@ -14,8 +14,8 @@
 */
 
 .input-xlarge {
-	height: 100px;
-	width: 300px;
+	height: 50px;
+	width: 500;
 }
 
 a.btn:visited { color: #333; }
@@ -40,7 +40,22 @@ padding: 20px;
 }
 #profile-merit ul {
 margin-top: 15px;
-}
+}<script type="text/javascript">
+    $('textarea#comment').autoResize({
+        // On resize:
+        onResize : function() {
+            $(this).css({opacity:0.8});
+        },
+        // After resize:
+        animateCallback : function() {
+            $(this).css({opacity:1});
+        },
+        // Quite slow animation:
+        animateDuration : 300,
+        // More extra space:
+        extraSpace : 40
+    });
+</script>
 #profile-merit ul {
 list-style: none;
 width: 320px;
@@ -64,15 +79,4 @@ font-size: 28px;
 margin-bottom: 5px;
 }
 
-.male-icon {
-background-position: -775px -52px;
-width: 22px;
-left: 20px;
-}
-.male-icon, .female-icon {
 
-position: relative;
-display: block;
-height: 17px;
-top: 1px;
-}

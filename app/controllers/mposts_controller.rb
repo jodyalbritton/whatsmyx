@@ -5,6 +5,8 @@ before_filter :load
   def load
     @mposts = Mpost.order("created_at DESC")
     @mpost = Mpost.new
+    
+
   end
 
   def index
