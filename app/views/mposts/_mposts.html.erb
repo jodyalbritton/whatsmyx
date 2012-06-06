@@ -3,7 +3,7 @@
  <div class="post-block">
       <div class="row">
             <div class="span3">
-               <%= image_tag mpost.user.profile.avatar.url(:thumb) %></br>
+               <%= image_tag mpost.user.profile.avatar.url(:medium) %></br>
                 <h2><%= mpost.user.username %></h2></br>
                  <%= time_ago_in_words(mpost.created_at) %> ago.
             </div>
@@ -18,7 +18,7 @@
    </div>
 <div id="comments_list">
 <ul id="comments_<%= mpost.id %>">
-<%= render_comments mpost %>
+  
 </ul>
 <%= render_comments_form mpost %>
 
