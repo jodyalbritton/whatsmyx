@@ -18,8 +18,10 @@
    </div>
 <div id="comments_list">
 <ul id="comments_<%= mpost.id %>">
-  
+  <%= render_comments mpost %>
 </ul>
+
+
 <%= render_comments_form mpost %>
 
 <% end %>

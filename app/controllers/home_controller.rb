@@ -2,6 +2,7 @@ class HomeController < ApplicationController
    before_filter :load
 
   def load
+
     @mposts = Mpost.all
    
   end
