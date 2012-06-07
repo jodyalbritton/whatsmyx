@@ -13,43 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120607043804) do
 
-  create_table "DATA_SRC", :id => false, :force => true do |t|
-    t.string "DataSrc_ID",  :limit => 6,   :null => false
-    t.string "Authors"
-    t.string "Title",                      :null => false
-    t.string "Year",        :limit => 4
-    t.string "Journal",     :limit => 135
-    t.string "Vol_City",    :limit => 16
-    t.string "Issue_State", :limit => 5
-    t.string "Start_Page",  :limit => 5
-    t.string "End_Page",    :limit => 5
-  end
-
-  create_table "DERIV_CD", :id => false, :force => true do |t|
-    t.string "Deriv_Cd",   :limit => 4,   :null => false
-    t.string "Deriv_Desc", :limit => 120
-  end
-
-  create_table "FD_GROUP", :id => false, :force => true do |t|
-    t.string "FdGrp_Cd",   :limit => 4,  :null => false
-    t.string "FdGrp_Desc", :limit => 60, :null => false
-  end
-
-  create_table "LANGDESC", :id => false, :force => true do |t|
-    t.string "Factor_Code", :limit => 5,   :null => false
-    t.string "Description", :limit => 140, :null => false
-  end
-
-  create_table "LANGUAL", :id => false, :force => true do |t|
-    t.string "NDB_No",      :limit => 5, :null => false
-    t.string "Factor_Code", :limit => 5, :null => false
-  end
-
-  create_table "SRC_CD", :id => false, :force => true do |t|
-    t.string "Src_Cd",     :limit => 2,  :null => false
-    t.string "SrcCd_Desc", :limit => 60, :null => false
-  end
-
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -57,11 +20,10 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
-    t.string   "channel_id"
-    t.string   "integer"
-    t.string   "ancestry"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "ancestry"
+    t.integer  "channel_id"
   end
 
   create_table "activity_actions", :force => true do |t|
@@ -79,8 +41,11 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
   end
 
   create_table "activity_object_activities", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "activity_id"
+    t.integer  "activity_object_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "object_type"
   end
 
   create_table "activity_object_audiences", :force => true do |t|
@@ -89,30 +54,37 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
   end
 
   create_table "activity_object_properties", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "object_type", :limit => 45
+    t.integer  "like_count",                :default => 0
+    t.integer  "channel_id"
   end
 
   create_table "activity_objects", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.string   "object_type", :limit => 45
+    t.integer  "like_count",                :default => 0
+    t.integer  "channel_id"
   end
 
   create_table "activity_verbs", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name",       :limit => 45
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "actors", :force => true do |t|
     t.string   "name"
-    t.string   "email"
+    t.string   "email",              :default => "",   :null => false
     t.string   "slug"
     t.string   "subject_type"
-    t.boolean  "notify_by_email"
+    t.boolean  "notify_by_email",    :default => true
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.integer  "activity_object_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.integer  "follower_count",     :default => 0
   end
 
   create_table "audiences", :force => true do |t|
@@ -160,23 +132,6 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
   create_table "contacts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "foods", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
-    t.string  "longdesc",    :limit => 200,                               :null => false
-    t.string  "shortdesc",   :limit => 60,                                :null => false
-    t.string  "comname",     :limit => 100
-    t.string  "manufacname", :limit => 65
-    t.string  "survey",      :limit => 1
-    t.string  "ref_desc",    :limit => 135
-    t.integer "refuse"
-    t.string  "SciName",     :limit => 65
-    t.decimal "n_factor",                   :precision => 4, :scale => 2
-    t.decimal "pro_factor",                 :precision => 4, :scale => 2
-    t.decimal "fat_factor",                 :precision => 4, :scale => 2
-    t.decimal "cho_factor",                 :precision => 4, :scale => 2
   end
 
   create_table "goals", :force => true do |t|
@@ -247,43 +202,17 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
 
   add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
-  create_table "nutr_defs", :force => true do |t|
-    t.string  "nutr_no",  :limit => 3,  :null => false
-    t.string  "units",    :limit => 7,  :null => false
-    t.string  "tagname",  :limit => 20
-    t.string  "nutrdesc", :limit => 60, :null => false
-    t.string  "num_dec",  :limit => 1,  :null => false
-    t.integer "sr_order",               :null => false
-  end
-
-  create_table "nutrients", :force => true do |t|
-    t.integer "ndb",                                                        :null => false
-    t.string  "nutr_no",       :limit => 3,                                 :null => false
-    t.decimal "nutr_val",                    :precision => 10, :scale => 3, :null => false
-    t.decimal "num_data_pts",                :precision => 5,  :scale => 0, :null => false
-    t.decimal "Std_Error",                   :precision => 8,  :scale => 3
-    t.string  "Src_Cd",        :limit => 2,                                 :null => false
-    t.string  "Deriv_Cd",      :limit => 4
-    t.string  "Ref_NDB_No",    :limit => 5
-    t.string  "Add_Nutr_Mark", :limit => 1
-    t.integer "Num_Studies"
-    t.decimal "Min",                         :precision => 10, :scale => 3
-    t.decimal "Max",                         :precision => 10, :scale => 3
-    t.integer "DF"
-    t.decimal "Low_EB",                      :precision => 10, :scale => 3
-    t.decimal "Up_EB",                       :precision => 10, :scale => 3
-    t.string  "Stat_cmt",      :limit => 10
-    t.string  "CC",            :limit => 1
-  end
-
   create_table "permissions", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+    t.integer  "activity_object_id"
+    t.text     "content"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -307,9 +236,22 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
+  create_table "relation_permissions", :force => true do |t|
+    t.integer  "relation_id"
+    t.integer  "permission_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "relations", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "actor_id"
+    t.string   "type"
+    t.string   "name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.string   "sender_type"
+    t.string   "receiver_type"
+    t.string   "ancestry"
   end
 
   create_table "roles", :force => true do |t|
@@ -360,8 +302,10 @@ ActiveRecord::Schema.define(:version => 20120607043804) do
   end
 
   create_table "ties", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "contact_id"
+    t.integer  "relation_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

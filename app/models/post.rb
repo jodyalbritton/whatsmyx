@@ -1,3 +1,7 @@
 class Post < ActiveRecord::Base
-  # attr_accessible :title, :body
+  belongs_to :user
+  attr_accessible :content
+  
+   opinio_subjectum
+
 end

@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def load
 
-    @mposts = Mpost.all
+    @posts = Post.all
    
   end
    
@@ -11,7 +11,7 @@ class HomeController < ApplicationController
      @stat = current_user.stats.build 
      @meal = current_user.meals.build
      @note = current_user.notes.build
-     @mpost = current_user.mposts.build
+     @post = current_user.posts.build
      @checklist = current_user.checklists.build
     
   end

@@ -8,7 +8,7 @@ Whatsmyx::Application.routes.draw do
   resources :community
  
   resources :checklists
-  resources :mposts do
+  resources :posts do
   opinio
 end 
  
