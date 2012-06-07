@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605131811) do
+ActiveRecord::Schema.define(:version => 20120607043804) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -35,14 +35,6 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.string "FdGrp_Desc", :limit => 60, :null => false
   end
 
-  create_table "FOOTNOTE", :id => false, :force => true do |t|
-    t.string "NDB_No",     :limit => 5,   :null => false
-    t.string "Footnt_No",  :limit => 4,   :null => false
-    t.string "Footnt_Typ", :limit => 1,   :null => false
-    t.string "Nutr_No",    :limit => 3
-    t.string "Footnt_Txt", :limit => 200, :null => false
-  end
-
   create_table "LANGDESC", :id => false, :force => true do |t|
     t.string "Factor_Code", :limit => 5,   :null => false
     t.string "Description", :limit => 140, :null => false
@@ -58,11 +50,72 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.string "SrcCd_Desc", :limit => 60, :null => false
   end
 
+  create_table "abilities", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "activities", :force => true do |t|
+    t.integer  "activity_verb_id"
+    t.string   "channel_id"
+    t.string   "integer"
+    t.string   "ancestry"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  create_table "activity_actions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "activity_logs", :force => true do |t|
     t.integer  "author_id"
     t.integer  "actor_id"
     t.integer  "action_id"
     t.integer  "verb_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "activity_object_activities", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "activity_object_audiences", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "activity_object_properties", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "activity_objects", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "activity_verbs", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "actors", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "slug"
+    t.string   "subject_type"
+    t.boolean  "notify_by_email"
+    t.integer  "activity_object_id"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "audiences", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -104,15 +157,10 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.datetime "updated_at",       :null => false
   end
 
-  create_table "dailylogs", :force => true do |t|
-    t.string   "date"
-    t.text     "notes"
-    t.integer  "user_id"
+  create_table "contacts", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "dailylogs", ["user_id"], :name => "index_dailylogs_on_user_id"
 
   create_table "foods", :force => true do |t|
     t.integer "ndb",                                                      :null => false
@@ -154,6 +202,7 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.string   "units"
     t.date     "date"
     t.string   "mcategory_id"
+    t.string   "integer"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
@@ -227,6 +276,16 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.string  "CC",            :limit => 1
   end
 
+  create_table "permissions", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.string   "fname"
@@ -247,6 +306,11 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "relations", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -289,11 +353,15 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.string   "value"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.date     "date"
-    t.integer  "category_id"
-    t.integer  "stype_id"
     t.string   "sunit"
     t.integer  "user_id"
+    t.integer  "category_id"
+    t.date     "date"
+  end
+
+  create_table "ties", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -310,6 +378,10 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.string   "username"
     t.string   "slug"
     t.string   "confirmation_token"
@@ -332,15 +404,5 @@ ActiveRecord::Schema.define(:version => 20120605131811) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
-
-  create_table "weight", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "seq",          :limit => 2,                                :null => false
-    t.decimal "amount",                     :precision => 5, :scale => 3, :null => false
-    t.string  "msre_desc",    :limit => 80,                               :null => false
-    t.decimal "gm_wgt",                     :precision => 7, :scale => 1, :null => false
-    t.integer "num_data_pts"
-    t.decimal "std_dev",                    :precision => 7, :scale => 3
-  end
 
 end

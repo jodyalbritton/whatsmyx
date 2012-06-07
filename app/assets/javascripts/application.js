@@ -12,11 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery.ui.core
 //= require jquery.ui.autocomplete
-//= require twitter/bootstrap
 //= require highcharts
-//= require autocomplete-rails
 //= require rails.validations
 //= require_tree .
 
