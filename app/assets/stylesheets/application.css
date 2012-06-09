@@ -14,8 +14,8 @@
 */
 
 .input-xlarge {
-	height: 50px;
-	width: 500;
+	height: 20px;
+	
 }
 
 a.btn:visited { color: #333; }
@@ -37,7 +37,7 @@ a.btn-primary:visited { color: #fff; }
 #profile-header {
 background-color: #EBEDEE;
 padding: 1%;
-height: 45px;
+height: 60px;
 }
 
 #profile-merit ul {
@@ -61,6 +61,17 @@ display: block;
 color: #2E393D;
 font-size: 28px;
 margin-bottom: 2%;
+}
+
+
+#post-footer {
+margin: 3px 0 8px;
+border-bottom: 1px solid #E3E3E3;
+
+}
+
+#comments_list ul {
+list-style: none;
 }
 
 

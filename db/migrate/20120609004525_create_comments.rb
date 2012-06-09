@@ -2,7 +2,7 @@ class CreateComments < ActiveRecord::Migration
   def self.up
     create_table :comments do |t|
       t.opinio
-
+      t.integer :activity_object_id
       t.timestamps
     end
   end
