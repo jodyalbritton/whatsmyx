@@ -16,6 +16,21 @@ module Merit
       # set_rank :level => 1, :to => Commiter.active do |commiter|
       #   commiter.repositories.count > 1 && commiter.followers >= 10
       # end
+      set_rank :level => 1, :to => User do |user|
+        user.points > 10
+      end
+      
+      set_rank :level => 2, :to => User do |user|
+        user.points > 2000
+      end
+      
+      set_rank :level => 3, :to => User do |user|
+        user.points > 3000
+      end
+      
+       set_rank :level => 4, :to => User do |user|
+        user.points > 4000
+      end
       #
       # set_rank :level => 2, :to => Commiter.active do |commiter|
       #   commiter.branches.count > 1 && commiter.followers >= 10

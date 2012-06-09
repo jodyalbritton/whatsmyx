@@ -24,14 +24,12 @@ module Merit
       # If it creates user, grant badge
       # Should be "current_user" after registration for badge to be granted.
       # grant_on 'users#create', :badge => 'just-registered', :to => :itself
-       grant_on ['UserRegistrations#create', 'UserRegistrations#update'], :model_name => 'RegistrationsController', :badge => 'autobiographer', :temporary => true do |user|
-       user.name.present? && user.username?
-       end
+      
       # If it has 10 comments, grant commenter-10 badge
       # grant_on 'comments#create', :badge => 'commenter', :level => 10 do |comment|
       #   comment.user.comments.count == 10
       # end
-
+   
       # If it has 5 votes, grant relevant-commenter badge
       # grant_on 'comments#vote', :badge => 'relevant-commenter', :to => :user do |comment|
       #   comment.votes.count == 5

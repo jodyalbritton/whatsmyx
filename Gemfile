@@ -1,4 +1,4 @@
-        source 'https://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 
@@ -47,6 +47,10 @@ gem 'omniauth-openid'
 gem 'merit'
 gem "opinio"
 gem 'client_side_validations', '3.2.0.beta.3'
+gem 'ancestry'
+gem 'acts_as_follower'
+gem 'whenever', :require => false
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

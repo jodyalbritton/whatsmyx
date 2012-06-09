@@ -3,12 +3,12 @@
  <div class="post-block">
       <div class="row">
             <div class="span3">
-               <%= image_tag post.user.profile.avatar.url(:medium) %></br>
+               
                 <h2><%= post.user.username %></h2></br>
                  <%= time_ago_in_words(post.created_at) %> ago.
             </div>
             <div class="post-body">
-                <%= post.content %>
+                <%= post.text %>
             </div>
       </div>
    <div class="row">

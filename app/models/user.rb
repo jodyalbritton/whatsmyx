@@ -3,12 +3,15 @@ class User < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :username, use: :slugged
+  acts_as_follower
+  acts_as_followable
+  rolify
   
   #validations 
   validates_presence_of :name, :username
   validates_uniqueness_of :username, :email, :case_sensitive => false
   validate :username_format
-	rolify
+	
   
   
   # Include default devise modules. Others available are:
@@ -18,7 +21,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes   
+  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes 
   validates_confirmation_of :password
  
  #assoications 
@@ -29,10 +32,10 @@ class User < ActiveRecord::Base
   has_many :goals, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :services, :dependent => :destroy
- 
   has_one :profile, dependent: :destroy
   has_one :settings, dependent: :destroy
   has_one :notifications, dependent: :destroy
+  has_one :actor, dependent: :destroy
  
   
  accepts_nested_attributes_for :profile, :settings

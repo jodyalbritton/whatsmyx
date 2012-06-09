@@ -36,29 +36,13 @@ a.btn-primary:visited { color: #fff; }
 
 #profile-header {
 background-color: #EBEDEE;
-padding: 20px;
+padding: 1%;
+height: 45px;
 }
-#profile-merit ul {
-margin-top: 15px;
-}<script type="text/javascript">
-    $('textarea#comment').autoResize({
-        // On resize:
-        onResize : function() {
-            $(this).css({opacity:0.8});
-        },
-        // After resize:
-        animateCallback : function() {
-            $(this).css({opacity:1});
-        },
-        // Quite slow animation:
-        animateDuration : 300,
-        // More extra space:
-        extraSpace : 40
-    });
-</script>
+
 #profile-merit ul {
 list-style: none;
-width: 320px;
+margin-top: 2%;
 }
 #profile-merit #name-box, #profile-header ul {
 float: left;
@@ -76,7 +60,7 @@ color: #909B9F;
 display: block;
 color: #2E393D;
 font-size: 28px;
-margin-bottom: 5px;
+margin-bottom: 2%;
 }
 
 

@@ -13,6 +13,12 @@ class HomeController < ApplicationController
      @note = current_user.notes.build
      @post = current_user.posts.build
      @checklist = current_user.checklists.build
+   
+      @services = {
+        :posts => Post.find(:all),
+        :stats => Stat.find(:all)
+      }
+     
     
   end
 end

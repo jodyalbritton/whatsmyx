@@ -1,5 +1,5 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<% resource.build_profile unless resource.profile%>
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= f.error_notification %>
 <ul class="nav nav-tabs" id="myTab">
@@ -20,7 +20,7 @@
 
   </div>
   <div class="tab-pane" id="profile">
-    <div class="pull-right">
+  <div class="pull-right">
     <%= image_tag @user.profile.avatar.url(:medium) %></br>
     <%= f.simple_fields_for :profile do |p| %>
     <%= f.file_field :avatar %>
@@ -29,8 +29,13 @@
     <div class="inputs">
     <%= f.simple_fields_for :profile do |p| %>
     <%= p.input :dob, :as => :date_picker, :label => "Date Of Birth" %>
+    <%= p.input :about %>
     <% end %>
   </div>
+
+    
+   
+
   </div>
   <div class="tab-pane" id="wordpass">
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>

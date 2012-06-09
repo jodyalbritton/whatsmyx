@@ -1,18 +1,45 @@
-<div id="profile-header" class="row well">
-	<div id="profile_pic" class="pull-left">
-		<%= image_tag @user.profile.avatar.url(:medium) %>
-    </div>
-	<div id="profile-name" class="span3 pull-left">
-	<h3><%= @user.username %></h3>
+
+
+<div id="profile-sidebar" class="span3 pull-left">
+
+   <div id="profile_pic">
+	<%= image_tag @user.profile.avatar.url(:medium) %>
+	
+   </div>
+   <div id="profile-level">
+   <h2> Level <%= @user.level %></h2>
+   </div>
+    <div id="profile-about">
+   <h2> About Me </h2>
+   <%= @user.profile.about %>
+   </div>
+   <div id="profile-followers">
+          <h2> Followers </h2>
+	  <% @followers.each do |follower| %>
+	  <%= image_tag follower.profile.avatar.url(:thumb) %>
+	  <% end %>
+   </div>
+</div>
+<div id="profile-body" class="span8 pull-right">
+<div class="row">
+   <div id="profile-header">
+        <div id="profile-name" class="span3 pull-left">
+	        <h3><%= @user.username %></h3>
+	        
+                <% if user_signed_in? %>
+                <div id="follows_user">
+                <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
+                 </div>
+                <% end %> 
         </div>
-        <div id="profile-merit" class="pull-right">
+<div id="profile-merit" class="pull-right visible-desktop">
         
       <ul>
         
           <li>
             
-              <strong> <%= @user.points %> </strong>
-              Points
+              <strong> <%= @user.follow_count %> </strong>
+              Following
             
 
           </li>
@@ -21,7 +48,7 @@
 
           
             <li>
-              <strong>33</strong>
+              <strong><%= @user.followers_count %></strong>
               Followers
             </li>
           
@@ -33,14 +60,18 @@
         </li>
       </ul>
       
-        </div>
+     
 	
 </div>
-<div id="profilebody">
-<div id="profile-sidebar" class="span4">
-<h1>About Me</h1>
-<%= @user.profile.about %></h3>
 </div>
+</div>
+<div id="profilebody">
+      
+          <div id="posts_list"><%= render :partial => "posts/posts_for_user" %></div>
+	
+</div>
+
 	
 
 </div>
+

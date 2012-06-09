@@ -11,6 +11,6 @@ $('#no_comments').hide();
   <% end %>
   $('textarea#comment_body').val('');
 <% else %>
-  $('#comments_<%= @comment.commentable_id %>').prepend("<%= escape_javascript(flash[:notice]) %>");
-  $('#comments_<%= @comment.commentable_id %>').prepend("<%= escape_javascript(flash[:error]) %>");
+  $('#flash_notice').prepend("<%= escape_javascript(flash[:notice]) %>");
+  $('#flash_notice').prepend("<%= escape_javascript(flash[:error]) %>");
 <% end %>

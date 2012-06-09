@@ -8,6 +8,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @post = @user.posts.find(:all)
+    @post = Post.new
+    @followers = @user.followers
   end
 
 end
