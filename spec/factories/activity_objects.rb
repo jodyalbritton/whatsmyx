@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :activity_object do
+    activity nil
   end
 end

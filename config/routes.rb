@@ -21,10 +21,9 @@ end
   resources :categories
 
   resources :stats
+  resources :streams
   resources :goals
-  resources :activity_stream_preferences
-  resources :activity_streams
-  
+
   resources :meals 
   resources :nutrition
   resources :nutr_defs

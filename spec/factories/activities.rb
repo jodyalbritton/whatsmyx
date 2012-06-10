@@ -2,6 +2,5 @@
 
 FactoryGirl.define do
   factory :activity do
-    ancestry "MyString"
   end
 end

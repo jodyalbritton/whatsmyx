@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120609044150) do
+ActiveRecord::Schema.define(:version => 20120609232519) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -19,110 +19,30 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
   end
 
   create_table "activities", :force => true do |t|
-    t.integer  "activity_verb_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "ancestry"
-    t.integer  "channel_id"
+    t.integer  "user_id",       :null => false
+    t.integer  "activity_type", :null => false
+    t.integer  "target_id",     :null => false
+    t.string   "target_type",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  add_index "activities", ["activity_verb_id"], :name => "index_activities_on_activity_verb_id"
-  add_index "activities", ["channel_id"], :name => "index_activities_on_channel_id"
-
-  create_table "activity_object_activities", :force => true do |t|
-    t.integer  "activity_id"
-    t.integer  "activity_object_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "object_type"
-  end
-
-  add_index "activity_object_activities", ["activity_id"], :name => "index_activity_object_activities_on_activity_id"
-  add_index "activity_object_activities", ["activity_object_id"], :name => "index_activity_object_activities_on_activity_object_id"
+  add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
+  add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
   create_table "activity_objects", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "object_type", :limit => 45
-    t.integer  "like_count",                :default => 0
-    t.integer  "channel_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
-  add_index "activity_objects", ["channel_id"], :name => "index_activity_objects_on_channel_id"
+  add_index "activity_objects", ["activity_id"], :name => "index_activity_objects_on_activity_id"
 
-  create_table "activity_stream_preferences", :force => true do |t|
-    t.string   "activity"
-    t.string   "location"
-    t.integer  "user_id"
+  create_table "activity_verbs", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "activity_stream_preferences", ["activity", "user_id"], :name => "activity_stream_preferences_idx"
-
-  create_table "activity_stream_totals", :force => true do |t|
-    t.string   "activity"
-    t.integer  "object_id"
-    t.string   "object_type"
-    t.float    "total",       :default => 0.0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
-  add_index "activity_stream_totals", ["activity", "object_id", "object_type"], :name => "activity_stream_totals_idx"
-
-  create_table "activity_streams", :force => true do |t|
-    t.string   "verb"
-    t.string   "activity"
-    t.integer  "actor_id"
-    t.string   "actor_type"
-    t.string   "actor_name_method"
-    t.integer  "count",                       :default => 1
-    t.integer  "object_id"
-    t.string   "object_type"
-    t.string   "object_name_method"
-    t.integer  "indirect_object_id"
-    t.string   "indirect_object_type"
-    t.string   "indirect_object_name_method"
-    t.string   "indirect_object_phrase"
-    t.integer  "status",                      :default => 0
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
-  end
-
-  add_index "activity_streams", ["actor_id", "actor_type"], :name => "activity_streams_by_actor"
-  add_index "activity_streams", ["indirect_object_id", "indirect_object_type"], :name => "activity_streams_by_indirect_object"
-  add_index "activity_streams", ["object_id", "object_type"], :name => "activity_streams_by_object"
-
-  create_table "activity_verbs", :force => true do |t|
-    t.string   "name",       :limit => 45
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "actors", :force => true do |t|
-    t.string   "name"
-    t.string   "email",              :default => "",   :null => false
-    t.string   "slug"
-    t.string   "subject_type"
-    t.boolean  "notify_by_email",    :default => true
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "activity_object_id"
-    t.integer  "follower_count",     :default => 0
-  end
-
-  add_index "actors", ["activity_object_id"], :name => "index_actors_on_activity_object_id"
-  add_index "actors", ["email"], :name => "index_actors_on_email"
-  add_index "actors", ["slug"], :name => "index_actors_on_slug", :unique => true
-
-  create_table "audiences", :force => true do |t|
-    t.integer "relation_id"
-    t.integer "activity_id"
-  end
-
-  add_index "audiences", ["activity_id"], :name => "index_audiences_on_activity_id"
-  add_index "audiences", ["relation_id"], :name => "index_audiences_on_relation_id"
 
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
@@ -144,18 +64,6 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
 
-  create_table "channels", :force => true do |t|
-    t.integer  "author_id"
-    t.integer  "owner_id"
-    t.integer  "user_author_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-  end
-
-  add_index "channels", ["author_id"], :name => "index_channels_on_author_id"
-  add_index "channels", ["owner_id"], :name => "index_channels_on_owner_id"
-  add_index "channels", ["user_author_id"], :name => "index_channels_on_user_author_id"
-
   create_table "checklists", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -173,19 +81,6 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
-
-  create_table "contacts", :force => true do |t|
-    t.integer  "sender_id"
-    t.integer  "receiver_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "inverse_id"
-    t.integer  "ties_count",  :default => 0
-  end
-
-  add_index "contacts", ["inverse_id"], :name => "index_contacts_on_inverse_id"
-  add_index "contacts", ["receiver_id"], :name => "index_contacts_on_receiver_id"
-  add_index "contacts", ["sender_id"], :name => "index_contacts_on_sender_id"
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",                      :null => false
@@ -209,14 +104,6 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
   end
 
   add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
-
-  create_table "groups", :force => true do |t|
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
 
   create_table "mcategories", :force => true do |t|
     t.string   "name"
@@ -268,13 +155,6 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "permissions", :force => true do |t|
-    t.string   "action"
-    t.string   "object"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "activity_object_id"
@@ -317,30 +197,6 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
-
-  create_table "relation_permissions", :force => true do |t|
-    t.integer  "relation_id"
-    t.integer  "permission_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "relation_permissions", ["permission_id"], :name => "index_relation_permissions_on_permission_id"
-  add_index "relation_permissions", ["relation_id"], :name => "index_relation_permissions_on_relation_id"
-
-  create_table "relations", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "type"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "sender_type"
-    t.string   "receiver_type"
-    t.string   "ancestry"
-  end
-
-  add_index "relations", ["ancestry"], :name => "index_relations_on_ancestry"
-  add_index "relations", ["user_id"], :name => "index_relations_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -388,16 +244,6 @@ ActiveRecord::Schema.define(:version => 20120609044150) do
     t.integer  "category_id"
     t.date     "date"
   end
-
-  create_table "ties", :force => true do |t|
-    t.integer  "contact_id"
-    t.integer  "relation_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ties", ["contact_id"], :name => "index_ties_on_contact_id"
-  add_index "ties", ["relation_id"], :name => "index_ties_on_relation_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
