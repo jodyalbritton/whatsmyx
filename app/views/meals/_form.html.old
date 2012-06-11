@@ -1,0 +1,15 @@
+<%= simple_form_for @meal, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name, :url => autocomplete_food_name_meals_path, :as => :autocomplete, :input_html => {:id_element => '#food'}%>
+  <%= f.input :food, :input_html => {:name =>"food[food]"}, :as =>"hidden" %>
+  <%= f.input :quanity %>
+  <%= f.input :units %>
+  <%= f.input :date %>
+  <%= f.association :mcategory, :include_blank => false, :label => 'Meal'  %>
+
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                meals_path, :class => 'btn' %>
+  </div>
+<% end %>

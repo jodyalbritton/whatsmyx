@@ -1,0 +1,16 @@
+class Food < ActiveRecord::Base
+  
+   attr_accessible :id, :ndb_no, :short_desc
+   has_many :nutrients, :foreign_key => 'ndb', :primary_key => 'ndb'
+ 
+   
+ define_index do
+    indexes shortdesc
+  
+   
+    end
+    
+   
+
+end
+

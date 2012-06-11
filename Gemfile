@@ -44,12 +44,13 @@ gem 'rails3-jquery-autocomplete'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
-gem 'merit'
+gem 'merit', :git => 'git://github.com/tute/merit.git'
 gem "opinio"
 gem 'client_side_validations', '3.2.0.beta.3'
 gem 'ancestry'
 gem 'acts_as_follower'
 gem 'whenever', :require => false
+gem "nested_form"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

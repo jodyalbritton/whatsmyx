@@ -1,6 +1,10 @@
 class Meal < ActiveRecord::Base
-  attr_accessible :date, :mcategory_id, :name, :ndb, :quanity, :units, :user_id
-  has_many :foods, :foreign_key => 'ndb', :primary_key => 'ndb', :include => 'nutrients'
+  attr_accessible :date, :name, :ndb, :quanity, :units, :ingredients_attributes, :favorite, :fave_name
+  
+    has_many :ingredients, :dependent => :destroy
+  
+  accepts_nested_attributes_for :ingredients
+
   belongs_to :mcategory
   belongs_to :user
   belongs_to :dailylog

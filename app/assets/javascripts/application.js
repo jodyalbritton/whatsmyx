@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require jquery.ui.core
 //= require jquery.ui.autocomplete
+//= require jquery_nested_form
 //= require autocomplete-rails
 //= require highcharts
 //= require rails.validations

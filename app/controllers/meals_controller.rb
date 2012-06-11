@@ -1,90 +1,117 @@
 class MealsController < ApplicationController
  before_filter :authenticate_user!
- autocomplete :food, :longdesc, :full => true
+ autocomplete :food, :name, :full => true
   # GET /meals
   # GET /meals.json
   
   def index
-    @user = User.find(current_user)
-    @meals_by_date = @user.meals.find(:all, :order => 'date DESC, id').group_by { |d| d.date}
-    @meals = @user.meals.all
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @meals }
+      redirect_to user_path(current_user)
     end
-  end
 
-  # GET /meals/1
-  # GET /meals/1.json
   def show
     @meal = Meal.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @meal }
-    end
+    @this_meal = Meal.find(params[:id])  
+      
+    @meal.ingredients.build :what_food => "_new_food"
+    @meal.ingredients.sort! { |a,b| a.what_food.downcase <=> b.what_food.downcase }
+    @meal.ingredients[0].what_food = nil
+        
+    @foods = Food.all
+    
+    @dvs = {:total_fat => 65, :fa_sat => 20, :cholesterol => 300, :sodium => 2400, :potassium => 3500,
+            :tot_carbs => 300, :fiber => 25, :protein => 50, :vit_c => 60, :calcium => 1000, :iron => 18, 
+            :sugar_total => 40, :calories => 2000, :f_and_vs => 5}   
+            
+    # @todays_meals = Meal.search(@meal.date, @meal.user).order("time_of_day")
+    
+     @cals = 0 
+  	 @salt = 0 
+  	 @fats = 0 
+  	 @sugs = 0 
+  	 @f_and_vs = 0 
+     # for individual_meal in @todays_meals do 
+  		 for ingredient in @this_meal.ingredients do 
+  			 
+  			 food = Food.find(ingredient.food_id) 
+  			 if food.umd == 0
+    			 if ingredient.serving_size.nil? 
+    				 multiplication_factor = ingredient.servings
+    			 else 
+    				 multiplication_factor = ingredient.servings*ingredient.serving_size/100
+    			 end
+    		 else
+    		   multiplication_factor = ingredient.servings
+  			 end
+  			 @cals = @cals + (food.calories*multiplication_factor) 
+  			 @salt = @salt + (food.sodium*multiplication_factor) 
+  			 @fats = @fats + (food.lipid_total*multiplication_factor) 
+  			 @sugs = @sugs + (food.sugar_total*multiplication_factor) 
+  		 end 
+     # end  
+            
+      @chart_data = "#{'%1.2f' % (100*@cals/@dvs[:calories])}, #{'%1.2f' % (100*@salt/@dvs[:sodium])}, #{'%1.2f' % (100*@fats/@dvs[:total_fat])}, #{'%1.2f' % (100*@sugs/@dvs[:sugar_total])}, #{'%1.2f' % (100*@f_and_vs/@dvs[:f_and_vs])}"
+            
+    if @meal.user != current_user
+      redirect_to user_path(current_user), :notice => "Access denied"
+    end         
   end
-
-  # GET /meals/new
-  # GET /meals/new.json
+  
   def new
     @meal = Meal.new
+    @foods = Food.all
+    
+    @meal.ingredients.build
+  end
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @meal }
+  def create
+    @meal = Meal.new(params[:meal])
+    if @meal.save
+      redirect_to @meal, :success => "Successfully created meal."
+    else
+      flash[:error] = "Oops, something didn't work! Remember, your food can't be blank, and you can't have more than one meal on any day. See the #{ActionController::Base.helpers.link_to "Help page", help_path} for more details".html_safe
+      redirect_to user_path(current_user)#, :success => "Food can't be blank! Make sure you select a food from the list. See the #{ActionController::Base.helpers.link_to "Help page", help_path} for more details".html_safe
     end
   end
 
-  # GET /meals/1/edit
   def edit
     @meal = Meal.find(params[:id])
-  end
-
-  # POST /meals
-  # POST /meals.json
-  def create
-    @meal = current_user.meals.build(params[:meal])
-
-    respond_to do |format|
-      if @meal.save
-        format.html { redirect_to @meal, notice: 'Meal was successfully created.' }
-        format.json { render json: @meal, status: :created, location: @meal }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @meal.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /meals/1
-  # PUT /meals/1.json
-  def update
-    @meal = Meal.find(params[:id])
-
-    respond_to do |format|
-      if @meal.update_attributes(params[:meal])
-        format.html { redirect_to @meal, notice: 'Meal was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @meal.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /meals/1
-  # DELETE /meals/1.json
-  def destroy
-    @meal = Meal.find(params[:id])
-    @meal.destroy
-
-    respond_to do |format|
-      format.html { redirect_to meals_url }
-      format.json { head :no_content }
+    
+    @foods = Food.all
+        
+    if @meal.user != current_user
+      redirect_to user_path(current_user), :warning => "Access denied"
     end
   end
   
+  def make_clone
+    old_meal = Meal.find(params[:id])
+    new_meal = old_meal.clone :include => :ingredients
+    new_meal.favorite = false
+    new_meal.date = Date.today
+    new_meal.save
+    redirect_to edit_meal_path(new_meal), :notice => "Edit your duplicated meal here"
+  end
 
-end
+  def update
+    @meal = Meal.find(params[:id])
+    if @meal.update_attributes(params[:meal])
+        redirect_to @meal, :success  => "Successfully updated meal."
+    else
+      # render :action => 'edit'
+      redirect_to @meal, :error => "Oops, something didn't work! Remember, your food can't be blank, and you can't have more than one meal on any day. See the #{ActionController::Base.helpers.link_to "Help page", help_path} for more details".html_safe
+    end 
+    
+  end
+
+  def destroy
+    @meal = Meal.find(params[:id])
+    if @meal.user != current_user
+      redirect_to user_path(current_user), :notice => "Access denied"
+    end
+    @meal.destroy
+    redirect_to user_path(current_user), :notice => "Successfully destroyed meal."
+  end
+  end
+  
+
+

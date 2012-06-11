@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610192753) do
+ActiveRecord::Schema.define(:version => 20120611121902) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -148,6 +148,63 @@ ActiveRecord::Schema.define(:version => 20120610192753) do
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
   create_table "foods", :force => true do |t|
+    t.string  "name"
+    t.float   "water"
+    t.float   "calories"
+    t.float   "protein"
+    t.float   "lipid_total"
+    t.float   "ash"
+    t.float   "carbohydrates"
+    t.float   "fiber"
+    t.float   "sugar_total"
+    t.float   "calcium"
+    t.float   "iron"
+    t.float   "magnesium"
+    t.float   "phosphorus"
+    t.float   "potassium"
+    t.float   "sodium"
+    t.float   "zinc"
+    t.float   "copper"
+    t.float   "manganese"
+    t.float   "selenium"
+    t.float   "vit_c"
+    t.float   "thiamin"
+    t.float   "riboflavin"
+    t.float   "niacin"
+    t.float   "panto_acid"
+    t.float   "vit_b6"
+    t.float   "folate_total"
+    t.float   "folic_acid"
+    t.float   "food_folate"
+    t.float   "folate_dfe"
+    t.float   "choline_total"
+    t.float   "vit_b12"
+    t.float   "vit_a_iu"
+    t.float   "vit_a_rae"
+    t.float   "retinol"
+    t.float   "alpha_carotene"
+    t.float   "beta_carotene"
+    t.float   "beta_crypt"
+    t.float   "lycopene"
+    t.float   "lut_zea"
+    t.float   "vit_e"
+    t.float   "vit_d_mcg"
+    t.float   "vit_d_iu"
+    t.float   "vit_k"
+    t.float   "fa_sat"
+    t.float   "fa_mono"
+    t.float   "fa_poly"
+    t.float   "cholesterol"
+    t.float   "weight_1_gms"
+    t.string  "weight_1_desc"
+    t.float   "weight_2_gms"
+    t.string  "weight_2_desc"
+    t.float   "refuse_pct"
+    t.integer "umd",            :default => 0
+    t.integer "user_id"
+  end
+
+  create_table "foods_back", :force => true do |t|
     t.integer "ndb",                                                      :null => false
     t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
     t.string  "longdesc",    :limit => 200,                               :null => false
@@ -164,6 +221,17 @@ ActiveRecord::Schema.define(:version => 20120610192753) do
     t.decimal "cho_factor",                 :precision => 4, :scale => 2
   end
 
+  create_table "footnotes", :force => true do |t|
+    t.string "ndb_no",      :limit => 5,                         :null => false
+    t.string "footnt_no",   :limit => 4,                         :null => false
+    t.string "footnt_typ",  :limit => 1,                         :null => false
+    t.string "nutr_no",     :limit => 3
+    t.string "footnt_txt",  :limit => 200,                       :null => false
+    t.string "usda_status", :limit => 0,   :default => "active"
+  end
+
+  add_index "footnotes", ["ndb_no"], :name => "ndb_no"
+
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
@@ -173,6 +241,18 @@ ActiveRecord::Schema.define(:version => 20120610192753) do
   end
 
   add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
+
+  create_table "ingredients", :force => true do |t|
+    t.string   "what_food"
+    t.integer  "servings"
+    t.integer  "food_id"
+    t.integer  "serving_size"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "meal_id"
+  end
+
+  add_index "ingredients", ["food_id"], :name => "index_ingredients_on_food_id"
 
   create_table "mcategories", :force => true do |t|
     t.string   "name"
@@ -191,6 +271,9 @@ ActiveRecord::Schema.define(:version => 20120610192753) do
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "food_id"
+    t.boolean  "favorite"
+    t.string   "fave_name"
   end
 
   create_table "merit_actions", :force => true do |t|

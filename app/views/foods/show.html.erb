@@ -1,58 +1,92 @@
-<%- model_class = @food.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<div id="form_top_right">
+	
+	
+</div>
 
-<dl class="dl-horizontal">
+<% food = @food %>
+<h1><%= food.name %></h1>
+<div class="span3 well">
 
+<div>Nutrition Facts</div>
+<div>Calories <%= h('%.0f' % (food.calories)) %></div>
+		
+<div>Calories from Fat <%= h('%.0f' % (food.lipid_total*9))  %></div>					 		
+<div>		
+ <% if food.umd == 0%>            
+  Serving size: <%= h(food.weight_1_desc.blank? ? "100 grams" : "#{food.weight_1_gms} grams") %>
+ <% elsif food.umd == 1 %>
+   Serving size: <%= h(food.weight_1_desc.blank? ? "100 grams" : "#{food.weight_1_desc}") %>
+ <% elsif food.umd == 2 %>
+ 	Serving size: <%= h(food.weight_1_desc.blank? ? "each" : "#{food.weight_1_desc}") %> 
+ <% end %>
+</div>	
 
-  <dt><strong><%= model_class.human_attribute_name(:longdesc) %>:</strong></dt>
-  <dd><%= @food.longdesc %></dd>
-  
-</dl>
-  
-<div class="tabbable"> 
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">Nutrition Facts</a></li>
-    <li><a href="#tab2" data-toggle="tab">Full Details</a></li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-  <table class="table horizontal">
-  <tr>
+			
+
+			
+ <div class="pull-right"><%= h('%.0f' % (100*food.lipid_total/@dvs[:total_fat])) %>%</div>    
+      
+       <div class="nut-label">Total Fat <%= h('%.0f' % (food.lipid_total))%>g</div>            
+			
+ <div class="pull-right"><%= h('%.0f' % (100*food.carbohydrates/@dvs[:tot_carbs])) %>%</div>   
+				
+	<div class="nut-label">Total Carbs <%= h('%.0f' % (food.carbohydrates)) %>g</div>            
+				
+  <div class="pull-right"><%= h('%.0f' % (100*food.sugar_total/@dvs[:sugar_total])) %>%</div>   	           
+					 
+        <div class="nut-label">Sugars <%= h('%.0f' % (food.sugar_total)) %>g</div>            
+      
+  <div class="pull-right"><%= h('%.0f' % (100*food.fa_sat/@dvs[:fa_sat])) %>%</div>  	
+    
+  <div class="nut-label">Sat. Fats <%= h('%.0f' % (food.fa_sat)) %>g</div>                
  
-    <th>Nutrition</th>
-    <th>Value</th>
+  <div class="pull-right"><%= h('%.0f' % (100*food.fiber/@dvs[:fiber])) %>%</div>            			
 
-  </tr>
-  <% @food.nutrients.each do |nutrient| %>
-  <tr>
-    <td><%=  nutrient.nutr_def.nutrdesc%></td>
-   
-    <td><%= nutrient.nutr_val %> <%= nutrient.nutr_def.units%></td>
-  </tr>
-  <%end%>    
-  </table>
-  </div>
-    <div class="tab-pane" id="tab2">
-    <table class= "table horizontal">
-   
-   
-
-    </table> 
-    </div>
-  </div>
-</div>
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              foods_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_food_path(@food), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              food_path(@food),
-              :method => 'delete',
-              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-             :class => 'btn btn-danger' %>
-</div>
-
-
+  <div class="nut-label">Dietary Fiber <%= h('%.0f' % (food.fiber)) %>g</div>            
   
+  <div class="pull-right"><%= h('%.0f' % (100*food.cholesterol/@dvs[:cholesterol])) %>%</div>      
+     
+  <div class="nut-label">Cholesterol <%= h('%.0f' % (food.cholesterol)) %>mg</div>            
+   
+  <div class="pull-right"><%= h('%.0f' % (100*food.sodium/@dvs[:sodium])) %>%</div>          
+                  
+        
+ <div class="nut-label">Sodium <%= h('%.0f' % (food.sodium)) %>mg</div>          
   
+  <div class="pull-right"><%= h('%.0f' % (100*food.protein/@dvs[:protein])) %>%</div>             
+               
+  <div class="nut-label">Protein <%= h('%.0f' % (food.protein)) %>g</div>            
+    
+           
+      
+				 <% if food.calcium != 0.0 %>
+  <div class="pull-right"> <%= h('%.0f' % (food.calcium.to_f*100/@dvs[:calcium])) %>%</div>				
+	 <div class="nut-label">Calcium</div>      
+       
+						
+				<% else %>
+				
+				<% end %>
+				 <% if !food.iron.nil? %>
+					<div class="pull-right"><%= h('%.0f' % (food.iron.to_f*100/@dvs[:iron])) %>%</div>
+					       <div class="nut-label">Iron</div>      
+					
+							
+				
+				<% else %>
+				
+				<% end %>					
+		
+				 <% if !food.vit_c.nil? %>
+					<div class="pull-right"> <%= h('%.0f' % (food.vit_c.to_f*100/@dvs[:vit_c])) %>%</div>
+					    <div class="nut-label">Vitamin C</div>      
+					
+							
+					
+				<% else %>
+		
+				<% end %>
+	</div>
+<div class="span9">
+	<p>The nutrient composition of food may vary due to: genetic, environmental and processing variables; changes in the manufacturer's product formulation; and cooking and preparation techniques.</p>    
+	</div>

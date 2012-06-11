@@ -1,8 +1,8 @@
 <%= form_for @food, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
-    <%= f.label :ndb, :class => 'control-label' %>
+    <%= f.label :ndb_no, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :ndb, :class => 'number_field' %>
+      <%= f.number_field :ndb_no, :class => 'number_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -12,15 +12,15 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :longdesc, :class => 'control-label' %>
+    <%= f.label :long_desc, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :longdesc, :class => 'text_field' %>
+      <%= f.text_field :long_desc, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :shortdesc, :class => 'control-label' %>
+    <%= f.label :shrt_desc, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :shortdesc, :class => 'text_field' %>
+      <%= f.text_field :shrt_desc, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -54,9 +54,9 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :SciName, :class => 'control-label' %>
+    <%= f.label :sciname, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :SciName, :class => 'text_field' %>
+      <%= f.text_field :sciname, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">

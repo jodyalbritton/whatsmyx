@@ -16,7 +16,7 @@ end
  
   resources :notes
   resources :meals do
-  get :autocomplete_food_longdesc, :on => :collection
+  get :autocomplete_food_name, :on => :collection
   end
 
   resources :mcategories
