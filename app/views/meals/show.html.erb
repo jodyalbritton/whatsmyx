@@ -1,6 +1,10 @@
 <%- model_class = @meal.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
+
+
+		    	
+		    	
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @meal.name %></dd>

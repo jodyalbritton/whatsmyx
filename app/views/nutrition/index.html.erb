@@ -7,3 +7,33 @@
   </p>  
   </form>
 </div>
+		<h2 id="month">
+		    	<%= link_to "<", :date => (@date -1).strftime("%Y-%m-%d") %>
+		    	<%=h @date.strftime("%Y %m %d") %>
+		    	<%= link_to ">", :date => (@date +1).strftime("%Y-%m-%d") %>
+		  	</h2>
+  <table>
+  <tbody>
+
+   <% @meals.each do |meal| %>
+
+      <tr>
+      	<td></td>
+        <td><%= link_to meal.name, meal_path(meal) %></td>
+       
+
+
+        <td><%= meal.quanity %></td>
+        <td><%= meal.units %></td>
+ 
+        
+        
+      </tr>
+ <% end %>
+  </tbody>
+    
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_meal_path,
+            :class => 'btn btn-primary' %>

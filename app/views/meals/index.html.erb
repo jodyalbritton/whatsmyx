@@ -1,9 +1,15 @@
 <%- model_class = Meal.new.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 
-<table class="table table-striped">
- <% @meals_by_mcategory.each do |mcategory, meals| %>
-  <thead>
+		    	
+  <% @meals_by_date.each do |date, meals| %>
+ 
+ <h1> <%= date %> </h1>
+
+   <table class="table table-striped">
+   <% meals.group_by { |m| m.mcategory }.sort.each do |mcategory, meals| %>
+
+   <thead>
 
 
   	
@@ -50,7 +56,7 @@
   </tbody>
     
 </table>
-  
+ <% end %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_meal_path,
             :class => 'btn btn-primary' %>

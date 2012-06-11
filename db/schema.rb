@@ -11,7 +11,52 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120609232519) do
+ActiveRecord::Schema.define(:version => 20120610192753) do
+
+  create_table "DATA_SRC", :id => false, :force => true do |t|
+    t.string "DataSrc_ID",  :limit => 6,   :null => false
+    t.string "Authors"
+    t.string "Title",                      :null => false
+    t.string "Year",        :limit => 4
+    t.string "Journal",     :limit => 135
+    t.string "Vol_City",    :limit => 16
+    t.string "Issue_State", :limit => 5
+    t.string "Start_Page",  :limit => 5
+    t.string "End_Page",    :limit => 5
+  end
+
+  create_table "DERIV_CD", :id => false, :force => true do |t|
+    t.string "Deriv_Cd",   :limit => 4,   :null => false
+    t.string "Deriv_Desc", :limit => 120
+  end
+
+  create_table "FD_GROUP", :id => false, :force => true do |t|
+    t.string "FdGrp_Cd",   :limit => 4,  :null => false
+    t.string "FdGrp_Desc", :limit => 60, :null => false
+  end
+
+  create_table "FOOTNOTE", :id => false, :force => true do |t|
+    t.string "NDB_No",     :limit => 5,   :null => false
+    t.string "Footnt_No",  :limit => 4,   :null => false
+    t.string "Footnt_Typ", :limit => 1,   :null => false
+    t.string "Nutr_No",    :limit => 3
+    t.string "Footnt_Txt", :limit => 200, :null => false
+  end
+
+  create_table "LANGDESC", :id => false, :force => true do |t|
+    t.string "Factor_Code", :limit => 5,   :null => false
+    t.string "Description", :limit => 140, :null => false
+  end
+
+  create_table "LANGUAL", :id => false, :force => true do |t|
+    t.string "NDB_No",      :limit => 5, :null => false
+    t.string "Factor_Code", :limit => 5, :null => false
+  end
+
+  create_table "SRC_CD", :id => false, :force => true do |t|
+    t.string "Src_Cd",     :limit => 2,  :null => false
+    t.string "SrcCd_Desc", :limit => 60, :null => false
+  end
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -82,6 +127,13 @@ ActiveRecord::Schema.define(:version => 20120609232519) do
     t.datetime "updated_at",         :null => false
   end
 
+  create_table "dailylogs", :force => true do |t|
+    t.date     "date"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",                      :null => false
     t.string   "followable_type",                    :null => false
@@ -94,6 +146,23 @@ ActiveRecord::Schema.define(:version => 20120609232519) do
 
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
+
+  create_table "foods", :force => true do |t|
+    t.integer "ndb",                                                      :null => false
+    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
+    t.string  "longdesc",    :limit => 200,                               :null => false
+    t.string  "shortdesc",   :limit => 60,                                :null => false
+    t.string  "comname",     :limit => 100
+    t.string  "manufacname", :limit => 65
+    t.string  "survey",      :limit => 1
+    t.string  "ref_desc",    :limit => 135
+    t.integer "refuse"
+    t.string  "SciName",     :limit => 65
+    t.decimal "n_factor",                   :precision => 4, :scale => 2
+    t.decimal "pro_factor",                 :precision => 4, :scale => 2
+    t.decimal "fat_factor",                 :precision => 4, :scale => 2
+    t.decimal "cho_factor",                 :precision => 4, :scale => 2
+  end
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
@@ -153,6 +222,35 @@ ActiveRecord::Schema.define(:version => 20120609232519) do
     t.date     "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "nutr_defs", :force => true do |t|
+    t.string  "nutr_no",  :limit => 3,  :null => false
+    t.string  "units",    :limit => 7,  :null => false
+    t.string  "tagname",  :limit => 20
+    t.string  "nutrdesc", :limit => 60, :null => false
+    t.string  "num_dec",  :limit => 1,  :null => false
+    t.integer "sr_order",               :null => false
+  end
+
+  create_table "nutrients", :force => true do |t|
+    t.integer "ndb",                                                        :null => false
+    t.string  "nutr_no",       :limit => 3,                                 :null => false
+    t.decimal "nutr_val",                    :precision => 10, :scale => 3, :null => false
+    t.decimal "num_data_pts",                :precision => 5,  :scale => 0, :null => false
+    t.decimal "Std_Error",                   :precision => 8,  :scale => 3
+    t.string  "Src_Cd",        :limit => 2,                                 :null => false
+    t.string  "Deriv_Cd",      :limit => 4
+    t.string  "Ref_NDB_No",    :limit => 5
+    t.string  "Add_Nutr_Mark", :limit => 1
+    t.integer "Num_Studies"
+    t.decimal "Min",                         :precision => 10, :scale => 3
+    t.decimal "Max",                         :precision => 10, :scale => 3
+    t.integer "DF"
+    t.decimal "Low_EB",                      :precision => 10, :scale => 3
+    t.decimal "Up_EB",                       :precision => 10, :scale => 3
+    t.string  "Stat_cmt",      :limit => 10
+    t.string  "CC",            :limit => 1
   end
 
   create_table "posts", :force => true do |t|
@@ -288,5 +386,15 @@ ActiveRecord::Schema.define(:version => 20120609232519) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "weight", :force => true do |t|
+    t.integer "ndb",                                                      :null => false
+    t.string  "seq",          :limit => 2,                                :null => false
+    t.decimal "amount",                     :precision => 5, :scale => 3, :null => false
+    t.string  "msre_desc",    :limit => 80,                               :null => false
+    t.decimal "gm_wgt",                     :precision => 7, :scale => 1, :null => false
+    t.integer "num_data_pts"
+    t.decimal "std_dev",                    :precision => 7, :scale => 3
+  end
 
 end

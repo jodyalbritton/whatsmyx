@@ -6,8 +6,9 @@ class MealsController < ApplicationController
   
   def index
     @user = User.find(current_user)
-    @meals_by_mcategory = @user.meals.find(:all).group_by { |m| m.mcategory}
+    @meals_by_date = @user.meals.find(:all, :order => 'date DESC, id').group_by { |d| d.date}
     @meals = @user.meals.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @meals }

@@ -4,7 +4,6 @@ class FoodsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @foods = Food.search(params[:search]).page(params[:page]).per(5)
     
     respond_to do |format|

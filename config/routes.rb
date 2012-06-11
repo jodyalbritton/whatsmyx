@@ -3,6 +3,8 @@ Whatsmyx::Application.routes.draw do
 
   
   
+  resources :dailylogs
+
   opinio_model
   
   resources :community
@@ -54,6 +56,8 @@ resources :services, :only => [:index, :create, :destroy]
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  
+
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
