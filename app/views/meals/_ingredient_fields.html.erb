@@ -1,0 +1,6 @@
+                        <%= f.link_to_remove "Remove this ingredient" %>
+	                <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_meals_path, :id_element => "ingredient_food_id" %>
+			<%= f.input :food_id %>
+	                <%= f.input :servings, :size => 5 %>
+		        <%= f.input :serving_size, :as => "hidden" %>
+

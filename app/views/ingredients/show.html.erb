@@ -1,11 +1,11 @@
-<%- model_class = Meal.new.class -%>
-<div id="meal_container" class="container">
+<%- model_class = Ingredient.new.class -%>
+<div id="ingredient_container" class="container">
 	<div class="row">
 		
-				<h1 id="show_date"><%= @meal.date.strftime("%A, %B %e") %></h1>
+				<h1 id="show_date"><%= @ingredient.date.strftime("%A, %B %e") %></h1>
 				     <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                                      edit_meal_path, :class => 'btn btn-default' %>
-				<%= link_to 'Delete', @meal, :method => :delete, :class => "btn btn-danger" %>
+                                      edit_ingredient_path, :class => 'btn btn-default' %>
+				<%= link_to 'Delete', @ingredient, :method => :delete, :class => "btn btn-danger" %>
 		
 				<div id="todays_chart" class="offset-by-five"></div>
 			
@@ -15,17 +15,17 @@
 		var chart;
 		var dv_labels = new Array();
 		dv_labels['Calories'] = '<%= @dvs[:calories] %> calorie diet.';
-		dv_labels['Sodium'] = '<%= @dvs[:sodium] %>mg DV.';
+		dv_labels['Protein'] = '<%= @dvs[:protein] %>g DV.';
 		dv_labels['Fats'] = '<%= @dvs[:total_fat] %>g DV.';
-		dv_labels['Sugars'] = '<%= @dvs[:sugar_total] %>g DV.';
-		dv_labels['Fruits and Veggies'] = '<%= @dvs[:f_and_vs] %> fruit and vegetable diet.';
+		dv_labels['Carbohydrates'] = '<%= @dvs[:tot_carbs] %>g DV.';
+		
 	
 		var dv_data = new Array();
 		dv_data['Calories'] = <%= @dvs[:calories] %>;
-		dv_data['Sodium'] = <%= @dvs[:sodium] %>;
-		dv_data['Fats'] = <%= @dvs[:total_fat] %>;
-		dv_data['Sugars'] = <%= @dvs[:sugar_total] %>;
-		dv_data['Fruits and Veggies'] = <%= @dvs[:f_and_vs] %>;
+		dv_data['Protein'] = <%= @dvs[:protein] %>;
+		dv_data['Fat'] = <%= @dvs[:total_fat] %>;
+		dv_data['Carbohydrates'] = <%= @dvs[:tot_carbs]%>;
+		
 
 	
 		$(document).ready(function() {
@@ -47,10 +47,10 @@
 		      xAxis: {
 		         categories: [
 		            'Calories',
-								'Sodium',
-								'Fats',
-								'Sugars',
-								'Fruits and Veggies'
+			    'Protein',
+			    'Fats',
+			    'Carbohydrates',
+								
 		         ]
 		      },
 		      yAxis: {
@@ -144,11 +144,11 @@
 
 	
 	
-			<%= content_tag_for(:div, @this_meal) do %>
+			<%= content_tag_for(:div, @this_ingredient) do %>
 
-				<% for ingredient in @this_meal.ingredients do %>
+				
 
-					<% food = Food.find(ingredient.food_id) %>
+					<% food = Food.find(@ingredient.food_id) %>
 <div class="span3 well">
 
 <div>Nutrition Facts</div>
@@ -234,8 +234,7 @@
 						
 		
 			<% end %>
-			<% end %>
-	</div>
+		
 	<br/>
 	
 </div>

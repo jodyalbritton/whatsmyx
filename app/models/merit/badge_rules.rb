@@ -34,8 +34,12 @@ module Merit
       # grant_on 'comments#vote', :badge => 'relevant-commenter', :to => :user do |comment|
       #   comment.votes.count == 5
       # end
-      grant_on 'registrations#update', :badge => 'autobiographer', :temporary => true, :model_name => 'user' do |user|
-      user.username.present?
+      #grant_on 'registrations#update', :badge => 'autobiographer', :temporary => true, :model_name => 'user' do |user|
+      #user.username.present?
+      #end
+      
+      grant_on ['registrations#create', 'registrations#update'], :badge => 'autobiographer', :model_name => 'User' do |user|
+            user.username.length > 2
       end
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
       # grant_on 'registrations#update', :badge => 'autobiographer', :temporary => true, :model_name => 'User' do |user|

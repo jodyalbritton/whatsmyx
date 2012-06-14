@@ -1,0 +1,9 @@
+<%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :date %>
+  <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_meals_path, :input_html => {:id_element => "#ingredient_food_id"} %>
+  <%= f.input :servings %>
+  <%= f.input :food_id %>
+  <%= f.input :serving_size %>
+  <%= f.association :mcategory %>
+  <%= f.button :wrapped, :cancel => ingredients_path %>
+<% end %>

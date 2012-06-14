@@ -1,26 +1,30 @@
-<%= simple_nested_form_for @meal do |f| %>  
+<%= semantic_nested_form_for @meal, :validate => true  do |f| %>  
+   <%= f.inputs do %>
   
-  <%= f.label :date, "Date eaten" %><br /> 
-  <%= f.input:date, :value => @meal.date ||= params[:date] ||= Date.today, :size => 10 %>
-        <%= f.fields_for :ingredients do |ff|%>
-	           <div class="close-button"><%= ff.link_to_remove "×" %></div>
-	                <%= ff.label :what_food, "Food" %>
-			<%= ff.input :what_food, :url => autocomplete_food_name_meals_path, :as => :autocomplete, :input_html => {:id_element => '#food'}%>
-			<%= ff.hidden_field :food_id, :id =>"food_id",  :name =>"ingredients[food_id]"%>
-	                <%= ff.label :servings, "How many servings?" %>
-	        	<%= ff.input :servings, :size => 5 %>
-		        <!-- <%= ff.label :serving_size, "Serving size (grams)" %> -->
-			<%= ff.hidden_field :serving_size, :size => 6 %>
-				<span>One serving: </span><label id="serving_desc"></label><br/>
+  
+
+  <%= f.input :date, :value => @meal.date ||= params[:date] ||= Date.today, :size => 10 %>
+ 
+
+                     
+                      
+                      <%= f.fields_for :ingredients %>
+                      
+               
+                      
+			
+		        
 			       
 			
-	<% end %>
-	<p><%= f.link_to_add "Add a Ingredient", :ingredients %></p>	
-	<%= f.label :favorite, "Add this meal to your favorites?" %>
-	<%= f.check_box :favorite, :default => false %>
-	<%= f.label :fave_name, "Give this meal a name!" %>
+	
+	
+        <%= f.link_to_add "Add another ingredient", :ingredients %></p>
+	<%= f.input :favorite, :as => 'boolean', :default => false %>
+	
 	<%= f.input :fave_name %>
-        <p><%= f.submit "Submit Meal", :class => "btn btn-default" %></p>
+        <%= f.actions :submit, :cancel %>
+        <% end %>
+          
 				
 <% end %>
 

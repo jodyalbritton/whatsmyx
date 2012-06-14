@@ -1,3 +1,39 @@
+<% cals_string = "" %>
+<% salt_string = "" %>
+<% fats_string = "" %>
+<% sugs_string = "" %>
+<% cals = 0 %>
+<% salt = 0 %>
+<% fats = 0 %>
+<% sugs = 0 %>
+<% dates = "" %>
+<% date_name = "" %>
+
+	<% @ingredients_tot.each do |ingredient| %>
+		<% food = Food.find(ingredient.food_id) %>
+		<% if ingredient.serving_size.nil? %>
+			<% multiplication_factor = ingredient.servings%>
+		<% else %>
+			<% multiplication_factor = ingredient.servings*ingredient.serving_size/100%>
+		<% end %>
+		<% cals = cals + (food.calories*multiplication_factor) %>
+		<% salt = salt + (food.sodium*multiplication_factor) %>
+		<% fats = fats + (food.lipid_total*multiplication_factor) %>
+		<% sugs = sugs + (food.sugar_total*multiplication_factor) %>
+	<% end %>
+	
+		
+		<% cals_string = cals_string + "#{cals} " %>
+		<% salt_string = salt_string + "#{salt} " %>
+		<% fats_string = fats_string + "#{fats} " %>
+		<% sugs_string = sugs_string + "#{sugs} " %>
+		<% cals = 0 %>
+		<% salt = 0 %>
+		<% fats = 0 %>
+		<% sugs = 0 %>
+
+   
+
 <div>
 <form action="<%= foods_path %>" method ="get" id="foods_search"  >
 
@@ -7,29 +43,101 @@
   </p>  
   </form>
 </div>
-		<h2 id="month">
-		    	<%= link_to "<", :date => (@date -1).strftime("%Y-%m-%d") %>
-		    	<%=h @date.strftime("%Y %m %d") %>
-		    	<%= link_to ">", :date => (@date +1).strftime("%Y-%m-%d") %>
-		  	</h2>
-  <table>
+	<div id="date-navigation">
+	  <div class="row">
+	     <div class="span3">
+	     <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	     </div>
+	      <div class="span3">
+	     
+	      <%=h @date.strftime("%A %B %d %Y") %>
+
+	     </div>
+	      <div class="span3">
+	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	     </div>
+	                
+		    	
+		    	
+        </div>
+	</div>	 
+
+  <div>
+  <table class="table tabel-horizontal">
   <tbody>
 
-   <% @meals.each do |meal| %>
-
-      <tr>
+   <% @ingredients.each do |mcategory, ingredients| %>
      
-        <td><%= link_to meal.name, meal_path(meal) %></td>
 
 
-        
-        
-      </tr>
- <% end %>
+   <tr>
+   
+   <td><h2><%= link_to mcategory.name %><h2></td>
+     <% for ingredient in ingredients %>
+   </tr>
+   <tr>
+     
+      <tr>
+      <td>
+             <%= ingredient.what_food %>
+
+       <td>      
+       
+      <tr>
+   <% end %>
+       
+   </tr>
+   <tr>
+   <td>
+  
+   </td>
+   </tr>
+    <% end %>
+
   </tbody>
-    
+
+</table>
+<table>
+<tbody>
+   <tr>
+     <td>
+       Calories
+     </td>
+ 
+     <td>
+       Protein
+     </td>
+  
+     <td>
+       Fat
+     </td>
+  </tr>
+   <tr>
+     <td>
+       <%= cals_string %>
+     </td>
+  
+     <td>
+       Calories
+     </td>
+ 
+     <td>
+       Calories
+     </td>
+  </tr>
+</tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_meal_path,
-            :class => 'btn btn-primary' %>
+</div>
+<div>
+
+<div  id="myModalNew"  class="modal hide fade">
+ 
+      <%= render 'ingredients/new_ingredient' %>
+   
+</div>
+</div>
+ <a data-toggle="modal" href="#myModalNew" class="btn btn-primary">Add Food</a>
+
+            
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120611121902) do
+ActiveRecord::Schema.define(:version => 20120614002341) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -246,10 +246,13 @@ ActiveRecord::Schema.define(:version => 20120611121902) do
     t.string   "what_food"
     t.integer  "servings"
     t.integer  "food_id"
-    t.integer  "serving_size"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.decimal  "serving_size", :precision => 11, :scale => 0
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.integer  "meal_id"
+    t.integer  "user_id"
+    t.date     "date"
+    t.integer  "mcategory_id"
   end
 
   add_index "ingredients", ["food_id"], :name => "index_ingredients_on_food_id"
@@ -267,11 +270,9 @@ ActiveRecord::Schema.define(:version => 20120611121902) do
     t.string   "units"
     t.date     "date"
     t.string   "mcategory_id"
-    t.string   "integer"
     t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "food_id"
     t.boolean  "favorite"
     t.string   "fave_name"
   end

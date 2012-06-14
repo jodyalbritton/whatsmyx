@@ -40,17 +40,18 @@ gem "highcharts-rails", "~> 2.2.1"
 gem "paperclip", "~> 3.0"
 gem "friendly_id", "~> 4.0.1"
 gem 'simple_form'
-gem 'rails3-jquery-autocomplete'
+gem 'rails3-jquery-autocomplete', :git => 'https://github.com/crowdint/rails3-jquery-autocomplete.git'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-openid'
 gem 'merit', :git => 'git://github.com/tute/merit.git'
 gem "opinio"
-gem 'client_side_validations', '3.2.0.beta.3'
+gem 'client_side_validations', :git => 'git://github.com/bcardarella/client_side_validations.git'
 gem 'ancestry'
 gem 'acts_as_follower'
 gem 'whenever', :require => false
 gem "nested_form"
+gem 'formtastic'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

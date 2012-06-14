@@ -21,7 +21,7 @@ end
 
   resources :mcategories
   resources :categories
-
+  resources :ingredients
   resources :stats
   resources :streams
   resources :goals
@@ -37,7 +37,7 @@ end
 
   match "users/auth/:service/callback" => 'services#create'
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => 'registrations' }
   
   resources :users, :only => [:index]
 

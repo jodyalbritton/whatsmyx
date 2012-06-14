@@ -57,19 +57,21 @@ class MealsController < ApplicationController
   end
   
   def new
-    @meal = Meal.new
-    @foods = Food.all
-    
+   @user = User.find(current_user)
+   @meal = Meal.new
+   @foods = Food.all
     @meal.ingredients.build
+
   end
 
   def create
-    @meal = Meal.new(params[:meal])
+  
+   @meal = current_user.meals.build(params[:meal])
     if @meal.save
       redirect_to @meal, :success => "Successfully created meal."
     else
-      flash[:error] = "Oops, something didn't work! Remember, your food can't be blank, and you can't have more than one meal on any day. See the #{ActionController::Base.helpers.link_to "Help page", help_path} for more details".html_safe
-      redirect_to user_path(current_user)#, :success => "Food can't be blank! Make sure you select a food from the list. See the #{ActionController::Base.helpers.link_to "Help page", help_path} for more details".html_safe
+      flash[:error] = "Oops, something didn't work! Remember, your food can't be blank.".html_safe
+      redirect_to new_meal_path(current_user)#, :success => "Food can't be blank! Make sure you select a food from the list. See the #{ActionController::Base.helpers.link_to "Help page", help_path} for more details".html_safe
     end
   end
 

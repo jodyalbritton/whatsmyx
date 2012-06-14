@@ -1,6 +1,13 @@
 class Ingredient < ActiveRecord::Base
   
-  attr_accessible :serving_size, :servings, :what_food, :food_id
-  belongs_to :meal
+  attr_accessible :meal, :what_food, :food_id, :servings, :serving_size, :user_id, :date, :mcategory_id
+  
+  #validations
+  
+    
+  #relations
+  belongs_to :user
+  belongs_to :mcategory
+
  
 end
