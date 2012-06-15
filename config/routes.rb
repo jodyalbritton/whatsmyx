@@ -23,7 +23,7 @@ end
   resources :categories
   resources :ingredients
   resources :stats
-  resources :streams
+  resources :activities
   resources :goals
 
   resources :meals 

@@ -4,10 +4,11 @@ class HomeController < ApplicationController
   def load
 
     @posts = Post.all
-   
+    @activities = Activity.all
   end
    
     def index
+     
      @stat = current_user.stats.build 
     
      @note = current_user.notes.build

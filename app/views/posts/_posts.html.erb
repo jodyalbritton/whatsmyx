@@ -1,14 +1,14 @@
 
  
-  <% for post in @posts %>
+<% for post in @posts %>
 <div class="row">
       <div id="post-sidebar" class="span3">
 
           <div id="post-avatar" class="span1">
-             <%= image_tag @post.user.profile.avatar.url(:thumb) %>
+             <%= image_tag post.user.profile.avatar.url(:thumb) %>
           </div>
           <div>
-             <h3><%=post.user.username %></h3>
+             <h3><%= post.user.username %></h3>
              <%= time_ago_in_words(post.created_at) %> ago.
          </div>
   
@@ -36,6 +36,7 @@
          </div>
     </div>
 </div>
+
 <% end %>
 
 

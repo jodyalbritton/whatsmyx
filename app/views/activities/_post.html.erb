@@ -1,0 +1,38 @@
+<div class="row">
+      <div id="post-sidebar" class="span3">
+
+          <div id="post-avatar" class="span1">
+             <%= image_tag activity.user.profile.avatar.url(:thumb) %>
+          </div>
+          <div>
+             <h3><%= activity.user.username %></h3>
+             <%= time_ago_in_words(activity.created_at) %> ago.
+         </div>
+  
+     </div>
+    <div id="post-body" class="span5">
+             <div class="post-content">
+              <%= activity.target.text %>
+             </div>
+     
+              <div id="post-footer"> 
+             
+              </div>
+
+
+
+
+           <div id="comments_list">
+          <ul id="comments_<%= activity.target.id %>">
+          <%= render_comments activity.target %>
+          </ul>
+          </div>
+
+         <div id="comment-form">
+          <%= render_comments_form activity.target %>
+         </div>
+    </div>
+</div>
+
+
+

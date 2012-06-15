@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(params[:post])
     if @post.save
       flash[:notice] = "Successfully created post."
-       @posts = Post.order("updated_at DESC")
+       @activities = Activity.order("updated_at DESC")
     end
   end
 

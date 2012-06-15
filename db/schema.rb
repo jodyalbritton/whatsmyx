@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614002341) do
+ActiveRecord::Schema.define(:version => 20120614223024) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -70,6 +70,10 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
     t.string   "target_type",   :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "actor_id"
+    t.integer  "object_id"
+    t.integer  "parent_id"
+    t.string   "verb"
   end
 
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
@@ -87,6 +91,14 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "audiences", :force => true do |t|
+    t.integer  "activity_id"
+    t.integer  "object_id"
+    t.string   "scope"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "badges_sashes", :id => false, :force => true do |t|
@@ -117,6 +129,14 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "circles", :force => true do |t|
+    t.integer  "author_id"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "comments", :force => true do |t|
     t.integer  "owner_id",           :null => false
     t.integer  "commentable_id",     :null => false
@@ -132,6 +152,14 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "embedded_objects", :force => true do |t|
+    t.integer  "embeddable_id"
+    t.string   "embeddable_type"
+    t.integer  "like_count",      :default => 0
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "follows", :force => true do |t|
@@ -242,6 +270,14 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
 
   add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
 
+  create_table "groups", :force => true do |t|
+    t.integer  "author_id"
+    t.string   "name"
+    t.string   "privacy_level"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "ingredients", :force => true do |t|
     t.string   "what_food"
     t.integer  "servings"
@@ -275,6 +311,14 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
     t.datetime "updated_at",   :null => false
     t.boolean  "favorite"
     t.string   "fave_name"
+  end
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "group_id"
+    t.integer  "member_id"
+    t.boolean  "active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "merit_actions", :force => true do |t|
@@ -425,6 +469,13 @@ ActiveRecord::Schema.define(:version => 20120614002341) do
     t.integer  "user_id"
     t.integer  "category_id"
     t.date     "date"
+  end
+
+  create_table "ties", :force => true do |t|
+    t.integer  "contact_id"
+    t.integer  "circle_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

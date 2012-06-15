@@ -1,10 +1,10 @@
 <% reply = defined?(reply) ? reply : false %>
-<div class="row">
+<div class="row" id="comment_<%= comment.id %>">
 <div id="comment-sidebar" class="span1">
 <%= image_tag comment.owner.profile.avatar.url(:thumb) %>
 </div>
 <div id="comment-content class="span4">
-   <li id="comment_<%= comment.id %>">
+   <li>
       <%= comment.owner.username %> Said:
       <%= simple_format(comment.body) %>
          <div class="span3">
