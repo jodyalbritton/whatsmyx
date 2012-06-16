@@ -1,6 +1,10 @@
+<a class="show_hide" href="#" rel="#slidingDiv">View</a></pre>
+<div id="slidingDiv" class="toggleDiv" style="display: none;">
+
+
 <div id="new_comment">
   <% if send(Opinio.current_user_method) %>
-    <h3><%= t('opinio.messages.add_comment') %></h3>
+    <%= t('opinio.messages.add_comment') %> 
     <%= form_for Comment.new, :remote => true do |f| %>
       <p>
         <%= f.text_area :body, :class=>"input-xlarge span5"%>
@@ -15,3 +19,10 @@
     </p>
   <% end %>
 </div>
+
+</div>
+
+
+
+
+

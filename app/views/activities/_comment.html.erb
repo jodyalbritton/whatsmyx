@@ -1,1 +1,36 @@
-Jody commented <%= time_ago_in_words(activity.created_at) %> ago.
+<div class="row">
+      <div id="post-sidebar" class="span3">
+
+          <div id="post-avatar" class="span1">
+             <%= image_tag activity.user.profile.avatar.url(:thumb) %>
+          </div>
+          <div>
+             <h3><%= activity.user.username %></h3>
+             <%= time_ago_in_words(activity.created_at) %> ago.
+         </div>
+  
+     </div>
+    <div id="post-body" class="span5">
+             <div class="post-content">
+             Commented on a post 
+             </div>
+     
+              <div id="post-footer"> 
+             
+              </div>
+
+
+
+
+           <div id="comments_list">
+          <ul id="comments_<%= activity.target.id %>">
+      
+          </ul>
+          </div>
+
+         <div id="comment-form">
+       
+         </div>
+    </div>
+</div>
+
