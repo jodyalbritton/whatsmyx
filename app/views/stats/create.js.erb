@@ -1,0 +1,30 @@
+<% if @stat.errors.any? -%>
+  /*Hide the flash notice div*/
+  $("#flash_notice").hide(300);
+
+  /*Update the html of the div stat_errors with the new one*/
+  $("#stat_errors").html("<%= escape_javascript(error_messages_for(@stat))%>");
+
+  /*Show the div stat_errors*/
+  $("#stat_errors").show(300);
+<% else -%>
+  /*Hide the div stat_errors*/
+  $("#stat_errors").hide(300);
+
+  /*Update the html of the div flash_notice with the new one*/
+  $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
+
+  /*Show the flash_notice div*/
+  $("#flash_notice").show(300);
+
+  /*Clear the entire form*/
+  $(":input:not(input[type=submit])").val("");
+
+  /*Replace the html of the div stat_lists with the updated new one*/
+  $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
+  
+  /*Replace the html of the div stat_lists with the updated new one*/
+  $("#stats_list").html("<%= escape_javascript( render :partial => "stats" ) %>");
+  
+  $('#myModalStat').modal('hide')
+<% end -%>

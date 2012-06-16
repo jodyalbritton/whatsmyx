@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_filter :load
 
   def load
-    @posts = Post.all
+    @posts = Post.order("updated_at DESC")
     @post = Post.new
   end
 
@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     if @post.save
       flash[:notice] = "Successfully created post."
        @activities = Activity.order("updated_at DESC")
+       @posts = Post.order("updated_at DESC")
     end
   end
 

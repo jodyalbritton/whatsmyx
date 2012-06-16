@@ -1,6 +1,6 @@
 <% unless activity.target.nil? %>
-<div class="row">
-      <div id="post-sidebar" class="span3">
+<div class="row activity-item">
+      <div id="post-sidebar" class="span2">
 
           <div id="post-avatar" class="span1">
              <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
@@ -11,25 +11,27 @@
          </div>
   
      </div>
-    <div id="post-body" class="span5">
+    <div id="post-body" class="span6">
              <div class="post-content">
               <%= activity.target.text %>
              </div>
      
               <div id="post-footer"> 
-             
+               <div class="control">
+                  Like - Flag
+                </div>
               </div>
 
 
 
 
-           <div id="comments_list">
+          <div id="comments_list">
           <ul id="comments_<%= activity.target.id %>">
           <%= render_comments activity.target %>
           </ul>
           </div>
 
-         <div id="comment-form">
+         <div id="comment-form" class="span4">
           <%= render_comments_form activity.target %>
          </div>
     </div>

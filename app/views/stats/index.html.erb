@@ -8,9 +8,7 @@
 
 <div>
 <br>
-<div id="paginator">
-<%= paginate @stats, :remote => true %>
-</div>  
+  
 
 <table class="table table-striped">
   <thead>
@@ -18,23 +16,32 @@
       
     </tr>
   </thead>
-  <tbody id="stats" >
+  
+
+  <tbody id="stats_list">
   	
    
 
-	<%= render @stats %>
+	<%= render :partial=> @stats %>
 	        
   </tbody>
+
 </table>
 </div>
 <br>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_stat_path,
-            :class => 'btn btn-primary' %>
 
  
+ <div  id="myModalStat"  class="modal hide fade">
  
+      <%= render 'shared/stat_form' %>
+   
+</div>
+</div>
+ <a data-toggle="modal" href="#myModalStat" class="btn btn-primary">Add Stat</a>
+
+            
+</div>
  
  
  

@@ -65,11 +65,7 @@ margin-bottom: 2%;
 }
 
 
-#post-footer {
-margin: 3px 0 8px;
-border-bottom: 1px solid #E3E3E3;
 
-}
 
 #comments_list ul {
 list-style: none;
@@ -80,12 +76,28 @@ list-style: none;
         border-bottom: thin solid black;
 }
 /****************************************************************
+Activity Feed
+****************************************************************/
+
+.activity-item {
+        min-height: 200px;
+        border-bottom: 1px solid #E3E3E3;
+        border-left: 1px solid #E3E3E3;
+        border-right: 1px solid #E3E3E3;
+        padding: 10px;
+}
+
+
+
+
+
+/****************************************************************
 Post Style
 ****************************************************************/
 
 .post-delete {
         padding: 1px;
-        border: 1px solid #E3E3E3;
+       
      
 }
 .post-avatar {
@@ -93,6 +105,10 @@ Post Style
         height: 60px;
 }
 
+#post-footer {
+margin: 3px 0 8px;
+
+}
 
 
 
@@ -102,7 +118,7 @@ Comments Style
 
 .comment-delete {
         padding: 1px;
-        border: 1px solid #E3E3E3;
+        
      
 }
 .comment-avatar {
@@ -110,6 +126,9 @@ Comments Style
         height: 60px;
 }
 
+.comment-item {
+        min-height: 100px;
+}
 
 /****************************************************************
 Note Style

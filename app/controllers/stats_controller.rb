@@ -1,12 +1,22 @@
 class StatsController < ApplicationController
-   before_filter :authenticate_user!
+   before_filter :authenticate_user!, :load
 
   # GET /stats
   # GET /stats.json
+
+
+  def load
+    @user = User.find(current_user)
+    @stats = @user.stats.order("date DESC")
+    @stat = Stat.new
+  end
+  
+  
+  
   def index
      
    @user = User.find(current_user)
-   @stats = @user.stats.order(:date).page(params[:page]).per(5)
+   
    @stats_by_category = @user.stats.find(:all).group_by { |s| s.category}
    @stats_by_weight = @user.stats.where(:category_id => "1") 
    @stats_by_bs = @user.stats.where(:category_id => "3")
@@ -49,20 +59,14 @@ class StatsController < ApplicationController
     @stat = Stat.find(params[:id])
   end
 
-  # POST /stats
-  # POST /stats.json
-  def create
+  # stat /stats
+  # stat /stats.json
+ def create
     @stat = current_user.stats.build(params[:stat])
-
-    respond_to do |format|
-      if @stat.save
-        format.html { redirect_to root_path, notice: 'Stat was successfully created.' }
-        format.json { render json: @stat, status: :created, location: @stat }
-        format.js #added
-      else
-        format.html { render action: "new" }
-        format.json { render json: @stat.errors, status: :unprocessable_entity }
-      end
+    if @stat.save
+      flash[:notice] = "Successfully created stat."
+       @activities = Activity.order("updated_at DESC")
+       @stats = @user.stats.order("date DESC")
     end
   end
 

@@ -1,8 +1,9 @@
 <% unless activity.target.nil? %>
-<div class="row">
-      <div id="post-sidebar" class="span3">
+<div class="row activity-item">
+       <div id="post-sidebar" class="span2">
 
-          <div id="post-avatar" class="span1">
+
+          <div id="stat-avatar" class="span1">
               <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
           </div>
           <div class="stat-avatar">
@@ -11,27 +12,16 @@
          </div>
   
      </div>
-    <div id="post-body" class="span5">
-             <div class="post-content">
+    <div id="stat-body" class="span6">
+             <div class="stat-content">
              Tracked a stat of <%= activity.target.value %>
              </div>
      
-              <div id="post-footer"> 
-             
+              <div id="stat-footer"> 
+                <div class="control">
+                  Like - Flag
+                </div>
               </div>
-
-
-
-
-           <div id="comments_list">
-          <ul id="comments_<%= activity.target.id %>">
-      
-          </ul>
-          </div>
-
-         <div id="comment-form">
-       
-         </div>
     </div>
 </div>
 

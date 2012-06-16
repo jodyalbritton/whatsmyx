@@ -22,4 +22,7 @@
 
   /*Replace the html of the div post_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
+  
+  /*Replace the html of the div post_lists with the updated new one*/
+  $("#posts_list").html("<%= escape_javascript( render :partial => "posts" ) %>");
 <% end -%>

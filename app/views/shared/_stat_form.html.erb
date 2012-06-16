@@ -5,7 +5,7 @@
   	<h2>Track your...</h2>
 </div>
  <div class="modal-body">
- <%= simple_form_for @stat do |f| %>
+ <%= simple_form_for @stat, :remote => true do |f| %>
   <%= f.association :category %>
 
  

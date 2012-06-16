@@ -1,6 +1,6 @@
 <% unless activity.target.nil? %>
-<div class="row">
-      <div id="ingredient-sidebar" class="span3">
+<div class="row activity-item">
+       <div id="post-sidebar" class="span2">
 
           <div  class="span1 ingredient-avatar">
             <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
@@ -11,7 +11,7 @@
          </div>
   
      </div>
-    <div id="ingredient-body" class="span5">
+    <div id="ingredient-body" class="span6">
              <div class="ingredient-content">
              Tracked an ingredient of <%= link_to activity.target.what_food, ingredient_path(activity.target) %>
              
@@ -19,21 +19,14 @@
              </div>
      
               <div id="ingredient-footer"> 
-             
+               <div class="control">
+                  Like - Flag
+                </div>
               </div>
 
 
 
 
-           <div id="comments_list">
-          <ul id="comments_<%= activity.target.id %>">
-      
-          </ul>
-          </div>
-         
-         <div id="comment-form" class="comment_form">
-       
-         </div>
     </div>
 </div>
 <% else %>

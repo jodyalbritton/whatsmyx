@@ -1,34 +1,47 @@
 <% reply = defined?(reply) ? reply : false %>
-<div class="row" id="comment_<%= comment.id %>">
-<div id="comment-sidebar" class="span1">
-<%= image_tag comment.owner.profile.avatar.url(:mini) %>
-</div>
-<div id="comment-content class="span4">
-   <li>
-      <%= comment.owner.username %> Said:
-      <%= simple_format(comment.body) %>
-         <div class="span3">
-           <%= time_ago_in_words(comment.created_at) %> ago.
+<div class="row comment-item span5" id="comment_<%= comment.id %>">
+       <div id="comment-sidebar" class="span1">
+        <%= image_tag comment.owner.profile.avatar.url(:mini) %>
+       </div>
+
+       <div id="comment-content" class="span3">
+          <div class="row comment-body">
+            <li>
+            <p>
+            <%= comment.owner.username %> Said: 
+            <%= comment.body %>
+            </p>
           </div>
-      <% if current_user == comment.owner %>
-      <div class="comment-delete span2">
-      <%= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true %> |
-      <%= comment.like_count  %> Like this     
-      <%- if current_user.likes? comment -%><%= unlike_link_for comment  %>
-      <%- else -%>
-      <%= like_link_for comment %>
-      <%- end -%>
-      </div>
-      <% end %>
-      <%# this enables only 1 level of replies %>
-        <% if Opinio.accept_replies && !reply %>
-          <span><%= link_to t('opinio.actions.reply'), reply_comment_path(comment), :remote => true %></span>
-          <ul id="comment_<%= comment.id %>_replies" class="replies">
-          <%= render :partial => "opinio/comments/comment", :collection => comment.comments, :locals => {:reply => true} %>
-          </ul>
-        <% end %>
-      </li>
-</div>
+          <div class="row comment-footer"> 
+             <div>
+             <%= time_ago_in_words(comment.created_at) %> ago.
+             </div>
+             <% if current_user == comment.owner %>
+             <div class="comment-delete span2">
+               <%= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true %> 
+             </div>
+             <% end %>
+             <div class="comment-likes span3">
+             <%= comment.like_count  %> Like this     
+             <%- if current_user.likes? comment -%><%= unlike_link_for comment  %>
+             <%- else -%>
+             <%= like_link_for comment %>
+             <%- end -%>
+             </div>
+            
+              <%# this enables only 1 level of replies %>
+              <% if Opinio.accept_replies && !reply %>
+              <div class="commemnt-reply">
+              <%= link_to t('opinio.actions.reply'), reply_comment_path(comment), :remote => true %>
+              <ul id="comment_<%= comment.id %>_replies" class="replies">
+              <%= render :partial => "opinio/comments/comment", :collection => comment.comments, :locals => {:reply => true} %>
+              </ul>
+              </div>
+              <% end %>
+              </li>
+          </div>
+       </div>
+ 
 </div>
 
 
