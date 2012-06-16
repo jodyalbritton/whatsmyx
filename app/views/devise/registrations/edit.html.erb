@@ -23,12 +23,12 @@
   <div class="pull-right">
     <%= image_tag @user.profile.avatar.url(:medium) %></br>
     <%= f.simple_fields_for :profile do |p| %>
-    <%= f.file_field :avatar %>
+    <%= p.file_field :avatar %>
      <% end %>
     </div>
     <div class="inputs">
     <%= f.simple_fields_for :profile do |p| %>
-    <%= p.input :dob, :as => :date_picker, :label => "Date Of Birth" %>
+    <%= p.input :dob, :label => "Date Of Birth" %>
     <%= p.input :about %>
     <% end %>
   </div>

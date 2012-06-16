@@ -3,9 +3,9 @@
       <div id="post-sidebar" class="span3">
 
           <div id="post-avatar" class="span1">
-             <%= image_tag activity.user.profile.avatar.url(:thumb) %>
+             <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
           </div>
-          <div>
+          <div class="post-avatar">
              <h3><%= activity.user.username %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
          </div>

@@ -79,6 +79,22 @@ list-style: none;
 
         border-bottom: thin solid black;
 }
+/****************************************************************
+Post Style
+****************************************************************/
+
+.post-delete {
+        padding: 1px;
+        border: 1px solid #E3E3E3;
+     
+}
+.post-avatar {
+        padding-bottom: 5px;
+        height: 60px;
+}
+
+
+
 
 /****************************************************************
 Comments Style
@@ -89,6 +105,11 @@ Comments Style
         border: 1px solid #E3E3E3;
      
 }
+.comment-avatar {
+        padding-bottom: 5px;
+        height: 60px;
+}
+
 
 /****************************************************************
 Note Style
@@ -102,6 +123,11 @@ Note Style
 #note_date_3i {
 	width: 100px;
 }
+.note-avatar {
+        padding-bottom: 5px;
+        height: 60px;
+}
+
 
 /****************************************************************
 Stat Style
@@ -116,6 +142,12 @@ Stat Style
 	width: 100px;
 }
 
+.stat-avatar {
+        padding-bottom: 5px;
+        height: 60px;
+}
+
+
 /****************************************************************
 Ingredient Style
 ****************************************************************/
@@ -127,6 +159,25 @@ Ingredient Style
 }
 #ingredient_date_3i {
 	width: 100px;
+}
+
+.ingredient-avatar {
+        padding-bottom: 5px;
+        height: 60px;
+}
+
+
+/****************************************************************
+Avatar Style
+****************************************************************/
+
+img.avatar  {
+-webkit-background-clip: padding-box;
+-webkit-border-radius: 8px;
+-moz-background-clip: padding-box;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background-clip: padding-box;
 }
 
 
