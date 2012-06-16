@@ -1,3 +1,4 @@
+<% unless activity.target.nil? %>
 <div class="row">
       <div id="post-sidebar" class="span3">
 
@@ -16,7 +17,7 @@
              </div>
      
               <div id="post-footer"> 
-              <%= t('Like') %> | <%= t('Share') %>
+             
               </div>
 
 
@@ -33,6 +34,12 @@
          </div>
     </div>
 </div>
+<% else %>
 
+<div class="content-removed">
+
+</div>
+
+<% end %>
 
 

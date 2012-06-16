@@ -50,13 +50,11 @@ class ActivitySourceObserver < ActiveRecord::Observer
       
    
    end
- 
-  
-      
-  end
+   end
 
-
- 
+ def after_destroy(target)
+   
+ end
   
 
 end

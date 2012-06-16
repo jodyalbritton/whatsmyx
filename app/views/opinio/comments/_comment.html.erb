@@ -12,7 +12,12 @@
           </div>
       <% if current_user == comment.owner %>
       <div class="comment-delete span2">
-      <%= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true %>
+      <%= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true %> |
+      <%= comment.like_count  %> Like this     
+      <%- if current_user.likes? comment -%><%= unlike_link_for comment  %>
+      <%- else -%>
+      <%= like_link_for comment %>
+      <%- end -%>
       </div>
       <% end %>
       <%# this enables only 1 level of replies %>

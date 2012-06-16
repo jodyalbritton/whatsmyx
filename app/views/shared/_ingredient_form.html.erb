@@ -5,17 +5,18 @@
 
  </div>
   <div class="modal-body">
-<%= simple_form_for @meal do |f| %>
+  <%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' }, :remote => true do |f| %>
+  <%= f.input :date %>
+  <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_meals_path, :input_html => {:id_element => "#ingredient_food_id"} %>
+  <%= f.input :servings %>
+  <%= f.input :food_id, :as => 'hidden' %>
+  <%= f.input :serving_size, :as => 'hidden'%>
+  <%= f.association :mcategory %>
+ 
 
- <%= f.input :name, :url => autocomplete_food_name_meals_path, :as => :autocomplete, :input_html => {:id_element => '#meal_ndb'}%>
-  <%= f.input :ndb, :as =>"hidden" %>
-  <%= f.input :quanity %>
-  <%= f.input :units %>
-  <%= f.input :date, :as => :date_picker, :input_html => {:value => DateTime.now.strftime('%m/%d/%Y')} %>
-  <%= f.association :mcategory, :label => 'Meal', :include_blank => false%>
   </div>
   <div class="modal-footer">
-   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+   <%= f.button :wrapped, :cancel => ingredients_path %>
  
 <% end %>
    

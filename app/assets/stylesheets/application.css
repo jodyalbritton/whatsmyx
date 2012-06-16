@@ -15,8 +15,8 @@
 */
 
 .input-xlarge {
-	height: 20px;
-	
+	height: 18px;
+
 }
 
 a.btn:visited { color: #333; }
@@ -78,6 +78,55 @@ list-style: none;
 .nut-label {
 
         border-bottom: thin solid black;
+}
+
+/****************************************************************
+Comments Style
+****************************************************************/
+
+.comment-delete {
+        padding: 1px;
+        border: 1px solid #E3E3E3;
+     
+}
+
+/****************************************************************
+Note Style
+****************************************************************/
+#note_date_1i {
+	width: 100px;
+}
+#note_date_2i {
+	width: 100px;
+}
+#note_date_3i {
+	width: 100px;
+}
+
+/****************************************************************
+Stat Style
+****************************************************************/
+#stat_date_1i {
+	width: 100px;
+}
+#stat_date_2i {
+	width: 100px;
+}
+#stat_date_3i {
+	width: 100px;
+}
+
+/****************************************************************
+Ingredient Style
+****************************************************************/
+#ingredient_date_1i {
+	width: 100px;
+}
+#ingredient_date_2i {
+	width: 100px;
+}
+#ingredient_date_3i {
+	width: 100px;
 }
 
 

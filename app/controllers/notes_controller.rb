@@ -38,19 +38,15 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
   end
 
-  # POST /notes
-  # POST /notes.json
-  def create
-    @note = Note.new(params[:note])
-
-    respond_to do |format|
-      if @note.save
-        format.html { redirect_to @note, notice: 'Note was successfully created.' }
-        format.json { render json: @note, status: :created, location: @note }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @note.errors, status: :unprocessable_entity }
-      end
+  # note /notes
+  # note /notes.json
+ def create
+  
+ 
+    @note = current_user.notes.build(params[:note])
+    if @note.save
+      flash[:notice] = "Successfully created note."
+       @activities = Activity.order("updated_at DESC")
     end
   end
 

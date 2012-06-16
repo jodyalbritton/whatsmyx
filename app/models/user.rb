@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_merit
-
+  include Likeable::UserMethods
   extend FriendlyId
   friendly_id :username, use: :slugged
   acts_as_follower

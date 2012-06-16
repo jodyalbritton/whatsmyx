@@ -1,4 +1,4 @@
 class Note < ActiveRecord::Base
-  attr_accessible :content, :name
+  attr_accessible :content, :name, :user, :date
   belongs_to :user
 end

@@ -91,7 +91,8 @@ resources :services, :only => [:index, :create, :destroy]
   #       get 'recent', :on => :collection
   #     end
   #   end
-
+ delete  'likes/:resource_name/:resource_id' => "likes#destroy", :as => 'like'
+ post    'likes/:resource_name/:resource_id' => "likes#create",  :as => 'like'
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController

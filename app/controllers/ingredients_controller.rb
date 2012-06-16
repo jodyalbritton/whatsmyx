@@ -79,15 +79,12 @@ class IngredientsController < ApplicationController
   # POST /ingredients.json
   def create
     @ingredient = current_user.ingredients.build(params[:ingredient])
-
-    respond_to do |format|
-      if @ingredient.save
-        format.html { redirect_to nutrition_index_path, notice: 'Ingredient was successfully created.' }
-        format.json { render json: @ingredient, status: :created, location: @ingredient }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @ingredient.errors, status: :unprocessable_entity }
-      end
+    flash[:notice] = "Successfully created post."
+  
+  
+    if @ingredient.save
+      flash[:notice] = "Successfully created ingredient."
+       @activities = Activity.order("updated_at DESC")
     end
   end
 

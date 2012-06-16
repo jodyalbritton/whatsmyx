@@ -1,3 +1,4 @@
+<% unless activity.target.nil? %>
 <div class="row">
       <div id="post-sidebar" class="span3">
 
@@ -35,6 +36,12 @@
          </div>
     </div>
 </div>
+<% else %>
 
+<div class="content-removed">
+
+</div>
+
+<% end %>
 
 

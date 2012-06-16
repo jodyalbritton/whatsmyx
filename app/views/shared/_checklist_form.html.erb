@@ -5,7 +5,7 @@
 
      </div>
   <div class="modal-body">
-  <%= simple_form_for @checklist do |f| %>
+  <%= simple_form_for @checklist , :remote => true do  |f| %>
   <%= f.input :name %>
   </div>
   <div class="modal-footer">

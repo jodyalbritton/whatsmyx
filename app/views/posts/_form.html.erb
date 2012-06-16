@@ -1,13 +1,18 @@
 
   
   <%= simple_form_for @post , :remote => true do |f| %>
-  <div id= "post_errors" style="display:none"></div>
+  <div id= "post_errors" style="display:none">
+  </div>
   <div class="row">
-  <div class="span7">
-   <%= f.input :text, :input_html => { :class => 'input-xlarge span5'}, :label => false%>
+   <div class="span7">
+   <div class="control-group pull-right">
+   <div class="input-append">
+   <%= f.text_area :text, :class => 'input-xlarge span5', :label => false%><%= f.submit "Post", :class => "btn" %>
    </div>
-   <div class="span2">
-   <%= f.submit "Post", class: "btn btn-large btn-inverse" %>
    </div>
+   </div>
+
+
+
    <% end %>
    </div>

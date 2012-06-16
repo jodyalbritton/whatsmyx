@@ -3,11 +3,11 @@
   	<h2>Write a note...</h2>
      </div>
   <div class="modal-body">
-<%= simple_form_for @note do |f| %>
+<%= simple_form_for @note, :remote => true do |f| %>
 
 
  <%= f.input :content, :input_html => { :class => 'input-xlarge' } %>
- <%= f.input :date, :as => :date_picker, :input_html => {:value => DateTime.now.strftime('%m/%d/%Y')}%>
+ <%= f.input :date %>
  
 
   </div>

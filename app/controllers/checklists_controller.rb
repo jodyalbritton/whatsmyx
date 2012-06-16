@@ -41,19 +41,15 @@ class ChecklistsController < ApplicationController
   # POST /checklists
   # POST /checklists.json
   def create
-    @checklist = Checklist.new(params[:checklist])
-
-    respond_to do |format|
-      if @checklist.save
-        format.html { redirect_to @checklist, notice: 'Checklist was successfully created.' }
-        format.json { render json: @checklist, status: :created, location: @checklist }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @checklist.errors, status: :unprocessable_entity }
-      end
+    @checklist = current_user.checklists.build(params[:checklist])
+    flash[:notice] = "Successfully created post."
+  
+  
+    if @checklist.save
+      flash[:notice] = "Successfully created checklist."
+       @activities = Activity.order("updated_at DESC")
     end
   end
-
   # PUT /checklists/1
   # PUT /checklists/1.json
   def update
