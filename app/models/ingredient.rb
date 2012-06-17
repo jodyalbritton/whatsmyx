@@ -8,6 +8,6 @@ class Ingredient < ActiveRecord::Base
   #relations
   belongs_to :user
   belongs_to :mcategory
-
+  belongs_to :food
  
 end

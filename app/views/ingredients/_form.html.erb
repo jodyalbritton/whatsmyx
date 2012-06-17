@@ -4,6 +4,6 @@
   <%= f.input :servings %>
   <%= f.input :food_id %>
   <%= f.input :serving_size %>
-  <%= f.association :mcategory %>
+  <%= f.association :mcategory, :include_blank => false %>
   <%= f.button :wrapped, :cancel => ingredients_path %>
 <% end %>

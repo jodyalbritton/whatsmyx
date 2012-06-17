@@ -4,7 +4,7 @@ class FoodsController < ApplicationController
   include ActionView::Helpers::SanitizeHelper
   
   def index
-     @foods = Food.search(params[:search]).page(params[:page]).per(5)
+     @foods = Food.search(params[:search]).page(params[:page]).per(25)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -31,7 +31,7 @@ class FoodsController < ApplicationController
         if params[:search].blank?
           redirect_to food_search_path 
         else
-          food_search = Food.search('"^' + query + '"|"' + query + '"|(' + query + ')', :match_mode => :extended2, :excerpts => false, :per_page => 100, :order => :umd, :sort_mode => :desc)
+          food_search = Food.search('"^' + query + '"|"' + query + '"|(' + query + ')', :match_mode => :any, :excerpts => false, :per_page => 25, :order => :name, :sort_mode => :desc)
           @foods = food_search.find_all{|food| food.user_id==nil || food.user_id==current_user.id}
         end
       else 

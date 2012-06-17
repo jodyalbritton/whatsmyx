@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614223024) do
+ActiveRecord::Schema.define(:version => 20120617103736) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(:version => 20120614223024) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "actor_id"
-    t.integer  "object_id"
     t.integer  "parent_id"
     t.string   "verb"
   end
@@ -176,6 +175,84 @@ ActiveRecord::Schema.define(:version => 20120614223024) do
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
   create_table "foods", :force => true do |t|
+    t.integer "user_id"
+    t.integer "ndb"
+    t.string  "name",          :limit => 60
+    t.float   "water"
+    t.float   "calories"
+    t.float   "protein"
+    t.float   "lipid_total"
+    t.float   "ash"
+    t.float   "carbohydrates"
+    t.float   "fiber"
+    t.float   "sugar_total",                                                :default => 0.0,   :null => false
+    t.float   "calcium"
+    t.decimal "iron",                        :precision => 4,  :scale => 2
+    t.integer "magnesium"
+    t.integer "phosphorus"
+    t.float   "potassium"
+    t.integer "sodium"
+    t.decimal "zinc",                        :precision => 4,  :scale => 2
+    t.string  "copper",        :limit => 9
+    t.decimal "manganese",                   :precision => 6,  :scale => 3
+    t.decimal "selenium",                    :precision => 5,  :scale => 1
+    t.float   "vit_c"
+    t.decimal "thiamin",                     :precision => 7,  :scale => 3
+    t.string  "riboflavin",    :limit => 47
+    t.string  "niacin",        :limit => 9
+    t.decimal "panto_acid",                  :precision => 8,  :scale => 3
+    t.decimal "vitamin_b6",                  :precision => 6,  :scale => 3
+    t.string  "folate_total",  :limit => 5
+    t.integer "folic_acid"
+    t.decimal "food_folate",                 :precision => 5,  :scale => 2
+    t.string  "folate_dfe",    :limit => 6
+    t.decimal "choline_total",               :precision => 6,  :scale => 3
+    t.decimal "vitamin_b12",                 :precision => 8,  :scale => 3
+    t.decimal "vitamin_a",                   :precision => 8,  :scale => 3
+    t.decimal "vitamin_a_rae",               :precision => 8,  :scale => 3
+    t.string  "retinol",       :limit => 23
+    t.string  "alpha_carot",   :limit => 26
+    t.string  "beta_carot",    :limit => 40
+    t.string  "beta_crypt",    :limit => 29
+    t.string  "lycopene",      :limit => 44
+    t.string  "lut_zea",       :limit => 33
+    t.string  "vitamin_e",     :limit => 52
+    t.string  "vitamin_d_ug",  :limit => 44
+    t.string  "vitamin_d_iu",  :limit => 33
+    t.string  "vitamin_k_ug",  :limit => 16
+    t.float   "fa_sat",                                                     :default => 0.0,   :null => false
+    t.decimal "fa_mono",                     :precision => 30, :scale => 0
+    t.float   "fa_poly"
+    t.float   "cholesterol",                                                :default => 0.0,   :null => false
+    t.string  "gmwt_1",        :limit => 77
+    t.string  "gmwt_desc",     :limit => 80
+    t.float   "serving_grams"
+    t.string  "gmwt_desc2",    :limit => 79
+    t.integer "refuse_pct"
+    t.boolean "umd",                                                        :default => false, :null => false
+    t.string  "slug"
+  end
+
+  add_index "foods", ["slug"], :name => "index_foods_on_slug", :unique => true
+
+  create_table "foods_back", :force => true do |t|
+    t.integer "ndb",                                                      :null => false
+    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
+    t.string  "longdesc",    :limit => 200,                               :null => false
+    t.string  "shortdesc",   :limit => 60,                                :null => false
+    t.string  "comname",     :limit => 100
+    t.string  "manufacname", :limit => 65
+    t.string  "survey",      :limit => 1
+    t.string  "ref_desc",    :limit => 135
+    t.integer "refuse"
+    t.string  "SciName",     :limit => 65
+    t.decimal "n_factor",                   :precision => 4, :scale => 2
+    t.decimal "pro_factor",                 :precision => 4, :scale => 2
+    t.decimal "fat_factor",                 :precision => 4, :scale => 2
+    t.decimal "cho_factor",                 :precision => 4, :scale => 2
+  end
+
+  create_table "foods_bak", :force => true do |t|
     t.string  "name"
     t.float   "water"
     t.float   "calories"
@@ -230,23 +307,6 @@ ActiveRecord::Schema.define(:version => 20120614223024) do
     t.float   "refuse_pct"
     t.integer "umd",            :default => 0
     t.integer "user_id"
-  end
-
-  create_table "foods_back", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
-    t.string  "longdesc",    :limit => 200,                               :null => false
-    t.string  "shortdesc",   :limit => 60,                                :null => false
-    t.string  "comname",     :limit => 100
-    t.string  "manufacname", :limit => 65
-    t.string  "survey",      :limit => 1
-    t.string  "ref_desc",    :limit => 135
-    t.integer "refuse"
-    t.string  "SciName",     :limit => 65
-    t.decimal "n_factor",                   :precision => 4, :scale => 2
-    t.decimal "pro_factor",                 :precision => 4, :scale => 2
-    t.decimal "fat_factor",                 :precision => 4, :scale => 2
-    t.decimal "cho_factor",                 :precision => 4, :scale => 2
   end
 
   create_table "footnotes", :force => true do |t|
@@ -522,7 +582,7 @@ ActiveRecord::Schema.define(:version => 20120614223024) do
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
 
-  create_table "weight", :force => true do |t|
+  create_table "weights", :force => true do |t|
     t.integer "ndb",                                                      :null => false
     t.string  "seq",          :limit => 2,                                :null => false
     t.decimal "amount",                     :precision => 5, :scale => 3, :null => false

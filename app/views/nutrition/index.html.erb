@@ -1,134 +1,241 @@
 <% cals_string = "" %>
-<% salt_string = "" %>
+<% prot_string = "" %>
 <% fats_string = "" %>
+<% carb_string = "" %>
+<% fibr_string = "" %>
+<% sodi_string = "" %>
 <% sugs_string = "" %>
+<% satf_string = "" %>
+<% chol_string = "" %>
+<% pots_string = "" %>
+<% prot_cals = 0 %>
+<% fats_cals = 0 %>
+<% carb_cals = 0 %>
 <% cals = 0 %>
-<% salt = 0 %>
+<% prot = 0 %>
 <% fats = 0 %>
+<% carb = 0 %>
+<% fibr = 0 %>
+<% sodi = 0 %>
 <% sugs = 0 %>
-<% dates = "" %>
-<% date_name = "" %>
+<% satf = 0 %>
+<% chol = 0 %>
+<% pots = 0 %>
+
 
 	<% @ingredients_tot.each do |ingredient| %>
 		<% food = Food.find(ingredient.food_id) %>
 		<% if ingredient.serving_size.nil? %>
 			<% multiplication_factor = ingredient.servings%>
 		<% else %>
-			<% multiplication_factor = ingredient.servings*ingredient.serving_size/100%>
+			<% multiplication_factor = ingredient.servings*ingredient.serving_size/ingredient.serving_grams%>
 		<% end %>
 		<% cals = cals + (food.calories*multiplication_factor) %>
-		<% salt = salt + (food.sodium*multiplication_factor) %>
+		<% prot = prot + (food.protein*multiplication_factor) %>
 		<% fats = fats + (food.lipid_total*multiplication_factor) %>
+		<% carb = carb + (food.carbohydrates*multiplication_factor) %>
+		<% fibr = fibr + (food.fiber*multiplication_factor) %>
+		<% sodi = sodi + (food.sodium*multiplication_factor) %>
 		<% sugs = sugs + (food.sugar_total*multiplication_factor) %>
+		<% satf = satf + (food.fa_sat*multiplication_factor) %>
+		<% chol = chol + (food.cholesterol*multiplication_factor) %>
+		<% pots = pots + (food.potassium*multiplication_factor) %>
 	<% end %>
 	
 		
 		<% cals_string = cals_string + "#{cals} " %>
-		<% salt_string = salt_string + "#{salt} " %>
+		<% prot_string = prot_string + "#{prot} " %>
 		<% fats_string = fats_string + "#{fats} " %>
+		<% fibr_string = fibr_string + "#{fibr} " %>
+		<% sodi_string = sodi_string + "#{sodi} " %>
 		<% sugs_string = sugs_string + "#{sugs} " %>
+		<% satf_string = satf_string + "#{satf} " %>
+		<% chol_string = chol_string + "#{chol} " %>
+		<% pots_string = pots_string + "#{pots} " %>
+		<% carb_string = carb_string + "#{carb} " %>
+		
+		<% prot_cals = (prot * 4)+ prot_cals %>
+		<% fats_cals = (fats * 8)+ fats_cals %>
+		<% carb_cals = (carb * 4)+ carb_cals %>
+		
 		<% cals = 0 %>
-		<% salt = 0 %>
+		<% prot = 0 %>
 		<% fats = 0 %>
-		<% sugs = 0 %>
+		<% carb = 0 %>
+		<% fibr = 0 %>
+        <% sodi = 0 %>
+        <% sugs = 0 %>
+        <% satf = 0 %>
+        <% chol = 0 %>
+        <% pots = 0 %>
 
    
 
-<div>
-<form action="<%= foods_path %>" method ="get" id="foods_search"  >
-
-  <p>  
-    <%= text_field_tag :search, params[:search] %>  
-    <%= submit_tag "Search", :name => nil %>  
-  </p>  
-  </form>
-</div>
-	<div id="date-navigation">
-	  <div class="row">
-	     <div class="span3">
-	     <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	     </div>
-	      <div class="span3">
+<div class="nutrition-container span12">
+	 <div id="date-navigation">
+	 <div class="row">
+	   <div class="span3">
+	    <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	   </div>
+	   <div class="span3">
 	     
-	      <%=h @date.strftime("%A %B %d %Y") %>
+	   <%=h @date.strftime("%A %B %d %Y") %>
 
-	     </div>
-	      <div class="span3">
+	   </div>
+	   <div class="span3">
 	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	     </div>
-	                
-		    	
-		    	
-        </div>
+	   </div>
+	 </div>
 	</div>	 
+    <div class="row">
+   	<div class="span4" id="nutrition-sidebar">
+   		    <div id="sidebar-data">
+   			<div class="well">
+        	<div class="input-append">
+   	        <form action="<%= foods_path %>" method ="get" id="foods_search"  >
+             <%= text_field_tag :search, params[:search], :class=>"span2" %><%= submit_tag "Search", :name => nil, :class=>"btn" %>  
+            </form>
+            </div>
+   				<div class="row">
+   				
+   				<div class="sidebar-data-left">
+   					<table class="table table-striped">
+   				    <tbody>
+   				    	<tr>
+   				    		<td>
+   				    			Calories
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= cals_string %>
+                            </td>
+                            <td>
+   				    			Protein
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= prot_string %>
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Carbs
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= carb_string %>
+                            </td>
+                            <td>
+   				    			Fats
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= fats_string %>
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Fiber
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= fibr_string %>
+                            </td>
+                            <td>
+   				    			Sodium
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= sodi_string %>
+                            </td>
+   				        </tr>
+   				       <tr>
+   				    		<td>
+   				    			Sugar
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= sugs_string %>
+                            </td>
+                            <td>
+   				    			Sat. Fat
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= satf_string %>
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Potassium
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= pots_string %>
+                            </td>
+                            <td>
+   				    			Cholesterol
+   				    	    </td>
+   				    	    <td>
+   				    	    <%= chol_string %>
+                            </td>
+   				        </tr>
+   				    </tbody>
+   					
+   					</table>
+   			
+   			    </div>
+   			      <div class="span3">
+   			   	<div id="chartdiv">
+   			    </div>
+   			   </div>
+   			   
+   		       </div>
+   			 
+   			</div>
+   		</div>
+    </div>
+    <div class="span8">
 
-  <div>
-  <table class="table tabel-horizontal">
-  <tbody>
-
-   <% @ingredients.each do |mcategory, ingredients| %>
+    <div class="row">
+    <table class="table tabel-horizontal">
+    <tbody>
      
-
-
-   <tr>
-   
-   <td><h2><%= link_to mcategory.name %><h2></td>
-     <% for ingredient in ingredients %>
-   </tr>
-   <tr>
-     
-      <tr>
+    <% @ingredients.each do |mcategory, ingredients| %>
+    <tr>
       <td>
-             <%= ingredient.what_food %>
+   	  <h2>
+     <%= link_to mcategory.name %>
+      <h2>
+     </td>
+    </tr>
+     <% for ingredient in ingredients %>
+ 
 
-       <td>      
-       
-      <tr>
+    <tr>
+      <td>
+      <%= ingredient.what_food %>
+      </td>
+     
+      
+     
+    </tr>
+    <tr>
+    <td>
+    	<%= ingredient.food.calories %> Calories | <%= ingredient.food.protein %> g Protein | <%= ingredient.food.lipid_total %> g of Fat |  <%= ingredient.food.carbohydrates %> g Carbs
+   	</td>
+   	
+   </tr>
    <% end %>
        
-   </tr>
-   <tr>
-   <td>
   
-   </td>
-   </tr>
+
     <% end %>
 
   </tbody>
 
 </table>
-<table>
-<tbody>
-   <tr>
-     <td>
-       Calories
-     </td>
- 
-     <td>
-       Protein
-     </td>
-  
-     <td>
-       Fat
-     </td>
-  </tr>
-   <tr>
-     <td>
-       <%= cals_string %>
-     </td>
-  
-     <td>
-       Calories
-     </td>
- 
-     <td>
-       Calories
-     </td>
-  </tr>
-</tbody>
-</table>
+
 
 </div>
+    </div>
+   	</div>
+   <div class="row nutrition-header">
+   
+
+
+
 <div>
 
 <div  id="myModalNew"  class="modal hide fade">
@@ -141,3 +248,49 @@
 
             
 </div>
+</div>
+
+<script>
+
+var chart;
+$(document).ready(function() {
+	chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'chartdiv',
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false
+		},
+		title: {
+			text: 'Macro Breakdown'
+		},
+		tooltip: {
+			formatter: function() {
+				return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+			}
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Macro breakdown',
+			data: [
+				['Protein',   <%= prot_cals %>],
+				['Fat',       <%= fats_cals %>],
+				['Carbohydrate',   <%= carb_cals %>]
+				
+
+
+			]
+		}]
+	});
+});
+</script>
