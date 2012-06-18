@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    @user = User.find(current_user)
     
     @users = User.all
   end
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @post = @user.posts.find(:all)
+    @activities = @user.activities.find(:all)
     @post = Post.new
     @followers = @user.followers
   end

@@ -7,9 +7,9 @@
 </div>
 
 <% food = @food %>
-<% if food.serving_grams == 0%>
+<% if food.serving_grams == 0 %>
 <% serving_size = 100 %>
-<% elsif food.serving_grams == nil %>
+<% elsif food.serving_grams.nil? %>
 <% serving_size = 100 %>
 <%else%>
 <% serving_size = food.serving_grams %>
@@ -38,7 +38,7 @@
 		
 <div>Calories from Fat <%= h('%.0f' % (((food.lipid_total* serving_size) / 100) *9))  %></div>					 		
 <div>	
-<% if food.gmwt_desc2 == nil %>	
+<% if food.gmwt_desc2.nil? %>	
  Serving Size: 100g
 <% elsif food.gmwt_desc2 == 0 %>
  Serving Size: 100g %>

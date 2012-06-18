@@ -70,37 +70,39 @@
         <% pots = 0 %>
 
    
+	
 
-<div class="nutrition-container span12">
-	 <div id="date-navigation">
-	 <div class="row">
-	   <div class="span3">
+ 
+    <div class="row">
+    	 
+	 <div class="row nutri-nav">
+	   <div class="span4">
 	    <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
 	   </div>
-	   <div class="span3">
+	   <div class="span4">
 	     
-	   <%=h @date.strftime("%A %B %d %Y") %>
+	   <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
 
 	   </div>
-	   <div class="span3">
+	   <div class="span4">
 	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
 	   </div>
 	 </div>
-	</div>	 
-    <div class="row">
+
    	<div class="span4" id="nutrition-sidebar">
    		    <div id="sidebar-data">
    			<div class="well">
+   	
         	<div class="input-append">
    	        <form action="<%= foods_path %>" method ="get" id="foods_search"  >
              <%= text_field_tag :search, params[:search], :class=>"span2" %><%= submit_tag "Search", :name => nil, :class=>"btn" %>  
             </form>
             </div>
-   				<div class="row">
-   				
-   				<div class="sidebar-data-left">
+     
+   			   				
+   				<div class="sidebar-data-left" class="span3">
    					<table class="table table-striped">
-   				    <tbody>
+   				  
    				    	<tr>
    				    		<td>
    				    			Calories
@@ -171,21 +173,23 @@
    				    	    <%= chol_string %>
                             </td>
    				        </tr>
-   				    </tbody>
+   				   
    					
    					</table>
    			
    			    </div>
-   			      <div class="span3">
-   			   	<div id="chartdiv">
-   			    </div>
-   			   </div>
+   			    
    			   
-   		       </div>
+   	
    			 
    			</div>
    		</div>
+   		 <div>
+   			   	<div id="chartdiv">
+   			    </div>    <div class="row">
     </div>
+    </div>
+     </div>
     <div class="span8">
 
     <div class="row">
@@ -230,20 +234,15 @@
 
 </div>
     </div>
-   	</div>
-   <div class="row nutrition-header">
+  
    
-
-
-
-<div>
 
 <div  id="myModalNew"  class="modal hide fade">
  
       <%= render 'ingredients/new_ingredient' %>
    
 </div>
-</div>
+
  <a data-toggle="modal" href="#myModalNew" class="btn btn-primary">Add Food</a>
 
             

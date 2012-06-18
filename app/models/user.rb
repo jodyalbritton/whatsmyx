@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
  
  #assoications 
+  has_many :activities, dependent: :destroy
   has_many :checklists, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy

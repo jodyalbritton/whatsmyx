@@ -1,31 +1,29 @@
-<div id="profile-sidebar" class="span3 pull-left">
+<div class="row">
+<div id="profile-sidebar" class="menu span3">
 
-   <div id="profile_pic">
-	<%= image_tag @user.profile.avatar.url(:medium) %>
+        <div id="profile_pic">
+	    <%= image_tag @user.profile.avatar.url(:medium) %>
 	
-   </div>
-    <div class="row">
-        <div id="profile-level" class="span2">
+        </div>
+   
+        <div id="profile-level">
             <h2> Level <%= @user.level %></h2>
         </div>
-        <div class="pull-right">
+        <div>
              <%= @user.points %></br>
              Points
         </div>
-    </div>
 
-   <div class="progress">
+
+        <div class="progress">
        <% if @user.level == 0 %>
-       <div class="bar" style="width:<%=number_to_percentage(10) %>;">
+       <div class="bar" style="width:<%=number_to_percentage(10) %>;">   </div>
        <% else if @user.level == 1 %>
-       <div class="bar" style="width:<%=number_to_percentage((@user.points.to_f / 2000) * 100) %>;">
+       <div class="bar" style="width:<%=number_to_percentage((@user.points.to_f / 2000) * 100) %>;">     </div>
        <% end %>
        <% end %>
-     
-       
         </div>
-   </div>
-
+   
    <div id="profile-about">
    <h2> About Me </h2>
    <%= @user.profile.about %>
@@ -33,14 +31,15 @@
    <div id="profile-followers">
           <h2> Followers </h2>
 	  <% @followers.each do |follower| %>
-	  <%= image_tag follower.profile.avatar.url(:thumb) %>
+	  <%= image_tag follower.profile.avatar.url(:mini) %>
 	  <% end %>
    </div>
-</div>
-<div id="profile-body" class="span8 pull-right">
-<div class="row">
-   <div id="profile-header">
-        <div id="profile-name" class="span3 pull-left">
+ 
+  </div>
+  <div id="profile-body" class="span9">
+    <div class="row">
+    <div id="profile-header">
+        <div id="profile-name span3">
 	        <h3><%= @user.username %></h3>
 	        
                 <% if user_signed_in? %>
@@ -49,9 +48,9 @@
                  </div>
                 <% end %> 
         </div>
-<div id="profile-merit" class="pull-right visible-desktop">
+        <div id="profile-merit" class="pull-right visible-desktop">
         
-      <ul>
+         <ul>
         
           <li>
             
@@ -79,16 +78,14 @@
       
      
 	
+     </div>
 </div>
 </div>
-</div>
-<div class="span9" id="profile-body">
-           
-          <div id="posts_list"><%= render :partial => "posts/posts_for_user" %></div>
-	
-</div>
+  <div id="activity_feed"><%= render :partial => "activities/index" %></div>
+
 
 	
 
+</div>
 </div>
 
