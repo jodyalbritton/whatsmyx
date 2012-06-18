@@ -16,3 +16,7 @@
 
 # Ignore all avatars
 /public/system/users/avatars
+
+# Ignore system files
+
+/config/database.yml
