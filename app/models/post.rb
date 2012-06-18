@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
    belongs_to :user
    has_many :activities, :as => :target
   
+    include Likeable
  
    opinio_subjectum
 

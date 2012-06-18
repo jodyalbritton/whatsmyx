@@ -9,5 +9,8 @@ class Ingredient < ActiveRecord::Base
   belongs_to :user
   belongs_to :mcategory
   belongs_to :food
+  
+  
+   include Likeable
  
 end

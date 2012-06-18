@@ -4,7 +4,7 @@ class Stat < ActiveRecord::Base
   belongs_to :category
   paginates_per 5
 
-
+  include Likeable
  def as_json(options={})
     super(:only => [:date,:value],
        

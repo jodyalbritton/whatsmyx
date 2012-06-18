@@ -3,10 +3,15 @@
       <div id="comment-sidebar" class="span2">
 
           <div id="comment-avatar" class="span1">
-              <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
+          <a href="#" id="example"  rel="popover" title="A Title" ><%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %></a>
           </div>
           <div class="comment-avatar">
-             <h3><%= activity.user.username %></h3>
+           <h3><%= activity.user.username %></h3>
+          	
+     
+             <div id="popover_content_wrapper" style="display: none">
+             <div>This is your div content</div>
+             </div>
              <%= time_ago_in_words(activity.created_at) %> ago.
          </div>
   
@@ -18,12 +23,28 @@
      
               <div id="comment-footer"> 
               <div class="control">
-                  Like - Flag
+                 <div class="comment-likes span3">
+             <%= activity.target.like_count  %> Like this     
+             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
+             <%- else -%>
+             <%= like_link_for activity.target %>
+             <%- end -%>
+             </div>
                 </div>
               </div>
 
 
 
+<script>
+$(document).ready(function(){
+  $('#example').popover({ 
+    html : true,
+    content: function() {
+      return $('#popover_content_wrapper').html();
+    }
+  });
+});
+</script>
 
          
 
@@ -37,4 +58,5 @@
 </div>
 
 <% end %>
+
 

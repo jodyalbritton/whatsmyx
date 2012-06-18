@@ -75,24 +75,10 @@
  
     <div class="row">
     	 
-	 <div class="row nutri-nav">
-	   <div class="span4">
-	    <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	   </div>
-	   <div class="span4">
-	     
-	   <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
-
-	   </div>
-	   <div class="span4">
-	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	   </div>
-	 </div>
+	
 
    	<div class="span4" id="nutrition-sidebar">
-   		    <div class="sidebar-controls">
-   	        <a data-toggle="modal" href="#myModalNew" class="btn btn-primary">Add Food</a>
-   	        </div>
+   		   
    		    <div id="sidebar-data">
    			<div class="well">
    		  
@@ -203,7 +189,20 @@
      </div>
     <div class="span8">
    
-    <div class="row nutri-body span7">
+    <div class="row nutri-body span8">
+     <div class="row nutri-nav">
+	   <div class="span2">
+	    <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	   </div>
+	   <div class="span4">
+	     
+	   <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
+
+	   </div>
+	   <div class="span2">
+	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	   </div>
+	 </div>
     <table class="table tabel-horizontal">
     <tbody>
     <% if @ingredients.count == 0 %> 
@@ -211,6 +210,9 @@
        	<div class= "no-entry span7">
     	You have not entered any foods for this date. 
     	</div>
+    	 <div class="add-food-button">
+   	        <a data-toggle="modal" href="#myModalFood" class="btn btn-primary">Add Food</a>
+   	        </div>
        <tr>
        <% else %>
  
@@ -224,23 +226,29 @@
      <%= link_to mcategory.name %>
       <h2>
      </td>
+     <td>
+     	 <div class="sidebar-controls">
+   	        <a data-toggle="modal" href="#myModalFood" class="btn btn-primary">Add Food</a>
+   	        </div>
+     </td>
     </tr>
      <% for ingredient in ingredients %>
- 
+    
   
     <tr>
       <td>
       <%= ingredient.what_food %>
       </td>
-     
-      
+      <td>
+      </td>
      
     </tr>
     <tr>
     <td>
     	<%= ingredient.food.calories %> Calories | <%= ingredient.food.protein %> g Protein | <%= ingredient.food.lipid_total %> g of Fat |  <%= ingredient.food.carbohydrates %> g Carbs
    	</td>
-   	
+   	 <td>
+      </td>
    </tr>
  
    <% end %>
@@ -267,7 +275,7 @@
   
    
 
-<div  id="myModalNew"  class="modal hide fade">
+<div  id="myModalFood"  class="modal hide fade">
  
       <%= render 'ingredients/new_ingredient' %>
    

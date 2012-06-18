@@ -18,7 +18,13 @@
      
               <div id="post-footer"> 
                <div class="control">
-                  Like - Flag
+                    <div class="comment-likes span3">
+             <%= activity.target.like_count  %> Like this     
+             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
+             <%- else -%>
+             <%= like_link_for activity.target %>
+             <%- end -%>
+             </div>
                 </div>
               </div>
 
