@@ -6,7 +6,7 @@
 </div>
  <div class="modal-body">
  <%= simple_form_for @stat, :remote => true do |f| %>
-  <%= f.association :category %>
+  <%= f.association :category, :include_blank => false %>
 
  
 

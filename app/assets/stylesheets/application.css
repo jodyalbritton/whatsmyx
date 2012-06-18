@@ -207,5 +207,23 @@ nutrition nav by date
 
 	text-align: center;
 	min-height: 80px;
+	
 }
 
+.sidebar-controls {
+	min-height: 50px;
+}
+
+.no-entry {
+	min-height: 20px;
+	text-align: center;
+	border-radius: 7px 7px;
+	background: yellow; 
+	
+ 
+}
+
+.nutri-body {
+	padding-top: 50px;
+
+}

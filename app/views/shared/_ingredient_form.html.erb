@@ -6,12 +6,13 @@
  </div>
   <div class="modal-body">
   <%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' }, :remote => true do |f| %>
-  <%= f.input :date %>
+  <%= f.association :mcategory, :label => "Meal", :include_blank => false %>
   <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_meals_path, :input_html => {:id_element => "#ingredient_food_id"} %>
   <%= f.input :servings %>
   <%= f.input :food_id, :as => 'hidden' %>
   <%= f.input :serving_size, :as => 'hidden'%>
-  <%= f.association :mcategory %>
+
+   <%= f.input :date %>
  
 
   </div>
