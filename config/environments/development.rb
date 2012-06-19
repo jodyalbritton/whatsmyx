@@ -64,7 +64,7 @@ Whatsmyx::Application.configure do
   config.assets.debug = true
   
   # setup mailer
-  config.action_mailer.default_url_options = { :host => 'http://whatsmyx.com' } 
+  config.action_mailer.default_url_options = { :host => 'whatsmyx.com' } 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   
