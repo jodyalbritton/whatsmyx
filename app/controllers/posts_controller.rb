@@ -17,7 +17,9 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(params[:post])
     if @post.save
       flash[:notice] = "Successfully created post."
-       @activities = Activity.order("updated_at DESC")
+       following = Follow.where(["follower_id = ?", @user.id])
+       following_ids = following.collect{|f| f.followable_id}
+       @activities = Activity.where(:user_id => following_ids).order('updated_at DESC').limit(20)
        @posts = Post.order("updated_at DESC")
     end
   end

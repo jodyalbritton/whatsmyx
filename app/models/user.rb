@@ -37,8 +37,7 @@ class User < ActiveRecord::Base
   has_many :services, :dependent => :destroy
   has_one :profile, dependent: :destroy
   has_one :settings, dependent: :destroy
-  has_one :notifications, dependent: :destroy
-  has_one :actor, dependent: :destroy
+  
  
   
  accepts_nested_attributes_for :profile, :settings
