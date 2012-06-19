@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617103736) do
+ActiveRecord::Schema.define(:version => 20120619003920) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -184,9 +184,9 @@ ActiveRecord::Schema.define(:version => 20120617103736) do
     t.float   "lipid_total"
     t.float   "ash"
     t.float   "carbohydrates"
-    t.float   "fiber"
+    t.float   "fiber",                                                      :default => 0.0,   :null => false
     t.float   "sugar_total",                                                :default => 0.0,   :null => false
-    t.float   "calcium"
+    t.float   "calcium",                                                    :default => 0.0,   :null => false
     t.decimal "iron",                        :precision => 4,  :scale => 2
     t.integer "magnesium"
     t.integer "phosphorus"
@@ -319,6 +319,15 @@ ActiveRecord::Schema.define(:version => 20120617103736) do
   end
 
   add_index "footnotes", ["ndb_no"], :name => "ndb_no"
+
+  create_table "friendships", :force => true do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+    t.integer "blocker_id"
+    t.boolean "pending",    :default => true
+  end
+
+  add_index "friendships", ["user_id", "friend_id"], :name => "index_friendships_on_user_id_and_friend_id", :unique => true
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
