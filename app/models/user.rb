@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  include Amistad::FriendModel
+
   include Likeable::UserMethods
     has_merit
   extend FriendlyId

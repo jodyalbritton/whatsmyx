@@ -4,7 +4,9 @@ class HomeController < ApplicationController
   def load
 
     @posts = Post.all
-    @activities = Activity.all
+    following = Follow.where(["follower_id = ?", (current_user)])
+    following_ids = following.collect{|f| f.followable_id}
+    @activities = Activity.where(:user_id => [following_ids, current_user]).order('created_at DESC')
   end
    
     def index

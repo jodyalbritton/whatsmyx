@@ -54,7 +54,7 @@ gem "nested_form"
 gem 'formtastic'
 gem 'redis'
 gem 'likeable'
-gem 'amistad'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

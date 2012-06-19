@@ -43,10 +43,10 @@
                <h3><%= @user.username %></h3>
 	        
                 <% if user_signed_in? %>
-                
+                <div id="follows_user">
                 <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
                 
-         
+                </div>
                 <% end %> 
         </div>
         <div id="profile-merit" class="pull-right visible-desktop">
