@@ -17,4 +17,4 @@
 # Ignore all avatars
 /public/system/users/avatars
 <<<<<<< HEAD
-config/database.yml
+config/database.ymlconfig/database.yml
