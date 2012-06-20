@@ -197,7 +197,7 @@
 	   <div class="span4">
 	     
 	   <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
-
+        
 	   </div>
 	   <div class="span2">
 	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>

@@ -3,16 +3,14 @@ Whatsmyx::Application.routes.draw do
 
   
   
-  resources :dailylogs
-
+ 
   opinio_model
   
   resources :community
- 
   resources :checklists
   resources :posts do
   opinio
-end 
+  end 
  
   resources :notes
   resources :meals do
@@ -30,9 +28,9 @@ end
   resources :nutrition
   resources :nutr_defs
   resources :foods do
-   resources :nutrients do
-     resources :nutr_defs
-   end
+    resources :nutrients do
+      resources :nutr_defs
+     end
   end
 
   match "users/auth/:service/callback" => 'services#create'
@@ -49,7 +47,7 @@ end
   
   end
  
-resources :services, :only => [:index, :create, :destroy]
+  resources :services, :only => [:index, :create, :destroy]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -110,6 +108,6 @@ resources :services, :only => [:index, :create, :destroy]
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   resources :users, :only => [:show], :path => '/' do 
-   resources :follows, :only => [:create, :destroy]
+    resources :follows, :only => [:create, :destroy]
    end
 end
