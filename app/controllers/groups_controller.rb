@@ -22,6 +22,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @group_activities = @group.activities.find(:all)
+    @current_memberships = current_user.memberships.where(:group_id => @group.id).count
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @group }
