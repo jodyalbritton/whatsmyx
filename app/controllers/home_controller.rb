@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @posts = Post.all
     following = Follow.where(["follower_id = ?", (current_user)])
     following_ids = following.collect{|f| f.followable_id}
-    @activities = Activity.where(:user_id => [following_ids, current_user]).order('created_at DESC')
+    @activities = Activity.where(:user_id => [following_ids, current_user]).order('created_at DESC').page params[:page]
   end
    
     def index
@@ -17,6 +17,12 @@ class HomeController < ApplicationController
      @post = current_user.posts.build
 
      @checklist = current_user.checklists.build
+     
+    respond_to do |format|
+    format.js
+    format.html # index.html.erb
+    format.xml  { render :xml => @activities }
+  end
   
     
   end

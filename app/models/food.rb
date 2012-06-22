@@ -10,6 +10,7 @@ class Food < ActiveRecord::Base
    
   has_many :ingredients
   has_many :weights
+  has_one :food_det, :primary_key => 'ndb', :foreign_key => 'ndb'
   
   extend FriendlyId
   friendly_id :name, use: :slugged

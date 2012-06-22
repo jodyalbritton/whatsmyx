@@ -25,18 +25,20 @@ Whatsmyx::Application.routes.draw do
   end 
  
   resources :notes
-  resources :meals do
-  get :autocomplete_food_name, :on => :collection
-  end
+ 
+  
+
 
   resources :mcategories
   resources :categories
-  resources :ingredients
+  resources :ingredients do 
+    get :autocomplete_food_det_longdesc, :on => :collection
+  end
   resources :stats
   resources :activities
   resources :goals
 
-  resources :meals 
+
   resources :nutrition
   resources :nutr_defs
   resources :foods do

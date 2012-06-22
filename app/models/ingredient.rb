@@ -1,6 +1,6 @@
 class Ingredient < ActiveRecord::Base
   
-  attr_accessible :meal, :what_food, :food_id, :servings, :serving_size, :user_id, :date, :mcategory_id
+  attr_accessible :what_food, :food_id, :servings, :serving_size, :user_id, :date, :mcategory_id
   
   #validations
   
@@ -10,7 +10,7 @@ class Ingredient < ActiveRecord::Base
   belongs_to :mcategory
   belongs_to :food
   
-  
+ validates_presence_of :what_food, :food_id
    include Likeable
  
 end

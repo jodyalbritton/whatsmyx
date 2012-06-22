@@ -12,7 +12,7 @@
   $("#stat_errors").hide(300);
 
   /*Update the html of the div flash_notice with the new one*/
-  $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
+  $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
 
   /*Show the flash_notice div*/
   $("#flash_notice").show(300);

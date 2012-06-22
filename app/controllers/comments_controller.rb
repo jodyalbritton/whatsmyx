@@ -10,8 +10,8 @@ class Opinio::CommentsController < ApplicationController
     @comment = resource.comments.build(params[:comment])
     @comment.owner = send(Opinio.current_user_method)
     if @comment.save
-      flash_area = :notice
-      message = t('opinio.messages.comment_sent')
+      set_flash(:notice, t('opinio.messages.comment_sent'))
+
     else
       flash_area = :error
       message = t('opinio.messages.comment_sending_error')

@@ -16,14 +16,14 @@
        </div>
   
        </div>
-       <div id="post-body" class="span6">
+       <div id="post-body" class="span6 post-body">
              <div class="post-content">
               <%= activity.target.text %>
        </div>
      
            
          
-              <div class="comment-likes">
+              <div class="post-likes">
              <%= activity.target.like_count  %> Propped This    
              <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
              <%- else -%>
@@ -31,6 +31,7 @@
              <%- end -%>
               <a href="javascript:toggleDiv('new_comment_<%=activity.target.id %>');" class= "icon-comment">Comment</a>
              </div>
+           
         
            
 

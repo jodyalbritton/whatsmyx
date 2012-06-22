@@ -72,6 +72,11 @@ margin-bottom: 2%;
 list-style: none;
 }
 
+
+.input-append {
+	padding-left: 100px;
+}
+
 .nut-label {
 
         border-bottom: thin solid black;
@@ -111,6 +116,19 @@ Post Style
 
 }
 
+.post-content {
+	min-height: 40px;
+	padding-bottom: 5px;
+
+}
+
+.post-likes {
+
+	border-bottom: 1px solid #E3E3E3;
+
+    
+
+}
 
 
 /****************************************************************
@@ -131,6 +149,10 @@ Comments Style
         min-height: 100px;
 }
 
+.comment-likes {
+	
+	color: gray;
+}
 /****************************************************************
 Note Style
 ****************************************************************/
@@ -198,7 +220,15 @@ img.avatar  {
 -moz-border-radius: 8px;
 border-radius: 8px;
 background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+background-color:white;
 }
+
+
 
 /****************************************************************
 nutrition nav by date
@@ -235,4 +265,16 @@ nutrition nav by date
     border-left: 1px solid #E3E3E3;
     border-right: 1px solid #E3E3E3;
 
+}
+
+.ui-autocomplete {
+	
+	    width: 340px;
+		max-height: 200px;
+		overflow-y: auto;
+		/* prevent horizontal scrollbar */
+		overflow-x: hidden;
+		/* add padding to account for vertical scrollbar */
+		padding-right: 20px;
+		
 }

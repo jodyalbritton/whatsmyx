@@ -1,6 +1,6 @@
 <%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' } :remote=> true do |f| %>
   <%= f.input :date %>
-  <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_meals_path, :input_html => {:id_element => "#ingredient_food_id"} %>
+  <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_det_longdesc_meals_path, :input_html => {:id_element => "#ingredient_food_id"} %>
   <%= f.input :servings %>
   <%= f.input :food_id %>
   <%= f.input :serving_size %>

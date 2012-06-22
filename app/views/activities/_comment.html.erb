@@ -2,8 +2,9 @@
 <div class="row activity-item">
       <div id="comment-sidebar" class="span2">
 
-          <div id="comment-avatar" class="span1">
-          <a href="#" id="example"  rel="popover" title="A Title" ><%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %></a>
+          <div  class="span1">
+         <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
+          
           </div>
           <div class="comment-avatar">
            <h3><%= activity.user.username %></h3>

@@ -3,7 +3,7 @@
 <div class="row comment-item span6" id="comment_<%= comment.id %>">
 	  
        <div id="comment-sidebar" class="span0">
-        <%= image_tag comment.owner.profile.avatar.url(:mini) %>
+        <%= image_tag comment.owner.profile.avatar.url(:mini), :class=> 'avatar'  %>
        </div>
 
        <div id="comment-content" class="span5">

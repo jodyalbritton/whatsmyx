@@ -5,8 +5,17 @@ class Group < ActiveRecord::Base
   has_many :memberships, dependent: :destroy
   has_many :activities, :foreign_key => :parent_id, dependent: :destroy
   
- after_create :create_new_membership
-
+  
+  
+  
+  validates_presence_of :name, :description
+  
+  
+  
+  after_create :create_new_membership
+ 
+ 
+ 
   private
     def create_new_membership
       self.memberships << Membership.new(:user_id => self.user)

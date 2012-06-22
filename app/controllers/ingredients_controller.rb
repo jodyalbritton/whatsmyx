@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
+  autocomplete :food_det, :longdesc, :full => true, :limit => '100'
   before_filter :authenticate_user!
   # GET /ingredients
   # GET /ingredients.json

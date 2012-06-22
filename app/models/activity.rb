@@ -6,6 +6,7 @@ class Activity < ActiveRecord::Base
   belongs_to :user
   belongs_to :target, :polymorphic => true
   
+  paginates_per 10
   default_scope :order => 'activities.created_at DESC'
   
   def to_partial_path() "activities/#{target_type.downcase}" end

@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
  #assoications 
   has_many :activities, dependent: :destroy
   has_many :groups 
+  has_many :comments, dependent: :destroy
   has_many :checklists, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
