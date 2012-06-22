@@ -16,11 +16,16 @@ class PostsController < ApplicationController
  
     @post = current_user.posts.build(params[:post])
     if @post.save
-      flash[:notice] = "Successfully created post."
-       following = Follow.where(["follower_id = ?", @user.id])
-       following_ids = following.collect{|f| f.followable_id}
-       @activities = Activity.where(:user_id => following_ids).order('updated_at DESC').limit(20)
-       @posts = Post.order("updated_at DESC")
+    flash[:notice] = "Successfully created post."
+    if params[:date] 
+    @group = Group.find(params[:group])
+    @group_activities = @group.activities.find(:all)
+    else 
+    following = Follow.where(["follower_id = ?", (current_user)])
+    following_ids = following.collect{|f| f.followable_id}
+    @activities = Activity.where(:user_id => [following_ids, current_user]).order('created_at DESC')
+    end
+    @posts = Post.order("updated_at DESC")
     end
   end
 

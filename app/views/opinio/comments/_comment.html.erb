@@ -1,11 +1,13 @@
 <% reply = defined?(reply) ? reply : false %>
-<div class="row comment-item span5" id="comment_<%= comment.id %>">
-       <div id="comment-sidebar" class="span1">
+ 
+<div class="row comment-item span6" id="comment_<%= comment.id %>">
+	  
+       <div id="comment-sidebar" class="span0">
         <%= image_tag comment.owner.profile.avatar.url(:mini) %>
        </div>
 
-       <div id="comment-content" class="span3">
-          <div class="row comment-body">
+       <div id="comment-content" class="span5">
+          <div class="comment-body">
             <li>
             <p>
             <%= comment.owner.username %> Said: 
@@ -13,22 +15,23 @@
             </p>
           </div>
           <div class="row comment-footer"> 
-             <div>
+            
+            
+             <div class="comment-likes">
              <%= time_ago_in_words(comment.created_at) %> ago.
-             </div>
-             <% if current_user == comment.owner %>
-             <div class="comment-delete span2">
-               <%= link_to t('opinio.actions.delete'), comment_path(comment), :method => :delete, :remote => true %> 
-             </div>
-             <% end %>
-             <div class="comment-likes span3">
-             <%= comment.like_count  %> Like this     
+             
              <%- if current_user.likes? comment -%><%= unlike_link_for comment  %>
              <%- else -%>
              <%= like_link_for comment %>
              <%- end -%>
-             </div>
-            
+              
+              (<%= comment.like_count %> Given)
+             
+              <% if current_user == comment.owner %>
+              <% end %>
+          
+              <%= link_to "Delete", comment_path(comment), :method => :delete, :remote => true,  :class=> "icon-trash" %> 
+              </div>
               <%# this enables only 1 level of replies %>
               <% if Opinio.accept_replies && !reply %>
               <div class="commemnt-reply">

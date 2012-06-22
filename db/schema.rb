@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120619003920) do
+ActiveRecord::Schema.define(:version => 20120622005255) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -78,28 +78,6 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
-  create_table "activity_objects", :force => true do |t|
-    t.integer  "activity_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "activity_objects", ["activity_id"], :name => "index_activity_objects_on_activity_id"
-
-  create_table "activity_verbs", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "audiences", :force => true do |t|
-    t.integer  "activity_id"
-    t.integer  "object_id"
-    t.string   "scope"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
     t.integer  "sash_id"
@@ -128,14 +106,6 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "circles", :force => true do |t|
-    t.integer  "author_id"
-    t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "comments", :force => true do |t|
     t.integer  "owner_id",           :null => false
     t.integer  "commentable_id",     :null => false
@@ -144,13 +114,6 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
     t.integer  "activity_object_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-  end
-
-  create_table "dailylogs", :force => true do |t|
-    t.date     "date"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "embedded_objects", :force => true do |t|
@@ -320,14 +283,17 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
 
   add_index "footnotes", ["ndb_no"], :name => "ndb_no"
 
-  create_table "friendships", :force => true do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
-    t.integer "blocker_id"
-    t.boolean "pending",    :default => true
+  create_table "gcategories", :force => true do |t|
+    t.string   "name",       :limit => 10
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
-  add_index "friendships", ["user_id", "friend_id"], :name => "index_friendships_on_user_id_and_friend_id", :unique => true
+  create_table "glevels", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "goals", :force => true do |t|
     t.integer  "user_id"
@@ -340,11 +306,14 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
   add_index "goals", ["user_id"], :name => "index_goals_on_user_id"
 
   create_table "groups", :force => true do |t|
-    t.integer  "author_id"
     t.string   "name"
+    t.integer  "user_id"
     t.string   "privacy_level"
+    t.boolean  "active"
+    t.text     "description"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "gcategory_id"
   end
 
   create_table "ingredients", :force => true do |t|
@@ -368,27 +337,19 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "meals", :force => true do |t|
-    t.string   "name"
-    t.integer  "ndb"
-    t.integer  "quanity"
-    t.string   "units"
-    t.date     "date"
-    t.string   "mcategory_id"
+  create_table "memberships", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.boolean  "favorite"
-    t.string   "fave_name"
+    t.boolean  "pending",    :default => true
+    t.integer  "group_id"
+    t.boolean  "blocked",    :default => false
+    t.integer  "glevel_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
-  create_table "memberships", :force => true do |t|
-    t.integer  "group_id"
-    t.integer  "member_id"
-    t.boolean  "active"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+  add_index "memberships", ["glevel_id"], :name => "index_memberships_on_glevel_id"
+  add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
+  add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
   create_table "merit_actions", :force => true do |t|
     t.integer  "user_id"
@@ -420,6 +381,21 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "notifications", :force => true do |t|
+    t.string   "target_type"
+    t.integer  "target_id"
+    t.integer  "recipient_id"
+    t.integer  "user_id"
+    t.string   "action"
+    t.boolean  "unread",       :default => true
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+  end
+
+  add_index "notifications", ["target_id"], :name => "index_notifications_on_target_id"
+  add_index "notifications", ["target_type"], :name => "index_notifications_on_target_type"
+  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
   create_table "nutr_defs", :force => true do |t|
     t.string  "nutr_no",  :limit => 3,  :null => false
@@ -456,6 +432,7 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "text"
+    t.integer  "parent_id"
   end
 
   add_index "posts", ["activity_object_id"], :name => "index_posts_on_activity_object_id"
@@ -534,17 +511,10 @@ ActiveRecord::Schema.define(:version => 20120619003920) do
     t.string   "value"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.date     "date"
     t.string   "sunit"
     t.integer  "user_id"
-    t.integer  "category_id"
-    t.date     "date"
-  end
-
-  create_table "ties", :force => true do |t|
-    t.integer  "contact_id"
-    t.integer  "circle_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "category_id", :null => false
   end
 
   create_table "users", :force => true do |t|

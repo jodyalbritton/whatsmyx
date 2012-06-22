@@ -1,9 +1,9 @@
   module LikesHelper    
     def like_link_for(target)
-      link_to "like it!!", like_path(:resource_name => target  .class, :resource_id => target.id), :method => :post
+      link_to "Give Props", like_path(:resource_name => target.class, :resource_id => target.id), :method => :post, :method => :delete, :class => "icon-thumbs-up"
     end
 
     def unlike_link_for(target)
-      link_to "unlike it!!", like_path(:resource_name => target.class, :resource_id => target.id), :method => :delete
+      link_to "Undo Props", like_path(:resource_name => target.class, :resource_id => target.id), :method => :delete, :class => "icon-thumbs-down" 
     end
   end

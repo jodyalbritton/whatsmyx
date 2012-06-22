@@ -1,0 +1,23 @@
+<h1>Listing gcategories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gcategories.each do |gcategory| %>
+  <tr>
+    <td><%= gcategory.name %></td>
+    <td><%= link_to 'Show', gcategory %></td>
+    <td><%= link_to 'Edit', edit_gcategory_path(gcategory) %></td>
+    <td><%= link_to 'Destroy', gcategory, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gcategory', new_gcategory_path %>

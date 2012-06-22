@@ -1,32 +1,38 @@
 <% unless activity.target.nil? %>
+
 <div class="row activity-item">
+	  <div class="activity-controls pull-right">
+	   <i class="icon-cog"></i>
+
+      </div>
       <div id="post-sidebar" class="span2">
 
-          <div id="post-avatar" class="span1">
-             <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
-          </div>
-          <div class="post-avatar">
+       <div id="post-avatar" class="span1">
+          <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
+       </div>
+       <div class="post-avatar">
              <h3><%= activity.user.username %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
-         </div>
+       </div>
   
-     </div>
-    <div id="post-body" class="span6">
+       </div>
+       <div id="post-body" class="span6">
              <div class="post-content">
               <%= activity.target.text %>
-             </div>
+       </div>
      
-              <div id="post-footer"> 
-               <div class="control">
-                    <div class="comment-likes span3">
-             <%= activity.target.like_count  %> Like this     
+           
+         
+              <div class="comment-likes">
+             <%= activity.target.like_count  %> Propped This    
              <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
              <%- else -%>
              <%= like_link_for activity.target %>
              <%- end -%>
+              <a href="javascript:toggleDiv('new_comment_<%=activity.target.id %>');" class= "icon-comment">Comment</a>
              </div>
-                </div>
-              </div>
+        
+           
 
 
 
@@ -37,7 +43,7 @@
           </ul>
           </div>
 
-         <div id="comment-form" class="span4">
+         <div id="comment-form">
           <%= render_comments_form activity.target %>
          </div>
     </div>

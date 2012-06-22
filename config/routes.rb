@@ -4,6 +4,18 @@ Whatsmyx::Application.routes.draw do
   
   
  
+ 
+  resources :notifications
+
+  resources :groups do
+    resources :memberships 
+  end
+    
+
+  resources :gcategories
+
+  
+
   opinio_model
   
   resources :community

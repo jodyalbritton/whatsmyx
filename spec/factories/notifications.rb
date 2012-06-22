@@ -3,5 +3,7 @@
 FactoryGirl.define do
   factory :notification do
     user nil
+    activity nil
+    read false
   end
 end

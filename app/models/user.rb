@@ -28,11 +28,13 @@ class User < ActiveRecord::Base
  
  #assoications 
   has_many :activities, dependent: :destroy
+  has_many :groups 
   has_many :checklists, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
   has_many :ingredients, dependent: :destroy
   has_many :goals, dependent: :destroy
+  has_many :memberships, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :services, :dependent => :destroy
   has_one :profile, dependent: :destroy

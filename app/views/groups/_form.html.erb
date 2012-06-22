@@ -1,0 +1,12 @@
+<%= simple_form_for @group do |f| %>
+
+    <%= f.input :name %>
+
+    <%= f.input :privacy_level, :include_blank => false %>
+    <%= f.input :active %>
+    <%= f.input :description %>
+     
+
+    <%= f.button :submit %>
+
+<% end %>

@@ -1,0 +1,109 @@
+<div class="row">
+<div id="groups-sidebar" class="menu span3">
+
+<div id="group-about">
+	<h2>
+		About
+	</h2>
+	<%= @group.description %>
+	<%= link_to 'Edit', edit_group_path(@group) %> |
+
+</div>
+
+<div id="group-owner">	
+	<h2>
+		Owner
+	</h2>
+  <%= @group.user %>
+</p>
+
+</div>
+
+<div id="group-privacy">
+	<h2>
+		Group Privacy
+	</h2>
+  <%= @group.privacy_level %>
+</p>
+
+</div>
+
+<div id="group-active">
+  	<h2>
+		Group Status
+	</h2>
+  <%= @group.active %>
+</p>
+</div>
+
+<div id="group-members">
+		<h2>
+		Group Members
+	</h2>
+<% @group.memberships.each do |membership| %>
+
+<%= membership.user.username%> 
+
+
+<% end %>
+</div>
+
+            
+  </div>    
+<div id="groups-body" class="span9">
+   <div class="row" id="group-header">
+   
+        <div id="profile-name">
+               <h3><%= @group.name %></h3>
+	            <% if @current_memberships == 0 %>
+                <% if user_signed_in? %>
+                <div id="join_group">
+                <%= link_to 'Join Group', new_group_membership_path(@group) %>
+                
+                </div>
+                <% end %> 
+                <% else %>
+                 <div id="leave_group">
+                <%= link_to 'Destroy', (@group), confirm: 'Are you sure?', method: :delete %>
+                
+                </div>
+                <% end %>
+        </div>
+        <div id="group-merit" class="pull-right visible-desktop">
+        
+         <ul>
+        
+          <li>
+            
+              <strong> <%= @group.memberships.count %> </strong>
+              Members
+            
+
+          </li>
+ </div>
+
+</div>
+ 
+
+
+ <% @parent = @group.id %>
+<div id="posts_form"><%= render :partial => 'posts/form' %></div>
+ <div id="activity_feed"><%= render "activities/group_index" %></div>
+
+
+
+
+
+
+  </div>
+ 
+</div>
+     
+
+
+
+
+
+
+
+

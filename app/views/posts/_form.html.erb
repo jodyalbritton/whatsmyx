@@ -7,7 +7,9 @@
    <div class="span7">
    <div class="control-group pull-right">
    <div class="input-append">
+  
    <%= f.text_area :text, :class => 'input-xlarge span5', :label => false%><%= f.submit "Post", :class => "btn" %>
+   <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
    </div>
    </div>
    </div>

@@ -1,3 +1,4 @@
+       <div class "row">
         <div class= well>
          <ul class="nav nav-list">
             <li class="nav-header">
@@ -26,3 +27,27 @@
             </li>
               </ul>
           </div>
+         </div>
+        <div class "row">
+         
+         
+         
+         
+         <ul class="nav nav-list">
+            <li class="nav-header">
+            Groups
+            </li>
+            <% current_user.memberships.each do |membership| %>
+            <li>
+               <%= link_to membership.group.name, membership.group %> 
+            </li>
+            <% end %>
+            <li>
+            	<hr>
+            </li>
+            <li>
+            	<%= link_to 'New Group', new_group_path %>
+            </li>
+              </ul>
+       
+         </div>

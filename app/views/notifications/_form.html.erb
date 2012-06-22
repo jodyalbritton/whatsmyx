@@ -1,0 +1,12 @@
+<%= simple_form_for @notification do |f| %>
+
+    <%= f.input :user %>
+    <%= f.input :target_type %>
+    <%= f.input :target_id %>
+    <%= f.input :recipient_id %>
+ 
+
+
+    <%= f.button :submit, :as => :input %>
+
+<% end %>
