@@ -34,6 +34,16 @@
 	  <%= image_tag follower.profile.avatar.url(:mini) %>
 	  <% end %>
    </div>
+   <div id="profile-memberships">
+   	   <h2> Groups </h2>
+   	      <ul>
+   	  	  <% @user.memberships.each do |membership| %>
+       	   <li>
+          <strong><%= link_to membership.group.name, membership.group%> </strong>
+          </li>
+          <% end %>
+          </ul>
+   </div>
  
   </div>
   <div id="profile-body" class="span9">
@@ -77,6 +87,8 @@
         </li>
       </ul>
       
+     
+      </ul>
      
 	
      </div>

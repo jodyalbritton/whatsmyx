@@ -82,6 +82,31 @@ list-style: none;
         border-bottom: thin solid black;
 }
 /****************************************************************
+Sign Up Forms
+****************************************************************/
+
+.signup-footer {
+	    text-align: center;
+        min-height: 200px;
+        border-bottom: 1px solid #E3E3E3;
+        border-left: 1px solid #E3E3E3;
+        border-right: 1px solid #E3E3E3;
+        padding: 10px;
+}
+
+.signup-header {
+
+        min-height: 200px;
+        border-top: 1px solid #E3E3E3;
+        border-left: 1px solid #E3E3E3;
+        border-right: 1px solid #E3E3E3;
+        padding: 10px;
+}
+
+.signup-header li {
+    list-style: none;
+}
+/****************************************************************
 Activity Feed
 ****************************************************************/
 

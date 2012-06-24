@@ -1,9 +1,11 @@
-<%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' } :remote=> true do |f| %>
+<%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' }, :remote=> true do |f| %>
   <%= f.input :date %>
-  <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_det_longdesc_meals_path, :input_html => {:id_element => "#ingredient_food_id"} %>
-  <%= f.input :servings %>
+  <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_ingredients_path, :input_html => {:id_element => "#ingredient_food_id"} %>
+ 
   <%= f.input :food_id %>
-  <%= f.input :serving_size %>
+  <%= f.input :serving_size, :as => 'hidden' %>
+  <%= f.input :servings %>
+  <%= f.association :serv_size, :label=> 'Serving Size', :include_blank => false %>
   <%= f.association :mcategory, :include_blank => false %>
   <%= f.button :wrapped, :cancel => ingredients_path %>
 <% end %>

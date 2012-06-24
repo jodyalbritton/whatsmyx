@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120622005255) do
+ActiveRecord::Schema.define(:version => 20120623214223) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -137,12 +137,31 @@ ActiveRecord::Schema.define(:version => 20120622005255) do
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
+  create_table "food_dets", :force => true do |t|
+    t.integer "ndb",                                                      :null => false
+    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
+    t.string  "longdesc",    :limit => 200,                               :null => false
+    t.string  "shortdesc",   :limit => 60,                                :null => false
+    t.string  "comname",     :limit => 100
+    t.string  "manufacname", :limit => 65
+    t.string  "survey",      :limit => 1
+    t.string  "ref_desc",    :limit => 135
+    t.integer "refuse"
+    t.string  "SciName",     :limit => 65
+    t.decimal "n_factor",                   :precision => 4, :scale => 2
+    t.decimal "pro_factor",                 :precision => 4, :scale => 2
+    t.decimal "fat_factor",                 :precision => 4, :scale => 2
+    t.decimal "cho_factor",                 :precision => 4, :scale => 2
+  end
+
+  add_index "food_dets", ["ndb"], :name => "INDEX_FOOD_DETS_ON_NDB"
+
   create_table "foods", :force => true do |t|
     t.integer "user_id"
     t.integer "ndb"
     t.string  "name",          :limit => 60
     t.float   "water"
-    t.float   "calories"
+    t.float   "calories",                                                   :default => 0.0,   :null => false
     t.float   "protein"
     t.float   "lipid_total"
     t.float   "ash"
@@ -197,23 +216,6 @@ ActiveRecord::Schema.define(:version => 20120622005255) do
   end
 
   add_index "foods", ["slug"], :name => "index_foods_on_slug", :unique => true
-
-  create_table "foods_back", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
-    t.string  "longdesc",    :limit => 200,                               :null => false
-    t.string  "shortdesc",   :limit => 60,                                :null => false
-    t.string  "comname",     :limit => 100
-    t.string  "manufacname", :limit => 65
-    t.string  "survey",      :limit => 1
-    t.string  "ref_desc",    :limit => 135
-    t.integer "refuse"
-    t.string  "SciName",     :limit => 65
-    t.decimal "n_factor",                   :precision => 4, :scale => 2
-    t.decimal "pro_factor",                 :precision => 4, :scale => 2
-    t.decimal "fat_factor",                 :precision => 4, :scale => 2
-    t.decimal "cho_factor",                 :precision => 4, :scale => 2
-  end
 
   create_table "foods_bak", :force => true do |t|
     t.string  "name"
@@ -311,22 +313,28 @@ ActiveRecord::Schema.define(:version => 20120622005255) do
     t.string   "privacy_level"
     t.boolean  "active"
     t.text     "description"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "gcategory_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "ingredients", :force => true do |t|
     t.string   "what_food"
     t.integer  "servings"
     t.integer  "food_id"
-    t.decimal  "serving_size", :precision => 11, :scale => 0
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.decimal  "serving_size",    :precision => 11, :scale => 0
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.integer  "meal_id"
     t.integer  "user_id"
     t.date     "date"
     t.integer  "mcategory_id"
+    t.integer  "serving_size_id"
+    t.integer  "serv_size_id"
   end
 
   add_index "ingredients", ["food_id"], :name => "index_ingredients_on_food_id"
@@ -485,6 +493,16 @@ ActiveRecord::Schema.define(:version => 20120622005255) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "serv_sizes", :force => true do |t|
+    t.string   "name"
+    t.float    "value"
+    t.integer  "ingredient_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "serv_sizes", ["ingredient_id"], :name => "index_serv_sizes_on_ingredient_id"
 
   create_table "services", :force => true do |t|
     t.integer  "user_id"

@@ -25,10 +25,10 @@
 
 	<% @ingredients_tot.each do |ingredient| %>
 		<% food = Food.find(ingredient.food_id) %>
-		<% if ingredient.serving_size.nil? %>
+		<% if ingredient.serv_size.nil? %>
 			<% multiplication_factor = ingredient.servings%>
 		<% else %>
-			<% multiplication_factor = ingredient.servings*ingredient.serving_size/ingredient.serving_grams%>
+			<% multiplication_factor = ingredient.servings*ingredient.serv_size.value/100%>
 		<% end %>
 		<% cals = cals + (food.calories*multiplication_factor) %>
 		<% prot = prot + (food.protein*multiplication_factor) %>
@@ -245,7 +245,7 @@
     </tr>
     <tr>
     <td>
-    	<%= ingredient.food.calories %> Calories | <%= ingredient.food.protein %> g Protein | <%= ingredient.food.lipid_total %> g of Fat |  <%= ingredient.food.carbohydrates %> g Carbs
+    	<%= ((ingredient.food.calories*ingredient.serv_size.value/100)*ingredient.servings).round %> Calories | <%= ((ingredient.food.protein*ingredient.serv_size.value/100)*ingredient.servings).round %> g Protein | <%= ((ingredient.food.lipid_total*ingredient.serv_size.value/100)*ingredient.servings).round %> g of Fat |  <%= ((ingredient.food.carbohydrates*ingredient.serv_size.value/100)*ingredient.servings).round %> g Carbs
    	</td>
    	 <td>
       </td>
@@ -303,7 +303,7 @@ $(document).ready(function() {
 		},
 		tooltip: {
 			formatter: function() {
-				return '<b>'+ this.point.name +'</b>: '+ this.percentage +' %';
+				return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %';
 			}
 		},
 		plotOptions: {

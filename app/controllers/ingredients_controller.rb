@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  autocomplete :food_det, :longdesc, :full => true, :limit => '100'
+  autocomplete :food, :name, :full => true, :limit => '100'
   before_filter :authenticate_user!
   # GET /ingredients
   # GET /ingredients.json
@@ -28,7 +28,7 @@ class IngredientsController < ApplicationController
             
     # @todays_ingredients = Ingredient.search(@ingredient.date, @ingredient.user).order("time_of_day")
     
-         @cals = 0 
+     @cals = 0 
   	 @prot = 0 
   	 @fats = 0 
   	 @carb = 0 
@@ -37,15 +37,14 @@ class IngredientsController < ApplicationController
   		
   			 
   			 food = Food.find(@ingredient.food_id) 
-  			 if food.umd == 0
-    			 if @ingredient.serving_size.nil? 
+  	
+    			 if @ingredient.serv_size.nil? 
     				 multiplication_factor = @ingredient.servings
     			 else 
-    				 multiplication_factor = @ingredient.servings*ingredient.serving_size/100
+    				 multiplication_factor = @ingredient.servings*@ingredient.serv_size.value/100
     			 end
+    	  
     	
-    		   multiplication_factor = @ingredient.servings
-  			 end
   			 @cals = @cals + (food.calories*multiplication_factor) 
   			 @prot = @prot + (food.protein*multiplication_factor) 
   			 @fats = @fats + (food.lipid_total*multiplication_factor) 

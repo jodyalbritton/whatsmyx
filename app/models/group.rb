@@ -1,5 +1,6 @@
 class Group < ActiveRecord::Base
-  attr_accessible :active, :description, :name, :privacy_level, :user, :gcategory_id
+  resourcify
+  attr_accessible :active, :description, :name, :privacy_level, :user, :gcategory_id, :avatar
   belongs_to :gcategory
   belongs_to :user
   has_many :memberships, dependent: :destroy
@@ -7,12 +8,18 @@ class Group < ActiveRecord::Base
   
   
   
+   has_attached_file :avatar, 
+          :styles => { :medium => "300x300>", 
+          :thumb => "64x64>",
+          :mini => "32x32>" },
+          :default_url =>"/assets/missing_:style.png"
   
   validates_presence_of :name, :description
   
   
   
   after_create :create_new_membership
+  
  
  
  

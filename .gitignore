@@ -16,5 +16,7 @@
 
 # Ignore all avatars
 /public/system/users/avatars
+/public/system/profiles/avatars
+/public/system/groups/avatars
 <<<<<<< HEAD
 config/database.ymlconfig/database.yml

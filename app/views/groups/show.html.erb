@@ -2,6 +2,7 @@
 <div id="groups-sidebar" class="menu span3">
 
 <div id="group-about">
+	<%= image_tag @group.avatar.url(:medium) %>
 	<h2>
 		About
 	</h2>
@@ -14,7 +15,7 @@
 	<h2>
 		Owner
 	</h2>
-  <%= @group.user %>
+  <%= @group.user.username %>
 </p>
 
 </div>
@@ -40,12 +41,12 @@
 		<h2>
 		Group Members
 	</h2>
-<% @group.memberships.each do |membership| %>
-
-<%= membership.user.username%> 
-
-
-<% end %>
+      
+     
+     <% @members.each do |x| %> 
+      <%= image_tag x.user.profile.avatar.url(:mini) %>
+    
+     <% end %>
 </div>
 
             
@@ -58,15 +59,21 @@
 	            <% if @current_memberships == 0 %>
                 <% if user_signed_in? %>
                 <div id="join_group">
-                <%= link_to 'Join Group', new_group_membership_path(@group) %>
+              <%= simple_form_for ([@group, @new_membership]) do |f| %>
+              <%= f.button :submit, :label => 'Join Group' %>
+              <%= f.input :user_id, :as=> 'hidden', :input_html => {:value => current_user}%>
+
+              <% end %>
                 
                 </div>
                 <% end %> 
                 <% else %>
                  <div id="leave_group">
-                <%= link_to 'Destroy', (@group), confirm: 'Are you sure?', method: :delete %>
-                
-                </div>
+           
+                 <% @membership.each do |membership| %>
+                 <%= link_to "Leave Group",  ([@group, membership]), confirm: 'Are you sure?', :class=>"btn btn-danger", method: :delete %>
+                 <% end %>
+                 </div>
                 <% end %>
         </div>
         <div id="group-merit" class="pull-right visible-desktop">

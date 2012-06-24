@@ -60,8 +60,8 @@ class MembershipsController < ApplicationController
         raise "Cannot self-join a private group, you need to be invited"
       end
       @membership.save
-    if @membership.save 
-      redirect_to group_memberships_path
+    if @membership.save
+       redirect_to :back
     end
     else 
     raise "Cannot join this group, you are already a member!"
@@ -74,7 +74,7 @@ class MembershipsController < ApplicationController
     @user = User.find(current_user)
     @group = Group.find(params[:group_id])
     @membership = @group.memberships.find(params[:id])
-    
+     redirect_to :back
 
 
       respond_to do |format|
@@ -92,8 +92,13 @@ class MembershipsController < ApplicationController
   # DELETE /memberships/1
   # DELETE /memberships/1.json
   def destroy
+   
+    @membership = Membership.find(params[:id])
     @user = User.find(current_user)
-    @membership = @user.memberships.find(params[:id])
     @membership.destroy
+    if @membership.destroy
+    redirect_to :back
+    end
+    
  end 
 end

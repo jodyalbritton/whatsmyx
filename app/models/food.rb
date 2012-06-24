@@ -9,7 +9,7 @@ class Food < ActiveRecord::Base
  
    
   has_many :ingredients
-  has_many :weights
+  has_many :weights, :primary_key => 'ndb', :foreign_key => 'ndb'
   has_one :food_det, :primary_key => 'ndb', :foreign_key => 'ndb'
   
   extend FriendlyId

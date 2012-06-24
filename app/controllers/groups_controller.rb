@@ -1,7 +1,9 @@
 class GroupsController < ApplicationController
-  
+  before_filter :load, :authenticate_user!
   before_filter :load
-
+  
+  load_and_authorize_resource :only => [:index, :show, :edit]
+  
   def load
     @posts = Post.order("updated_at DESC")
     @post = Post.new
@@ -9,7 +11,11 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
+    
+    @user = User.find(current_user)
     @groups = Group.all
+    
+   
 
     respond_to do |format|
       format.html # index.html.erb
@@ -23,10 +29,12 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group_activities = @group.activities.find(:all)
     @current_memberships = current_user.memberships.where(:group_id => @group.id).count
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @group }
-    end
+    @new_membership = @group.memberships.build
+    @user = User.find(current_user)
+    @membership = @group.memberships.where(:user_id => current_user)
+    @members = @group.memberships.find(:all)
+    
+    
   end
 
   # GET /groups/new
@@ -82,7 +90,11 @@ class GroupsController < ApplicationController
   # DELETE /groups/1.json
   def destroy
     @group = Group.find(params[:id])
+    if @group.user == current_user 
     @group.destroy
+    else 
+    raise "cannot"
+    end
 
     respond_to do |format|
       format.html { redirect_to groups_url }

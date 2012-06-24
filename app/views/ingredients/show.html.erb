@@ -23,7 +23,7 @@
 		var dv_data = new Array();
 		dv_data['Calories'] = <%= @dvs[:calories] %>;
 		dv_data['Protein'] = <%= @dvs[:protein] %>;
-		dv_data['Fat'] = <%= @dvs[:total_fat] %>;
+		dv_data['Fats'] = <%= @dvs[:total_fat] %>;
 		dv_data['Carbohydrates'] = <%= @dvs[:tot_carbs]%>;
 		
 
@@ -46,7 +46,7 @@
 		      // },
 		      xAxis: {
 		         categories: [
-		            'Calories',
+		        'Calories',
 			    'Protein',
 			    'Fats',
 			    'Carbohydrates',
@@ -146,65 +146,71 @@
 	
 			<%= content_tag_for(:div, @this_ingredient) do %>
 
-				
 
-					<% food = Food.find(@ingredient.food_id) %>
+
+<% food = Food.find(@ingredient.food_id) %>
 <div class="span3 well">
-
 <div>Nutrition Facts</div>
-<div>Calories <%= h('%.0f' % (food.calories)) %></div>
+<% if @ingredient.serv_size.nil? %>
+                       Serving Size: 100g
+    		     <% multiplication_factor = @ingredient.servings %>
+    			 <% else %>
+    				 <% multiplication_factor = (@ingredient.serv_size.value / 100)*@ingredient.servings.to_f %>
+    				 Serving Size :<%=@ingredient.servings%> <%= @ingredient.serv_size.name%><% if @ingredient.servings > 1%>s<%else%><%end%>
+    				
+    			<% end %>
+
+<div>Calories <%= h('%.0f' % (multiplication_factor * food.calories)) %></div>
 		
 <div>Calories from Fat <%= h('%.0f' % (food.lipid_total*9))  %></div>					 		
 <div>		
- <% if food.umd == 0%>            
-  Serving size: <%= h(food.weight_1_desc.blank? ? "100 grams" : "#{food.weight_1_gms} grams") %>
- <% elsif food.umd == 1 %>
-   Serving size: <%= h(food.weight_1_desc.blank? ? "100 grams" : "#{food.weight_1_desc}") %>
- <% elsif food.umd == 2 %>
- 	Serving size: <%= h(food.weight_1_desc.blank? ? "each" : "#{food.weight_1_desc}") %> 
- <% end %>
+                
+    			
+ 
+ 
+
 </div>	
 
 			
 
 			
- <div class="pull-right"><%= h('%.0f' % (100*food.lipid_total/@dvs[:total_fat])) %>%</div>    
+ <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.lipid_total/@dvs[:total_fat])*100)) %>%</div>    
       
-       <div class="nut-label">Total Fat <%= h('%.0f' % (food.lipid_total))%>g</div>            
+       <div class="nut-label">Total Fat <%= h('%.0f' % (food.lipid_total*multiplication_factor))%>g</div>            
 			
- <div class="pull-right"><%= h('%.0f' % (100*food.carbohydrates/@dvs[:tot_carbs])) %>%</div>   
+ <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.carbohydrates/@dvs[:tot_carbs])*100)) %>%</div>   
 				
-	<div class="nut-label">Total Carbs <%= h('%.0f' % (food.carbohydrates)) %>g</div>            
+	<div class="nut-label">Total Carbs <%= h('%.0f' % (food.carbohydrates*multiplication_factor)) %>g</div>            
 				
-  <div class="pull-right"><%= h('%.0f' % (100*food.sugar_total/@dvs[:sugar_total])) %>%</div>   	           
+  <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.sugar_total/@dvs[:sugar_total])*100)) %>%</div>   	           
 					 
-        <div class="nut-label">Sugars <%= h('%.0f' % (food.sugar_total)) %>g</div>            
+        <div class="nut-label">Sugars <%= h('%.0f' % (food.sugar_total*multiplication_factor)) %>g</div>            
       
-  <div class="pull-right"><%= h('%.0f' % (100*food.fa_sat/@dvs[:fa_sat])) %>%</div>  	
+  <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.fa_sat/@dvs[:fa_sat])*100)) %>%</div>  	
     
-  <div class="nut-label">Sat. Fats <%= h('%.0f' % (food.fa_sat)) %>g</div>                
+  <div class="nut-label">Sat. Fats <%= h('%.0f' % (food.fa_sat*multiplication_factor)) %>g</div>                
  
-  <div class="pull-right"><%= h('%.0f' % (100*food.fiber/@dvs[:fiber])) %>%</div>            			
+  <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.fiber/@dvs[:fiber])*100)) %>%</div>            			
 
-  <div class="nut-label">Dietary Fiber <%= h('%.0f' % (food.fiber)) %>g</div>            
+  <div class="nut-label">Dietary Fiber <%= h('%.0f' % (food.fiber*multiplication_factor)) %>g</div>            
   
-  <div class="pull-right"><%= h('%.0f' % (100*food.cholesterol/@dvs[:cholesterol])) %>%</div>      
+  <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.cholesterol/@dvs[:cholesterol])*100)) %>%</div>      
      
-  <div class="nut-label">Cholesterol <%= h('%.0f' % (food.cholesterol)) %>mg</div>            
+  <div class="nut-label">Cholesterol <%= h('%.0f' % (food.cholesterol*multiplication_factor)) %>mg</div>            
    
-  <div class="pull-right"><%= h('%.0f' % (100*food.sodium/@dvs[:sodium])) %>%</div>          
+  <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.sodium/@dvs[:sodium])*100)) %>%</div>          
                   
         
- <div class="nut-label">Sodium <%= h('%.0f' % (food.sodium)) %>mg</div>          
+ <div class="nut-label">Sodium <%= h('%.0f' % (food.sodium*multiplication_factor)) %>mg</div>          
   
-  <div class="pull-right"><%= h('%.0f' % (100*food.protein/@dvs[:protein])) %>%</div>             
+  <div class="pull-right"><%= h('%.0f' % ((multiplication_factor*food.protein/@dvs[:protein])*100)) %>%</div>             
                
-  <div class="nut-label">Protein <%= h('%.0f' % (food.protein)) %>g</div>            
+  <div class="nut-label">Protein <%= h('%.0f' % (food.protein*multiplication_factor)) %>g</div>            
     
            
       
 				 <% if food.calcium != 0.0 %>
-  <div class="pull-right"> <%= h('%.0f' % (food.calcium.to_f*100/@dvs[:calcium])) %>%</div>				
+  <div class="pull-right"> <%= h('%.0f' % ((food.calcium.to_f*multiplication_factor/@dvs[:calcium])*100)) %>%</div>				
 	 <div class="nut-label">Calcium</div>      
        
 						
@@ -212,7 +218,7 @@
 				
 				<% end %>
 				 <% if !food.iron.nil? %>
-					<div class="pull-right"><%= h('%.0f' % (food.iron.to_f*100/@dvs[:iron])) %>%</div>
+					<div class="pull-right"><%= h('%.0f' % ((food.iron.to_f*multiplication_factor/@dvs[:iron])*100)) %>%</div>
 					       <div class="nut-label">Iron</div>      
 					
 							
@@ -222,7 +228,7 @@
 				<% end %>					
 		
 				 <% if !food.vit_c.nil? %>
-					<div class="pull-right"> <%= h('%.0f' % (food.vit_c.to_f*100/@dvs[:vit_c])) %>%</div>
+					<div class="pull-right"> <%= h('%.0f' % ((food.vit_c.to_f*multiplication_factor/@dvs[:vit_c])*100)) %>%</div>
 					    <div class="nut-label">Vitamin C</div>      
 					
 							

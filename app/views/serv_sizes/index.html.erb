@@ -1,0 +1,27 @@
+<h1>Listing serv_sizes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Value</th>
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @serv_sizes.each do |serv_size| %>
+  <tr>
+    <td><%= serv_size.name %></td>
+    <td><%= serv_size.value %></td>
+
+    <td><%= link_to 'Show', serv_size %></td>
+    <td><%= link_to 'Edit', edit_serv_size_path(serv_size) %></td>
+    <td><%= link_to 'Destroy', serv_size, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Serv size', new_serv_size_path %>

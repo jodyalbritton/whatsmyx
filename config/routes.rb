@@ -5,6 +5,8 @@ Whatsmyx::Application.routes.draw do
   
  
  
+  resources :serv_sizes
+
   resources :notifications
 
   resources :groups do
@@ -32,7 +34,7 @@ Whatsmyx::Application.routes.draw do
   resources :mcategories
   resources :categories
   resources :ingredients do 
-    get :autocomplete_food_det_longdesc, :on => :collection
+    get :autocomplete_food_name, :on => :collection
   end
   resources :stats
   resources :activities
@@ -57,7 +59,7 @@ Whatsmyx::Application.routes.draw do
   root :to => 'home#index'
   end
   devise_scope :user do
-  root :to => "devise/registrations#new"
+  root :to => "devise/sessions#new"
   
   end
  
