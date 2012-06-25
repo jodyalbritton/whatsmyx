@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623214223) do
+ActiveRecord::Schema.define(:version => 20120624040847) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -77,6 +77,13 @@ ActiveRecord::Schema.define(:version => 20120623214223) do
 
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
+
+  create_table "audiences", :force => true do |t|
+    t.integer  "activity_id"
+    t.integer  "relation_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
@@ -162,8 +169,8 @@ ActiveRecord::Schema.define(:version => 20120623214223) do
     t.string  "name",          :limit => 60
     t.float   "water"
     t.float   "calories",                                                   :default => 0.0,   :null => false
-    t.float   "protein"
-    t.float   "lipid_total"
+    t.float   "protein",                                                    :default => 0.0,   :null => false
+    t.float   "lipid_total",                                                :default => 0.0,   :null => false
     t.float   "ash"
     t.float   "carbohydrates"
     t.float   "fiber",                                                      :default => 0.0,   :null => false
@@ -477,6 +484,14 @@ ActiveRecord::Schema.define(:version => 20120623214223) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "relations", :force => true do |t|
+    t.integer  "audience_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "relations", ["audience_id"], :name => "index_relations_on_audience_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"

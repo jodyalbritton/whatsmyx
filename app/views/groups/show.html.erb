@@ -1,3 +1,6 @@
+ <% @parent = @group.id %>
+ 
+ 
 <div class="row">
 <div id="groups-sidebar" class="menu span3">
 
@@ -60,7 +63,7 @@
                 <% if user_signed_in? %>
                 <div id="join_group">
               <%= simple_form_for ([@group, @new_membership]) do |f| %>
-              <%= f.button :submit, :label => 'Join Group' %>
+              <%= f.button :submit,  'Join Group', :class => 'btn btn-primary' %>
               <%= f.input :user_id, :as=> 'hidden', :input_html => {:value => current_user}%>
 
               <% end %>
@@ -93,9 +96,21 @@
  
 
 
- <% @parent = @group.id %>
+
+<% unless @current_memberships == 0 %>
 <div id="posts_form"><%= render :partial => 'posts/form' %></div>
- <div id="activity_feed"><%= render "activities/group_index" %></div>
+<% end %>
+
+     <% if @group.privacy_level == "PUBLIC" %>
+      <div id="activity_feed"><%= render "activities/index" %></div>
+      <% elsif @group.privacy_level == "RESTRICTED"%>
+      <% unless @current_memberships == 0 %>
+      <div id="activity_feed"><%= render "activities/index" %></div>
+      <%= paginate @activities%>
+      <% end %>
+      <% end %>
+
+  
 
 
 

@@ -25,6 +25,10 @@ a.btn-danger:visited { color: #fff; }
 
 a.btn-primary:visited { color: #fff; }
 
+/****************************************************************
+Users
+****************************************************************/
+
 #user_profile_attributes_dob_1i {
 	width: 100px;
 }
@@ -66,7 +70,50 @@ margin-bottom: 2%;
 }
 
 
+#profile-header {
+background-color: #EBEDEE;
+padding: 1%;
+min-height: 70px;
 
+}
+
+/****************************************************************
+Groups
+****************************************************************/
+
+#group-merit ul {
+list-style: none;
+margin-top: 2%;
+}
+#group-merit #name-box, #profile-header ul {
+float: left;
+}
+
+#group-merit ul li {
+float: right;
+margin-left: 35px;
+font-size: 18px;
+text-align: center;
+color: #909B9F;
+}
+
+#group-merit ul li strong {
+display: block;
+color: #2E393D;
+font-size: 28px;
+margin-bottom: 2%;
+}
+
+#group-header {
+background-color: #EBEDEE;
+padding: 1%;
+min-height: 70px;
+
+}
+
+#posts_form {
+    
+}
 
 #comments_list ul {
 list-style: none;
@@ -153,6 +200,15 @@ Post Style
 
     
 
+}
+
+
+.post-form-div {
+	    padding-top: 5px;
+	    border-bottom: 1px solid #E3E3E3;
+        border-left: 1px solid #E3E3E3;
+        border-right: 1px solid #E3E3E3;
+	
 }
 
 
