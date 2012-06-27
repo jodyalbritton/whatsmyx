@@ -6,14 +6,20 @@
 </div>
  <div class="modal-body">
  <%= simple_form_for @stat, :remote => true do |f| %>
-  <%= f.association :category, :include_blank => false %>
+    <%= f.input :stype ,:placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_stats_path, :update_elements => {:id => "#stat_category_id", :sunit => "#stat_sunit"} %>
+	 
+	  <%= f.input :value %>
+	   <%= f.input :sunit, :label => "Units"%>
+	  <%= f.input :date  %>
+	  <%= f.input :category_id, :as => "hidden"%>
+	  
+	 
 
- 
-
-   <%= f.input :value, :input_html => { :class => "span1" }%>
-   <%= f.input :sunit, :label => 'Units', :input_html => { :class => "span1" }, :hint => "Units eg; lbs or inches"%>
-
-  <%= f.input :date %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary', :disable_with => "Please wait..." %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                stats_path, :class => 'btn' %>
+  </div>
  </div>
 <div class="modal-footer">
    

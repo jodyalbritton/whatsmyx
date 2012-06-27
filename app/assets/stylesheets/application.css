@@ -25,9 +25,23 @@ a.btn-danger:visited { color: #fff; }
 
 a.btn-primary:visited { color: #fff; }
 
+
+/****************************************************************
+Physical Activity
+****************************************************************/
+.pactivity-form {
+	padding-top: 20px;
+}
 /****************************************************************
 Users
 ****************************************************************/
+.tab-pane {
+	padding-top: 15px;
+}
+.input-about {
+	height: 45px;
+
+}
 
 #user_profile_attributes_dob_1i {
 	width: 100px;
@@ -81,11 +95,53 @@ min-height: 70px;
 Groups
 ****************************************************************/
 
+ul.nav.nav-tabs {
+display: block;
+margin-bottom: -1px;
+}
+
+
+.group-body-tab {
+
+}
+.my-groups {
+	padding: 1px;
+}
+.group-sidebar {
+	  
+	    padding: 10px;
+	
+       
+       
+	
+}
+
+.group-item {
+	
+            
+	
+}
+.group-pane {
+	        
+	        border-bottom: 1px solid #E3E3E3;
+	        border-right: 1px solid #E3E3E3;
+	        border-left: 1px solid #E3E3E3;
+	    
+}
+.group-body {
+	  
+	    padding: 10px;
+
+       
+       
+	
+}
+
 #group-merit ul {
 list-style: none;
 margin-top: 2%;
 }
-#group-merit #name-box, #profile-header ul {
+#group-merit #name-box, #group-header ul {
 float: left;
 }
 
@@ -309,7 +365,44 @@ border-width: 1px 2px 2px 1px;
 background-color:white;
 }
 
+img.group-pic {
 
+width: 75%;
+height: 75%;
+
+-webkit-background-clip: padding-box;
+-webkit-border-radius: 8px;
+-moz-background-clip: padding-box;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+background-color:white;
+	
+}
+
+img.group-pic-small {
+
+
+
+-webkit-background-clip: padding-box;
+-webkit-border-radius: 8px;
+-moz-background-clip: padding-box;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+background-color:white;
+	
+}
 
 /****************************************************************
 nutrition nav by date

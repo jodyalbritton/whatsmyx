@@ -1,4 +1,5 @@
 class StatsController < ApplicationController
+   autocomplete :category, :name, :full => true, :limit => '100', :extra_data => [:sunit]
    before_filter :authenticate_user!, :load
 
   # GET /stats

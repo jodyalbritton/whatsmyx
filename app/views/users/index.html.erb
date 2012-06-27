@@ -1,7 +1,16 @@
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, user %> signed up <%= user.created_at.to_date %>
-    </li>
-  <% end %>
-</ul>
+<div class="users-list">
+	<div class="users-header" id="users-header">
+    </div>
+    <% @users.each do |user| %>
+    <div class="row item-user">
+    	<div class="span3 user-item-sidebar">
+        <%= image_tag user.profile.avatar.url(:thumb), :class => "avatar" %>
+    	<%= link_to user.username,(user)%> 
+    	</div>
+    	<div class="span6 user-item-body">
+    		
+    	</div>
+    </div>
+    <% end %>
+</div>
+ 

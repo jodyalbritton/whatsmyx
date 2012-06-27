@@ -1,0 +1,24 @@
+require 'spec_helper'
+
+describe "pactivities/edit" do
+  before(:each) do
+    @pactivity = assign(:pactivity, stub_model(Pactivity,
+      :name => "MyString",
+      :user => nil,
+      :exercise => nil,
+      :duration => 1.5
+    ))
+  end
+
+  it "renders the edit pactivity form" do
+    render
+
+    # Run the generator again with the --webrat flag if you want to use webrat matchers
+    assert_select "form", :action => pactivities_path(@pactivity), :method => "post" do
+      assert_select "input#pactivity_name", :name => "pactivity[name]"
+      assert_select "input#pactivity_user", :name => "pactivity[user]"
+      assert_select "input#pactivity_exercise", :name => "pactivity[exercise]"
+      assert_select "input#pactivity_duration", :name => "pactivity[duration]"
+    end
+  end
+end

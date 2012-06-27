@@ -20,18 +20,31 @@
 
   </div>
   <div class="tab-pane" id="profile">
-  <div class="pull-right">
+  <div class="row">
+  
+    <div class="span5">
+   <div class="form-controls">
+    <%= f.simple_fields_for :profile do |p| %>
+    <%= p.input :dob, :label => "Date Of Birth" %>
+    <%= p.input :gender, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :default => "Male" %>
+    <%= p.input :about , :input_html => {:class => "input-about"}%>
+    </div>
+    <div class="well">
+    	<h2> Body </h2>
+    	<%= p.input :weight, :input_html => {:class => "span1"} %>
+    	<%= p.input :height, :collection => height_options, :input_html => {:class => "span1"} %>
+    </div>
+    <% end %>
+  </div>
+  <div class="span3">
     <%= image_tag @user.profile.avatar.url(:medium) %></br>
     <%= f.simple_fields_for :profile do |p| %>
     <%= p.file_field :avatar %>
      <% end %>
     </div>
-    <div class="inputs">
-    <%= f.simple_fields_for :profile do |p| %>
-    <%= p.input :dob, :label => "Date Of Birth" %>
-    <%= p.input :about %>
-    <% end %>
   </div>
+ 
+  
 
     
    

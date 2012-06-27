@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :fname, :lname, :dob, :about, :avatar
+  attr_accessible :fname, :lname, :dob, :about, :avatar, :weight, :height, :gender
   
   
   has_attached_file :avatar, 

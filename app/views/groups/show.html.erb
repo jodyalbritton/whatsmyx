@@ -5,12 +5,14 @@
 <div id="groups-sidebar" class="menu span3">
 
 <div id="group-about">
-	<%= image_tag @group.avatar.url(:medium) %>
+	<%= image_tag @group.avatar.url(:medium), :class => "group-pic"%>
 	<h2>
 		About
 	</h2>
 	<%= @group.description %>
+    <% if current_user == @group.user %>
 	<%= link_to 'Edit', edit_group_path(@group) %> |
+	<% end %>
 
 </div>
 

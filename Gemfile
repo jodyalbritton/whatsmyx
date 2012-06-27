@@ -54,6 +54,8 @@ gem "nested_form"
 gem 'formtastic'
 gem 'redis'
 gem 'likeable'
+gem 'jquery-ui-themes'
+
 
 
 

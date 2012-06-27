@@ -1,0 +1,19 @@
+
+
+  	<% @groups.each do |group| %>
+  	         <div class="row group-pane">
+  	      
+  	         <div class="span2 group-sidebar" >
+  	         <%= image_tag group.avatar.url(:thumb), :class => "group-pic-small" %>
+  	         </div>
+  	         <div class="span8 group-body">
+  	         <div><h2><%= link_to group.name, group %></h2></div>
+  	         <% if current_user == group.user %>
+  	         <div><%= link_to 'Edit', edit_group_path(group) %> | <%= link_to 'Destroy', (group), confirm: 'Are you sure?', method: :delete %></div>
+             <% end %>
+             <div> Description: <%= group.description %></div>
+             <div> Members: <%= group.memberships.count %></div>
+  	         </div>
+  	         </div>
+    
+    <% end %>

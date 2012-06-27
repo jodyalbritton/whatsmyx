@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120624040847) do
+ActiveRecord::Schema.define(:version => 20120627192328) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -78,13 +78,6 @@ ActiveRecord::Schema.define(:version => 20120624040847) do
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
-  create_table "audiences", :force => true do |t|
-    t.integer  "activity_id"
-    t.integer  "relation_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
     t.integer  "sash_id"
@@ -101,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20120624040847) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "slug"
+    t.string   "sunit"
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
@@ -129,6 +123,13 @@ ActiveRecord::Schema.define(:version => 20120624040847) do
     t.integer  "like_count",      :default => 0
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "exercises", :force => true do |t|
+    t.integer "code"
+    t.decimal "mets",                    :precision => 4, :scale => 2
+    t.string  "category", :limit => 22
+    t.string  "name",     :limit => 223
   end
 
   create_table "follows", :force => true do |t|
@@ -441,6 +442,20 @@ ActiveRecord::Schema.define(:version => 20120624040847) do
     t.string  "CC",            :limit => 1
   end
 
+  create_table "pactivities", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "exercise_id"
+    t.float    "duration"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.time     "time"
+    t.string   "category"
+  end
+
+  add_index "pactivities", ["exercise_id"], :name => "index_pactivities_on_exercise_id"
+  add_index "pactivities", ["user_id"], :name => "index_pactivities_on_user_id"
+
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "activity_object_id"
@@ -481,17 +496,21 @@ ActiveRecord::Schema.define(:version => 20120624040847) do
     t.string   "fname"
     t.string   "lname"
     t.string   "name"
+    t.float    "weight",                            :default => 0.0, :null => false
+    t.string   "height",              :limit => 45
+    t.float    "waist_circ"
+    t.float    "kneck_circ"
+    t.float    "shoulders_circ"
+    t.float    "chest_circ"
+    t.float    "hips_circ"
+    t.float    "bicep_circ"
+    t.float    "thigh_circ"
+    t.float    "calf_circ"
+    t.float    "forearm_circ"
+    t.string   "gender"
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
-
-  create_table "relations", :force => true do |t|
-    t.integer  "audience_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "relations", ["audience_id"], :name => "index_relations_on_audience_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
