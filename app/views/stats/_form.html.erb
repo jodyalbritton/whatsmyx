@@ -1,4 +1,9 @@
-<%= simple_form_for (@stat), :html => { :class => 'form-horizontal' }, :remote => true do |f| %>
+<div class="modal-header">
+  	<button class="close" data-dismiss="modal">×</button>
+  	<h2>Track your...</h2>
+</div>
+<div class="modal-body">
+<%= simple_form_for @stat, :remote => true do |f| %>
       <%= f.input :stype ,:placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_stats_path, :update_elements => {:id => "#stat_category_id", :sunit => "#stat_sunit"} %>
 	 
 	  <%= f.input :value %>
@@ -7,10 +12,9 @@
 	  <%= f.input :category_id, :as => "hidden"%>
 	  
 	 
-
+</div>
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary', :disable_with => "Please wait..." %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                stats_path, :class => 'btn' %>
+    <%= f.button :submit, "Track Stat", :class => 'btn-primary', :input_html => { :disable_with => 'Processing...' } %>
+    <button class="btn" data-dismiss="modal">Cancel</button>
   </div>
 <% end %>
