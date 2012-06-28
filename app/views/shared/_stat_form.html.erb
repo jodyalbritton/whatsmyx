@@ -15,15 +15,13 @@
 	  
 	 
 
-  <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary', :disable_with => "Please wait..." %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                stats_path, :class => 'btn' %>
-  </div>
+
  </div>
 <div class="modal-footer">
+	<%= f.button :submit, :class => 'btn-primary', :disable_with => "Please wait..." %>
    
-    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+   
+    
 <% end %>
  </div>
 

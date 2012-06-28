@@ -36,7 +36,7 @@ Whatsmyx::Application.routes.draw do
 
 
   resources :mcategories
-  resources :categories
+  resources :categories 
   resources :ingredients do 
     get :autocomplete_food_name, :on => :collection
   end
@@ -44,7 +44,9 @@ Whatsmyx::Application.routes.draw do
     get :autocomplete_category_name, :on => :collection
   end
   resources :activities
-  resources :goals
+  resources :goals do
+  get :autocomplete_category_name, :on => :collection
+  end
 
 
   resources :nutrition

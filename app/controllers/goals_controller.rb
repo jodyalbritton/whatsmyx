@@ -1,4 +1,5 @@
 class GoalsController < ApplicationController
+  autocomplete :category, :name, :full => true, :limit => '100'
   before_filter :authenticate_user!
   # GET /goals
   # GET /goals.json
@@ -26,6 +27,7 @@ class GoalsController < ApplicationController
   # GET /goals/new
   # GET /goals/new.json
   def new
+  
     @goal = Goal.new
 
     respond_to do |format|
@@ -36,7 +38,8 @@ class GoalsController < ApplicationController
 
   # GET /goals/1/edit
   def edit
-    @goal = Goal.find(params[:id])
+    @user = User.find(current_user)
+    @goal = @user.goals.find(params[:id])
   end
 
   # POST /goals
@@ -58,7 +61,8 @@ class GoalsController < ApplicationController
   # PUT /goals/1
   # PUT /goals/1.json
   def update
-    @goal = Goal.find(params[:id])
+    @user = User.find(current_user)
+    @goal = @user.goals.find(params[:id])
 
     respond_to do |format|
       if @goal.update_attributes(params[:goal])
@@ -74,7 +78,8 @@ class GoalsController < ApplicationController
   # DELETE /goals/1
   # DELETE /goals/1.json
   def destroy
-    @goal = Goal.find(params[:id])
+    @user = User.find(current_user)
+    @goal = @user.goals.find(params[:id])
     @goal.destroy
 
     respond_to do |format|

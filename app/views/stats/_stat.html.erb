@@ -4,7 +4,42 @@
      <td></td>
         <td>I recorded a <%= link_to stat.category.name, stat_path(stat) %> of <%= stat.value %> <%= stat.sunit %> on <%= stat.date %> </td>
       
-       
+        <td>
+        	<% goal = current_user.goals.where(:category_id => stat.category_id)  %>
+        	<% goal.each do |goal| %>
+        	<% if stat.value > goal.value %>
+        	 
+           <div class="progress progress-danger">
+        	<div class="bar" style="width:<%=number_to_percentage((goal.value.to_f / stat.value.to_f) * 100 ) %>;"> 
+        		<%= stat.value - goal.value %> <%= stat.sunit %> to goal
+            </div>
+        	</div>
+        	 <%elsif stat.value < goal.value %>
+        	  <div class="progress">
+        	 <div class="bar" style="width:<%=number_to_percentage((stat.value.to_f / goal.value.to_f) * 100 ) %>;"> 
+        		<%= goal.value - stat.value %> <%= stat.sunit %> to goal
+            </div>
+        	</div>
+        	 <%elsif stat.value == goal.value %>
+        	  <div class="progress progress-success">
+        	 <div class="bar" style="width:<%=number_to_percentage((stat.value.to_f / goal.value.to_f) * 100 ) %>;"> 
+        		At Goal!
+            </div>
+        	</div>
+        	 <% else %>
+        	  <div class="progress">
+        	 <div class="bar" style="width:<%=number_to_percentage(100) %>;"> 
+        		<%= stat.category.name %> <%= goal.value %> 
+            </div>
+        	</div>
+        	  
+        	 <% end %>
+        	
+        	<% end %>
+        
+        
+        </td>
+      
   
         
         <td>

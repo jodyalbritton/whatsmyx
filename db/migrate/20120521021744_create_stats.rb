@@ -3,7 +3,7 @@ class CreateStats < ActiveRecord::Migration
     create_table :stats do |t|
       t.string :name
       t.string :stype
-      t.string :value
+      t.integer :value
 
       t.timestamps
     end
