@@ -43,6 +43,8 @@
   
         
         <td>
+          <a  href="javascript:toggleDiv('chart_container_toggle_<%= stat.id %>');" class="btn btn-mini">Chart</a>
+        
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_stat_path(stat), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -52,5 +54,70 @@
                       :class => 'btn btn-mini btn-danger',
                       :remote => true %>
         </td>
+      </tr>
+      <tr class="chart_row">
+      	
+      	<td colspan="4" class="chart_row">
+        <div style="display:none;" id="chart_container_toggle_<%=stat.id%>">
+      	<div id="chart_container_<%=stat.id%>" class="chart-container span11">
+      	
+       
+        <script type="text/javascript">
+    
+ /**
+ * Gray theme for Highcharts JS
+ * @author Torstein Hønsi
+ */
+
+
+
+  $(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "chart_container_<%= stat.id %>",
+        zoomType: 'x'
+
+      },
+      title: {
+        text: "History"
+      },
+    
+     xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          second: '%e. %b',
+          minute: '%e. %b',
+          hour: '%e. %B',
+          day: '%e. %b',
+          week: '%e. %b',
+          month: '%Y %b %e.',
+          year: '%y %e. %b'
+        }
+    },	
+      yAxis: {
+        title: {
+          text: "<%= stat.category.name %>"
+        }
+      },
+      tooltip: {
+      formatter: function () {
+        return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + Highcharts.numberFormat(this.y, 2) + " <%= stat.category.sunit%>";
+      }
+    }, 
+
+      series: [{
+         
+          name: "<%= stat.category.name %> by Date",
+          pointInterval: <%= 1.day * 1000 %>,
+          data: <%= stat.by_category.map{ |f| [f.date.to_datetime.to_i* 1000, f.value.to_i] }.sort.inspect %>	
+        }]
+   
+    })
+  })
+
+     </script>
+     </div>
+     </div>
+     </td>
       </tr>
   

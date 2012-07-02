@@ -13,16 +13,16 @@
   </tr>
 
 <% @pactivities.each do |pactivity| %>
-  <% cals = 0 %>
-<% if pactivity.user.profile.weight > 0 %>
-  <% cals = (((pactivity.exercise.mets * 3.5 * (pactivity.user.profile.weight  / 4.5359237))/200).round * pactivity.duration) %> 
-<% end %>
+ 
+
+ 
+
   <tr>
     
 
     <td><%= pactivity.exercise.name%></td>
     <td><%= pactivity.duration %></td>
-    <td><%= cals %></td>
+    <td>  <%= pactivity.burned %></td>
     <td><%= link_to 'Show', pactivity %></td>
     <td><%= link_to 'Edit', edit_pactivity_path(pactivity) %></td>
     <td><%= link_to 'Destroy', pactivity, confirm: 'Are you sure?', method: :delete %></td>

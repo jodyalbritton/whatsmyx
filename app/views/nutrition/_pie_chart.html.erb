@@ -1,0 +1,53 @@
+ <div id="chartdiv">
+ </div>   
+
+<% unless @tot_cals == nil %>
+        <% prot_cals = (@tot_prot * 4) %>
+		<% fats_cals = (@tot_fats * 8) %>
+		<% carb_cals = (@tot_carb * 4) %>
+<% end %>
+
+<script>
+
+var chart;
+$(document).ready(function() {
+	chart = new Highcharts.Chart({
+		chart: {
+			renderTo: 'chartdiv',
+			plotBackgroundColor: null,
+			plotBorderWidth: null,
+			plotShadow: false
+		},
+		title: {
+			text: 'Macro Breakdown'
+		},
+		tooltip: {
+			formatter: function() {
+				return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %';
+			}
+		},
+		plotOptions: {
+			pie: {
+				allowPointSelect: true,
+				cursor: 'pointer',
+				dataLabels: {
+					enabled: false
+				},
+				showInLegend: true
+			}
+		},
+		series: [{
+			type: 'pie',
+			name: 'Macro breakdown',
+			data: [
+				['Protein',   <%= h('%.1f' % (prot_cals)) %>],
+				['Fat',       <%= h('%.1f' % (fats_cals)) %>],
+				['Carbohydrate',  <%= h('%.1f' % (carb_cals)) %>]
+				
+
+
+			]
+		}]
+	});
+});
+</script>

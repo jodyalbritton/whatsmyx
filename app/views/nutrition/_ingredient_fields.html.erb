@@ -1,0 +1,21 @@
+   <div class="nested-fields well">
+   <div class="form-header">
+   <%= link_to_remove_association "x",f,:class=> "btn close" %>
+   </div>
+
+   <%= f.input :what_food, :as => :autocomplete, :url => autocomplete_food_name_ingredients_path, :input_html => {:class=> "span3"} %>
+   <%= f.input :food_id,:input_html => {:class=>"food-id" }, :as => "hidden" %>
+   
+    
+     <div class="weight_select">
+     	 
+     </div>
+
+   	  <%= f.input :servings, :input_html => {:class=> "span1"} %>
+   	  <div class="food-servings">
+   	  <%= f.association :serv_size, :include_blank => false, :input_html => {:class=> "span2"}, :label => false %>
+      </div>
+
+  
+   
+</div>

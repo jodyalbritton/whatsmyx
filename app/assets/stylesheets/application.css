@@ -9,11 +9,17 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *= require jquery.ui.core
  *= require jquery.ui.autocomplete
- *= require formtastic
+ *= require token-input
  *= require_self
  *= require_tree .
 */
-
+.chart_row {
+	
+	
+	min-height: 0px;
+  
+  
+}
 .input-xlarge {
 	height: 18px;
 
@@ -221,6 +227,17 @@ Activity Feed
         padding: 10px;
 }
 
+.stat-content {
+	padding-bottom: 10px;
+}
+
+.meal-content {
+	padding-bottom: 10px;
+}
+
+.pactivity-content {
+	padding-bottom: 10px;
+}
 
 
 
@@ -339,12 +356,23 @@ Ingredient Style
 #ingredient_date_3i {
 	width: 100px;
 }
+#meal_date_1i {
+	width: 75px;
+}
+#meal_date_2i {
+	width: 75px;
+}
+#meal_date_3i {
+	width:  50px;
+}
 
 .ingredient-avatar {
         padding-bottom: 5px;
         height: 60px;
 }
-
+.ingredient_from_list{
+	text-align: center;
+}
 
 /****************************************************************
 Avatar Style

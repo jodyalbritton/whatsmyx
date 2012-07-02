@@ -14,13 +14,14 @@
      </div>
     <div id="stat-body" class="span6">
              <div class="stat-content">
-             Tracked a stat of <%= activity.target.value %>
+             Tracked a <%= activity.target.category.name %> of <%= activity.target.value %> <%= activity.target.category.sunit %>
+           
              </div>
      
               <div id="stat-footer"> 
                 <div class="control">
                  <div class="comment-likes span3">
-             <%= activity.target.like_count  %> Like this     
+             <%= activity.target.like_count  %> Props    
              <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
              <%- else -%>
              <%= like_link_for activity.target %>

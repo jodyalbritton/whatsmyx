@@ -8,13 +8,28 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
-      score 10, :on => [
-         'registrations#update'
-      ]
       
-       score 10, :on => [
+      
+       score 5, :on => [
          'stats#create'
       ]
+      
+       score 5, :on => [
+         'stats#create'
+      ]
+      
+       score 5, :on => [
+         'meals#create'
+      ]
+      
+       score 5, :on => [
+         'pactivities#create'
+      ]
+      
+      score 5, :on => [
+         'likes#create', :to => [:liked]
+      ]
+      
       #
       # score 15, :on => 'reviews#create', :to => [:reviewer, :reviewed]
       #

@@ -5,22 +5,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:value) %></th>
+    
       <th><%= model_class.human_attribute_name(:category_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:value) %></th>
+      
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @goals.each do |goal| %>
       <tr>
-        <td><%= link_to goal.id, goal_path(goal) %></td>
-        <td><%= goal.user_id %></td>
-        <td><%= goal.value %></td>
-        <td><%= goal.category_id %></td>
-        <td><%=l goal.created_at %></td>
+        
+        <td><%= goal.category.name %></td>
+        <td>goal of <%= goal.value %> <%= goal.category.sunit %></td>
+      
+     
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_goal_path(goal), :class => 'btn btn-mini' %>

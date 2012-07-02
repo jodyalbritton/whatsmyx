@@ -13,5 +13,11 @@ class Stat < ActiveRecord::Base
        
   )
 end
+
+def by_category
+   
+   user.stats.where(:category_id => self.category_id )
+end 
+
   
 end

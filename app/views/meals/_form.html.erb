@@ -1,0 +1,50 @@
+<div>
+<%= simple_form_for @meal, :remote => true do  |f| %>
+
+    <div class="control-group">
+    <%= f.input :name %>
+    <% if params[:date] %>
+    <%= f.input :date, :as => "string", :input_html => {:value => params[:date]} %>
+    
+    <% else %>
+    <%= f.input :date, :as => "string", :input_html => {:value => Date.today} %>
+    <% end %>
+ 
+     <%= f.simple_fields_for :ingredients do |f| %>
+     	<%= render 'ingredient_fields', :f => f%>
+     <% end %>
+       <div id="ingredient">
+       	<div id="ingredient_from_list", class="ingredient_from_list">
+         <%= link_to_add_association 'add ingredient', f, :ingredients, :class=>"btn btn-primary" %>
+        </div>
+       </div>
+    <div class="form-actions">
+    <%= f.button :submit  %>
+    <%= link_to 'Back', meals_path %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+<script>
+	
+
+    
+	$(document).ready(function() {
+     $('#ingredient').bind('insertion-callback',
+         function() {
+        
+       
+           $('.autocomplete').bind('railsAutocomplete.select', function(event, data){
+             /* Do something here */
+              $(this).parent().find('.food-id').val(data.item.id);
+               
+          
+             });
+           
+         });
+         
+         
+       });
+</script>

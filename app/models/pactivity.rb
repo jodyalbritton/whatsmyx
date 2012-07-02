@@ -1,5 +1,20 @@
 class Pactivity < ActiveRecord::Base
   belongs_to :user
   belongs_to :exercise
-  attr_accessible :duration, :name, :exercise_id, :time
+   has_many :activities, :as => :target
+  attr_accessible :duration, :name, :exercise_id, :time, :category
+  
+ 
+  
+  include Likeable
+  opinio_subjectum
+
+  
+  def burned
+   
+    if self.user.profile.weight > 0 
+    burned = (((self.exercise.mets * 3.5 * (self.user.profile.weight  / 4.5359237))/200).round * self.duration)
+    end 
+    
+  end
 end

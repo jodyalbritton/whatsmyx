@@ -2,14 +2,14 @@ class ActivitySourceObserver < ActiveRecord::Observer
  
  
  
- observe :post, :comment, :stat, :ingredient
+ observe :post, :comment, :stat, :pactivity, :meal
 
   def after_create(target)
    @object = target.class.to_s
    
    
-   if @object == "Post"
-    Activity.create!(
+      if @object == "Post"
+      Activity.create!(
       :user => target.user, 
       :target_id => target.id, 
       :activity_type=> target.class.to_s, 
@@ -18,7 +18,8 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :parent_id => target.parent_id,
       :target_type => target.class.to_s,
       :verb => "Posted")
-   elsif @object == "Comment"
+     
+      elsif @object == "Comment"
       Activity.create!(
       :user => target.owner, 
       :target_id => target.id, 
@@ -29,7 +30,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :parent_id => target.commentable_id,
       :verb => "commented")
       
-  elsif @object == "Stat"
+      elsif @object == "Stat"
       Activity.create!(
       :user => target.user, 
       :target_id => target.id, 
@@ -39,7 +40,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :target_type => target.class.to_s, 
       :verb => "tracked")
       
-  elsif @object == "Ingredient"
+      elsif @object == "Meal"
       Activity.create!(
       :user => target.user, 
       :target_id => target.id, 
@@ -47,7 +48,19 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :created_at => target.created_at, 
       :updated_at => target.updated_at,
       :target_type => target.class.to_s, 
-      :verb => "logged")
+      :verb => "tracked")
+      
+      elsif @object == "Pactivity"
+      Activity.create!(
+      :user => target.user, 
+      :target_id => target.id, 
+      :activity_type=> target.class.to_s, 
+      :created_at => target.created_at, 
+      :updated_at => target.updated_at,
+      :target_type => target.class.to_s, 
+      :verb => "tracked")
+      
+ 
       
    
    end

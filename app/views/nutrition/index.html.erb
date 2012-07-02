@@ -1,273 +1,61 @@
-<% cals_string = "" %>
-<% prot_string = "" %>
-<% fats_string = "" %>
-<% carb_string = "" %>
-<% fibr_string = "" %>
-<% sodi_string = "" %>
-<% sugs_string = "" %>
-<% satf_string = "" %>
-<% chol_string = "" %>
-<% pots_string = "" %>
-<% prot_cals = 0 %>
-<% fats_cals = 0 %>
-<% carb_cals = 0 %>
-<% cals = 0 %>
-<% prot = 0 %>
-<% fats = 0 %>
-<% carb = 0 %>
-<% fibr = 0 %>
-<% sodi = 0 %>
-<% sugs = 0 %>
-<% satf = 0 %>
-<% chol = 0 %>
-<% pots = 0 %>
-
-
-	<% @ingredients_tot.each do |ingredient| %>
-		<% food = Food.find(ingredient.food_id) %>
-		<% if ingredient.serv_size.nil? %>
-			<% multiplication_factor = ingredient.servings%>
-		<% else %>
-			<% multiplication_factor = ingredient.servings*ingredient.serv_size.value/100%>
-		<% end %>
-		<% cals = cals + (food.calories*multiplication_factor) %>
-		<% prot = prot + (food.protein*multiplication_factor) %>
-		<% fats = fats + (food.lipid_total*multiplication_factor) %>
-		<% carb = carb + (food.carbohydrates*multiplication_factor) %>
-		<% fibr = fibr + (food.fiber*multiplication_factor) %>
-		<% sodi = sodi + (food.sodium*multiplication_factor) %>
-		<% sugs = sugs + (food.sugar_total*multiplication_factor) %>
-		<% satf = satf + (food.fa_sat*multiplication_factor) %>
-		<% chol = chol + (food.cholesterol*multiplication_factor) %>
-		<% pots = pots + (food.potassium*multiplication_factor) %>
-	<% end %>
-	
-		
-		<% cals_string = cals_string + "#{cals} " %>
-		<% prot_string = prot_string + "#{prot} " %>
-		<% fats_string = fats_string + "#{fats} " %>
-		<% fibr_string = fibr_string + "#{fibr} " %>
-		<% sodi_string = sodi_string + "#{sodi} " %>
-		<% sugs_string = sugs_string + "#{sugs} " %>
-		<% satf_string = satf_string + "#{satf} " %>
-		<% chol_string = chol_string + "#{chol} " %>
-		<% pots_string = pots_string + "#{pots} " %>
-		<% carb_string = carb_string + "#{carb} " %>
-		
-		<% prot_cals = (prot * 4)+ prot_cals %>
-		<% fats_cals = (fats * 8)+ fats_cals %>
-		<% carb_cals = (carb * 4)+ carb_cals %>
-		
-		<% cals = 0 %>
-		<% prot = 0 %>
-		<% fats = 0 %>
-		<% carb = 0 %>
-		<% fibr = 0 %>
-        <% sodi = 0 %>
-        <% sugs = 0 %>
-        <% satf = 0 %>
-        <% chol = 0 %>
-        <% pots = 0 %>
-
-   
-	
-
- 
-    <div class="row">
+<div class="row">
     	 
 	
 
    	<div class="span4" id="nutrition-sidebar">
    		   
-   		    <div id="sidebar-data">
-   			<div class="well">
-   		  
-        	<div class="input-append">
-   	        <form action="<%= foods_path %>" method ="get" id="foods_search"  >
-             <%= text_field_tag :search, params[:search], :class=>"span2" %><%= submit_tag "Search", :name => nil, :class=>"btn" %>  
-            </form>
-            </div>
+   		      			
      
    			   				
-   				<div class="sidebar-data-left" class="span3">
-   					<table class="table table-striped">
-   				  
-   				    	<tr>
-   				    		<td>
-   				    			Calories
-   				    	    </td>
-   				    	    <td>
-   				    	       <%= h('%.1f' % (cals_string)) %>
-   				    	                               </td>
-                            <td>
-   				    			Protein
-   				    	    </td>
-   				    	    <td>
-   				    	       <%= h('%.1f' % (prot_string)) %>
-   				    	
-                            </td>
-   				        </tr>
-   				        <tr>
-   				    		<td>
-   				    			Carbs
-   				    	    </td>
-   				    	    <td>
-   				    	       <%= h('%.1f' % (carb_string)) %>
-   				    	
-                            </td>
-                            <td>
-   				    			Fats
-   				    	    </td>
-   				    	    <td>
-   				    	       <%= h('%.1f' % (fats_string)) %>
-   				    	   
-                            </td>
-   				        </tr>
-   				        <tr>
-   				    		<td>
-   				    			Fiber
-   				    	    </td>
-   				    	    <td>
-   				    	       <%= h('%.1f' % (fibr_string)) %>
-   				    	    
-                            </td>
-                            <td>
-   				    			Sodium
-   				    	    </td>
-   				    	    <td>
-   				    	    	<%= h('%.1f' % (sodi_string)) %>
-   				    
-                            </td>
-   				        </tr>
-   				       <tr>
-   				    		<td>
-   				    			Sugar
-   				    	    </td>
-   				    	    <td>
-   				    	    <%= h('%.1f' % (sugs_string)) %>
-   				    	     
-                            </td>
-                            <td>
-   				    			Sat. Fat
-   				    	    </td>
-   				    	    <td>
-   				    	      <%= h('%.1f' % (satf_string)) %>
-   				    	
-                            </td>
-   				        </tr>
-   				        <tr>
-   				    		<td>
-   				    			Potassium
-   				    	    </td>
-   				    	    <td>
-   				    	    <%= h('%.1f' % (pots_string)) %>
-   				 
-                            </td>
-                            <td>
-   				    			Cholesterol
-   				    	    </td>
-   				    	    <td>
-   				    	<%= h('%.1f' % (chol_string)) %>
-                            </td>
-   				        </tr>
-   				   
+   				<div id="sidebar-data-left">
    					
-   					</table>
+   					<%= render "nut_facts"%>
    			
    			    </div>
    			    
    			   
    	
    			 
-   			</div>
-   		</div>
-   		 <div>
-   			   	<div id="chartdiv">
-   			    </div>    <div class="row">
+   		
+   	          <div id="sidebar-chart">
+   		          <%= render "nutrition/pie_chart"%>
+   		      </div>
+   
+    
     </div>
-    </div>
-     </div>
     <div class="span8">
    
     <div class="row nutri-body span8">
-     <div class="row nutri-nav">
-	   <div class="span2">
-	    <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	   </div>
+      <div class="row nutri-nav">
+	     <div class="span2">
+	       <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	     </div>
 	   <div class="span4">
 	     
-	   <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
+	       <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
         
 	   </div>
 	   <div class="span2">
 	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
 	   </div>
 	 </div>
-    <table class="table tabel-horizontal">
-    <tbody>
-    <% if @ingredients.count == 0 %> 
-       <tr class="no-entry-foods">
-       	<div class= "no-entry span7">
-    	You have not entered any foods for this date. 
-    	</div>
-    	 <div class="add-food-button">
-   	        <a data-toggle="modal" href="#myModalFood" class="btn btn-primary">Add Food</a>
-   	        </div>
-       <tr>
-       <% else %>
+	<a href="javascript:toggleDiv('meal-form');">Add Meal</a>
+    <div id="meal-form" style="display:none;">
+    	<%= render "meals/form"%>
+    </div>
+    <div id="meal-list">
+   
  
-  
-    <% @ingredients.each do |mcategory, ingredients| %>
-    
-  
-    <tr>
-      <td>
-   	  <h2>
-     <%= link_to mcategory.name %>
-      <h2>
-     </td>
-     <td>
-     	 <div class="sidebar-controls">
-   	        <a data-toggle="modal" href="#myModalFood" class="btn btn-primary">Add Food</a>
-   	        </div>
-     </td>
-    </tr>
-     <% for ingredient in ingredients %>
-    
-  
-    <tr>
-      <td>
-      <%= ingredient.what_food %>
-      </td>
-      <td>
-      </td>
      
-    </tr>
-    <tr>
-    <td>
-    	<%= ((ingredient.food.calories*ingredient.serv_size.value/100)*ingredient.servings).round %> Calories | <%= ((ingredient.food.protein*ingredient.serv_size.value/100)*ingredient.servings).round %> g Protein | <%= ((ingredient.food.lipid_total*ingredient.serv_size.value/100)*ingredient.servings).round %> g of Fat |  <%= ((ingredient.food.carbohydrates*ingredient.serv_size.value/100)*ingredient.servings).round %> g Carbs
-   	</td>
-   	 <td>
-      </td>
-   </tr>
- 
-   <% end %>
-   
-
-   
-   <% end %>
-       
+      
+      <%= render @meals %>
+      </div>
   
-
-
     
-    </div>
- 
-  <% end %>
+  
 
-  </tbody>
-
-</table>
+   
+   
 
 
 
@@ -275,59 +63,13 @@
   
    
 
-<div  id="myModalFood"  class="modal hide fade">
- 
-      <%= render 'ingredients/new_ingredient' %>
-   
-</div>
+
 
  
 
             
 </div>
-</div>
 
-<script>
-
-var chart;
-$(document).ready(function() {
-	chart = new Highcharts.Chart({
-		chart: {
-			renderTo: 'chartdiv',
-			plotBackgroundColor: null,
-			plotBorderWidth: null,
-			plotShadow: false
-		},
-		title: {
-			text: 'Macro Breakdown'
-		},
-		tooltip: {
-			formatter: function() {
-				return '<b>'+ this.point.name +'</b>: '+ Math.round(this.percentage) +' %';
-			}
-		},
-		plotOptions: {
-			pie: {
-				allowPointSelect: true,
-				cursor: 'pointer',
-				dataLabels: {
-					enabled: false
-				},
-				showInLegend: true
-			}
-		},
-		series: [{
-			type: 'pie',
-			name: 'Macro breakdown',
-			data: [
-				['Protein',   <%= h('%.1f' % (prot_cals)) %>],
-				['Fat',       <%= h('%.1f' % (fats_cals)) %>],
-				['Carbohydrate',  <%= h('%.1f' % (carb_cals)) %>]
-				
+        
 
 
-			]
-		}]
-	});
-});
-</script>

@@ -8,22 +8,25 @@ class StatsController < ApplicationController
 
   def load
     @user = User.find(current_user)
-    @stats = @user.stats.order("date DESC")
+    @stats = @user.stats.order("date DESC").page(params[:page])
     @stat = Stat.new
   end
   
+  def chart
+  @user = User.find(current_user)
+   
+   #@stats_by_category = @user.stats.find(:all).group_by { |s| s.category}
+   @category =  Category.find(params[:category])
+   @stats_by_category = @user.stats.where(:category_id => params[:category]) 
   
-  
+   #@stats_by_bs = @user.stats.where(:category_id => "3")
+   #@stats_by_bp = @user.stats.where(:category_id => "4") 
+   #@stats_by_bf = @user.stats.where(:category_id => "5") 
+   # @stats_by_ti = @user.stats.where(:category_id => "6") 
+  end 
   def index
      
-   @user = User.find(current_user)
    
-   @stats_by_category = @user.stats.find(:all).group_by { |s| s.category}
-   @stats_by_weight = @user.stats.where(:category_id => "1") 
-   @stats_by_bs = @user.stats.where(:category_id => "3")
-   @stats_by_bp = @user.stats.where(:category_id => "4") 
-   @stats_by_bf = @user.stats.where(:category_id => "5") 
-   @stats_by_ti = @user.stats.where(:category_id => "6") 
     respond_to do |format|
       format.html # index.html.erb
       format.js #added
@@ -67,7 +70,7 @@ class StatsController < ApplicationController
     if @stat.save
       flash[:notice] = "Successfully created stat."
        @activities = Activity.order("updated_at DESC")
-       @stats = @user.stats.order("date DESC")
+       @stats = @user.stats.order("date DESC").page(params[:page])
     end
   end
 

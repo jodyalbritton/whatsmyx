@@ -1,16 +1,25 @@
 <h2>Sign up</h2>
 <% resource.build_profile unless resource.profile%>
-
+<% resource.build_dgoal unless resource.dgoal%>
 <%= simple_form_for(resource,:validate => true , :as => resource_name, :url => registration_path(resource_name),:html => {:class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
   
   <div class="inputs">
+    <%= f.input :name, :required => true  %>
+    <%= f.input :email, :required => true %>
     <%= f.input :username, :required => true, :autofocus => true %>
     <%= f.simple_fields_for :profile do |p| %>
-      <%= p.input :dob, :as => :date_picker %>
+      <%= p.input :dob, :as => "date" %>
+      <%= p.input :gender, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :prompt => "Select One" %>
+      
+      
+    	<%= p.input :weight, :input_html => {:class => "span1"} %>
+    	<%= p.input :height, :collection => height_options, :input_html => {:class => "span1"} %>
+ 
      <% end %>
-      <%= f.input :name, :required => true  %>
-    <%= f.input :email, :required => true %>
+     
+     
+    
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
       

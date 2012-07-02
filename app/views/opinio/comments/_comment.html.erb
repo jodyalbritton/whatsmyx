@@ -1,7 +1,13 @@
 <% reply = defined?(reply) ? reply : false %>
  
 <div class="row comment-item span6" id="comment_<%= comment.id %>">
-	  
+	   <% if current_user == comment.owner %>
+             
+              <div class="comment-delete span6">
+              <%= link_to "x", comment_path(comment), :method => :delete, :remote => true,  :class=> "btn btn-mini pull-right" %> 
+               </div>
+               <% end %>
+               
        <div id="comment-sidebar" class="span0">
         <%= image_tag comment.owner.profile.avatar.url(:mini), :class=> 'avatar'  %>
        </div>
@@ -14,7 +20,7 @@
             <%= comment.body %>
             </p>
           </div>
-          <div class="row comment-footer"> 
+      
             
             
              <div class="comment-likes">
@@ -27,10 +33,7 @@
               
               (<%= comment.like_count %> Given)
              
-              <% if current_user == comment.owner %>
-              <% end %>
-          
-              <%= link_to "Delete", comment_path(comment), :method => :delete, :remote => true,  :class=> "icon-trash" %> 
+             
               </div>
               <%# this enables only 1 level of replies %>
               <% if Opinio.accept_replies && !reply %>
@@ -42,7 +45,7 @@
               </div>
               <% end %>
               </li>
-          </div>
+        
        </div>
  
 </div>

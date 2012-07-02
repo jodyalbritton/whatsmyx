@@ -1,0 +1,59 @@
+<% unless activity.target.nil? %>
+<div class="row activity-item">
+       <div id="post-sidebar" class="span2">
+
+          <div  class="span1 meal-avatar">
+            <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
+          </div>
+          <div class="meal-avatar">
+             <h3><%= activity.user.username %></h3>
+             <%= time_ago_in_words(activity.created_at) %> ago.
+         </div>
+  
+     </div>
+             <div id="meal-body" class="span6">
+             <div class="meal-content">
+              Had <%= link_to activity.target.name, meal_path(activity.target) %> Calories (<%= activity.target.cals.round %>)
+              <% activity.target.ingredients.each do |ingredient| %>
+              <div class="meal-ingredient">
+              	<%= ingredient.what_food %>
+              </div>
+              <% end %>
+              
+             
+           
+             </div>
+     
+             
+             <div class="meal-likes">
+             <%= activity.target.like_count  %> Props    
+             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
+             <%- else -%>
+             <%= like_link_for activity.target %>
+             <%- end -%>
+             <a href="javascript:toggleDiv('new_comment_<%=activity.target.id %>');" class= "icon-comment">Comment</a>
+             </div>
+             <div id="comments_list">
+               <ul id="comments_<%= activity.target.id %>">
+               <%= render_comments activity.target %>
+               </ul>
+             </div>
+
+         <div id="comment-form">
+          <%= render_comments_form activity.target %>
+         </div>
+
+
+
+
+    </div>
+</div>
+<% else %>
+
+<div class="content-removed">
+
+</div>
+
+<% end %>
+
+
