@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes 
+  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes, :dgoal_attributes 
   validates_confirmation_of :password
  
  #assoications 
@@ -34,17 +34,19 @@ class User < ActiveRecord::Base
   has_many :checklists, dependent: :destroy
   has_many :notes, dependent: :destroy
   has_many :stats, dependent: :destroy
+  has_many :meals, dependent: :destroy
   has_many :ingredients, dependent: :destroy
   has_many :goals, dependent: :destroy
   has_many :memberships, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :services, :dependent => :destroy
   has_one :profile, dependent: :destroy
+  has_one :dgoal, dependent: :destroy
   has_one :settings, dependent: :destroy
   
  
   
- accepts_nested_attributes_for :profile, :settings
+ accepts_nested_attributes_for :profile, :settings, :dgoal
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info

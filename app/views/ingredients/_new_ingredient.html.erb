@@ -5,10 +5,11 @@
 
  </div>
   <div class="modal-body">
-<%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' } , :remote => true do |f| %>
+<%= simple_form_for @ingredient, :html => { :class => 'form-horizontal' }  do |f| %>
   <%= f.input :what_food, :as => :autocomplete,  :url => autocomplete_food_name_ingredients_path, :input_html => {:id_element => "#ingredient_food_id"} %>
+    <%= f.input :food_id, :input_html => {:class => "food-id"} %>
   <%= f.input :servings %>
-  <%= f.input :food_id, :as => 'hidden' %>
+
   <%= f.input :serving_size, :as => 'hidden' %>
   <%= f.association :serv_size %>
 

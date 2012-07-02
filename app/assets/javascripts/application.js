@@ -17,8 +17,9 @@
 //= require jquery.ui.autocomplete
 //= require autocomplete-rails
 //= require highcharts
-//= require jquery_nested_form
+//= require cocoon
 //= require rails.validations
+//= require jquery.tokeninput
 //= require_tree .
 
 

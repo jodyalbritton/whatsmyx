@@ -5,10 +5,11 @@ class FoodsController < ApplicationController
   
   def index
      @foods = Food.search(params[:search]).page(params[:page]).per(25)
-    
+       
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @foods }
+      format.html
+      format.json { render json: @foods.tokens(params[:q]) }
+    
     end
   
   end

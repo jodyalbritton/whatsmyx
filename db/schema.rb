@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628054108) do
+ActiveRecord::Schema.define(:version => 20120630050158) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -116,6 +116,18 @@ ActiveRecord::Schema.define(:version => 20120628054108) do
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
   end
+
+  create_table "dgoals", :force => true do |t|
+    t.integer  "user_id"
+    t.float    "calories"
+    t.float    "protein"
+    t.float    "fat"
+    t.float    "carbs"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "dgoals", ["user_id"], :name => "index_dgoals_on_user_id"
 
   create_table "embedded_objects", :force => true do |t|
     t.integer  "embeddable_id"
@@ -356,6 +368,18 @@ ActiveRecord::Schema.define(:version => 20120628054108) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "meals", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "mcategory_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "name"
+    t.date     "date"
+  end
+
+  add_index "meals", ["mcategory_id"], :name => "index_meals_on_mcategory_id"
+  add_index "meals", ["user_id"], :name => "index_meals_on_user_id"
+
   create_table "memberships", :force => true do |t|
     t.integer  "user_id"
     t.boolean  "pending",    :default => true
@@ -563,7 +587,7 @@ ActiveRecord::Schema.define(:version => 20120628054108) do
   create_table "stats", :force => true do |t|
     t.string   "name"
     t.string   "stype"
-    t.string   "value"
+    t.integer  "value"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.date     "date"

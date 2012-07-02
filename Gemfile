@@ -50,11 +50,12 @@ gem 'client_side_validations', :git => 'git://github.com/bcardarella/client_side
 gem 'ancestry'
 gem 'acts_as_follower'
 gem 'whenever', :require => false
-gem "nested_form"
-gem 'formtastic'
+gem 'cocoon'
+gem 'chosen-rails'
 gem 'redis'
 gem 'likeable'
 gem 'jquery-ui-themes'
+gem 'ajax-chosen-rails'
 
 
 

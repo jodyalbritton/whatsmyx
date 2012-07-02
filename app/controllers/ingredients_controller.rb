@@ -84,7 +84,7 @@ class IngredientsController < ApplicationController
   
     if @ingredient.save
       flash[:notice] = "Successfully created ingredient."
-       @activities = Activity.order("updated_at DESC")
+       redirect_to nutrition_index_path, notice: 'Food was successfully added.' 
     end
   end
 

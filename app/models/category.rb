@@ -3,5 +3,6 @@ class Category < ActiveRecord::Base
   friendly_id :name, use: :slugged
   attr_accessible :name, :slug, :sunit
   has_many :stats
+  has_many :goals
   
 end

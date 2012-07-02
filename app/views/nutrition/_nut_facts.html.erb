@@ -1,0 +1,119 @@
+<% cals_goal = current_user.dgoal.calories %>
+<% prot_goal = current_user.dgoal.protein %>
+<% fats_goal = current_user.dgoal.fat %>
+<% carbs_goal = current_user.dgoal.carbs %>
+
+<% unless @tot_cals == nil %>
+<table class="table table-striped">
+   				  
+   				    	<tr>
+   				    		<td>
+   				    			Calories
+   				    	    </td>
+   				    	    <td>
+   				    	         <%= @tot_cals.round %> kcal
+   				    	                               </td>
+                            <td>
+   				    			Protein
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= @tot_fats.round %>g
+   				    	
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Goal
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= cals_goal %>
+   				    	    </td>
+                            <td>
+   				    			Goal
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= prot_goal %>
+   				    	
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Carbs
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= @tot_carb.round %>g
+   				    	
+                            </td>
+                            <td>
+   				    			Fats
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= @tot_fats.round %>g
+   				    	   
+                            </td>
+   				        </tr>
+   				         <tr>
+   				    		<td>
+   				    			Goal
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= carbs_goal %>
+   				    	    </td>
+                            <td>
+   				    			Goal
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= fats_goal %>
+   				    	
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Fiber
+   				    	    </td>
+   				    	    <td>
+   				    	       <%= @tot_fibr.round %>g
+   				    	    
+                            </td>
+                            <td>
+   				    			Sodium
+   				    	    </td>
+   				    	    <td>
+   				    	    	<%= @tot_sodi.round %>mg
+   				    
+                            </td>
+   				        </tr>
+   				       <tr>
+   				    		<td>
+   				    			Sugar
+   				    	    </td>
+   				    	    <td>
+   				    	    <%= @tot_sugs.round %>g
+   				    	     
+                            </td>
+                            <td>
+   				    			Sat. Fat
+   				    	    </td>
+   				    	    <td>
+   				    	     <%= @tot_satf.round %>g
+   				    	
+                            </td>
+   				        </tr>
+   				        <tr>
+   				    		<td>
+   				    			Potassium
+   				    	    </td>
+   				    	    <td>
+   				    	   <%= @tot_pots.round %>mg
+   				 
+                            </td>
+                            <td>
+   				    			Cholesterol
+   				    	    </td>
+   				    	    <td>
+   				         	<%= @tot_chol.round %>mg
+                            </td>
+   				        </tr>
+   					
+   					</table>
+  <% end %>

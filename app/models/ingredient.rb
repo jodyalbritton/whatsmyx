@@ -1,6 +1,6 @@
 class Ingredient < ActiveRecord::Base
   
-  attr_accessible :what_food, :food_id, :servings, :serving_size, :user_id, :date, :mcategory_id, :serv_size_id
+  attr_accessible :what_food, :food_id, :servings, :serving_size, :user_id, :date, :mcategory_id, :serv_size_id, :meal_id
   
   #validations
   
@@ -10,8 +10,72 @@ class Ingredient < ActiveRecord::Base
   belongs_to :mcategory
   belongs_to :food
   belongs_to :serv_size
+  belongs_to :meal
+ 
     
- validates_presence_of :what_food, :food_id
+ 
    include Likeable
+   
+   
+   def multiplication_factor
+     
+     if self.serv_size.nil? 
+     multiplication_factor = self.servings
+     else 
+     multiplication_factor = self.servings*self.serv_size.value/100 
+     end 
+     
+   end 
+   
+   def cals
+     
+     self.food.calories * multiplication_factor
+   end
+   
+   def prot
+     
+     self.food.protein * multiplication_factor
+   end
+   
+   def fats
+     
+     self.food.lipid_total * multiplication_factor
+   end
+   
+   def carb
+     
+     self.food.carbohydrates * multiplication_factor
+   end
+  
+   def fibr
+     
+     self.food.fiber * multiplication_factor
+   end
+
+   def sodi
+     
+     self.food.sodium * multiplication_factor
+   end
+
+   def sugs
+     
+     self.food.sugar_total * multiplication_factor
+   end
+   
+   def satf
+     self.food.fa_sat * multiplication_factor
+   end
+    
+   def chol
+     self.food.cholesterol * multiplication_factor
+   end
+   
+   def pots
+     self.food.potassium * multiplication_factor
+   end 
+   
+   
+
+
  
 end

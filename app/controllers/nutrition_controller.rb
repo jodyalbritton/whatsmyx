@@ -1,18 +1,47 @@
-class NutritionController < ApplicationController
+  class NutritionController < ApplicationController
     before_filter :authenticate_user!
   def index
-   @ingredient = current_user.ingredients.build 
+  @meal = current_user.meals.build 
   @date = params[:date] ? Date.parse(params[:date]) : Date.today
   @user = User.find(current_user)
   
+  
+ 
+ 
+  
+    
   if params[:date] 
-  @ingredients = @user.ingredients.where(:date => params[:date]).order("mcategory_id ASC").group_by { |m| m.mcategory}
-  @ingredients_tot = @user.ingredients.where(:date => params[:date])
+  @meals = @user.meals.where(:date => params[:date]).order("created_at ASC")
+  @meals_tot = @user.meals.where(:date => params[:date])
+  
+  @tot_cals = @meals.sum { |meal| meal.cals }
+  @tot_fats = @meals.sum { |meal| meal.fats }
+  @tot_prot = @meals.sum { |meal| meal.prot }
+  @tot_carb = @meals.sum { |meal| meal.carb }
+  @tot_sugs = @meals.sum { |meal| meal.sugs }
+  @tot_pots = @meals.sum { |meal| meal.pots }
+  @tot_chol = @meals.sum { |meal| meal.chol }
+  @tot_sodi = @meals.sum { |meal| meal.sodi }
+  @tot_fibr = @meals.sum { |meal| meal.fibr }
+  @tot_satf = @meals.sum { |meal| meal.satf }
  
   else
-  @ingredients = @user.ingredients.where(:date => Date.today).order("mcategory_id ASC").group_by { |m| m.mcategory}
-  @ingredients_tot = @user.ingredients.where(:date => Date.today)
+  @meals = @user.meals.where(:date => Date.today).order("created_at ASC")
+  @meals_tot = @user.meals.where(:date => Date.today)
+  
+  @tot_cals = @meals.sum { |meal| meal.cals }
+  @tot_fats = @meals.sum { |meal| meal.fats }
+  @tot_prot = @meals.sum { |meal| meal.prot }
+  @tot_carb = @meals.sum { |meal| meal.carb }
+  @tot_sugs = @meals.sum { |meal| meal.sugs }
+  @tot_pots = @meals.sum { |meal| meal.pots }
+  @tot_chol = @meals.sum { |meal| meal.chol }
+  @tot_sodi = @meals.sum { |meal| meal.sodi }
+  @tot_fibr = @meals.sum { |meal| meal.fibr }
+  @tot_satf = @meals.sum { |meal| meal.satf }
   end
+  
+ 
   end 
   def show
   

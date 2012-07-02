@@ -12,7 +12,7 @@ class HomeController < ApplicationController
     def index
      
      @stat = current_user.stats.build 
-     @ingredient = current_user.ingredients.build
+     @meal = current_user.meals.build
      @note = current_user.notes.build
      @post = current_user.posts.build
 
