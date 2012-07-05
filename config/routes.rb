@@ -71,7 +71,7 @@ Whatsmyx::Application.routes.draw do
   root :to => 'home#index'
   end
   devise_scope :user do
-  root :to => "devise/sessions#new"
+  root :to => "devise/registrations#new"
   
   end
  
