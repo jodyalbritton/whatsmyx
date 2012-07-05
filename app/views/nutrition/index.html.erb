@@ -1,75 +1,40 @@
 <div class="row">
     	 
-	
-
    	<div class="span4" id="nutrition-sidebar">
    		   
-   		      			
-     
-   			   				
-   				<div id="sidebar-data-left">
-   					
-   					<%= render "nut_facts"%>
-   			
-   			    </div>
-   			    
-   			   
-   	
-   			 
-   		
-   	          <div id="sidebar-chart">
-   		          <%= render "nutrition/pie_chart"%>
-   		      </div>
-   
-    
+   	   <div id="sidebar-data-left">
+   	      <%= render "nut_facts"%>
+   	   </div>
+   	   <div id="sidebar-chart">
+   	      <%= render "nutrition/pie_chart"%>
+   	   </div>
     </div>
     <div class="span8">
    
-    <div class="row nutri-body span8">
-      <div class="row nutri-nav">
-	     <div class="span2">
-	       <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	     </div>
-	   <div class="span4">
-	     
-	       <h2><%=h @date.strftime("%A %B %d %Y") %></h2>
-        
-	   </div>
-	   <div class="span2">
-	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
-	   </div>
-	 </div>
-	<a href="javascript:toggleDiv('meal-form');">Add Meal</a>
+    
+      
+    <div class="row nutri-nav">
+    
+    <%= render "nutrition/date_picker"%>
+	   
+	</div>
+	
+	<div class="row nutrition-header">
+     <%= render "nutrition/header" %>
+    </div>
+	
+	
     <div id="meal-form" style="display:none;">
     	<%= render "meals/form"%>
     </div>
     <div id="meal-list">
-   
- 
-     
-      
-      <%= render @meals %>
-      </div>
-  
-    
-  
-
-   
-   
-
-
-
+    <%= render @meals %>
     </div>
   
-   
-
-
-
- 
-
-            
+    
+     
+    </div>
 </div>
-
         
 
 

@@ -10,20 +10,19 @@ class User < ActiveRecord::Base
   rolify
   
   #validations 
-  validates_presence_of :name, :username
-  validates_uniqueness_of :username, :email, :case_sensitive => false
-  validate :username_format
+  #validates_presence_of :name, :username
+  validates_uniqueness_of :email, :case_sensitive => false
+  #validate :username_format
 	
   
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
+  devise  :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :invitable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes, :dgoal_attributes 
+  attr_accessible :name,:email, :password, :password_confirmation, :remember_me, :username, :profile_attributes, :settings_attributes, :dgoal_attributes, :opt_in
   validates_confirmation_of :password
  
  #assoications 
@@ -64,12 +63,42 @@ end
       end
     end
   end
+ 
   def username_format
   has_one_letter = username =~ /[a-zA-Z]/
   all_valid_characters = username =~ /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
   errors.add(:username, "must have at least one letter and contain only letters, digits, or underscores") unless (has_one_letter and all_valid_characters)
   end
   
+  after_create :send_welcome_email
+   # override Devise method
+  # no password is required when the account is created; validate password when the user sets one
+ 
+  def password_required?
+    if !persisted? 
+      false
+    else
+      !password.nil? || !password_confirmation.nil?
+    end
+  end
+  
+  # override Devise method
+  def confirmation_required?
+    false
+  end
+  
+  # override Devise method
+  def active_for_authentication?
+    confirmed? || confirmation_period_valid?
+  end
+  
+  private
+
+  def send_welcome_email
+    unless self.email.include?('@example.com') && Rails.env != 'test'
+      UserMailer.welcome_email(self).deliver
+    end
+  end
   
     def update_with_password(params={})
         current_password = params.delete(:current_password)
@@ -91,4 +120,7 @@ end
         clean_up_passwords
         result
       end
+      
+     
+      
 end

@@ -1,0 +1,51 @@
+<%- model_class = Stat.new.class -%>
+
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+
+
+
+
+<div>
+	<a data-toggle="modal" href="#myModalStat" class="btn btn-primary">Add Stat</a>
+<br>
+  
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      
+    </tr>
+  </thead>
+  
+
+  <tbody id="stats_list">
+  	
+   
+
+	<%= render :partial=> @stats %>
+	        
+  </tbody>
+
+</table>
+<%= paginate @stats%>
+
+</div>
+<br>
+
+
+ 
+ <div  id="myModalStat"  class="modal hide fade">
+ 
+      <%= render 'stats/form' %>
+   
+</div>
+</div>
+ 
+
+            
+</div>
+ 
+ 
+ 
+ 
+ 

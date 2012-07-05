@@ -6,6 +6,7 @@
      
     <%= f.input :exercise_id, :as => "hidden"%>
     <%= f.input :category, :as=> "hidden" %>
+    <%= f.input :date %>
 
     <% if @pactivity.time == nil %>
     <%= f.input :time, :as => "string", :label => "Start Time", :input_html => {:value => Time.now.strftime("%r") }%>

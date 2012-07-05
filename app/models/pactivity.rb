@@ -2,7 +2,7 @@ class Pactivity < ActiveRecord::Base
   belongs_to :user
   belongs_to :exercise
    has_many :activities, :as => :target
-  attr_accessible :duration, :name, :exercise_id, :time, :category
+  attr_accessible :duration, :name, :exercise_id, :time, :category, :date
   
  
   

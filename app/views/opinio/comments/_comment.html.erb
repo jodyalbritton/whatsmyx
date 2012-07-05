@@ -1,11 +1,12 @@
 <% reply = defined?(reply) ? reply : false %>
- 
-<div class="row comment-item span6" id="comment_<%= comment.id %>">
+      <div class="span6">
+      	
+      <div class="row comment-item" id="comment_<%= comment.id %>">
 	   <% if current_user == comment.owner %>
-             
-              <div class="comment-delete span6">
-              <%= link_to "x", comment_path(comment), :method => :delete, :remote => true,  :class=> "btn btn-mini pull-right" %> 
-               </div>
+             <div class="comment-delete pull-right">
+              
+              <%= link_to "x", comment_path(comment), :method => :delete, :remote => true,  :class=> "btn close" %> 
+              </div>
                <% end %>
                
        <div id="comment-sidebar" class="span0">
@@ -49,5 +50,5 @@
        </div>
  
 </div>
-
+</div>
 

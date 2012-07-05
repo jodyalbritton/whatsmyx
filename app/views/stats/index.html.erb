@@ -1,51 +1,120 @@
-<%- model_class = Stat.new.class -%>
 
-<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
-
-
-
-
-<div>
-	<a data-toggle="modal" href="#myModalStat" class="btn btn-primary">Add Stat</a>
-<br>
+<% @stats_by_cat.sort.each do |category, stats| %>
   
-
-<table class="table table-striped">
-  <thead>
-    <tr>
-      
-    </tr>
-  </thead>
+  <div class="well span12">
+  <div class="row">
+  <div class="span6">
+  <h3><%= category.name %></h3>
+  </div>
+  <div class="span3">
+  <h4>Current <%= category.name %></h4>
+  <% recent = Stat.where(:category_id => category.id).order("date ASC").last %>
+  <%= recent.value %>
   
+  
+  </div>
+  <div class="span3">
+   <h4>Goal</h4>
+   <% goal = current_user.goals.where(:category_id => category.id).last  %>
+        	
+        	 <%= goal.value %>
+ 
+        	  
+        	
+        	
+ 
+ 
+  </div>
+  </div>
+  <div class="stat-controls">
+  <a href="javascript:toggleDiv('stat-values-<%= category.id %>');" class="btn btn-mini">Last 10</a>
+  <a  href="javascript:toggleDiv('chart_container_toggle_<%= category.id %>');" class="btn btn-mini">Chart</a>
+  </div>
+  </div>
+  <div style="display:none;" class="span12" id="stat-values-<%= category.id %>">
+  <% for stat in stats %>
+  <div class="stat-item">
+  <div class="row">
+  <div class="span8">
+  I recorded a <%= link_to stat.category.name, stat_path(stat) %> of <%= stat.value %> on <%= stat.date.strftime("%B %d, %Y") %>
+  </div>
+  <div class="span4">
+  	 <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_stat_path(stat), :class => 'btn btn-mini' %>
+     <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      stat_path(stat),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger',
+                      :remote => true %>
+  </div>
+  </div>
+  </div>
+ 
+  
+ 
+  <% end %>
+  
+   </div>
+    <div style="display:none;" id="chart_container_toggle_<%=category.id%>">
+    <div class="span12" id="chart_container_<%=category.id %>">
+   <script type="text/javascript">
+    
+ /**
+ * Gray theme for Highcharts JS
+ * @author Torstein Hønsi
+ */
 
-  <tbody id="stats_list">
-  	
+
+
+  $(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "chart_container_<%= category.id %>",
+        zoomType: 'x'
+
+      },
+      title: {
+        text: "History"
+      },
+    
+     xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          second: '%e. %b',
+          minute: '%e. %b',
+          hour: '%e. %B',
+          day: '%e. %b',
+          week: '%e. %b',
+          month: '%Y %b %e.',
+          year: '%y %e. %b'
+        }
+    },	
+      yAxis: {
+        title: {
+          text: "<%= category.name %>"
+        }
+      },
+      tooltip: {
+      formatter: function () {
+        return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + Highcharts.numberFormat(this.y, 2) + " <%= category.sunit%>";
+      }
+    }, 
+
+      series: [{
+      	  <% chart_stats = current_user.stats.where(:id => category.id) %>
+          
+          name: "<%= category.name %> by Date",
+          pointInterval: <%= 1.day * 1000 %>,
+          data: <%= stat.by_category.map{ |f| [f.date.to_datetime.to_i* 1000, f.value.to_i] }.sort.inspect %>	
+        }]
    
+    })
+  })
 
-	<%= render :partial=> @stats %>
-	        
-  </tbody>
-
-</table>
-<%= paginate @stats%>
-
-</div>
-<br>
+     </script>
+     </div>
+     </div>
 
 
- 
- <div  id="myModalStat"  class="modal hide fade">
- 
-      <%= render 'stats/form' %>
-   
-</div>
-</div>
- 
-
-            
-</div>
- 
- 
- 
- 
- 
+<% end %>

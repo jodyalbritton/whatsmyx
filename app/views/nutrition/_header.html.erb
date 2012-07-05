@@ -1,0 +1,32 @@
+
+<div class="span2 outer-box">
+	<div class="inner-box">
+	<h3>Calories</h3>
+	<h1><%= @tot_cals.round %></h1>
+	<h3>Consumed</h3>
+	</div>
+</div>
+<div class="span2 outer-box">
+	<div class="inner-box">
+	<h3>Calories</h3>
+	<h1><%= @daily_burn.round%></h1>
+	<h3>Burned</h3>
+	</div>
+</div>
+<div class="span2 outer-box">
+	<div class="inner-box">
+	<h3>Meals</h3>
+	<h1><%= @meals.count %></h1>
+	<h3>Logged</h3>
+	</div>
+</div>
+
+<div class="span2 outer-box">
+	<div class="inner-box">
+    <h3>Add</h3>
+	<h1><a href="javascript:toggleDiv('meal-form');">+</a></h1>
+	<h3>Meal</h3>
+	
+	</div>
+</div>
+

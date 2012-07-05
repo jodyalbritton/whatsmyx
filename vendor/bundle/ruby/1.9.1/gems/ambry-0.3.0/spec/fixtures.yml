@@ -1,0 +1,14 @@
+---
+Person:
+  moe@3stooges.com:
+    :name: Moe Howard
+  shemp@3stooges.com:
+    :name: Shemp Howard
+  curly@3stooges.com:
+    :name: Curly Howard
+  larry@3stooges.com:
+    :name: Larry Fine
+"MyModule::Animal":
+  Canis Familaris:
+    :species: Canis Familaris
+    :common_name: Dog

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120630050158) do
+ActiveRecord::Schema.define(:version => 20120705051923) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -177,65 +177,61 @@ ActiveRecord::Schema.define(:version => 20120630050158) do
   add_index "food_dets", ["ndb"], :name => "INDEX_FOOD_DETS_ON_NDB"
 
   create_table "foods", :force => true do |t|
-    t.integer "user_id"
-    t.integer "ndb"
-    t.string  "name",          :limit => 60
-    t.float   "water"
-    t.float   "calories",                                                   :default => 0.0,   :null => false
-    t.float   "protein",                                                    :default => 0.0,   :null => false
-    t.float   "lipid_total",                                                :default => 0.0,   :null => false
-    t.float   "ash"
-    t.float   "carbohydrates"
-    t.float   "fiber",                                                      :default => 0.0,   :null => false
-    t.float   "sugar_total",                                                :default => 0.0,   :null => false
-    t.float   "calcium",                                                    :default => 0.0,   :null => false
-    t.decimal "iron",                        :precision => 4,  :scale => 2
+    t.integer "NDB_No"
+    t.string  "shrt_desc",     :limit => 60
+    t.decimal "water",                        :precision => 5, :scale => 2, :default => 0.0, :null => false
+    t.float   "calories",                                                   :default => 0.0, :null => false
+    t.float   "protein",       :limit => 4,                                 :default => 0.0, :null => false
+    t.float   "lipid_total",   :limit => 5,                                 :default => 0.0, :null => false
+    t.decimal "ash",                          :precision => 4, :scale => 2
+    t.float   "carbohydrates", :limit => 5,                                 :default => 0.0, :null => false
+    t.float   "fiber",         :limit => 3,                                 :default => 0.0, :null => false
+    t.float   "sugar_total",   :limit => 4,                                 :default => 0.0, :null => false
+    t.integer "calcium"
+    t.decimal "iron",                         :precision => 4, :scale => 2
     t.integer "magnesium"
     t.integer "phosphorus"
-    t.float   "potassium"
-    t.integer "sodium"
-    t.decimal "zinc",                        :precision => 4,  :scale => 2
+    t.float   "potassium",                                                  :default => 0.0, :null => false
+    t.float   "sodium",                                                     :default => 0.0, :null => false
+    t.decimal "zinc",                         :precision => 4, :scale => 2
     t.string  "copper",        :limit => 9
-    t.decimal "manganese",                   :precision => 6,  :scale => 3
-    t.decimal "selenium",                    :precision => 5,  :scale => 1
-    t.float   "vit_c"
-    t.decimal "thiamin",                     :precision => 7,  :scale => 3
+    t.decimal "manganese",                    :precision => 6, :scale => 3
+    t.string  "selenium",      :limit => 66
+    t.string  "vit_c",         :limit => 7
+    t.decimal "thiamin",                      :precision => 7, :scale => 3
     t.string  "riboflavin",    :limit => 47
-    t.string  "niacin",        :limit => 9
-    t.decimal "panto_acid",                  :precision => 8,  :scale => 3
-    t.decimal "vitamin_b6",                  :precision => 6,  :scale => 3
-    t.string  "folate_total",  :limit => 5
-    t.integer "folic_acid"
-    t.decimal "food_folate",                 :precision => 5,  :scale => 2
-    t.string  "folate_dfe",    :limit => 6
-    t.decimal "choline_total",               :precision => 6,  :scale => 3
-    t.decimal "vitamin_b12",                 :precision => 8,  :scale => 3
-    t.decimal "vitamin_a",                   :precision => 8,  :scale => 3
-    t.decimal "vitamin_a_rae",               :precision => 8,  :scale => 3
-    t.string  "retinol",       :limit => 23
+    t.string  "niacin",        :limit => 7
+    t.string  "panto_acid",    :limit => 47
+    t.string  "vit_b6",        :limit => 74
+    t.string  "folate_total",  :limit => 62
+    t.string  "folic_acid",    :limit => 49
+    t.string  "food_folate",   :limit => 53
+    t.string  "folate_dfe",    :limit => 4
+    t.string  "choline_total", :limit => 43
+    t.string  "vit_b12",       :limit => 39
+    t.decimal "vit_a_iu",                     :precision => 8, :scale => 3
+    t.decimal "vit_a_rae",                    :precision => 8, :scale => 3
+    t.string  "retinol",       :limit => 48
     t.string  "alpha_carot",   :limit => 26
-    t.string  "beta_carot",    :limit => 40
-    t.string  "beta_crypt",    :limit => 29
-    t.string  "lycopene",      :limit => 44
-    t.string  "lut_zea",       :limit => 33
-    t.string  "vitamin_e",     :limit => 52
-    t.string  "vitamin_d_ug",  :limit => 44
-    t.string  "vitamin_d_iu",  :limit => 33
-    t.string  "vitamin_k_ug",  :limit => 16
-    t.float   "fa_sat",                                                     :default => 0.0,   :null => false
-    t.decimal "fa_mono",                     :precision => 30, :scale => 0
-    t.float   "fa_poly"
-    t.float   "cholesterol",                                                :default => 0.0,   :null => false
-    t.string  "gmwt_1",        :limit => 77
-    t.string  "gmwt_desc",     :limit => 80
-    t.float   "serving_grams"
-    t.string  "gmwt_desc2",    :limit => 79
-    t.integer "refuse_pct"
-    t.boolean "umd",                                                        :default => false, :null => false
-    t.string  "slug"
+    t.string  "beta_carot",    :limit => 46
+    t.string  "beta_crypt",    :limit => 77
+    t.string  "lycopene",      :limit => 123
+    t.string  "lut_zea",       :limit => 66
+    t.string  "vit_e",         :limit => 120
+    t.string  "vit_d",         :limit => 82
+    t.string  "vivit_d",       :limit => 113
+    t.string  "vit_k",         :limit => 100
+    t.float   "fa_sat",                                                     :default => 0.0, :null => false
+    t.string  "fa_mono",       :limit => 63
+    t.string  "fa_poly",       :limit => 91
+    t.float   "cholesterol",                                                :default => 0.0, :null => false
+    t.string  "gmwt_1",        :limit => 118
+    t.string  "gmwt_desc1",    :limit => 104
+    t.string  "gmwt_2",        :limit => 103
+    t.string  "gmwt_desc2",    :limit => 131
+    t.string  "refuse_pct",    :limit => 99
+    t.string  "name",          :limit => 130
   end
-
-  add_index "foods", ["slug"], :name => "index_foods_on_slug", :unique => true
 
   create_table "foods_bak", :force => true do |t|
     t.string  "name"
@@ -293,6 +289,67 @@ ActiveRecord::Schema.define(:version => 20120630050158) do
     t.integer "umd",            :default => 0
     t.integer "user_id"
   end
+
+  create_table "foods_older", :force => true do |t|
+    t.integer "user_id"
+    t.integer "ndb"
+    t.string  "name",          :limit => 60
+    t.float   "water"
+    t.float   "calories",                                                   :default => 0.0,   :null => false
+    t.float   "protein",                                                    :default => 0.0,   :null => false
+    t.float   "lipid_total",                                                :default => 0.0,   :null => false
+    t.float   "ash"
+    t.float   "carbohydrates"
+    t.float   "fiber",                                                      :default => 0.0,   :null => false
+    t.float   "sugar_total",                                                :default => 0.0,   :null => false
+    t.float   "calcium",                                                    :default => 0.0,   :null => false
+    t.decimal "iron",                        :precision => 4,  :scale => 2
+    t.integer "magnesium"
+    t.integer "phosphorus"
+    t.float   "potassium",                                                  :default => 0.0,   :null => false
+    t.integer "sodium"
+    t.decimal "zinc",                        :precision => 4,  :scale => 2
+    t.string  "copper",        :limit => 9
+    t.decimal "manganese",                   :precision => 6,  :scale => 3
+    t.decimal "selenium",                    :precision => 5,  :scale => 1
+    t.float   "vit_c"
+    t.decimal "thiamin",                     :precision => 7,  :scale => 3
+    t.string  "riboflavin",    :limit => 47
+    t.string  "niacin",        :limit => 9
+    t.decimal "panto_acid",                  :precision => 8,  :scale => 3
+    t.decimal "vitamin_b6",                  :precision => 6,  :scale => 3
+    t.string  "folate_total",  :limit => 5
+    t.integer "folic_acid"
+    t.decimal "food_folate",                 :precision => 5,  :scale => 2
+    t.string  "folate_dfe",    :limit => 6
+    t.decimal "choline_total",               :precision => 6,  :scale => 3
+    t.decimal "vitamin_b12",                 :precision => 8,  :scale => 3
+    t.decimal "vitamin_a",                   :precision => 8,  :scale => 3
+    t.decimal "vitamin_a_rae",               :precision => 8,  :scale => 3
+    t.string  "retinol",       :limit => 23
+    t.string  "alpha_carot",   :limit => 26
+    t.string  "beta_carot",    :limit => 40
+    t.string  "beta_crypt",    :limit => 29
+    t.string  "lycopene",      :limit => 44
+    t.string  "lut_zea",       :limit => 33
+    t.string  "vitamin_e",     :limit => 52
+    t.string  "vitamin_d_ug",  :limit => 44
+    t.string  "vitamin_d_iu",  :limit => 33
+    t.string  "vitamin_k_ug",  :limit => 16
+    t.float   "fa_sat",                                                     :default => 0.0,   :null => false
+    t.decimal "fa_mono",                     :precision => 30, :scale => 0
+    t.float   "fa_poly"
+    t.float   "cholesterol",                                                :default => 0.0,   :null => false
+    t.string  "gmwt_1",        :limit => 77
+    t.string  "gmwt_desc",     :limit => 80
+    t.float   "serving_grams"
+    t.string  "gmwt_desc2",    :limit => 79
+    t.integer "refuse_pct"
+    t.boolean "umd",                                                        :default => false, :null => false
+    t.string  "slug"
+  end
+
+  add_index "foods_older", ["slug"], :name => "index_foods_on_slug", :unique => true
 
   create_table "footnotes", :force => true do |t|
     t.string "ndb_no",      :limit => 5,                         :null => false
@@ -478,6 +535,7 @@ ActiveRecord::Schema.define(:version => 20120630050158) do
     t.datetime "updated_at",  :null => false
     t.time     "time"
     t.string   "category"
+    t.date     "date"
   end
 
   add_index "pactivities", ["exercise_id"], :name => "index_pactivities_on_exercise_id"
@@ -524,8 +582,8 @@ ActiveRecord::Schema.define(:version => 20120630050158) do
     t.string   "lname"
     t.string   "name"
     t.float    "weight",                            :default => 0.0, :null => false
-    t.string   "height",              :limit => 45
-    t.float    "waist_circ"
+    t.integer  "height"
+    t.float    "waist_circ",                        :default => 0.0, :null => false
     t.float    "kneck_circ"
     t.float    "shoulders_circ"
     t.float    "chest_circ"
@@ -597,18 +655,18 @@ ActiveRecord::Schema.define(:version => 20120630050158) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                                :default => "", :null => false
+    t.string   "encrypted_password",                   :default => ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                        :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
     t.string   "name"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
@@ -621,15 +679,24 @@ ActiveRecord::Schema.define(:version => 20120630050158) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.integer  "sash_id"
-    t.integer  "points",                 :default => 0
-    t.integer  "level",                  :default => 0
+    t.integer  "points",                               :default => 0
+    t.integer  "level",                                :default => 0
     t.integer  "actor_id"
     t.string   "activity_stream_token"
+    t.string   "invitation_token",       :limit => 60
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.boolean  "opt_in"
   end
 
   add_index "users", ["actor_id"], :name => "index_users_on_actor_id"
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
+  add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
 

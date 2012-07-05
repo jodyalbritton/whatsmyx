@@ -8,7 +8,8 @@ class StatsController < ApplicationController
 
   def load
     @user = User.find(current_user)
-    @stats = @user.stats.order("date DESC").page(params[:page])
+    @stats = @user.stats.order("date DESC")
+    @stats_by_cat = @stats.group_by { |s| s.category }
     @stat = Stat.new
   end
   

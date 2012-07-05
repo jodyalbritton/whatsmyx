@@ -1,17 +1,13 @@
 
 
   	<% current_user.memberships.each do |membership| %>
-  	         <div class="span11 group-pane">
-  	         <div class="span2" id="group-sidebar">
-  	         <%= image_tag membership.group.avatar.url(:thumb), :class => "group-pic-small"  %>
-  	         </div>
-  	         <div class="span8" id="group-body">
-  	         <div><h2><%= link_to membership.group.name, membership.group %></h2></div>
-  	         <% if current_user == membership.group.user %>
-  	         <div><%= link_to 'Edit', edit_group_path(membership.group) %> | <%= link_to 'Destroy', (membership.group), confirm: 'Are you sure?', method: :delete %></div>
-             <% end %>
-             <div> Description: <%= membership.group.description %></div>
-             <div> Members: <%= membership.group.memberships.count %></div>
-  	         </div>
-             </div>
+  	       
+  	    
+  	    
+  	         <%= image_tag membership.group.avatar.url(:mini), :class => "group-pic-mini"  %>
+  	     
+             
+            
+  	  
+            
     <% end %>

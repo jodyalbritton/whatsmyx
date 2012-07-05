@@ -12,6 +12,17 @@
  *= require_self
  *= require_tree .
 */
+
+.comment-item:hover {
+	
+	background-color: #eee;
+}
+
+.comment-item {
+	
+	padding: 15px;
+}
+
 .chart_row {
 	
 	
@@ -94,6 +105,21 @@ background-color: #EBEDEE;
 padding: 1%;
 min-height: 70px;
 
+}
+
+/****************************************************************
+Nutrition Page
+****************************************************************/
+#meal-form {
+	padding: 10px;
+}
+.inner-box {
+	padding: 20px;
+	text-align: center;
+	min-height: 100px;
+	border: 1px solid #E3E3E3;
+	background-color: #EBEDEE;
+	       
 }
 
 /****************************************************************

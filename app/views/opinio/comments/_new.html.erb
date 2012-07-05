@@ -2,7 +2,7 @@
 
 
 
-<div class="span3" id="new_comment_<%= commentable.id %>" style="display:none;">
+<div class="span5" id="new_comment_<%= commentable.id %>" style="display:none;">
   <% if send(Opinio.current_user_method) %>
      
     <%= form_for Comment.new, :remote => true do |f| %>
@@ -21,7 +21,6 @@
     </p>
   <% end %>
 </div>
-
 
 
 

@@ -6,6 +6,7 @@ $('#no_comments').hide();
     $('#comment_<%= @comment.commentable_id %>_replies').append("<%= escape_javascript( render @comment, :locals => {:reply => @reply} ) %>");
     $('#commentable_id').val('<%= @comment.commentable.commentable_id %>');
     $('#commentable_type').val('<%= @comment.commentable.commentable_type %>');
+  
   <% else %>
      /*Hide the div post_errors*/
   $("#flash_notice").hide(300);
@@ -15,12 +16,13 @@ $('#no_comments').hide();
 
   /*Show the flash_notice div*/
   $("#flash_notice").show(300);
-
+   $('#new_comment_<%= @comment.commentable_id %>').toggle();
   $('#comments_<%= @comment.commentable_id %>').<%= Opinio.sort_order == 'ASC' ? 'append' : 'prepend'%>("<%= escape_javascript( render @comment, :locals => {:reply => @reply} ) %>");
   <% end %>
   
   $('textarea#comment_body').val('');
-  
+    
+    
 <% else %>
 
   $('#flash_error').append("<%= escape_javascript(flash[:error]) %>");

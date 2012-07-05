@@ -1,41 +1,66 @@
-<h2>Sign up</h2>
-<% resource.build_profile unless resource.profile%>
-<% resource.build_dgoal unless resource.dgoal%>
+<div id="rquest-invite" class="modal hide fade">
 <%= simple_form_for(resource,:validate => true , :as => resource_name, :url => registration_path(resource_name),:html => {:class => 'form-horizontal' }) do |f| %>
-  <%= f.error_notification %>
-  
-  <div class="inputs">
-    <%= f.input :name, :required => true  %>
-    <%= f.input :email, :required => true %>
-    <%= f.input :username, :required => true, :autofocus => true %>
-    <%= f.simple_fields_for :profile do |p| %>
-      <%= p.input :dob, :as => "date" %>
-      <%= p.input :gender, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :prompt => "Select One" %>
-      
-      
-    	<%= p.input :weight, :input_html => {:class => "span1"} %>
-    	<%= p.input :height, :collection => height_options, :input_html => {:class => "span1"} %>
- 
-     <% end %>
-     
-     
+<div class="modal-header">
+<button class="close" data-dismiss="modal">×</button>
+  <h2> Request Invitation </h2>
+</div>
+<div class="modal-body">
+	<%= f.error_notification %> 
+	<%= f.input :email, :placeholder => 'user@example.com' %> 
+	 
+    <p>
+    	Sign up for infrequent updates about whatsmyx. Don't worry, we hate spam just as much as you do
+    	</P>
+   <%= f.input :opt_in, :label =>"Allow Updates" %> 
+ </div>
+<div class="modal-footer">
+	<%= f.button :submit, :label=>"Request Invite", :class => 'btn-primary', :disable_with => "Please wait..." %>
+
+    <button class="btn" data-dismiss="modal">Cancel</button>
+   
     
-    <%= f.input :password, :required => true %>
-    <%= f.input :password_confirmation, :required => true %>
-      
-  
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", :class => 'btn btn-primary' %>
-     <div class="pull-right">
-    <%= render :partial => "devise/shared/links" %>
-  </div>
-  </div>
- 
+ </div>
 <% end %>
+</div>
+<div id="romance-copy" class="hero-unit">
+  
+   <h2>Find Your X</h2>
+   <p>
+   	Your X is whatever you want it to be. Track anything. You can choose what to share, and who to share it with. We believe you should 
+   	be in charge of your data. Forget the preset list of stats offered by most diet websites. Here you will be free to track anything.
+    
+    <ul> 
+    	<li>
+    		Stats
+        </li>
+        <li>
+    		Nutrition
+        </li>
+         <li>
+    		Activities
+        </li>
+         <li>
+    		User Curated Groups
+        </li>
+         <li>
+    		Points System with Levels and Achievments
+        </li>
+   </ul>
+   </p>
+   <p>
+   	
+   </p>
 
-
-
-
-
-
+   <div class="beta-button"  style="text-align: center;">
+   	   <h3>
+   	Limited Beta Coming Soon
+   	</h3>
+  <a data-toggle="modal" href="#rquest-invite" class="btn btn-primary btn-large">Request invite</a>
+   </div>
+  </div>
+  
+<div id="call-to-action">
+	
+	
+</div>
