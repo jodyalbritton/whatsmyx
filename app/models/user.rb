@@ -70,6 +70,26 @@ end
   errors.add(:username, "must have at least one letter and contain only letters, digits, or underscores") unless (has_one_letter and all_valid_characters)
   end
   
+   def update_with_password(params={})
+        current_password = params.delete(:current_password)
+
+        if params[:password].blank?
+          params.delete(:password)
+          params.delete(:password_confirmation) if params[:password_confirmation].blank?
+        end 
+
+        result = if params[:password].blank? || valid_password?(current_password) 
+          update_attributes(params)
+        else
+          self.attributes = params
+          self.valid?
+          self.errors.add(:current_password, current_password.blank? ? :blank : :invalid)
+          false
+        end 
+
+        clean_up_passwords
+        result
+      end
   after_create :send_welcome_email
    # override Devise method
   # no password is required when the account is created; validate password when the user sets one
@@ -100,26 +120,7 @@ end
     end
   end
   
-    def update_with_password(params={})
-        current_password = params.delete(:current_password)
-
-        if params[:password].blank?
-          params.delete(:password)
-          params.delete(:password_confirmation) if params[:password_confirmation].blank?
-        end 
-
-        result = if params[:password].blank? || valid_password?(current_password) 
-          update_attributes(params)
-        else
-          self.attributes = params
-          self.valid?
-          self.errors.add(:current_password, current_password.blank? ? :blank : :invalid)
-          false
-        end 
-
-        clean_up_passwords
-        result
-      end
+   
       
      
       
