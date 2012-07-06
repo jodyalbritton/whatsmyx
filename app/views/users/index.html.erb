@@ -4,8 +4,10 @@
     <% @users.each do |user| %>
     <div class="row item-user">
     	<div class="span3 user-item-sidebar">
+    	<% unless user.profile == nil %>
         <%= image_tag user.profile.avatar.url(:thumb), :class => "avatar" %>
     	<%= link_to user.username,(user)%> 
+    	<% end %>
     	</div>
     	<div class="span6 user-item-body">
     		

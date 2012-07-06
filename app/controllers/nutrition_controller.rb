@@ -14,8 +14,11 @@
   @meals = @user.meals.where(:date => params[:date]).order("created_at ASC")
   @meals_tot = @user.meals.where(:date => params[:date])
   @daily_activities = @user.pactivities.where(:date => params[:date])
+  if  @user.profile == nil
+  @daily_burn = 0
+  elsif
   @daily_burn = (@daily_activities.sum { |daily| daily.burned }) + @user.profile.mbr
-  
+  end 
   @tot_cals = @meals.sum { |meal| meal.cals }
   @tot_fats = @meals.sum { |meal| meal.fats }
   @tot_prot = @meals.sum { |meal| meal.prot }
@@ -31,8 +34,11 @@
   @meals = @user.meals.where(:date => Date.today).order("created_at ASC")
   @meals_tot = @user.meals.where(:date => Date.today)
   @daily_activities = @user.pactivities.where(:date => Date.today)
+  if  @user.profile == nil
+  @daily_burn = 0
+  elsif
   @daily_burn = (@daily_activities.sum { |daily| daily.burned }) + @user.profile.mbr
-  
+  end 
   @tot_cals = @meals.sum { |meal| meal.cals }
   @tot_fats = @meals.sum { |meal| meal.fats }
   @tot_prot = @meals.sum { |meal| meal.prot }

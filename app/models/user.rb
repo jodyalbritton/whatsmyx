@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-
+  after_create :initialize_profile
   include Likeable::UserMethods
   has_merit
   extend FriendlyId
@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
  
   
  accepts_nested_attributes_for :profile, :settings, :dgoal
+  def initialize_profile
+      (self.profile = Profile.new).save
+      (self.settings = Settings.new).save
+      (self.dgoal = Dgoal.new).save
+  end
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info

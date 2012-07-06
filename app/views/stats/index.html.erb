@@ -7,7 +7,7 @@
   <h3><%= category.name %></h3>
   </div>
   <div class="span3">
-  <h4>Current <%= category.name %></h4>
+  <h4>Current </h4>
   <% recent = Stat.where(:category_id => category.id).order("date ASC").last %>
   <%= recent.value %>
   
@@ -16,8 +16,13 @@
   <div class="span3">
    <h4>Goal</h4>
    <% goal = current_user.goals.where(:category_id => category.id).last  %>
-        	
+   
+        	 <%  if goal == nil %>
+        	 <%= link_to "Set a Goal",(:goals) %>
+        	 <% elsif %>
         	 <%= goal.value %>
+        	 
+        	 <% end %>
  
         	  
         	
@@ -29,6 +34,7 @@
   <div class="stat-controls">
   <a href="javascript:toggleDiv('stat-values-<%= category.id %>');" class="btn btn-mini">Last 10</a>
   <a  href="javascript:toggleDiv('chart_container_toggle_<%= category.id %>');" class="btn btn-mini">Chart</a>
+  <%= link_to "Goals",(:goals), :class=>"btn btn-mini" %>
   </div>
   </div>
   <div style="display:none;" class="span12" id="stat-values-<%= category.id %>">
