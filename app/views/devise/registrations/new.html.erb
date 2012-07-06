@@ -6,7 +6,9 @@
 </div>
 <div class="modal-body">
 	<%= f.error_notification %> 
-	<%= f.input :email, :placeholder => 'user@example.com' %> 
+	<%= f.input :email, :placeholder => 'user@example.com', :required => true %> 
+	<%= f.input :name, :required => true  %>
+    <%= f.input :username, :required => true, :autofocus => true %>
 	 
     <p>
     	Sign up for infrequent updates about whatsmyx. Don't worry, we hate spam just as much as you do
@@ -27,30 +29,14 @@
   
    <h2>Find Your X</h2>
    <p>
-   	Your X is whatever you want it to be. Track anything. You can choose what to share, and who to share it with. We believe you should 
-   	be in charge of your data. Forget the preset list of stats offered by most diet websites. Here you will be free to track anything.
+   	Want to privatly track statistical data about yourself, you can do that. Want to join a community of other self-trackers, 
+   	sharing in goals and encouragement, you can do that too. You can track anything, with user curated stat types, foods, and more. 
+   	Create or join a group. Your privacy is important and you have options ranging from a completely private profile, to a public profile
+   	with followers. 
     
-    <ul> 
-    	<li>
-    		Stats
-        </li>
-        <li>
-    		Nutrition
-        </li>
-         <li>
-    		Activities
-        </li>
-         <li>
-    		User Curated Groups
-        </li>
-         <li>
-    		Points System with Levels and Achievments
-        </li>
-   </ul>
+    
    </p>
-   <p>
-   	
-   </p>
+   
 
    <div class="beta-button"  style="text-align: center;">
    	   <h3>

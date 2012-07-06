@@ -10,9 +10,9 @@ class User < ActiveRecord::Base
   rolify
   
   #validations 
-  #validates_presence_of :name, :username
-  validates_uniqueness_of :email, :case_sensitive => false
-  #validate :username_format
+  validates_presence_of :name, :username
+  validates_uniqueness_of :username, :email, :case_sensitive => false
+  validate :username_format
 	
   
   
