@@ -5,14 +5,10 @@ class Group < ActiveRecord::Base
   belongs_to :user
   has_many :memberships, dependent: :destroy
   has_many :activities, :foreign_key => :parent_id, dependent: :destroy
+   
+  mount_uploader :avatar, AvatarUploader
   
   
-  
-   has_attached_file :avatar, 
-          :styles => { :medium => "300x300>", 
-          :thumb => "64x64>",
-          :mini => "32x32>" },
-          :default_url =>"/assets/missing_:style.png"
   
   validates_presence_of :name, :description
   
@@ -24,6 +20,7 @@ class Group < ActiveRecord::Base
  
  
   private
+  
     def create_new_membership
       self.memberships << Membership.new(:user_id => self.user)
     end

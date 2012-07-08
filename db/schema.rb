@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705051923) do
+ActiveRecord::Schema.define(:version => 20120707225522) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(:version => 20120705051923) do
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
+  create_table "audiences", :force => true do |t|
+    t.integer  "audience_member_id"
+    t.integer  "post_id"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "audience_member_type"
+  end
+
+  add_index "audiences", ["audience_member_id"], :name => "index_audiences_on_audience_member_id"
+  add_index "audiences", ["post_id"], :name => "index_audiences_on_post_id"
+
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
     t.integer  "sash_id"
@@ -129,13 +140,14 @@ ActiveRecord::Schema.define(:version => 20120705051923) do
 
   add_index "dgoals", ["user_id"], :name => "index_dgoals_on_user_id"
 
-  create_table "embedded_objects", :force => true do |t|
+  create_table "embedded_ojects", :force => true do |t|
     t.integer  "embeddable_id"
     t.string   "embeddable_type"
-    t.integer  "like_count",      :default => 0
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
+
+  add_index "embedded_ojects", ["embeddable_id"], :name => "index_embedded_ojects_on_embeddable_id"
 
   create_table "exercises", :force => true do |t|
     t.integer "code"
@@ -557,33 +569,29 @@ ActiveRecord::Schema.define(:version => 20120705051923) do
     t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "organization",        :limit => 45
-    t.string   "phone",               :limit => 45
-    t.string   "mobile",              :limit => 45
-    t.string   "fax",                 :limit => 45
+    t.string   "organization",   :limit => 45
+    t.string   "phone",          :limit => 45
+    t.string   "mobile",         :limit => 45
+    t.string   "fax",            :limit => 45
     t.string   "address"
     t.string   "city"
-    t.string   "zipcode",             :limit => 45
-    t.string   "province",            :limit => 45
-    t.string   "country",             :limit => 45
+    t.string   "zipcode",        :limit => 45
+    t.string   "province",       :limit => 45
+    t.string   "country",        :limit => 45
     t.integer  "prefix_key"
     t.string   "description"
     t.string   "experience"
     t.string   "website"
-    t.string   "skype",               :limit => 45
-    t.string   "im",                  :limit => 45
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+    t.string   "skype",          :limit => 45
+    t.string   "im",             :limit => 45
     t.text     "about"
     t.date     "dob"
     t.string   "fname"
     t.string   "lname"
     t.string   "name"
-    t.float    "weight",                            :default => 0.0, :null => false
-    t.integer  "height"
-    t.float    "waist_circ",                        :default => 0.0, :null => false
+    t.float    "weight",                       :default => 0.0, :null => false
+    t.integer  "height",                       :default => 0,   :null => false
+    t.float    "waist_circ",                   :default => 0.0, :null => false
     t.float    "kneck_circ"
     t.float    "shoulders_circ"
     t.float    "chest_circ"
@@ -593,6 +601,7 @@ ActiveRecord::Schema.define(:version => 20120705051923) do
     t.float    "calf_circ"
     t.float    "forearm_circ"
     t.string   "gender"
+    t.string   "avatar"
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
@@ -654,6 +663,15 @@ ActiveRecord::Schema.define(:version => 20120705051923) do
     t.integer  "category_id", :null => false
   end
 
+  create_table "tags", :force => true do |t|
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "category_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "post"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
     t.string   "encrypted_password",                   :default => ""
@@ -706,6 +724,14 @@ ActiveRecord::Schema.define(:version => 20120705051923) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "viewers", :force => true do |t|
+    t.string   "name"
+    t.integer  "viewable_id"
+    t.string   "viewable_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "weights", :force => true do |t|
     t.integer "ndb",                                                      :null => false

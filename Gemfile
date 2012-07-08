@@ -35,9 +35,10 @@ gem "launchy"
 gem "devise"
 gem "cancan"
 gem "rolify"
-gem 'kaminari'
+gem 'will_paginate'
 gem "highcharts-rails", "~> 2.2.1"
-gem "paperclip", "~> 3.0"
+gem "carrierwave"
+gem "rmagick", :require => 'RMagick'
 gem "friendly_id", "~> 4.0.1"
 gem 'simple_form'
 gem 'rails3-jquery-autocomplete', :git => 'https://github.com/crowdint/rails3-jquery-autocomplete.git'

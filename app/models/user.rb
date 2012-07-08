@@ -27,7 +27,8 @@ class User < ActiveRecord::Base
  
  #assoications 
   has_many :activities, dependent: :destroy
-  has_many :groups 
+  has_many :relations, dependent: :destroy
+  has_many :groups, through: :memberships
   has_many :pactivities, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :checklists, dependent: :destroy
@@ -46,6 +47,7 @@ class User < ActiveRecord::Base
  
   
  accepts_nested_attributes_for :profile, :settings, :dgoal
+ 
   def initialize_profile
       (self.profile = Profile.new).save
       (self.settings = Settings.new).save

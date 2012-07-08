@@ -15,6 +15,7 @@
 //= require twitter/bootstrap
 //= require jquery.ui.core
 //= require jquery.ui.autocomplete
+//= require jquery.Jcrop
 //= require autocomplete-rails
 //= require highcharts
 //= require cocoon

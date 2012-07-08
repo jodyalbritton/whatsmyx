@@ -5,7 +5,7 @@ Whatsmyx::Application.routes.draw do
   
  
  
-  resources :meals
+    resources :meals
 
     resources :pactivities do
      get :autocomplete_exercise_name, :on => :collection
@@ -25,18 +25,18 @@ Whatsmyx::Application.routes.draw do
   
 
     opinio_model
-  
+   
     resources :community
-    resources :checklists
+    
     resources :posts do
     opinio
     end 
  
-    resources :notes
+   
  
   
 
-
+  resource  :profile
   resources :mcategories
   resources :categories 
   resources :ingredients do 
@@ -136,6 +136,7 @@ Whatsmyx::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   resources :users, :only => [:show], :path => '/' do 
+    
      
     resources :follows, :only => [:create, :destroy]
    end

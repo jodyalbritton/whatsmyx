@@ -1,12 +1,14 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :fname, :lname, :dob, :about, :avatar, :weight, :height, :gender, :waist_circ
+  attr_accessible :fname, :lname, :dob, :about, :avatar, :weight, :height, :gender, :waist_circ, :crop_x, :crop_y, :crop_w, :crop_h
+  
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
+  after_update :crop_avatar
   
   
-  has_attached_file :avatar, 
-          :styles => { :medium => "300x300>", 
-          :thumb => "64x64>",
-          :mini => "32x32>" },
-          :default_url =>"/assets/missing_:style.png"
+  mount_uploader :avatar, AvatarUploader
+ def crop_avatar
+    avatar.recreate_versions! if crop_x.present?
+ end
  def age         
  age = (Date.today.year - self.dob.year).to_i
  end 

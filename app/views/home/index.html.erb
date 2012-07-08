@@ -11,10 +11,15 @@
  <% @parent = '0'%>
  <div id="posts_form"><%= render :partial => 'posts/form' %></div>
  
- <div id="activity_feed"><%= render "activities/index" %></div>
-<%= paginate @activities%>
+ <div id="activity_feed">
+ 	
+ 	<%= render "activities/index" %>
+ 	
+ </div>
 
+<%= will_paginate @activities%>
 
 
 </div>
+
 </div>

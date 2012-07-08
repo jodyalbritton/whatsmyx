@@ -6,7 +6,8 @@ def index
   
     following = Follow.where(["follower_id = ?", @user.id])
     following_ids = following.collect{|f| f.followable_id}
-    @activities = Activity.where(:user_id => following_ids).order('created_at DESC').page params[:page]
+    @activities_of_interest = Activity.where(:target_type => "Post")
+    @activities = @activities_of_interest.where(:user_id => following_ids).order('created_at DESC').page params[:page]
 end
 
 end

@@ -7,7 +7,7 @@ class MealsController < ApplicationController
   def load
     @user = User.find(current_user)
     @meals = @user.meals.order("created_at DESC")
-    @stat = Stat.new
+    
   end
   
   def index
