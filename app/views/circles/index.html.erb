@@ -1,0 +1,79 @@
+<div class="span12 circle-container">
+<div class="row contact-area">
+	<% current_user.follows.each do |follow| %>
+	<div class="user-card span2 draggable">
+
+	<div class="user-card-sidebar">
+	    <%= image_tag follow.followable.profile.avatar.url(:mini) %>
+	</div>
+	<div class="user-card-main">
+		<%= follow.followable.username %>
+    </div>
+
+	</div>
+	<% end %>
+</div>
+<div class="row">
+<div class="span2">
+      <div class="circle-outer">
+      <div class="circle">
+      <div class="circle-item">
+      <div class="circle-title">
+      <div class="circle-users">
+        New Circle 
+       </div>
+      <h2> <%= link_to '+', new_circle_path %> </h2>
+       </div>
+      
+       
+      
+      </div>
+      </div>
+      </div>
+    </div>
+
+<% @circles.each do |circle| %>
+    
+    <div class="span2">
+      <div class="circle-outer">
+      <div class="circle">
+      <div class="circle-item">
+      <div class="circle-title">
+       <%= circle.name %>
+       </div>
+       <div class="circle-users">
+       <h3> <%= circle.relationships.count %></h3>
+       </div>
+       
+    
+      </div>
+      </div>
+      </div>
+    </div>
+    <% end %>
+     <div class="span2">
+      <div class="circle-outer">
+      <div class="circle">
+      <div class="circle-item">
+      <div class="circle-title">
+       Following
+       </div>
+       <div class="circle-users">
+       <h3> <%= current_user.follows.count %></h3>
+       </div>
+       
+      
+      </div>
+      </div>
+      </div>
+    </div>
+    </div>
+    
+    </div>
+    
+
+
+
+
+
+

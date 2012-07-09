@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120707225522) do
+ActiveRecord::Schema.define(:version => 20120708235559) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -78,17 +78,6 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
 
-  create_table "audiences", :force => true do |t|
-    t.integer  "audience_member_id"
-    t.integer  "post_id"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.string   "audience_member_type"
-  end
-
-  add_index "audiences", ["audience_member_id"], :name => "index_audiences_on_audience_member_id"
-  add_index "audiences", ["post_id"], :name => "index_audiences_on_post_id"
-
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
     t.integer  "sash_id"
@@ -110,13 +99,16 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
 
-  create_table "checklists", :force => true do |t|
-    t.string   "name"
+  create_table "circles", :force => true do |t|
     t.integer  "user_id"
-    t.date     "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "author_id"
   end
+
+  add_index "circles", ["user_id"], :name => "index_circles_on_user_id"
 
   create_table "comments", :force => true do |t|
     t.integer  "owner_id",           :null => false
@@ -485,15 +477,6 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
 
   add_index "mposts", ["user_id"], :name => "index_mposts_on_user_id"
 
-  create_table "notes", :force => true do |t|
-    t.string   "name"
-    t.text     "content"
-    t.integer  "user_id"
-    t.date     "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "notifications", :force => true do |t|
     t.string   "target_type"
     t.integer  "target_id"
@@ -560,6 +543,7 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
     t.datetime "updated_at"
     t.text     "text"
     t.integer  "parent_id"
+    t.integer  "circle_id"
   end
 
   add_index "posts", ["activity_object_id"], :name => "index_posts_on_activity_object_id"
@@ -605,6 +589,16 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "circle_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "relationships", ["circle_id"], :name => "index_relationships_on_circle_id"
+  add_index "relationships", ["user_id"], :name => "index_relationships_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -663,14 +657,15 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
     t.integer  "category_id", :null => false
   end
 
-  create_table "tags", :force => true do |t|
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "category_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "post"
+  create_table "ties", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "circle_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
+
+  add_index "ties", ["circle_id"], :name => "index_ties_on_circle_id"
+  add_index "ties", ["user_id"], :name => "index_ties_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
@@ -724,14 +719,6 @@ ActiveRecord::Schema.define(:version => 20120707225522) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
-
-  create_table "viewers", :force => true do |t|
-    t.string   "name"
-    t.integer  "viewable_id"
-    t.string   "viewable_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-  end
 
   create_table "weights", :force => true do |t|
     t.integer "ndb",                                                      :null => false

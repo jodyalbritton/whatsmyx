@@ -1,13 +1,13 @@
 <% unless activity.target.nil? %>
 
-<div class="row activity-item">
+      <div class="row activity-item">
 	  <div class="activity-controls pull-right">
 	   <i class="icon-cog"></i>
 
       </div>
       <div id="post-sidebar" class="span2">
 
-       <div id="post-avatar" class="span1">
+       <div id="post-avatar">
           <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
        </div>
        <div class="post-avatar">
@@ -19,7 +19,7 @@
        <div id="post-body" class="span6 post-body">
              <div class="post-content">
               <%= activity.target.text %>
-       </div>
+             </div>
      
            
          
@@ -38,7 +38,7 @@
 
 
 
-          <div id="comments_list">
+          <div id="comments_list span6">
           <ul id="comments_<%= activity.target.id %>">
           <%= render_comments activity.target %>
           </ul>

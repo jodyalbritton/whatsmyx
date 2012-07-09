@@ -27,12 +27,12 @@ class User < ActiveRecord::Base
  
  #assoications 
   has_many :activities, dependent: :destroy
-  has_many :relations, dependent: :destroy
+  
   has_many :groups, through: :memberships
   has_many :pactivities, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :checklists, dependent: :destroy
-  has_many :notes, dependent: :destroy
+  has_many :relationships
+  has_many :circles, :foreign_key => :author_id
   has_many :stats, dependent: :destroy
   has_many :meals, dependent: :destroy
   has_many :ingredients, dependent: :destroy
@@ -43,6 +43,11 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_one :dgoal, dependent: :destroy
   has_one :settings, dependent: :destroy
+  
+ 
+ 
+  
+ 
   
  
   

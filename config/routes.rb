@@ -5,6 +5,8 @@ Whatsmyx::Application.routes.draw do
   
  
  
+  resources :circles
+  resources :contacts
     resources :meals
 
     resources :pactivities do

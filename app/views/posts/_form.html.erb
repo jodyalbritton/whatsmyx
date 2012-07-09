@@ -1,23 +1,23 @@
 
-  
+ 
   <%= simple_form_for @post , :remote => true do |f| %>
-  <div id= "post_errors" style="display:none">
-  </div>
-  <div class="row post-form-div">
-   <div class="span7">
-   <div class="control-group pull-right">
-   <div>
   
-   <%= f.text_area :text, :class => 'input-xlarge span5', :label => false%>
-
+   <div class="row">
+   <div class="form-container">
+  
+   <div class="form-box span6">
+   <%= f.input :text,  :label => false, :input_html => {:class=> "input-xlarge span6"}%>
+   </div>
+   <div class="form-assoc span3">
+   <%= f.submit "Post", :class => "btn btn-primary" %>
+  
+   </div>
+  
+   <div class="form-buttons">
    <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
-  
-   <%= f.submit "Post", :class => "btn" %>
+   
    </div>
    </div>
    </div>
-
-
-
    <% end %>
-   </div>
+
