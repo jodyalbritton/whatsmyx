@@ -1,4 +1,4 @@
-    <%= simple_form_for @profile do |p| %>
+    <%= simple_form_for ([current_user, @profile]) do |p| %>
     <%= p.file_field :avatar %>
     <%= p.input :dob, :label => "Date Of Birth" %>
     <%= p.input :gender, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :default => "Male" %>

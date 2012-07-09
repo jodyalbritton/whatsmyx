@@ -1,67 +1,56 @@
 Whatsmyx::Application.routes.draw do
 
-
-  
+  opinio_model
   
  
  
-  resources :circles
-  resources :contacts
+    resources :activities
+    resources :contacts
     resources :meals
-
+    resources :categories 
     resources :pactivities do
-     get :autocomplete_exercise_name, :on => :collection
+    get :autocomplete_exercise_name, :on => :collection
     end
-
-    resources :serv_sizes
-
-    resources :notifications
-
+    resources :stats do 
+    get :autocomplete_category_name, :on => :collection
+     end
+    resources :goals do
+    get :autocomplete_category_name, :on => :collection
+    end
     resources :groups do
     resources :memberships 
     end
-    
-
     resources :gcategories
 
   
 
-    opinio_model
+  
    
     resources :community
     
     resources :posts do
     opinio
     end 
- 
-   
- 
+    resources :mcategories
+    resources :nutrition
+    resources :serv_sizes
+    resources :nutr_defs
+    resources :foods do
+     resources :nutrients do
+        resources :nutr_defs
+      end
+    end
   
+    resources :ingredients do 
+     get :autocomplete_food_name, :on => :collection
+    end
+    match "/stats/chart/" => "stats#chart", :as => :chart
+  
+  
+ 
 
-  resource  :profile
-  resources :mcategories
-  resources :categories 
-  resources :ingredients do 
-    get :autocomplete_food_name, :on => :collection
-  end
-  match "/stats/chart/" => "stats#chart", :as => :chart
-  resources :stats do 
-    
-    get :autocomplete_category_name, :on => :collection
-  end
-  resources :activities
-  resources :goals do
-  get :autocomplete_category_name, :on => :collection
-  end
-
-
-  resources :nutrition
-  resources :nutr_defs
-  resources :foods do
-    resources :nutrients do
-      resources :nutr_defs
-     end
-  end
+  
+  
 
   match "users/auth/:service/callback" => 'services#create'
 
@@ -137,9 +126,12 @@ Whatsmyx::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-  resources :users, :only => [:show], :path => '/' do 
-    
-     
-    resources :follows, :only => [:create, :destroy]
+    resources :users, :only => [:show], :path => '/' do 
+      resources :follows, :only => [:create, :destroy]
+      resource  :profile
+      
+      resource  :settings
+      resources :circles
+      
    end
 end

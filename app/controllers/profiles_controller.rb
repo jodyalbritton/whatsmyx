@@ -25,12 +25,12 @@ class ProfilesController < ApplicationController
 
 def update
 
-    @profile = current_user.profile(params[:profile])
+    @profile = current_user.profile
     if @profile.update_attributes(params[:profile])
       if params[:profile][:avatar].present?
         render :crop
       else
-        redirect_to profile_path, notice: "Successfully updated user."
+        redirect_to user_profile_path, notice: "Successfully updated user."
       end
     else
       render :new
