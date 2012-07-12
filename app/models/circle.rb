@@ -8,8 +8,16 @@ class Circle < ActiveRecord::Base
   has_many :relationships
   has_many :users, :through => :relationships
   
-   attr_reader :user_tokens
+  attr_reader :user_tokens
   
+  validates_length_of :name, :maximum => 15
+  
+  def name_format
+  has_one_letter = name =~ /[a-zA-Z]/
+  all_valid_characters = name =~ /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
+  
+  errors.add(:username, "must have at least one letter and contain only letters, digits, or underscores") unless (has_one_letter and all_valid_characters)
+  end
   def user_tokens=(ids)
     self.user_ids = ids.split(",")
   end

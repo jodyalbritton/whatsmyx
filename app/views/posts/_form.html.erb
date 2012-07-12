@@ -4,19 +4,21 @@
    <div class="form-container">
    <div class="row">
   
-  
+   <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
    <div class="form-box span6">
    <%= f.input :text,  :label => false, :input_html => {:class=> "input-xlarge span6"}%>
    </div>
    <div class="form-assoc span3">
+   <% if @parent == 0 %>
    <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => false%>
+   <% end %>
    
    </div>
    </div>
    <div class="form-buttons">
    	
    <%= f.submit "Post", :class => "btn btn-primary" %>
-   <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
+   
    
 
    </div>
