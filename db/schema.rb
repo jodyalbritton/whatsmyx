@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120708235559) do
+ActiveRecord::Schema.define(:version => 20120712061325) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20120708235559) do
     t.integer  "actor_id"
     t.integer  "parent_id"
     t.string   "verb"
+    t.integer  "scope"
   end
 
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
@@ -477,21 +478,6 @@ ActiveRecord::Schema.define(:version => 20120708235559) do
 
   add_index "mposts", ["user_id"], :name => "index_mposts_on_user_id"
 
-  create_table "notifications", :force => true do |t|
-    t.string   "target_type"
-    t.integer  "target_id"
-    t.integer  "recipient_id"
-    t.integer  "user_id"
-    t.string   "action"
-    t.boolean  "unread",       :default => true
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
-  add_index "notifications", ["target_id"], :name => "index_notifications_on_target_id"
-  add_index "notifications", ["target_type"], :name => "index_notifications_on_target_type"
-  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
-
   create_table "nutr_defs", :force => true do |t|
     t.string  "nutr_no",  :limit => 3,  :null => false
     t.string  "units",    :limit => 7,  :null => false
@@ -538,15 +524,12 @@ ActiveRecord::Schema.define(:version => 20120708235559) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "activity_object_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "text"
     t.integer  "parent_id"
-    t.integer  "circle_id"
+    t.integer  "scope",      :default => 0, :null => false
   end
-
-  add_index "posts", ["activity_object_id"], :name => "index_posts_on_activity_object_id"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"

@@ -17,6 +17,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :updated_at => target.updated_at,
       :parent_id => target.parent_id,
       :target_type => target.class.to_s,
+      :scope => target.scope,
       :verb => "Posted")
      
       elsif @object == "Comment"

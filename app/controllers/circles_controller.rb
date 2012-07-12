@@ -46,7 +46,7 @@ class CirclesController < ApplicationController
 
     respond_to do |format|
       if @circle.save
-        format.html { redirect_to @circle, notice: 'Circle was successfully created.' }
+        format.html { redirect_to @user_circle, notice: 'Circle was successfully created.' }
         format.json { render json: @circle, status: :created, location: @circle }
       else
         format.html { render action: "new" }

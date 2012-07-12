@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_filter :load
 
   def load
+    @scopes = current_user.circles.map { |r| [r.name, r.id] }
     @posts = Post.order("updated_at DESC")
     @post = Post.new
   end

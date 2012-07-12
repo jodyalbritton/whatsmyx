@@ -1,6 +1,6 @@
 class Activity < ActiveRecord::Base
 #feilds accesible 
- attr_accessible :user, :actor_id, :target_id, :activity_type, :created_at, :updated_at, :target_type, :parent_id, :verb
+ attr_accessible :user, :actor_id, :target_id, :activity_type, :created_at, :updated_at, :target_type, :parent_id, :verb, :scope
 
 #relations for the activity   
   belongs_to :user
@@ -9,7 +9,12 @@ class Activity < ActiveRecord::Base
  
   default_scope :order => 'activities.created_at DESC'
   
-  def to_partial_path() "activities/#{target_type.downcase}" end
+  def to_partial_path() 
+    "activities/#{target_type.downcase}" 
+  end
   
+  def audience
+     self.target.scope
+  end
 
 end
