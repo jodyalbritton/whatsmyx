@@ -3,7 +3,7 @@ Whatsmyx::Application.routes.draw do
   opinio_model
   
  
- 
+    resources :circles
     resources :activities
     resources :contacts
     resources :meals
@@ -131,7 +131,7 @@ Whatsmyx::Application.routes.draw do
       resource  :profile
       
       resource  :settings
-      resources :circles
+     
       
    end
 end
