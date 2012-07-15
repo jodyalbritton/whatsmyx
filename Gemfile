@@ -58,6 +58,7 @@ gem 'likeable'
 gem 'jquery-ui-themes'
 gem 'ajax-chosen-rails'
 gem 'devise_invitable'
+gem 'thin'
 
 
 

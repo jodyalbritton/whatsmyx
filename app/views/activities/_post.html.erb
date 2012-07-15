@@ -7,13 +7,12 @@
       </div>
       <div id="post-sidebar" class="span2">
 
-       <div id="post-avatar">
-          <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
-       </div>
-       <div class="post-avatar">
+      <div class="post-avatar">
+             <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
              <h3><%= activity.user.username %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
-       </div>
+      </div>
+      
   
        </div>
        <div id="post-body" class="span6 post-body">

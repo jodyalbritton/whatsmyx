@@ -1,7 +1,7 @@
 <% reply = defined?(reply) ? reply : false %>
   
       	
-      <div class="comment-item" id="comment_<%= comment.id %>">
+       <div class="comment-item" id="comment_<%= comment.id %>">
 	   <% if current_user == comment.owner %>
              <div class="comment-delete pull-right">
               
@@ -9,17 +9,19 @@
               </div>
                <% end %>
                
-       <div id="comment-sidebar span1">
-        <%= image_tag comment.owner.profile.avatar.url(:mini), :class=> 'avatar'  %>
-       </div>
+    
+        
+     
 
-       <div id="comment-content" class="span5">
+       <div id="comment-content">
           <div class="comment-body">
-            <li>
+           
             <p>
+            <%= image_tag comment.owner.profile.avatar.url(:mini), :class=> 'avatar'  %>
             <%= comment.owner.username %> Said: 
             <%= comment.body %>
             </p>
+         
           </div>
       
             
@@ -45,7 +47,7 @@
               </ul>
               </div>
               <% end %>
-              </li>
+         
         
        </div>
  

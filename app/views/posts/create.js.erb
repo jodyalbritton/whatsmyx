@@ -7,7 +7,7 @@
   $("#flash_notice").append("<%= escape_javascript(error_messages_for(@post))%>");
 
   /*Show the div post_errors*/
-  $("#flash_notice").show(300);
+  $("#flash_notice").show(slow);
 <% else -%>
   
   /*Hide the div post_errors*/

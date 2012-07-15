@@ -18,3 +18,8 @@ Badge.create!({
    :id => 1,
    :name => 'autobiographer'
  })
+
+Badge.create!({
+   :id => 2,
+   :name => 'statistician'
+ })

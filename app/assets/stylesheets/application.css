@@ -15,15 +15,7 @@
  *= require_tree .
 */
 
-.comment-item:hover {
-	
-	background-color: #eee;
-}
 
-.comment-item {
-	
-	padding: 15px;
-}
 
 .chart_row {
 	
@@ -32,16 +24,58 @@
   
   
 }
-.input-xlarge {
-	height: 18px;
 
-}
 
 a.btn:visited { color: #333; }
 
 a.btn-danger:visited { color: #fff; }
 
 a.btn-primary:visited { color: #fff; }
+/****************************************************************
+Home
+****************************************************************/
+
+/****************************************************************
+Dashboard
+****************************************************************/
+.dash-items {
+	
+	padding-top: 15px;
+	border-left: 1px solid #E3E3E3;
+	border-right: 1px solid #E3E3E3;
+	border-bottom: 1px solid #E3E3E3;
+}
+.dash-item {
+	text-align: center;
+	
+	margin-bottom: 20px;
+	background: #eee;
+	height: 170px;
+	width: 170px;
+}
+
+.dash-content {
+	padding-top: 50px;
+}
+.badge-content {
+	
+	padding-top: 50px;
+	
+}
+.badge-item {
+	
+	background: #eee;
+	width: 120px;
+	height: 120px;
+   -moz-border-radius:120px;
+   -webkit-border-radius:120px;
+   border: 10px solid #0088CC;
+   
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+	
+}
 
 /****************************************************************
 Circles
@@ -121,8 +155,23 @@ Physical Activity
 /****************************************************************
 Users
 ****************************************************************/
-.tab-pane {
+.progress {
+	width: 90%;
+}
+
+.points {
+	padding-top: 10px;
+	width: 90%;
+}
+.user-controls {
 	padding-top: 15px;
+	border-bottom: 1px solid #E3E3E3;
+	border-right: 1px solid #E3E3E3;
+    border-left: 1px solid #E3E3E3;
+	
+}
+.tab-pane {
+	
 }
 .input-about {
 	height: 45px;
@@ -140,9 +189,13 @@ Users
 }
 
 #profile-header {
-background-color: #EBEDEE;
-padding: 1%;
-min-height: 70px;
+    background-color: #EBEDEE;
+    padding: 1%;
+    min-height: 70px;
+    border-top: 1px solid #E3E3E3;
+    border-bottom: 1px solid #E3E3E3;
+	border-right: 1px solid #E3E3E3;
+    border-left: 1px solid #E3E3E3;
 
 }
 
@@ -202,9 +255,7 @@ margin-bottom: -1px;
 }
 
 
-.group-body-tab {
 
-}
 .my-groups {
 	padding: 1px;
 }
@@ -268,18 +319,11 @@ min-height: 70px;
 
 }
 
-#posts_form {
-    
-}
-
-#comments_list ul {
-list-style: none;
-}
 
 
-.input-append {
-	padding-left: 100px;
-}
+
+
+
 
 .nut-label {
 
@@ -341,6 +385,39 @@ Activity Feed
 Post Style
 ****************************************************************/
 
+#post_scope.select {
+	width: 198px;
+}
+
+
+.post-form-box {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+}
+.post-form-container {
+	     
+	     padding-top: 5px;
+	     padding-bottom: 5px;
+	     border-bottom: 1px solid #E3E3E3;
+         border-right: 1px solid #E3E3E3;
+         border-left: 1px solid #E3E3E3;
+         border-top: 1px solid #E3E3E3;
+	
+}
+.post-input {
+	height: 18px;
+	width : 94%;
+	
+
+}
+.post-input-footer {
+	background: #eee;
+}
+.form-buttons {
+	padding-left: 20px;
+}
+
 .post-delete {
         padding: 1px;
        
@@ -371,18 +448,27 @@ Post Style
 }
 
 
-.post-form-div {
-	    padding-top: 5px;
-	    border-bottom: 1px solid #E3E3E3;
-        border-left: 1px solid #E3E3E3;
-        border-right: 1px solid #E3E3E3;
-	
-}
 
 
 /****************************************************************
 Comments Style
 ****************************************************************/
+.comment-item:hover {
+	
+	background-color: #eee;
+}
+
+#comment-item p {
+list-style: none;
+}
+.comment-item {
+	
+	padding: 15px;
+}
+
+.comment-content {
+	list-style: none;
+}
 
 .comment-delete {
         padding: 1px;
@@ -473,7 +559,9 @@ Ingredient Style
 Avatar Style
 ****************************************************************/
 
-img.avatar  {
+img.thumbnail  {
+
+
 -webkit-background-clip: padding-box;
 -webkit-border-radius: 8px;
 -moz-background-clip: padding-box;
@@ -487,11 +575,49 @@ border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
 border-width: 1px 2px 2px 1px;
 background-color:white;
 }
+img.avatar  {
 
+
+
+-webkit-border-radius: 8px;
+
+-moz-border-radius: 8px;
+border-radius: 8px;
+
+overflow: hidden;
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 1px 1px 1px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+
+}
+
+
+img.user-pic {
+ display: block;
+	height: 72%;
+    width:72%;
+  
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: 8px;
+    -moz-background-clip: padding-box;
+    -moz-border-radius: 8px;
+     border-radius: 8px;
+     background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 1px 1px 1px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+margin-left: auto;
+    margin-right: auto; 
+}
 img.group-pic {
 
-width: 75%;
-height: 75%;
+height: 72%;
+width:72%;
 
 -webkit-background-clip: padding-box;
 -webkit-border-radius: 8px;
@@ -504,7 +630,7 @@ background-clip: padding-box;
 border:solid;
 border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
 border-width: 1px 2px 2px 1px;
-background-color:white;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
 	
 }
 

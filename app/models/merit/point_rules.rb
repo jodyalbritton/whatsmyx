@@ -26,9 +26,7 @@ module Merit
          'pactivities#create'
       ]
       
-      score 5, :on => [
-         'likes#create', :to => [:liked]
-      ]
+     
       
       #
       # score 15, :on => 'reviews#create', :to => [:reviewer, :reviewed]

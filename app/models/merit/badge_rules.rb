@@ -40,6 +40,9 @@ module Merit
       
       grant_on ['registrations#create', 'registrations#update'], :badge => 'autobiographer', :model_name => 'User' do |user|
             user.username.length > 2
+      end 
+      grant_on ['stats#create'], :badge => 'autobiographer'  do |stat|
+            stat.user.stats.count > 10
       end
       # Changes his name by one wider than 4 chars (arbitrary ruby code case)
       # grant_on 'registrations#update', :badge => 'autobiographer', :temporary => true, :model_name => 'User' do |user|

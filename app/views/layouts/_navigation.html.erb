@@ -1,7 +1,7 @@
                 <div class="nav-collapse">
                 <ul class="nav pull-left">
 	                 <% if user_signed_in? %>
-	                <li><%= link_to "Feed", root_path %></li>
+	                <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Feed", root_path %></li>
 	                <li class="hidden-desktop"><%= link_to "Body", stats_path %></li>
 	                
 	                 <li class="dropdown visible-desktop">
@@ -25,7 +25,7 @@
                         </ul>
                   </li>
             
-	               <li class="dropdown visible-desktop">
+	               <li class="dropdown visible-desktop <%= 'active' if params[:controller] == 'nutrition' %>">
 	                 <a href="#"
                           class="dropdown-toggle"
                           data-toggle="dropdown">
@@ -116,4 +116,3 @@
                   </li>
                 </ul>
                </div>
-             

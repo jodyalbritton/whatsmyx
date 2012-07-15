@@ -1,63 +1,47 @@
 <% unless activity.target.nil? %>
 <div class="row activity-item">
+	 <div class="activity-controls pull-right">
+	   <i class="icon-cog"></i>
+
+      </div>
       <div id="comment-sidebar" class="span2">
 
-          <div  class="span1">
-         <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
-          
-          </div>
           <div class="comment-avatar">
+           <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
            <h3><%= activity.user.username %></h3>
-          	
-     
-             <div id="popover_content_wrapper" style="display: none">
-             <div>This is your div content</div>
-             </div>
-             <%= time_ago_in_words(activity.created_at) %> ago.
+           <%= time_ago_in_words(activity.created_at) %> ago.
          </div>
   
      </div>
-    <div id="comment-body" class="span4">
+     <div id="comment-body" class="span6 comment-body">
              <div class="comment-content">
-                 <%= activity.user.username%> Commmented on <%= activity.target.commentable_id %>
+               <%= activity.target.body %>
              </div>
      
-              <div id="comment-footer"> 
-              <div class="control">
-                 <div class="comment-likes span3">
-             <%= activity.target.like_count  %> Like this     
+           
+         
+              <div class="comment-likes">
+             <%= activity.target.like_count  %> Props    
              <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
              <%- else -%>
              <%= like_link_for activity.target %>
              <%- end -%>
+              
              </div>
-                </div>
-              </div>
+           
+        
+           
 
 
 
-<script>
-$(document).ready(function(){
-  $('#example').popover({ 
-    html : true,
-    content: function() {
-      return $('#popover_content_wrapper').html();
-    }
-  });
-});
-</script>
 
-         
-
+          
     </div>
-   </div>
-
+</div>
 <% else %>
 
 <div class="content-removed">
- 
+
 </div>
 
 <% end %>
-
-

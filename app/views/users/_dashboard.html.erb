@@ -1,0 +1,53 @@
+<div class="row dash-items">
+	<div class="span2">
+		<div class="dash-item">
+			<div class="dash-content">
+			Activites
+			<h2><%= @user.pactivities.count %></h2>
+			Logged
+			</div>
+	    </div>
+	</div>
+	<div class="span2">
+		<div class="dash-item">
+			
+			<div class="dash-content">
+			Meals
+			<h2><%= @user.meals.count %></h2>
+			Logged
+			</div>
+	    
+	    </div>
+	</div>
+	<div class="span2">
+		<div class="dash-item">
+			
+			<div class="dash-content">
+			Stats
+			<h2><%= @user.stats.count %></h2>
+			Logged
+			</div>
+	  
+	    </div>
+	</div>
+	<div class="span2">
+		<div class="dash-item">
+			<div class="dash-content">
+			Badges
+			<h2><%= @user.badges.count %></h2>
+			Earned
+			</div>
+	    </div>
+	</div>
+	<% @user.badges.each do |badge| %>
+	   
+	<div class="span2">
+		<div class="badge-item">
+			<div class="badge-content">
+			<%= badge.name %>
+			</div>
+	    </div>
+	</div>
+	<% end %>
+	
+</div>
