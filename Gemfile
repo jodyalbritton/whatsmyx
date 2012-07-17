@@ -25,12 +25,9 @@ end
 gem 'thinking-sphinx', '2.0.12'
  
 gem 'jquery-rails'
-gem "rspec-rails", ">= 2.0"
+
 gem "factory_girl_rails", ">= 3.1.0", :group => [:development, :test]
-gem "email_spec", ">= 1.2.1", :group => :test
-gem "cucumber-rails", ">= 1.3.0", :group => :test
-gem "capybara", ">= 1.1.2", :group => :test
-gem "database_cleaner", ">= 0.7.2", :group => :test
+
 gem "launchy"
 gem "devise"
 gem "cancan"
@@ -59,9 +56,16 @@ gem 'jquery-ui-themes'
 gem 'ajax-chosen-rails'
 gem 'devise_invitable'
 gem 'thin'
+gem 'kaminari'
 
 
-
+group :test do 
+  gem "rspec-rails", ">= 2.0"
+  gem "email_spec", ">= 1.2.1", :group => :test
+  gem "cucumber-rails", ">= 1.3.0", :group => :test, :require => false
+  gem "capybara", ">= 1.1.2", :group => :test
+  gem "database_cleaner", ">= 0.7.2", :group => :test
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -80,4 +84,3 @@ gem 'thin'
 
 
 
-gem "kaminari"

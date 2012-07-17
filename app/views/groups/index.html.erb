@@ -10,8 +10,23 @@
      		</div>
        </div>
      </div>
-     <div class="span8">
-     <%= render "group-item" %>
+     <div class="span9">
+      <div class="row">
+      <ul class="nav nav-tabs" id="myTab">
+       <li class="active"><a href="#my-groups" data-toggle="tab">My Groups</a></li>
+       <li><a href="#all-groups" data-toggle="tab">All Groups</a></li>
+      </ul>
+      </div>
+ 
+      <div class="tab-content row">
+        <div class="tab-pane span9 active" id="my-groups">
+        <%= render "group-item" %>
+        </div>
+        <div class="tab-pane span9" id="all-groups">
+        </div>
+        
+     </div>
+         
      </div>
      </div>
 

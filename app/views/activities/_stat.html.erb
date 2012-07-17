@@ -20,13 +20,7 @@
      
               <div id="stat-footer"> 
                 <div class="control">
-                 <div class="comment-likes span3">
-             <%= activity.target.like_count  %> Props    
-             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
-             <%- else -%>
-             <%= like_link_for activity.target %>
-             <%- end -%>
-             </div>
+                <%= render "activities/likes", :like_object => activity %>
                 </div>
               </div>
     </div>

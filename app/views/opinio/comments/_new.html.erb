@@ -2,13 +2,13 @@
 
 
 
-<div class="span5" id="new_comment_<%= commentable.id %>" style="display:none;">
+<div id="new_comment_<%= commentable.id %>" style="display:none;">
   <% if send(Opinio.current_user_method) %>
      
     <%= form_for Comment.new, :remote => true do |f| %>
   <div class="control-group">
-   <div class="input-append well span4">
-        <%= f.text_area :body, :class=>"input-xlarge span3"%><%= f.submit "Comment", :class=> "btn" %>
+   <div class="input-append well">
+        <%= f.text_area :body, :class=>"input-comment span4"%><%= f.submit "Comment", :class=> "btn" %>
    </div>
    </div>
       <%= hidden_field_tag :commentable_id, commentable.id %>

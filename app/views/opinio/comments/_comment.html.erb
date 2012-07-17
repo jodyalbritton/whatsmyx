@@ -1,9 +1,9 @@
 <% reply = defined?(reply) ? reply : false %>
   
       	
-       <div class="comment-item" id="comment_<%= comment.id %>">
+       <div class="comment-item row" id="comment_<%= comment.id %>">
 	   <% if current_user == comment.owner %>
-             <div class="comment-delete pull-right">
+             <div class="comment-delete row">
               
               <%= link_to "x", comment_path(comment), :method => :delete, :remote => true,  :class=> "btn close" %> 
               </div>
@@ -15,10 +15,12 @@
 
        <div id="comment-content">
           <div class="comment-body">
-           
+           <div class="comment-img">
+           <%= image_tag comment.owner.profile.avatar.url(:mini), :class=> 'avatar'  %>
+           </div>
             <p>
-            <%= image_tag comment.owner.profile.avatar.url(:mini), :class=> 'avatar'  %>
-            <%= comment.owner.username %> Said: 
+            
+            <%= link_to comment.owner.username, comment.owner %> <b>Said: </b>
             <%= comment.body %>
             </p>
          

@@ -7,11 +7,11 @@
       </div>
       <div id="post-sidebar" class="span2">
 
-      <div class="post-avatar">
-             <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
+     
+             <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar visible-desktop" %>
              <h3><%= activity.user.username %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
-      </div>
+   
       
   
        </div>
@@ -22,14 +22,11 @@
      
            
          
-              <div class="post-likes">
-             <%= activity.target.like_count  %> Props    
-             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
-             <%- else -%>
-             <%= like_link_for activity.target %>
-             <%- end -%>
-              <a href="javascript:toggleDiv('new_comment_<%=activity.target.id %>');" class= "icon-comment">Comment</a>
-             </div>
+            
+             <%= render "activities/likes", :like_object => activity %>
+      
+        
+                   
            
         
            
@@ -39,12 +36,16 @@
 
           <div id="comments_list span6">
           <ul id="comments_<%= activity.target.id %>">
-          <%= render_comments activity.target %>
+          	<%= render_comments activity.target %>
+          
           </ul>
+          
+        
           </div>
-
+           
          <div id="comment-form">
           <%= render_comments_form activity.target %>
+          
          </div>
     </div>
 </div>

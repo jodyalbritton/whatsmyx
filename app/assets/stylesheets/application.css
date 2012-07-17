@@ -15,8 +15,6 @@
  *= require_tree .
 */
 
-
-
 .chart_row {
 	
 	
@@ -26,15 +24,13 @@
 }
 
 
-a.btn:visited { color: #333; }
 
-a.btn-danger:visited { color: #fff; }
-
-a.btn-primary:visited { color: #fff; }
 /****************************************************************
 Home
 ****************************************************************/
-
+.home-menu {
+	padding-right: 5px;
+}
 /****************************************************************
 Dashboard
 ****************************************************************/
@@ -273,11 +269,18 @@ margin-bottom: -1px;
             
 	
 }
+.group-link {
+	padding-left: 5px;
+}
+.group-list-item {
+	        padding-top: 5px;
+}
 .group-pane {
-	        
+	        padding: 15px;
 	        border-bottom: 1px solid #E3E3E3;
 	        border-right: 1px solid #E3E3E3;
 	        border-left: 1px solid #E3E3E3;
+	        
 	    
 }
 .group-body {
@@ -364,6 +367,7 @@ Activity Feed
         border-left: 1px solid #E3E3E3;
         border-right: 1px solid #E3E3E3;
         padding: 10px;
+        
 }
 
 .stat-content {
@@ -386,14 +390,14 @@ Post Style
 ****************************************************************/
 
 #post_scope.select {
-	width: 198px;
+	width: 120px;
 }
 
 
 .post-form-box {
 	margin-left: auto;
 	margin-right: auto;
-	width: 60%;
+	width: 54%;
 }
 .post-form-container {
 	     
@@ -440,7 +444,7 @@ Post Style
 }
 
 .post-likes {
-
+    color: gray;
 	border-bottom: 1px solid #E3E3E3;
 
     
@@ -453,6 +457,15 @@ Post Style
 /****************************************************************
 Comments Style
 ****************************************************************/
+.comment-img {
+	float: left;
+	padding-right: 5px;
+}
+.comment-body p {
+  text-align : justify; 
+  word-wrap: break-word;	
+}
+
 .comment-item:hover {
 	
 	background-color: #eee;
@@ -463,7 +476,9 @@ list-style: none;
 }
 .comment-item {
 	
-	padding: 15px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .comment-content {
@@ -487,6 +502,10 @@ list-style: none;
 .comment-likes {
 	
 	color: gray;
+}
+
+.input-comment {
+	height: 18px;
 }
 /****************************************************************
 Note Style

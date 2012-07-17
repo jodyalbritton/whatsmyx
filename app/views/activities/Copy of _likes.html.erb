@@ -1,0 +1,9 @@
+             <% activity = Activity.find(object)%>
+             
+             <%= activity.target.like_count  %> Props    
+             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
+             <%- else -%>
+             <%= like_link_for activity.target  %>
+             <%- end -%>
+              <a href="javascript:toggleDiv('new_comment_<%=activity.target.id %>');" class= "icon-comment">Comment</a>       
+             

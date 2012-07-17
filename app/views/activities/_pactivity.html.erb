@@ -20,14 +20,8 @@
      
            
            
-             <div class="pactivity-likes">
-             <%= activity.target.like_count  %> Props    
-             <%- if current_user.likes? activity.target -%><%= unlike_link_for activity.target  %>
-             <%- else -%>
-             <%= like_link_for activity.target %>
-             <%- end -%>
-             <a href="javascript:toggleDiv('new_comment_<%=activity.target.id %>');" class= "icon-comment">Comment</a>
-             </div>
+             <%= render "activities/likes", :like_object => activity %>
+             
            <div id="comments_list">
           <ul id="comments_<%= activity.target.id %>">
           <%= render_comments activity.target %>
