@@ -1,18 +1,14 @@
-<div class="users-list">
-	<div class="users-header" id="users-header">
-    </div>
-    <% @users.each do |user| %>
-    <div class="row item-user">
-    	<div class="span3 user-item-sidebar">
-    	<% unless user.profile == nil %>
-        <%= image_tag user.profile.avatar.url(:thumb), :class => "avatar" %>
-    	<%= link_to user.username,(user)%> 
-    	<% end %>
-    	</div>
-    	<div class="span6 user-item-body">
-    		
-    	</div>
-    </div>
-    <% end %>
-</div>
+<div id="users-list" class="users-list">
+	
  
+    <%= render "users/list" %>
+  
+</div>
+<div id="paginator" class="visible-desktop paginator">
+   <%= paginate @users, :window => 3, :left => 0, :right => 0, :remote=> true%>
+</div>
+<div id="paginator-small" class="hidden-desktop">
+    <%= paginate @users, :window => 0, :left => 0, :right => 0, :remote=> true%>
+	
+</div>
+

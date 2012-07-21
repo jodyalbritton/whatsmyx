@@ -21,16 +21,16 @@
           <span class="icon-bar"></span>
           </a>
           <a class="brand" href="/">What's My X?</a>
-          <div class="nav">
+          <div class="nav-collapse">
           <%= render 'layouts/navigation' %>
           </div>
    
         </div>
      </div>
   </div>
-
-  <div class="container">
-
+ <div id="wrap">
+  <div id="main" class="container clear-top">
+   
     <div class="row">
     	 <div class="span12">
          <%= render 'layouts/messages' %>
@@ -38,7 +38,36 @@
          <%= render 'layouts/ga'%>
          </div>
     </div>
+   </div>
   </div>
+  <footer class="footer">
+    <div class="container" style="margin:0 auto;">
+        <div class="row">
+            <div class="span2 offset2">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="">About Us</a></li>
+                   
+                </ul>
+            </div>
+            <div class="span2 offset1">
+                <h4>Resource</h4>
+                <ul>
+                    <li><a href="">Get help</a></li>
+                
+                </ul>
+            </div>
+            <div class="span2 offset1">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="" title="Facebook">Facebook</a></li>
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 
 

@@ -32,7 +32,6 @@ gem "launchy"
 gem "devise"
 gem "cancan"
 gem "rolify"
-gem 'will_paginate'
 gem "highcharts-rails", "~> 2.2.1"
 gem "carrierwave"
 gem "rmagick", :require => 'RMagick'
@@ -57,6 +56,7 @@ gem 'ajax-chosen-rails'
 gem 'devise_invitable'
 gem 'thin'
 gem 'kaminari'
+gem 'faker'
 
 
 group :test do 

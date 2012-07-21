@@ -11,7 +11,12 @@
           <%= render "activities/index" %>
           
         </div>
-        <%= will_paginate @activities%>
+        <div id="paginator" class="paginator">
+        <%= link_to_next_page @activities, 'Next Page', :remote => true%>
+        </div>
+
+ 
+      
 
     </div>
 </div>

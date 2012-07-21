@@ -1,0 +1,23 @@
+<div class="item-user">
+	    <ul class="thumbnails">
+        <% @users.each do |user| %>
+        <li>
+ 
+    	<% unless user.profile == nil %>
+        <div class="thumbnail span1 list-username">
+        <div class="user-list-avatar visible-desktop">
+        <%= link_to (image_tag user.profile.avatar.url(:thumb), :class => "avatar"), user%>
+        </div>
+        <div class="user-list-avatar hidden-desktop">
+        <%= link_to (image_tag user.profile.avatar.url(:mini), :class => "avatar"), user%>
+        </div>
+        <caption>
+    	<%= link_to user.username,(user)%> 
+        </caption>
+        </div>
+    	<% end %>
+    
+    
+    	<% end %>
+    	</ul>
+    	</div>

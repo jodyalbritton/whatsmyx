@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = User.find(current_user)
     
-    @users = User.all
+    @users = User.page(params[:page]).per(24)
   end
 
   def show

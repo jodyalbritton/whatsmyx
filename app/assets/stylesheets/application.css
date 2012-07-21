@@ -14,6 +14,32 @@
  *= require_self
  *= require_tree .
 */
+/* styles for layout */
+html,body
+{
+    height:100%;
+}
+
+#wrap
+{
+  min-height: 100%;  
+}
+
+#main
+{
+    overflow:auto;
+    padding-bottom:110px; /* this needs to be bigger than footer height*/
+}
+
+.footer 
+{
+    position: relative;
+	margin-top: -110px; /* negative value of footer height */
+	height: 100px;
+	clear:both;
+    padding-top:20px;
+    color:#fff;
+} 
 
 .chart_row {
 	
@@ -24,7 +50,11 @@
 }
 
 
-
+.paginator {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
 /****************************************************************
 Home
 ****************************************************************/
@@ -226,6 +256,18 @@ min-height: 70px;
 
 }
 
+.users-list {
+	min-height: 120px;
+}
+.list-username {
+	text-align: center;
+	
+}
+
+.user-list-avatar {
+	padding-left: 2px;
+	padding-right: 2px;
+}
 /****************************************************************
 Nutrition Page
 ****************************************************************/

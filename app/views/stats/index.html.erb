@@ -1,9 +1,11 @@
-
+  <div class="stats-header span11">
+  	<%= render "stats/header" %>
+  </div>
 <% @stats_by_cat.sort.each do |category, stats| %>
   
-  <div class="well span12">
+  <div class="well span11">
   <div class="row">
-  <div class="span6">
+  <div class="span5">
   <h3><%= category.name %></h3>
   </div>
   <div class="span3">
@@ -37,7 +39,7 @@
   <%= link_to "Goals",(:goals), :class=>"btn btn-mini" %>
   </div>
   </div>
-  <div style="display:none;" class="span12" id="stat-values-<%= category.id %>">
+  <div style="display:none;" class="span11" id="stat-values-<%= category.id %>">
   <% for stat in stats %>
   <div class="stat-item">
   <div class="row">
@@ -63,7 +65,7 @@
   
    </div>
     <div style="display:none;" id="chart_container_toggle_<%=category.id%>">
-    <div class="span12" id="chart_container_<%=category.id %>">
+    <div class="span11" id="chart_container_<%=category.id %>">
    <script type="text/javascript">
     
  /**
