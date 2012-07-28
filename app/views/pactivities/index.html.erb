@@ -1,5 +1,11 @@
-<h1>Physical Activities</h1>
+<% content_for :sidebar do %>
 
+    <%= link_to 'New Activity', new_pactivity_path, :class=> "btn btn-primary"%>
+<% end %>
+
+<% content_for :top do %>
+<h1>Physical Activities</h1>
+<% end %>
 <table class="table table-striped">
   <tr>
    
@@ -32,4 +38,4 @@
 
 <br />
 
-<%= link_to 'New Activity', new_pactivity_path %>
+

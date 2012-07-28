@@ -1,4 +1,4 @@
-/*
+	/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -15,8 +15,66 @@
  *= require_tree .
 */
 /* styles for layout */
-html,body
-{
+@media (max-width: 980px) {
+    body {
+        padding-top: 0;
+    }
+}
+.subnav {
+    width: 100%;
+}
+@media (max-width: 768px) {
+    .subnav {
+        position: static;
+        top: auto;
+        z-index: auto;
+        width: auto;
+        height: auto;
+    }
+    .subnav .nav > li {
+        float: none;
+    }
+}
+@media (min-width: 980px) {
+  .subnav-fixed {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    right: 0;
+    z-index: 1020;
+  }
+ .subnav-fixed .nav {
+    width: 938px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1210px) {
+  .subnav-fixed .nav {
+    width: 1168px;
+  }
+}
+
+@media (min-width: 768px) { 
+  .sb-fixed{
+    position: fixed;
+    
+  } 
+  
+  .post-fixed{
+  	background: white;
+  	position: fixed;
+  
+  }
+  
+
+}
+
+
+
+.footer {
+	text-align: center;
+}
+html,body{
     height:100%;
 }
 
@@ -24,13 +82,26 @@ html,body
 {
   min-height: 100%;  
 }
+#content-body {
 
+}
 #main
 {
     overflow:auto;
-    padding-bottom:110px; /* this needs to be bigger than footer height*/
+    padding-top: 85px;
+    padding-bottom:120px; /* this needs to be bigger than footer height*/
 }
 
+#sub-nav {
+	background: #EEEEEE;
+	min-height: 80px;
+    
+	
+
+
+    -webkit-box-shadow: 0px 5px 5px 0px #333;
+    box-shadow: 0px 5px 5px 0px #333;
+}
 .footer 
 {
     position: relative;
@@ -51,9 +122,8 @@ html,body
 
 
 .paginator {
-	width: 40%;
-	margin-left: auto;
-	margin-right: auto;
+	text-align: center;
+	
 }
 /****************************************************************
 Home
@@ -64,8 +134,13 @@ Home
 /****************************************************************
 Dashboard
 ****************************************************************/
+.profile-header {
+	width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 .dash-items {
-	
+    
 	padding-top: 15px;
 	border-left: 1px solid #E3E3E3;
 	border-right: 1px solid #E3E3E3;
@@ -76,8 +151,8 @@ Dashboard
 	
 	margin-bottom: 20px;
 	background: #eee;
-	height: 170px;
-	width: 170px;
+	height: 160px;
+	width: 160px;
 }
 
 .dash-content {
@@ -181,6 +256,8 @@ Physical Activity
 /****************************************************************
 Users
 ****************************************************************/
+
+
 .progress {
 	width: 90%;
 }
@@ -217,7 +294,7 @@ Users
 #profile-header {
     background-color: #EBEDEE;
     padding: 1%;
-    min-height: 70px;
+    min-height: 50px;
     border-top: 1px solid #E3E3E3;
     border-bottom: 1px solid #E3E3E3;
 	border-right: 1px solid #E3E3E3;
@@ -252,7 +329,7 @@ margin-bottom: 2%;
 #profile-header {
 background-color: #EBEDEE;
 padding: 1%;
-min-height: 70px;
+min-height: 40px;
 
 }
 
@@ -281,6 +358,14 @@ Nutrition Page
 	border: 1px solid #E3E3E3;
 	background-color: #EBEDEE;
 	       
+}
+
+.nutrition-tabs {
+	padding-top: 10px;
+}
+
+#sidebar-summary {
+	padding-top: 10px;
 }
 
 /****************************************************************
@@ -408,7 +493,7 @@ Activity Feed
         border-bottom: 1px solid #E3E3E3;
         border-left: 1px solid #E3E3E3;
         border-right: 1px solid #E3E3E3;
-        padding: 10px;
+      
         
 }
 
@@ -430,21 +515,25 @@ Activity Feed
 /****************************************************************
 Post Style
 ****************************************************************/
-
+#form-action-main {
+	margin-bottom: -18px;
+}
 #post_scope.select {
 	width: 120px;
 }
 
-
-.post-form-box {
-	margin-left: auto;
-	margin-right: auto;
-	width: 54%;
+#post-form-small{
+	padding-left: 10px;
+	padding-top: 10px;
 }
-.post-form-container {
-	     
+
+.post-form-box{
+	padding-left: 10px;
+}
+#post-form-cont {
+	     min-height: 50px;
 	     padding-top: 5px;
-	     padding-bottom: 5px;
+          
 	     border-bottom: 1px solid #E3E3E3;
          border-right: 1px solid #E3E3E3;
          border-left: 1px solid #E3E3E3;
@@ -452,8 +541,11 @@ Post Style
 	
 }
 .post-input {
-	height: 18px;
-	width : 94%;
+	
+	margin-left: auto;
+	margin-right: auto;
+	height: 50px;
+	width : 95%;
 	
 
 }
@@ -518,9 +610,6 @@ list-style: none;
 }
 .comment-item {
 	
-	padding-bottom: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
 }
 
 .comment-content {
@@ -548,6 +637,7 @@ list-style: none;
 
 .input-comment {
 	height: 18px;
+	width: 95%;
 }
 /****************************************************************
 Note Style
@@ -656,9 +746,8 @@ border-width: 1px 1px 1px 1px;
 
 
 img.user-pic {
- display: block;
-	height: 72%;
-    width:72%;
+
+	
   
     -webkit-background-clip: padding-box;
     -webkit-border-radius: 8px;
@@ -677,8 +766,6 @@ margin-left: auto;
 }
 img.group-pic {
 
-height: 72%;
-width:72%;
 
 -webkit-background-clip: padding-box;
 -webkit-border-radius: 8px;
@@ -760,5 +847,4 @@ nutrition nav by date
 		overflow-x: hidden;
 		/* add padding to account for vertical scrollbar */
 		padding-right: 20px;
-		
 }

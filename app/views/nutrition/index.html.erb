@@ -1,35 +1,55 @@
-<div class="row">
-    	 
-   	<div class="span4" id="nutrition-sidebar">
-   		   
-   	   <div id="sidebar-data-left">
-   	      <%= render "nut_facts"%>
-   	   </div>
-   	   <div id="sidebar-chart">
-   	      <%= render "nutrition/pie_chart"%>
-   	   </div>
-    </div>
-    <div class="span8">
+<% content_for :sidebar do %>
+	Menu Needed
+<% end %>
+
+
    
     
-      
-    <div class="row nutri-nav">
+    <% content_for :top do%>
+    <div class="row-fluid nutri-nav">
     
     <%= render "nutrition/date_picker"%>
 	   
 	</div>
-	
-	<div class="row nutrition-header">
-     <%= render "nutrition/header" %>
-    </div>
-	
-	
-    <div id="meal-form" style="display:none;">
+	 <div id="meal-form" style="display:none;">
     	<%= render "meals/form"%>
     </div>
+    <% end %>
+	<div class="row-fluid nutrition-header">
+     <%= render "nutrition/header" %>
+    </div>
+   
+	<div class="nutrition-tabs">
+	  <ul class="nav nav-tabs">
+       <li class="active"><a href="#meal-summary" data-toggle="tab">Summary</a></li>
+       <li><a href="#meal-breakdown" data-toggle="tab">Breakdown</a></li>
+  
+      </ul>
+  </div>
+  <div class="tab-content row-fluid">
+ 
+  <div class="tab-pane active span9" id="meal-summary">
+  	
+    
     <div id="meal-list">
     <%= render @meals %>
     </div>
+ 
+  </div>
+   <div class="tab-pane" id="meal-breakdown">
+        <div id="nutrition-sidebar">
+   		   
+   	   <div id="sidebar-summary" class="span4">
+   	      <%= render "nutrition/nut_facts"%>
+   	   </div>
+   	   <div id="sidebar-chart"  class="span4">
+   	      <%= render "nutrition/pie_chart"%> 
+   	   </div>
+    </div>
+  </div>
+  
+</div>
+   
   
     
      

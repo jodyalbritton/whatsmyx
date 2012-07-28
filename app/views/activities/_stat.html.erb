@@ -1,20 +1,13 @@
 <% unless activity.target.nil? %>
-<div class="row activity-item">
-       <div id="post-sidebar" class="span2">
-
-
-          <div id="stat-avatar" class="span1">
-              <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
-          </div>
-          <div class="stat-avatar">
-             <h3><%= activity.user.username %></h3>
+<div class="row-fluid activity-item">
+       <div id="post-sidebar" class="span3">
+       	     <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
+             <h3><%= link_to activity.user.username, activity.user %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
-         </div>
-  
-     </div>
-    <div id="stat-body" class="span6">
+       </div>
+    <div id="stat-body" class="span7">
              <div class="stat-content">
-             Tracked a <%= activity.target.category.name %> of <%= activity.target.value %> <%= activity.target.category.sunit %>
+             Tracked a <%= link_to activity.target.category.name, activity.target %> of <%= activity.target.value %> <%= activity.target.category.sunit %>
            
              </div>
      
@@ -23,6 +16,8 @@
                 <%= render "activities/likes", :like_object => activity %>
                 </div>
               </div>
+    </div>
+    <div class="span2 activity-logo" >
     </div>
 </div>
 

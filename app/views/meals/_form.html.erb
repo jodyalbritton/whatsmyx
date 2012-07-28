@@ -11,7 +11,7 @@
     <% end %>
  
      <%= f.simple_fields_for :ingredients do |f| %>
-     	<%= render 'ingredient_fields', :f => f%>
+     	<%= render 'meals/ingredient_fields', :f => f%>
      <% end %>
        <div id="ingredient">
        	<div id="ingredient_from_list", class="ingredient_from_list">
@@ -20,7 +20,7 @@
        </div>
     <div class="form-actions">
     <%= f.button :submit  %>
-    <%= link_to 'Back', meals_path %>
+    <a href="javascript:toggleDiv('meal-form');javascript:toggleDiv('header-date');">Cancel</a>
     </div>
   <% end %>
   </div>

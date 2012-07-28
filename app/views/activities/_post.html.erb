@@ -1,23 +1,23 @@
 <% unless activity.target.nil? %>
 
-      <div class="row activity-item">
-	  <div class="activity-controls pull-right">
-	   <i class="icon-cog"></i>
-
-      </div>
-      <div id="post-sidebar" class="span2">
+      <div class="row-fluid activity-item">
+	  
+      <div id="post-sidebar" class="span3">
 
      
              <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar visible-desktop" %>
-             <h3><%= activity.user.username %></h3>
+             <h3><%= link_to activity.user.username, activity.user %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
    
       
   
        </div>
-       <div id="post-body" class="span6 post-body">
+       <div id="post-body" class="span7 post-body">
              <div class="post-content">
+             <p>
+              <%= link_to "Posted", activity.target %>:
               <%= activity.target.text %>
+             </p>
              </div>
      
            
@@ -34,19 +34,21 @@
 
 
 
-          <div id="comments_list span6">
-          <ul id="comments_<%= activity.target.id %>">
-          	<%= render_comments activity.target %>
+          <div id="comments_list" class="row-fluid">
+          <div id="comments_<%= activity.target.id %>">
+          	<%= render_comments activity.target, :page => params[:page] %>
           
-          </ul>
+          </div>
           
         
           </div>
            
-         <div id="comment-form">
+         <div id="comment-form" class="row-fluid">
           <%= render_comments_form activity.target %>
-          
+         
          </div>
+    </div>
+     <div class="span2 activity-logo" >
     </div>
 </div>
 <% else %>

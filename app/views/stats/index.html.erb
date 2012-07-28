@@ -1,21 +1,33 @@
-  <div class="stats-header span11">
+<% content_for :sidebar do %>
+
+
+<% end %>
+ <% content_for :top do %>
+ <div class="stats-header">
   	<%= render "stats/header" %>
   </div>
-<% @stats_by_cat.sort.each do |category, stats| %>
-  
-  <div class="well span11">
-  <div class="row">
-  <div class="span5">
-  <h3><%= category.name %></h3>
-  </div>
+<% end %>
+
+ <% @stats_by_cat.sort.each do |category, stats| %>
+
+ 
+
+<div class="modal hide fade" id="stats-modal">
+  <%= render "stats/form"%>
+</div>
+  <div class="well span8">
+  <div class="row-fluid">
   <div class="span3">
+   <h3><%= category.name %></h3>
+  </div>
+  <div class="span2">
   <h4>Current </h4>
   <% recent = Stat.where(:category_id => category.id).order("date ASC").last %>
   <%= recent.value %>
   
   
   </div>
-  <div class="span3">
+  <div class="span2">
    <h4>Goal</h4>
    <% goal = current_user.goals.where(:category_id => category.id).last  %>
    
@@ -36,14 +48,14 @@
   <div class="stat-controls">
   <a href="javascript:toggleDiv('stat-values-<%= category.id %>');" class="btn btn-mini">Last 10</a>
   <a  href="javascript:toggleDiv('chart_container_toggle_<%= category.id %>');" class="btn btn-mini">Chart</a>
-  <%= link_to "Goals",(:goals), :class=>"btn btn-mini" %>
+
   </div>
   </div>
-  <div style="display:none;" class="span11" id="stat-values-<%= category.id %>">
+  <div style="display:none;" class="span8" id="stat-values-<%= category.id %>">
   <% for stat in stats %>
   <div class="stat-item">
-  <div class="row">
-  <div class="span8">
+  <div class="row-fluid">
+  <div class="span4">
   I recorded a <%= link_to stat.category.name, stat_path(stat) %> of <%= stat.value %> on <%= stat.date.strftime("%B %d, %Y") %>
   </div>
   <div class="span4">
@@ -64,8 +76,8 @@
   <% end %>
   
    </div>
-    <div style="display:none;" id="chart_container_toggle_<%=category.id%>">
-    <div class="span11" id="chart_container_<%=category.id %>">
+    <div class="span8" style="display:none;" id="chart_container_toggle_<%=category.id%>">
+    <div class="span10" style="min-height: 400px;"id="chart_container_<%=category.id %>">
    <script type="text/javascript">
     
  /**

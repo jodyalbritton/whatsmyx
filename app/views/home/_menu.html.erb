@@ -6,12 +6,12 @@
             </li>
          
             <li>
-            
-                <%= link_to "Track Stats", :stats %>
+                <a data-toggle="modal" href="#stats-modal" >Track Stat</a>
+                
               
             </li>
              <li>
-                 <%= link_to "Track Activity", :pactivities %>
+                 <a data-toggle="modal" href="#pactivity-modal" >Track Activity</a>
              </li>
               <li>
                   <%= link_to "Track Nutrition", nutrition_index_path %>
@@ -42,4 +42,14 @@
               </ul>
               </div>
        
+     <div class="modal hide fade" id="pactivity-modal">
+       <%= render "pactivities/form"%>
+     </div>
      
+     <div class="modal hide fade" id="stats-modal">
+       <%= render "stats/form"%>
+     </div>
+     
+     <div class="modal hide fade" id="meal-modal">
+       <%= render "stats/form"%>
+     </div>

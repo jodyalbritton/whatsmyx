@@ -1,17 +1,16 @@
 <% unless activity.target.nil? %>
-<div class="row activity-item">
-       <div id="post-sidebar" class="span2">
+<div class="row-fluid activity-item">
+       <div id="meal-sidebar" class="span3">
 
-          <div  class="span1 meal-avatar">
+       
             <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
-          </div>
-          <div class="meal-avatar">
-             <h3><%= activity.user.username %></h3>
+         
+             <h3><%= link_to activity.user.username, activity.user %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
-         </div>
+       
   
-     </div>
-             <div id="meal-body" class="span6">
+       </div>
+             <div id="meal-body" class="span7">
              <div class="meal-content">
               Had <%= link_to activity.target.name, meal_path(activity.target) %> Calories (<%= activity.target.cals.round %>)
               <% activity.target.ingredients.each do |ingredient| %>
@@ -40,6 +39,8 @@
 
 
 
+    </div>
+     <div class="span2 activity-logo" >
     </div>
 </div>
 <% else %>

@@ -1,9 +1,9 @@
 <% reply = defined?(reply) ? reply : false %>
   
       	
-       <div class="comment-item row" id="comment_<%= comment.id %>">
+       <div class="comment-item" id="comment_<%= comment.id %>">
 	   <% if current_user == comment.owner %>
-             <div class="comment-delete row">
+             <div class="comment-delete row-fluid">
               
               <%= link_to "x", comment_path(comment), :method => :delete, :remote => true,  :class=> "btn close" %> 
               </div>
@@ -26,20 +26,9 @@
          
           </div>
       
+            <%= render "opinio/comments/likes", :like_object => comment %>
             
             
-             <div class="comment-likes">
-             <%= time_ago_in_words(comment.created_at) %> ago.
-             
-             <%- if current_user.likes? comment -%><%= unlike_link_for comment  %>
-             <%- else -%>
-             <%= like_link_for comment %>
-             <%- end -%>
-              
-              (<%= comment.like_count %> Given)
-             
-             
-              </div>
               <%# this enables only 1 level of replies %>
               <% if Opinio.accept_replies && !reply %>
               <div class="commemnt-reply">

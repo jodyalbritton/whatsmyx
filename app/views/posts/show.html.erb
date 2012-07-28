@@ -1,0 +1,19 @@
+<%= @post.user.username %>
+<%= @post.created_at %>
+<%= @post.text %>
+
+
+          <div id="comments_list span6">
+          <ul id="comments_<%= @post.id %>">
+          	<%= render_comments @post %>
+          
+          </ul>
+          
+        
+          </div>
+           
+         <div id="comment-form">
+          <%= render_comments_form @post %>
+         </div>
+          
+   

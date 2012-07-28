@@ -1,8 +1,6 @@
  <% @parent = @group.id %>
- 
- 
-<div class="row">
-<div id="groups-sidebar" class="menu span3">
+<% content_for :sidebar do %>
+<div id="groups-sidebar" class="menu">
 
 <div id="group-about">
 	<%= image_tag @group.avatar.url(:medium), :class => "group-pic"%>
@@ -38,7 +36,11 @@
   	<h2>
 		Group Status
 	</h2>
-  <%= @group.active %>
+  <% if @group.active == true %>
+  Active
+  <% else %>
+  Not Active
+  <% end %>
 </p>
 </div>
 
@@ -56,10 +58,9 @@
 
             
   </div>    
-<div id="groups-body" class="span9">
-   <div class="row" id="group-header">
-   
-        <div id="profile-name">
+<% end %>
+<% content_for :top_left do %>
+  <div id="profile-name">
                <h3><%= @group.name %></h3>
 	            <% if @current_memberships == 0 %>
                 <% if user_signed_in? %>
@@ -81,6 +82,11 @@
                  </div>
                 <% end %>
         </div>
+<% end %>
+<% content_for :top_right do %>
+  <div  id="group-header">
+   
+      
         <div id="group-merit" class="pull-right visible-desktop">
         
          <ul>
@@ -93,15 +99,25 @@
 
           </li>
  </div>
+  </div>
+ <% end %>
+<% content_for :top do %>
+<% unless @current_memberships == 0 %>
+<div id="posts_form"><%= render :partial => 'posts/form' %></div>
 
-</div>
+
+<% end %>
+
+
+
+<% end %>
+
+
+<div id="groups-body">
  
 
 
 
-<% unless @current_memberships == 0 %>
-<div id="posts_form"><%= render :partial => 'posts/form' %></div>
-<% end %>
 
      <% if @group.privacy_level == "PUBLIC" %>
       <div id="activity_feed"><%= render "activities/index" %></div>
@@ -121,7 +137,7 @@
 
   </div>
  
-</div>
+
      
 
 

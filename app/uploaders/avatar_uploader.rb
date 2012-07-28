@@ -54,7 +54,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
   
   version :medium do
-  resize_to_fill(300, 300)
+  resize_to_fill(250, 250)
   end
   
   

@@ -8,7 +8,7 @@
     <%= form_for Comment.new, :remote => true do |f| %>
   <div class="control-group">
    <div class="input-append well">
-        <%= f.text_area :body, :class=>"input-comment span4"%><%= f.submit "Comment", :class=> "btn" %>
+        <%= f.text_area :body, :class=>"input-comment"%><%= f.submit "Comment", :class=> "btn" %>
    </div>
    </div>
       <%= hidden_field_tag :commentable_id, commentable.id %>

@@ -18,9 +18,10 @@
 
   /*Show the flash_notice div*/
   $("#flash_notice").show(300);
-
+   $("#post-form-cont").hide(0);
+   $("#post-form-small").show(0);
   /*Clear the entire form*/
-  $("#post_text").val("");
+  $("#post-form-cont-form.text").val("");
 
   /*Replace the html of the div post_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");

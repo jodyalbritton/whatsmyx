@@ -1,12 +1,15 @@
-<div class="row">
-    <div class="menu span3 visible-desktop">
-     <%= render 'menu' %>
-    </div>
-    <div class="span9" id="feed-body">
-        <div id="posts_form">
+<% content_for :sidebar do %>
+	<%= render "home/menu" %>
+<% end %>
+
+   <% content_for :top do %>
+   <div id="posts_form">
         	<% @parent = '0'%>
         	<%= render :partial => 'posts/form' %>
         </div>
+   <% end %>
+        <div id="feed-body">
+        
         <div id="activity_feed">
           <%= render "activities/index" %>
           
@@ -19,7 +22,7 @@
       
 
     </div>
-</div>
+
 
 
 

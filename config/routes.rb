@@ -6,16 +6,20 @@ Whatsmyx::Application.routes.draw do
     resources :circles
     resources :activities
     resources :contacts
-    resources :meals
+    resources :meals do
+      opinio
+    end
     resources :categories 
     resources :pactivities do
-    get :autocomplete_exercise_name, :on => :collection
+    opinio
+      get :autocomplete_exercise_name, :on => :collection
     end
     resources :stats do 
-    get :autocomplete_category_name, :on => :collection
-     end
+      opinio
+      get :autocomplete_category_name, :on => :collection
+    end
     resources :goals do
-    get :autocomplete_category_name, :on => :collection
+      get :autocomplete_category_name, :on => :collection
     end
     resources :groups do
     resources :memberships 

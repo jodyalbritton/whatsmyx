@@ -1,34 +1,32 @@
 
-
-     <div class="row">
-      
-     <div class="span3">
-     	<div id="group-sidebar">
+<% content_for :sidebar do %>
+<div id="group-sidebar">
      	    <div class="my-group-item">
      	    	<h2>My Groups</h2>
      	   <%= render "my-group-item"%>
      		</div>
        </div>
-     </div>
-     <div class="span9">
-      <div class="row">
-      <ul class="nav nav-tabs" id="myTab">
+<% end %>
+   
+      
+    
+    
+      <div class="row-fluid">
+       <ul class="nav nav-tabs" id="myTab">
        <li class="active"><a href="#my-groups" data-toggle="tab">My Groups</a></li>
        <li><a href="#all-groups" data-toggle="tab">All Groups</a></li>
       </ul>
       </div>
- 
-      <div class="tab-content row">
-        <div class="tab-pane span9 active" id="my-groups">
+     
+      <div class="tab-content">
+        <div class="tab-pane active span10" id="my-groups">
         <%= render "group-item" %>
         </div>
-        <div class="tab-pane span9" id="all-groups">
+        <div class="tab-pane span10" id="all-groups">
         </div>
-        
-     </div>
-         
-     </div>
-     </div>
+      </div>
+   
+  
 
         
       

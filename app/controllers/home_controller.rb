@@ -18,6 +18,7 @@ class HomeController < ApplicationController
      aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
      @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]
      @stat = current_user.stats.build 
+     @pactivity = current_user.pactivities.build 
      @meal = current_user.meals.build
      
      @post = current_user.posts.build
