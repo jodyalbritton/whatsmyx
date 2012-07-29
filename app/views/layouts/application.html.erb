@@ -29,8 +29,9 @@
         </div>
      </div>
   </div>
-  
+  <% if user_signed_in? %>
   <div class="container-fluid">
+  	
   <div class="nav subnav-fixed">
   <div id="sub-nav" class="row-fluid">
     	 	<div class="span3">
@@ -46,6 +47,7 @@
          </div>
  </div>
  </div>
+ <% end %>
  <div id="wrap">
   <div id="main" class="container-fluid clear-top">
  
