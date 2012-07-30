@@ -59,11 +59,12 @@
   <% content_for :top do %>
    <div id="profile-header" class="span10">
        
-        <div id="profile-name">
-         	   <div id="profile_pic">
+        <div id="profile-name" class="row">
+        <div id="profile_pic" class="span3">
 	    <%= image_tag @user.profile.avatar.url(:thumb), :class=> "user-pic" %>
 	
         </div>
+        <div class="span6">
                <h3><%= @user.username %></h3>
 	        
                 <% if user_signed_in? %>
@@ -72,6 +73,7 @@
                 
                 </div>
                 <% end %> 
+        </div>
         </div>
         <% content_for :top_right do %>
         <div id="profile-merit" class="pull-right">
