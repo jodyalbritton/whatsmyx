@@ -1,10 +1,5 @@
 <% content_for :sidebar do %>
 <div id="profile-sidebar" class="menu">
-
-        <div id="profile_pic">
-	    <%= image_tag @user.profile.avatar.url(:medium), :class=> "user-pic" %>
-	
-        </div>
    
         
         <div class="points">
@@ -59,12 +54,12 @@
   <% content_for :top do %>
    <div id="profile-header" class="span10">
        
-        <div id="profile-name" class="row">
+        <div id="profile-name" class="row-fluid">
         <div id="profile_pic" class="span3">
 	    <%= image_tag @user.profile.avatar.url(:thumb), :class=> "user-pic" %>
 	
-        </div>
-        <div class="span6">
+       </div>
+        <div class="span3">
                <h3><%= @user.username %></h3>
 	        
                 <% if user_signed_in? %>
@@ -76,7 +71,7 @@
         </div>
         </div>
         <% content_for :top_right do %>
-        <div id="profile-merit" class="pull-right">
+        <div id="profile-merit">
         
          <ul>
         
