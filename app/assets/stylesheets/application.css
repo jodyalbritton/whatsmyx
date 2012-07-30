@@ -88,7 +88,7 @@ html,body{
 #main
 {
     overflow:auto;
-    padding-top: 85px;
+    padding-top: 100px;
     padding-bottom:120px; /* this needs to be bigger than footer height*/
 }
 

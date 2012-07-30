@@ -12,6 +12,8 @@ class Circle < ActiveRecord::Base
   
   validates_length_of :name, :maximum => 15
   
+  after_create :create_new_relationship
+  
   def name_format
   has_one_letter = name =~ /[a-zA-Z]/
   all_valid_characters = name =~ /^[a-zA-Z0-9_]*[a-zA-Z][a-zA-Z0-9_]*$/
@@ -21,4 +23,13 @@ class Circle < ActiveRecord::Base
   def user_tokens=(ids)
     self.user_ids = ids.split(",")
   end
+  
+  
+  
+  
+   private
+  
+    def create_new_relationship
+      self.relationships << Relationship.new(:user_id => self.author_id)
+    end
 end
