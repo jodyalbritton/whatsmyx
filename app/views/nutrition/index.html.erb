@@ -11,14 +11,15 @@
     <%= render "nutrition/date_picker"%>
 	   
 	</div>
-	 <div id="meal-form" style="display:none;">
-    	<%= render "meals/form"%>
-    </div>
+	
     <% end %>
+  
 	<div class="row-fluid nutrition-header">
      <%= render "nutrition/header" %>
     </div>
-   
+      <div id="meal-form" style="display:none;">
+    	<%= render "meals/form"%>
+    </div>
 	<div class="nutrition-tabs">
 	  <ul class="nav nav-tabs">
        <li class="active"><a href="#meal-summary" data-toggle="tab">Summary</a></li>
@@ -28,7 +29,7 @@
   </div>
   <div class="tab-content row-fluid">
  
-  <div class="tab-pane active span9" id="meal-summary">
+  <div class="tab-pane active" id="meal-summary">
   	
     
     <div id="meal-list">

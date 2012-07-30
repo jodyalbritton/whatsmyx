@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
       if params[:profile][:avatar].present?
         render :crop
       else
-        redirect_to profile_path, notice: "Successfully created user."
+        redirect_to user_path, notice: "Successfully created user."
       end
     else
       render :new
@@ -30,7 +30,7 @@ def update
       if params[:profile][:avatar].present?
         render :crop
       else
-        redirect_to user_profile_path, notice: "Successfully updated user."
+        redirect_to user_path(current_user), notice: "Successfully updated user."
       end
     else
       render :new

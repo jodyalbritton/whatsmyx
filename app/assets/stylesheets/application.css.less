@@ -86,16 +86,27 @@ html,body{
 #content-body {
 
 }
-#main
-{
+
+@media (min-width: 980px){
+  #main{
     overflow:auto;
     padding-top: 100px;
     padding-bottom:120px; /* this needs to be bigger than footer height*/
 }
+  
+}
+@media (max-width: 980px){
+  #main{
+    overflow:auto;
+   
+    padding-bottom:120px; /* this needs to be bigger than footer height*/
+}
+  
+}
 
 #sub-nav {
   background: #EEEEEE;
-  min-height: 80px;
+  min-height: 64px;
     
   
 
@@ -122,7 +133,7 @@ Activity Feed
 }
 .activity-item {
   border-bottom: 1px solid #E3E3E3;
-  padding-top: 10px;
+ 
   min-height: 175px;
 }
 
@@ -311,24 +322,26 @@ Nutrition Page
   padding-top: 10px;
 }
 
+.nut-label {
+
+ border-bottom: thin solid black;
+}
 /****************************************************************
 Groups
 ****************************************************************/
 
-ul.nav.nav-tabs {
-display: block;
-margin-bottom: -1px;
+.group-pane{
+  border-bottom: 1px solid #E3E3E3;
+  min-height: 120px;
 }
 
 
-
-
-
-
-.nut-label {
-
-        border-bottom: thin solid black;
+.tab-pane {
+  border-left: 1px solid #E3E3E3;
+  border-right: 1px solid #E3E3E3;
 }
+
+
 /****************************************************************
 Sign Up Forms
 ****************************************************************/
@@ -353,6 +366,149 @@ Sign Up Forms
 
 .signup-header li {
     list-style: none;
+}
+
+/****************************************************************
+Avatar Style
+****************************************************************/
+
+img.thumbnail  {
+
+
+-webkit-background-clip: padding-box;
+-webkit-border-radius: 8px;
+-moz-background-clip: padding-box;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+background-color:white;
+}
+img.avatar  {
+
+
+
+-webkit-border-radius: 8px;
+
+-moz-border-radius: 8px;
+border-radius: 8px;
+
+overflow: hidden;
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 1px 1px 1px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+
+}
+
+
+img.user-pic {
+
+  
+  
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: 8px;
+    -moz-background-clip: padding-box;
+    -moz-border-radius: 8px;
+     border-radius: 8px;
+     background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 1px 1px 1px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+margin-left: auto;
+    margin-right: auto; 
+}
+img.group-pic {
+
+
+-webkit-background-clip: padding-box;
+-webkit-border-radius: 8px;
+-moz-background-clip: padding-box;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+ box-shadow: 0 0 5px rgba(0, 0, 0, 0.65);
+  
+}
+
+img.group-pic-small {
+
+
+
+-webkit-background-clip: padding-box;
+-webkit-border-radius: 8px;
+-moz-background-clip: padding-box;
+-moz-border-radius: 8px;
+border-radius: 8px;
+background-clip: padding-box;
+
+
+border:solid;
+border-color: #dddddd #aaaaaa #aaaaaa #dddddd;
+border-width: 1px 2px 2px 1px;
+background-color:white;
+  
+}
+
+/****************************************************************
+nutrition nav by date
+****************************************************************/
+.nutri-nav {
+
+  text-align: center;
+
+  
+}
+
+.sidebar-controls {
+  min-height: 50px;
+}
+
+.no-entry {
+  min-height: 20px;
+  text-align: center;
+  border-radius: 7px 7px;
+  background: yellow; 
+  
+ 
+}
+.add-food-button {
+    
+  padding-top: 40px;
+  text-align: center;
+}
+.nutri-body {
+  
+  min-height: 500px;
+  
+  border-bottom: 1px solid #E3E3E3;
+    border-left: 1px solid #E3E3E3;
+    border-right: 1px solid #E3E3E3;
+
+}
+
+.ui-autocomplete {
+  
+      width: 340px;
+    max-height: 200px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    /* add padding to account for vertical scrollbar */
+    padding-right: 20px;
 }
 /****************************************************************
 Users

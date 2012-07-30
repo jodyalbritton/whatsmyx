@@ -1,10 +1,15 @@
+<%- model_class = Goal.new.class -%>
 <% content_for :sidebar do %>
 	Menu Needed
 <% end %>
-<%- model_class = Goal.new.class -%>
+
+<%= content_for :top_left do %>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+<% end %>
+
+
 
 <div id="goal-form">
 	

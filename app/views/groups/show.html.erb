@@ -3,7 +3,7 @@
 <div id="groups-sidebar" class="menu">
 
 <div id="group-about">
-	<%= image_tag @group.avatar.url(:medium), :class => "group-pic"%>
+	
 	<h2>
 		About
 	</h2>
@@ -61,6 +61,11 @@
 <% end %>
 <% content_for :top_left do %>
   <div id="profile-name">
+  	           <div class="row-fluid">
+  	           	<div class="span2">
+  	           		<%= image_tag @group.avatar.url(:thumb), :class => "group-pic"%>
+  	            </div>
+  	            <div class="span3">
                <h3><%= @group.name %></h3>
 	            <% if @current_memberships == 0 %>
                 <% if user_signed_in? %>
@@ -81,6 +86,8 @@
                  <% end %>
                  </div>
                 <% end %>
+        </div>
+        </div>
         </div>
 <% end %>
 <% content_for :top_right do %>

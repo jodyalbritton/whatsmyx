@@ -5,7 +5,7 @@
       <div id="post-sidebar" class="span2 post-sidebar">
 
      
-             <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar visible-desktop" %>
+             <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
              <h3><%= link_to activity.user.username, activity.user %></h3>
              <%= time_ago_in_words(activity.created_at) %> ago.
    
