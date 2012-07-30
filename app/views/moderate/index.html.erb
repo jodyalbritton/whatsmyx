@@ -1,0 +1,17 @@
+<% @users.each do |user| %>
+<div class="row-fluid">
+<table>
+	<thead>
+		
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= user.username %></td>
+			<td><%= link_to user.email, invite_user_path(user) %></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
+<% end %>

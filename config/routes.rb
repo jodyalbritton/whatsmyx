@@ -2,7 +2,7 @@ Whatsmyx::Application.routes.draw do
 
   opinio_model
   
- 
+    resources :moderate
     resources :circles
     resources :activities
     resources :contacts
@@ -58,7 +58,7 @@ Whatsmyx::Application.routes.draw do
 
   match "users/auth/:service/callback" => 'services#create'
 
-  devise_for :users, :controllers => { :registrations => 'registrations' }
+  devise_for :users, :controllers => { :registrations => 'registrations', :confirmations => "confirmations" }
   
   resources :users, :only => [:index]
 
@@ -67,6 +67,7 @@ Whatsmyx::Application.routes.draw do
   end
   devise_scope :user do
   root :to => "devise/registrations#new"
+  match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   
   end
  
@@ -133,9 +134,9 @@ Whatsmyx::Application.routes.draw do
     resources :users, :only => [:show], :path => '/' do 
       resources :follows, :only => [:create, :destroy]
       resource  :profile
-      
       resource  :settings
-     
+ 
+      get 'invite', :on => :member
       
    end
 end

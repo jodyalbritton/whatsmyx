@@ -18,19 +18,27 @@ class UsersController < ApplicationController
     @followers = @user.followers
   end
 
-end
+
 
  def edit
       @user = User.find(params[:id])
  end
 
-    def update
-      @user = User.find(current_user.id)
-      if @user.update_attributes(params[:user])
+ def update
+   @user = User.find(current_user.id)
+    if @user.update_attributes(params[:user])
         # Sign in the user bypassing validation in case his password changed
         sign_in @user, :bypass => true
         redirect_to root_path
-      else
+    else
         render "edit"
-      end
     end
+ end
+ def invite
+    authorize! :invite, @user, :message => 'Not authorized as an administrator.'
+    @user = User.find(params[:id])
+    @user.send_confirmation_instructions
+    redirect_to :back, :notice => "Sent invitation to #{@user.email}."
+ end
+
+end

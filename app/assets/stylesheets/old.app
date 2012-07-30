@@ -345,72 +345,7 @@ min-height: 40px;
 	padding-left: 2px;
 	padding-right: 2px;
 }
-/****************************************************************
-Nutrition Page
-****************************************************************/
-#meal-form {
-	padding: 10px;
-}
-.inner-box {
-	padding: 20px;
-	text-align: center;
-	min-height: 100px;
-	border: 1px solid #E3E3E3;
-	background-color: #EBEDEE;
-	       
-}
 
-.nutrition-tabs {
-	padding-top: 10px;
-}
-
-#sidebar-summary {
-	padding-top: 10px;
-}
-
-/****************************************************************
-Groups
-****************************************************************/
-
-ul.nav.nav-tabs {
-display: block;
-margin-bottom: -1px;
-}
-
-
-
-
-
-
-.nut-label {
-
-        border-bottom: thin solid black;
-}
-/****************************************************************
-Sign Up Forms
-****************************************************************/
-
-.signup-footer {
-	    text-align: center;
-        min-height: 200px;
-        border-bottom: 1px solid #E3E3E3;
-        border-left: 1px solid #E3E3E3;
-        border-right: 1px solid #E3E3E3;
-        padding: 10px;
-}
-
-.signup-header {
-
-        min-height: 200px;
-        border-top: 1px solid #E3E3E3;
-        border-left: 1px solid #E3E3E3;
-        border-right: 1px solid #E3E3E3;
-        padding: 10px;
-}
-
-.signup-header li {
-    list-style: none;
-}
 /****************************************************************
 Activity Feed
 ****************************************************************/
