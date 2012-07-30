@@ -38,7 +38,7 @@
                          <%= link_to "Diary", nutrition_index_path %>
                         </li>
                         <li>
-                         <%= link_to('Edit Profile', edit_user_registration_path(:anchor => "dgoal"))%>
+                         <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
                         </li>
                         </ul>
                    </li>
@@ -85,7 +85,7 @@
                     <%= link_to('Edit account', edit_user_registration_path) %>
                     </li>
                     <li>
-                    <%= link_to('Edit Profile', edit_user_registration_path(:anchor => "profile"))%>
+                    <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
                     </li>
                      <li>
                     <%= link_to('Change Password', edit_user_registration_path(:anchor => "wordpass"))%>

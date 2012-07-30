@@ -53,25 +53,18 @@
  
   
 
-    <div class="row-fluid">
+   <div class="row-fluid">
     	 <div class="span2">
-    	 	
-    	 <div class="sb-fixed span2">
-    	  <%= yield :sidebar %>
-    	 </div>
+    	  <div class="sb-fixed span2">
+    	   <%= yield :sidebar %>
+    	  </div>
     	 </div>  
     	 <div class="span8" id="main-content">
-        
-    	 
-        
-          <div id="content-body">
-         <%= render 'layouts/messages' %>
-          <%= yield %>
-         <%= render 'layouts/ga'%>
+           <%= render 'layouts/messages' %>
+           <%= yield %>
+           <%= render 'layouts/ga'%>
          </div>
-     
-      </div>
-          <div id="right-sidebar" class="span2">
+         <div id="right-sidebar" class="span2">
          </div>
     </div>
    </div>

@@ -15,7 +15,7 @@
 <div class="modal hide fade" id="stats-modal">
   <%= render "stats/form"%>
 </div>
-  <div class="well span8">
+  <div class="well span11">
   <div class="row-fluid">
   <div class="span3">
    <h3><%= category.name %></h3>
@@ -51,7 +51,7 @@
 
   </div>
   </div>
-  <div style="display:none;" class="span8" id="stat-values-<%= category.id %>">
+  <div style="display:none;" class="span11" id="stat-values-<%= category.id %>">
   <% for stat in stats %>
   <div class="stat-item">
   <div class="row-fluid">
@@ -76,8 +76,8 @@
   <% end %>
   
    </div>
-    <div class="span8" style="display:none;" id="chart_container_toggle_<%=category.id%>">
-    <div class="span10" style="min-height: 400px;"id="chart_container_<%=category.id %>">
+    <div class="span11" style="display:none;" id="chart_container_toggle_<%=category.id%>">
+    <div class="span11" style="min-height: 400px;"id="chart_container_<%=category.id %>">
    <script type="text/javascript">
     
  /**
