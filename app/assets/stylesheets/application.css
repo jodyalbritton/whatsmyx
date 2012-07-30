@@ -312,8 +312,8 @@ float: left;
 
 #profile-merit ul li {
 float: right;
-
-font-size: 18px;
+margin-left: 10px;
+font-size: 12px;
 text-align: center;
 color: #909B9F;
 }
