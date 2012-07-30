@@ -1,9 +1,11 @@
     <%= simple_form_for ([current_user, @profile]) do |p| %>
-    <%= p.file_field :avatar %>
+    <div class="row-fluid">
+    <div class="span10">
+    
     <%= p.input :dob, :label => "Date Of Birth" %>
     <%= p.input :gender, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :default => "Male" %>
     <%= p.input :about , :input_html => {:class => "input-about"}%>
-    </div>
+  
     <div class="well">
     	<h2> Body </h2>
     	<%= p.input :weight, :input_html => {:class => "span1"} %>
@@ -12,4 +14,16 @@
     </div>
     
     <%= p.button :submit %>
+    </div>
+    <div class="span2">
+    	
+    <%= image_tag @profile.avatar.url(:medium) %></br>
+    
+    <%= p.file_field :avatar %>
+  
+    </div>
+    </div>
+    
+    </div>
     <% end %>
+    
