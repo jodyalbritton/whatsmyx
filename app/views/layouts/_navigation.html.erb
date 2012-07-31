@@ -90,6 +90,9 @@
                     <li>
                     <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
                     </li>
+                    <li>
+                    <%= link_to('Edit Circles', circles_path)%>
+                    </li>
                      <li>
                     <%= link_to('Change Password', edit_user_registration_path(:anchor => "wordpass"))%>
                     </li>
@@ -107,7 +110,7 @@
                   <% if user_signed_in? %>
                      <% if current_user.has_role? :admin %>
                       <li>
-                      <%= link_to('Admin', users_path) %>
+                      <%= link_to('Moderate', moderate_index_path) %>
                       </li>
                     <% end %>
                   <% else %>

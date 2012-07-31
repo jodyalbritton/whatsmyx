@@ -1,8 +1,12 @@
 
-<div class="span12 circle-container">
-<div class="row contact-area">
+<div class="circle-container">
+<div class="contact-area">
+	<ul class="thumbnails">
 	<% current_user.follows.each do |follow| %>
-	<div class="user-card span2 draggable">
+	<li class="thumbnail">
+    <div class="user-card draggable row-fluid">
+    <div class="row-fluid">
+	
 
 	<div class="user-card-sidebar">
 	    <%= image_tag follow.followable.profile.avatar.url(:mini) %>
@@ -11,9 +15,17 @@
 		<%= follow.followable.username %>
     </div>
 
+	
+
+    
 	</div>
+	</div>
+		</li>
 	<% end %>
+	</ul>
 </div>
+</div>
+
 <div class="row">
 <div class="span2">
       <div class="circle-outer">

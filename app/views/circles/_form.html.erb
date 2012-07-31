@@ -3,8 +3,9 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
+    <%= f.input :user_tokens, :label => "Circle Members", :as => 'string', :input_html => {  data: {load: @circle.users.collect {|user| {:id => user.id, :name => user.username } }}}, :class=> "x-large"%>
+
     <%= f.input :description %>
-    <%= f.input :user_tokens, :as => 'string', :input_html => {data: {load: @circle.users}}%>
   </div>
 
   <div class="form-actions">
