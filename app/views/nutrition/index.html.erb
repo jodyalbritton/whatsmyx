@@ -31,9 +31,16 @@
  
   <div class="tab-pane active" id="meal-summary">
   	
-    
+  
     <div id="meal-list">
+    <% if @meals.count == 0 %>
+     <div class="alert alert-error">
+    	You have not entered any foods for this date! 
+    </div>
+    <% else %>
     <%= render @meals %>
+  
+    <% end %>
     </div>
  
   </div>
