@@ -23,13 +23,12 @@
   </div>
 
    <div class="tab-pane" id="dgoal">
-   	   <%= f.simple_fields_for :dgoal do |d| %>
-   	   		<%= d.input :calories %>
-   	   		<%= d.input :protein %>
-   	   		<%= d.input :fat %>
-   	   		<%= d.input :carbs %>
-   	   		
-   	   <% end %>
+   	<%= f.simple_fields_for :dgoal do |d| %>
+    	<%= d.input :calories %>
+   	    <%= d.input :protein, :label => "Protein(g)", :placeholder => "50"%>
+   	    <%= d.input :fat, :label => "Fats(g)", :placeholder => "50" %>
+   	    <%= d.input :carbs, :label => "Carbohydrate(g)", :placeholder => "300" %>	
+   	<% end %>
    
   </div>
   <div class="tab-pane" id="wordpass">
