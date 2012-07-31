@@ -58,7 +58,7 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @user = User.find(current_user)
-    @group = @user.groups.build(params[:group])
+    @group = current_user.groups.build(params[:group])
 
     respond_to do |format|
       if @group.save

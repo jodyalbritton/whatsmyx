@@ -28,7 +28,8 @@ class User < ActiveRecord::Base
  #assoications 
   has_many :activities, dependent: :destroy
   
-  has_many :groups, through: :memberships
+  has_many :groups
+  
   has_many :pactivities, dependent: :destroy
 
   has_many :relationships
