@@ -7,14 +7,14 @@
   	<%= render "stats/header" %>
   </div>
 <% end %>
-
+<div class="modal hide fade" id="stats-modal">
+  <%= render "stats/form"%>
+</div>
  <% @stats_by_cat.sort.each do |category, stats| %>
 
  
 
-<div class="modal hide fade" id="stats-modal">
-  <%= render "stats/form"%>
-</div>
+
   <div class="well span11">
   <div class="row-fluid">
   <div class="span3">
