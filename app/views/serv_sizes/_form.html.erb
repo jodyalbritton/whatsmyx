@@ -1,11 +1,11 @@
-<%= semantic_form_for @serv_size do |f| %>
-  <%= f.inputs do %>
+<%= simple_form_for @serv_size do |f| %>
+
     <%= f.input :name %>
     <%= f.input :value %>
 
-  <% end %>
 
-  <%= f.actions do %>
-    <%= f.action :submit, :as => :input %>
-  <% end %>
+
+
+    <%= f.button :submit %>
+ 
 <% end %>
