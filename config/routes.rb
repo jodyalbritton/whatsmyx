@@ -3,6 +3,7 @@ Whatsmyx::Application.routes.draw do
   opinio_model
   
     resources :moderate
+    resources  :help
     resources :circles
     resources :activities
     resources :contacts
