@@ -15,7 +15,7 @@
        <div id="post-body" class="span8 post-body">
              <div class="post-content">
              <p>
-              <%= link_to "Posted", activity.target %>:
+              <%= link_to "Posted", activity.target %><%if activity.parent_id > 0%> to a group: <% end %>
               <%= activity.target.text %>
              </p>
              </div>
@@ -54,7 +54,7 @@
 <% else %>
 
 <div class="content-removed">
-
+ Content Removed
 </div>
 
 <% end %>
