@@ -1,4 +1,4 @@
- <table class="table tabel-horizontal">
+ <table class="table table-striped">
     <tbody>
     <% if @meals.count == 0 %> 
        <tr class="no-entry-foods">
@@ -14,9 +14,9 @@
    	  <h2>
      <%= link_to meal.name,(meal) %>
       <h2>
-       <h3>
-      <%= link_to 'Destroy', meal, confirm: 'Are you sure?', method: :delete %>|<%= link_to 'Edit', edit_meal_path(meal) %></td>
-       </h3>
+       <h4>
+      <%= link_to 'Destroy', meal, confirm: 'Are you sure?', method: :delete %></td>
+       </h4>
      </td>
      <td>
      	

@@ -1,22 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
-  <b>User:</b>
-  <%= @meal.user %>
+  <b>Name</b>
+  <%= @meal.name %>
 </p>
 
 <p>
-  <b>Mcategory:</b>
-  <%= @meal.mcategory %>
-</p>
-
-<p>
-  <b>Ingredient:</b>
+  <b>Ingredients:</b>
   <% @meal.foods.each do |food| %>
+  <div>
   <%= food.name %>
+  </div>
   <% end %>
 </p>
 
 
-<%= link_to 'Edit', edit_meal_path(@meal) %> |
-<%= link_to 'Back', meals_path %>
+<%= link_to 'Back', nutrition_index_path %>
