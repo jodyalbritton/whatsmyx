@@ -12,7 +12,7 @@
        </div>
              <div id="meal-body" class="span8">
              <div class="meal-content">
-              Had <%= link_to activity.target.name, meal_path(activity.target) %> Calories (<%= activity.target.cals%>)
+              Had <%= link_to activity.target.name, meal_path(activity.target) %> Calories (<%= activity.target.cals.round %>)
               <% activity.target.ingredients.each do |ingredient| %>
               <div class="meal-ingredient">
               	<%= ingredient.what_food %>

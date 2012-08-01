@@ -1,9 +1,12 @@
-
+   <% content_for :top_left do %>
+   <h2>Groups</h2>
+   <% end %>
    <% content_for :sidebar do %>
      <div id="group-sidebar">
-      <div class="my-group-item">
-        <h2>My Groups</h2>
-        <%= render "my-group-item"%>
+     
+      <hr>
+      <div class="groups-menu">
+      	<%= link_to "Start a Group", new_group_path %>
       </div>
      </div>
      <% end %>
@@ -24,11 +27,11 @@
    
         <div class="tab-pane active" id="my-groups">
         <div class="row-fluid">
-        <%= render "group-item" %>
+            <%=render "my-groups-item"%>
         </div>
         </div>
         <div class="tab-pane" id="all-groups">
-        	Test
+        	<%= render "group-item" %>
         </div>
         </div>
         </div>

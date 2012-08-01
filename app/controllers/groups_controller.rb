@@ -11,9 +11,10 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    
+    group_ids = current_user.memberships.collect{|g| g.group_id}
     @user = User.find(current_user)
     @groups = Group.all
+    @my_groups = Group.where(:id => group_ids )
     
    
 
