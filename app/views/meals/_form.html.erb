@@ -19,7 +19,7 @@
         </div>
        </div>
     <div class="form-actions">
-    <%= f.button :submit  %>
+    <%= f.button :submit, :disable_with => "Please wait..." %>
     <a href="javascript:toggleDiv('meal-form');javascript:toggleDiv('header-date');">Cancel</a>
     </div>
   <% end %>
