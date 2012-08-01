@@ -4,7 +4,7 @@
 </div>
 <div class="modal-body">
 <%= simple_form_for @stat, :remote => true do |f| %>
-      <%= f.input :stype ,:placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_stats_path, :update_elements => {:id => "#stat_category_id", :sunit => "#stat_sunit"} %>
+      <%= f.input :stype ,:label => "Stat Name (Weight, Blood Glucose, etc)",:placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_stats_path, :update_elements => {:id => "#stat_category_id", :sunit => "#stat_sunit"} %>
 	 
 	  <%= f.input :value %>
 	   <%= f.input :sunit, :label => "Units"%>
