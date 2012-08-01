@@ -1,5 +1,5 @@
 class IngredientsController < ApplicationController
-  autocomplete :food, :name, :full => true, :limit => '100'
+  autocomplete :food, :name, :full => true, :limit => '100',:extra_data => [:gmwt_1,:gmwt_desc]
   before_filter :authenticate_user!
   # GET /ingredients
   # GET /ingredients.json

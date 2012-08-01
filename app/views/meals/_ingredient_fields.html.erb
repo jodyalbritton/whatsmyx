@@ -2,20 +2,18 @@
    <div class="form-header">
    <%= link_to_remove_association "x",f,:class=> "btn close" %>
    </div>
-
-   <%= f.input :what_food, :as => :autocomplete, :url => autocomplete_food_name_ingredients_path, :input_html => {:class=> "span3"} %>
-   <%= f.input :food_id,:input_html => {:class=>"food-id" }, :as => "hidden" %>
    
+   <%= f.input :what_food, :as => :autocomplete, :url => autocomplete_food_name_ingredients_path, :input_html => {:class=> "span3"}, :placeholder => "Start typing a food name" %>
+   <%= f.input :food_id,:input_html => {:class=>"food-id" }, :as => "hidden" %>
+ 
     
      <div class="weight_select">
      	 
      </div>
-
-   	  <%= f.input :servings, :input_html => {:class=> "span1"} %>
-   	  <div class="food-servings">
-   	  <%= f.association :serv_size, :include_blank => false, :input_html => {:class=> "span2"}, :label => false %>
-      </div>
-
+      <div class="food-serv-desc"></div>
+      <%= f.input :serving_size, :label =>"Serving Size (g)", :input_html => { :class=> "servings-id input-small"}%>
+   	  <%= f.input :servings, :input_html => {:class=> "span1"} , :input_html => {:value => "1", :class=> "input-small"} %>
+  
   
    
 </div>

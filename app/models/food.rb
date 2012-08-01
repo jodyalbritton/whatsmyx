@@ -14,7 +14,7 @@ class Food < ActiveRecord::Base
   has_one :food_det, :primary_key => 'ndb', :foreign_key => 'ndb'
   
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  
   
   def self.tokens(query)
     foods = where("name like ?", "%#{query}%")
@@ -32,7 +32,7 @@ class Food < ActiveRecord::Base
   
   define_index do
     indexes name
-    indexes slug
+
   
 
    

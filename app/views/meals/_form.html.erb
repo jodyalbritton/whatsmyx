@@ -38,9 +38,13 @@
        
            $('.autocomplete').bind('railsAutocomplete.select', function(event, data){
              /* Do something here */
-              $(this).parent().find('.food-id').val(data.item.id);
-               
-          
+           
+           $(this).parent().find('.food-id').val(data.item.id); 
+           $(this).parent().find('.servings-id').val(data.item.gmwt_1); 
+           $(this).parent().find('.food-serv-desc').html(data.item.gmwt_desc); 
+      
+              
+    
              });
            
          });
