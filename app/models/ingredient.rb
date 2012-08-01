@@ -21,8 +21,9 @@ class Ingredient < ActiveRecord::Base
      
      if self.serving_size.nil? 
      multiplication_factor = self.servings
+     
      else 
-     multiplication_factor = self.servings*self.serving_size/100 
+     multiplication_factor = self.servings*self.serving_size/100.0
      end 
      
    end 
