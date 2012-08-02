@@ -2,7 +2,7 @@
 
       <div class="row-fluid activity-item">
 	  
-      <div id="post-sidebar" class="span2 post-sidebar">
+      <div id="activity-sidebar" class="span2 activity-sidebar">
 
      
              <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
@@ -12,7 +12,7 @@
       
   
        </div>
-       <div id="post-body" class="span8 post-body">
+       <div id="post-body" class="span8 activity-body">
              <div class="post-content">
              <p>
               <%= link_to "Posted", activity.target %><%if activity.parent_id > 0%> to a group: <% end %>

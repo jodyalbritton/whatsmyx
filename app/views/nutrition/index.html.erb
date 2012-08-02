@@ -20,6 +20,12 @@
       <div id="meal-form" style="display:none;">
     	<%= render "meals/form"%>
     </div>
+     <% if @meals.count == 0 %>
+     <div class="meal-body">
+     <div class="alert alert-error">
+    	You have not entered any foods for this date! 
+    </div>
+    <% else %>
 	<div class="nutrition-tabs">
 	  <ul class="nav nav-tabs">
        <li class="active"><a href="#meal-summary" data-toggle="tab">Summary</a></li>
@@ -33,15 +39,11 @@
   	
   
     <div id="meal-list">
-    <% if @meals.count == 0 %>
-     <div class="alert alert-error">
-    	You have not entered any foods for this date! 
-    </div>
-    <% else %>
+  
     <%= render @meals %>
   
-    <% end %>
-    </div>
+
+  
  
   </div>
    <div class="tab-pane" id="meal-breakdown">
@@ -62,7 +64,10 @@
     
      
     </div>
+    
+    <% end %>
+  </div>
 </div>
-        
+   
 
 

@@ -4,7 +4,7 @@ class Ingredient < ActiveRecord::Base
   
   #validations
   
-    
+    validates_presence_of :food_id, :serving_size, :servings
   #relations
   belongs_to :user
   belongs_to :mcategory

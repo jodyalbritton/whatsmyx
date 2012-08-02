@@ -34,14 +34,14 @@
   	
   <div class="nav subnav-fixed">
   <div id="sub-nav" class="row-fluid">
-    	 	<div class="span3">
+    	 	<div class="span3 top-left">
     	 	      <%= yield :top_left %>
     	    </div>
-    	 	<div class="span6">
+    	 	<div class="span6 top-bar">
  	              <%= yield :top %>
  	        </div>
  	      
- 	        <div class="span3">
+ 	        <div class="span3 top-right">
  	        	 <%= yield :top_right %>
  	        </div>
          </div>
@@ -55,7 +55,7 @@
 
    <div class="row-fluid">
     	 <div class="span2">
-    	  <div class="sb-fixed span2">
+    	  <div class="sb-fixed sidebar span2">
     	   <%= yield :sidebar %>
     	  </div>
     	 </div>  

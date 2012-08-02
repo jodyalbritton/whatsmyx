@@ -10,6 +10,7 @@ class Meal < ActiveRecord::Base
    attr_accessible :name, :ingredients_attributes, :date
    include Likeable
    opinio_subjectum
+   validates_presence_of :name, :date
 
    
    def cals

@@ -1,6 +1,6 @@
 <% unless activity.target.nil? %>
 <div class="row-fluid activity-item">
-       <div id="meal-sidebar" class="span2 meal-sidebar">
+       <div id="activity-sidebar" class="span2 activity-sidebar">
 
        
             <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
@@ -10,7 +10,7 @@
        
   
        </div>
-             <div id="meal-body" class="span8">
+             <div id="meal-body" class="span8 activity-body">
              <div class="meal-content">
               Had <%= link_to activity.target.name, meal_path(activity.target) %> Calories (<%= activity.target.cals.round %>)
               <% activity.target.ingredients.each do |ingredient| %>

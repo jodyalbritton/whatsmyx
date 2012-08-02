@@ -51,7 +51,8 @@
       
      
      <% @members.each do |x| %> 
-      <%= image_tag x.user.profile.avatar.url(:mini) %>
+      <a href="/<%= x.user.slug%>"  rel="popover" data-content="Test" data-original-title="<%=x.user.username %>"><%= image_tag x.user.profile.avatar.url(:mini) %></a>
+ 
     
      <% end %>
 </div>

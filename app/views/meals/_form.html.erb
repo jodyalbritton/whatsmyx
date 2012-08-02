@@ -1,5 +1,5 @@
 <div>
-<%= simple_form_for @meal, :remote => true do  |f| %>
+<%= simple_form_for @meal,:validate => true, :remote => true do  |f| %>
 
     <div class="control-group">
     <%= f.input :name %>

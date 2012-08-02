@@ -2,13 +2,13 @@
   	<input type="text" placeholder="What's New ?" class="input-xlarge"> 
   </div>
   <div  id="post-form-cont" style="display:none;">
-  <%= simple_form_for @post , :remote => true do |f| %>
+  <%= simple_form_for @post , :remote => true, :validate => true do |f| %>
 
    
    <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
    <div class="post-form-box">
    <%= f.input :text,  :label => false, :input_html => {:id=>"post-form-cont-form", :class=> "post-input"}%>
-
+   
 
       
        </div>

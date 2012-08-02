@@ -1,4 +1,4 @@
-<%= simple_form_for @pactivity do |f| %>
+<%= simple_form_for @pactivity,:input_html=> {:class=> "form form-horizontal"}, :validate => true do |f| %>
     <div class="span5">
     	<h1>New Activity</h1>
     <div class="pactivity-form">
@@ -6,7 +6,7 @@
      
     <%= f.input :exercise_id, :as => "hidden"%>
     <%= f.input :category, :as=> "hidden" %>
-    <%= f.input :date %>
+    <%= f.input :date, :input_html => {:class=>"input-small"}%>
 
     <% if @pactivity.time == nil %>
     <%= f.input :time, :as => "string", :label => "Start Time", :input_html => {:value => Time.now.strftime("%r") }%>
