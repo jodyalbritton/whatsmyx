@@ -41,7 +41,8 @@
            
            $(this).parent().find('.food-id').val(data.item.id); 
            $(this).parent().find('.servings-id').val(data.item.gmwt_1); 
-           $(this).parent().find('.food-serv-desc').html(data.item.gmwt_desc); 
+           $(this).parent().find('.food-serv-desc').html("<h4>"+data.item.gmwt_desc+"</h4>"); 
+           
       
               
     

@@ -11,9 +11,19 @@
      	 
      </div>
       <div class="food-serv-desc"></div>
-      <%= f.input :serving_size, :label =>"Serving Size (g)", :input_html => { :class=> "servings-id input-small"}%>
-   	  <%= f.input :servings, :input_html => {:class=> "span1"} , :input_html => {:value => "1", :class=> "input-small"} %>
-  
+      <div class="row-fluid">
+      	<div class="span1">
+          <%= f.input :serving_size, :label => "Grams", :disabled => true, :input_html => { :class=> "servings-id input-small"}%> 
+   	    </div>
+   	    <div class="span1" style="text-align: center; padding-top: 20px;">
+   	      <h3>X<h3>
+   	    </div>
+   	    <div class="span1">
+   	      <%= f.input :servings, :hint => "How Many?", :input_html => {:value => "1", :class=> "input-small"} %>
+       </div>
+       <div class="span1 total-id">
+       	  
+      </div>
   
    
 </div>
