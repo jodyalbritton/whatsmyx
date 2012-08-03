@@ -3,16 +3,16 @@
   $("#flash_notice").hide(300);
 
   /*Update the html of the div note_errors with the new one*/
-  $("#note_errors").html("<%= escape_javascript(error_messages_for(@note))%>");
+  $("#flash_errors").append("<%= escape_javascript(error_messages_for(@meal))%>");
 
   /*Show the div note_errors*/
-  $("#note_errors").show(300);
+  $("#flash_errors").show(300);
 <% else -%>
   /*Hide the div note_errors*/
-  $("#note_errors").hide(300);
+  $("#flash_errors").hide(300);
 
   /*Update the html of the div flash_notice with the new one*/
-  $("#flash_notice").html("<%= escape_javascript(flash[:notice])%>");
+  $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
 
   /*Show the flash_notice div*/
   $("#flash_notice").show(300);
@@ -22,12 +22,13 @@
 
   /*Replace the html of the div note_lists with the updated new one*/
   $('#meal-form').toggle();
-  $("#meal-list").html("<%= escape_javascript( render @meals ) %>");
-  $("#sidebar-data-left").html("<%= escape_javascript( render "nutrition/nut_facts" ) %>");
+  $("#meal-summary").html("<%= escape_javascript( render @meals ) %>");
+  $("#sidebar-summary").html("<%= escape_javascript( render "nutrition/nut_facts" ) %>");
   $("#sidebar-chart").html("<%= escape_javascript( render "nutrition/pie_chart" ) %>");
+  
  
   
-  /*Close the Modal */
+  	
   
  
 <% end -%>

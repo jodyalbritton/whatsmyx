@@ -52,11 +52,12 @@ class MealsController < ApplicationController
      
      if @meal.save 
      @user = User.find(current_user)
-     
+     flash[:notice] = "Successfully created meal."
      if @meal.date == Date.today
      
-      @meals = @user.meals.where(:date => Date.today).order("created_at ASC")
-      @tot_cals = @meals.sum { |meal| meal.cals }
+     @date_for = Date.today
+     @meals = @user.meals.where(:date => Date.today).order("created_at ASC")
+     @tot_cals = @meals.sum { |meal| meal.cals }
      @tot_fats = @meals.sum { |meal| meal.fats }
      @tot_prot = @meals.sum { |meal| meal.prot }
      @tot_carb = @meals.sum { |meal| meal.carb }
@@ -69,6 +70,7 @@ class MealsController < ApplicationController
     
  
      else
+     @date_for = @meal.date
      @meals = @user.meals.where(:date => @meal.date).order("created_at ASC")
      @tot_cals = @meals.sum { |meal| meal.cals }
      @tot_fats = @meals.sum { |meal| meal.fats }

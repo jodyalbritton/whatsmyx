@@ -20,12 +20,7 @@
       <div id="meal-form" style="display:none;">
     	<%= render "meals/form"%>
     </div>
-     <% if @meals.count == 0 %>
-     <div class="meal-body">
-     <div class="alert alert-error">
-    	You have not entered any foods for this date! 
-    </div>
-    <% else %>
+  
 	<div class="nutrition-tabs">
 	  <ul class="nav nav-tabs">
        <li class="active"><a href="#meal-summary" data-toggle="tab">Summary</a></li>
@@ -35,16 +30,22 @@
   </div>
   <div class="tab-content row-fluid">
  
-  <div class="tab-pane active" id="meal-summary">
+  <div class="tab-pane active" style="min-height: 50px;" id="meal-summary">
   	
+  <% if @meals.count == 0 %> 
+    
+       	<div class= "alert alert-error" style="width: 95%; margin-left: auto; margin-right: auto;">
+    	You have not entered any meals for this date. 
+    	</div>
+   
+   <% else %>
+ 
   
-    <div id="meal-list">
-  
-    <%= render @meals %>
+   <%= render @meals %>
   
 
-  
-   </div>
+   <% end %>
+
   </div>
    <div class="tab-pane" id="meal-breakdown">
      <div class="row-fluid">
@@ -56,7 +57,7 @@
    	      <%= render "nutrition/pie_chart"%> 
    	   </div>
     </div>
-  </div>
+
   
 
    
@@ -65,7 +66,7 @@
      
     </div>
     
-    <% end %>
+    
   </div>
 
    

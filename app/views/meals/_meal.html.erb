@@ -1,22 +1,18 @@
  <table class="table table-striped">
     <tbody>
-    <% if @meals.count == 0 %> 
-       <tr class="no-entry-foods">
-       	<div class= "no-entry span7">
-    	You have not entered any foods for this date. 
-    	</div>
-    	
-       <tr>
-       <% else %>
+    
 
       <tr>
       <td>
+      <div class="span10">
    	  <h2>
-     <%= link_to meal.name,(meal) %>
+       <%= link_to meal.name,(meal) %>
       <h2>
-       <h4>
-      <%= link_to 'Destroy', meal, confirm: 'Are you sure?', method: :delete %></td>
-       </h4>
+      </div>
+      <div class="meal-remove pull-right">
+    
+      <%= link_to 'Destroy', meal, confirm: 'Are you sure?', method: :delete, :class=>"btn btn-danger" %></td>
+     </div>
      </td>
      <td>
      	
@@ -43,7 +39,7 @@
    </tr>
     
  
-  <% end %>
+ 
   <% end %>
        
   
