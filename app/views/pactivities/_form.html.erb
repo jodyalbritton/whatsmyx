@@ -1,7 +1,14 @@
-<%= simple_form_for @pactivity,:input_html=> {:class=> "form form-horizontal"}, :validate => true do |f| %>
-    <div class="span5">
-    	<h1>New Activity</h1>
-    <div class="pactivity-form">
+<%= simple_form_for @pactivity,:input_html=> {:class=> "form-horizontal"}, :validate => true, :remote => true do |f| %>
+<div class="modal-header">
+  	<button class="close" data-dismiss="modal">×</button>
+  	<h2>Log an activity</h2>
+</div>
+
+<div class="modal-body">
+
+  
+    
+  
     <%= f.input :name, :placeholder => "Start Typing....",:hint => "Any activity eg; Weight Lifting, Laundry..", :as => :autocomplete,  :url => autocomplete_exercise_name_pactivities_path, :update_elements => {:id => "#pactivity_exercise_id", :category => "#pactivity_category"}, :label => "Activity" %>
      
     <%= f.input :exercise_id, :as => "hidden"%>
@@ -14,14 +21,14 @@
      <%= f.input :time, :as => "string", :label => "Start Time", :input_html => {:value => @pactivity.time.strftime("%r")} %>
     <% end %>
     <%= f.input :duration, :hint => "in minutes" %>
-    </div>
-    <div class="form-actions">
-    <%= f.button :submit, "Log Activity", :disable_with => "Please wait..."  %>
-    <%= link_to 'Back', pactivities_path %>
-    </div>
-    </div>
-<% end %>
 
+</div>
+<div class="form-actions">
+    <%= f.button :submit, "Log Activity", :disable_with => "Please wait...", :class=> "btn btn-primary"  %>
+    <button data-dismiss="modal" class="btn">Cancel</button>
+ </div>
+   
+<% end %>
 
 <script>
   

@@ -1,13 +1,13 @@
-<% if @stat.errors.any? -%>
+
   /*Hide the flash notice div*/
   $("#flash_notice").hide(300);
 
   /*Update the html of the div stat_errors with the new one*/
-  $("#stat_errors").html("<%= escape_javascript(render "stats/errors")%>");
+  $("#stat_errors").html("<%= escape_javascript(render "stats/errors") %>");
 
   /*Show the div stat_errors*/
   $("#stat_errors").show(300);
-<% else -%>
+
   /*Hide the div stat_errors*/
   $("#stat_errors").hide(300);
 
@@ -28,6 +28,4 @@
   
   $('#stats-modal').modal('hide');
   
-
-<% end -%>
 

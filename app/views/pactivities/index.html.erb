@@ -1,41 +1,31 @@
 <% content_for :sidebar do %>
-
-    <%= link_to 'New Activity', new_pactivity_path, :class=> "btn btn-primary"%>
+    <a data-toggle="modal"  href="#pactivity-modal" class="btn btn-primary">new</a>
+    
 <% end %>
 
 <% content_for :top_leftt do %>
-<h1>Physical Activities</h1>
+	<h1>Physical Activities</h1>
 <% end %>
+
+
 <table class="table table-striped">
+
   <tr>
-   
+
     <th>Physical Activity</th>
     <th>Duration</th>
     <th>Calories Burned</th>
     <th></th>
     <th></th>
-    <th></th>
- 
+
   </tr>
+<tbody id="pactivity-list">
+   <%= render @pactivities %>
+</tbody>
 
-<% @pactivities.each do |pactivity| %>
- 
 
- 
-
-  <tr>
-    
-
-    <td><%= pactivity.exercise.name%></td>
-    <td><%= pactivity.duration %></td>
-    <td>  <%= pactivity.burned %></td>
-    <td><%= link_to 'Show', pactivity %></td>
-    <td><%= link_to 'Edit', edit_pactivity_path(pactivity) %></td>
-    <td><%= link_to 'Destroy', pactivity, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
 </table>
-
-<br />
-
+   <div class="modal hide fade" id="pactivity-modal">
+       <%= render "pactivities/form"%>
+  </div>
 

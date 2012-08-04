@@ -5,8 +5,9 @@ class Stat < ActiveRecord::Base
   has_many :activities, :as => :target
   paginates_per 5
 
-  validates_presence_of :value, :date, :category_id
- 
+  validates_presence_of :value, :date, :category_id, :sunit
+  
+  validates_length_of :value, :maximum => 5, :too_long => "That number is too big"
  include Likeable
  def as_json(options={})
     super(:only => [:date,:value],
