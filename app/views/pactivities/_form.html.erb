@@ -16,26 +16,19 @@
     <%= f.input :date, :input_html => {:class=>"input-small"}%>
 
     <% if @pactivity.time == nil %>
-    <%= f.input :time, :as => "string", :label => "Start Time", :input_html => {:value => Time.now.strftime("%r") }%>
+    <%= f.input :time, :label => "Start Time", :input_html => {:class => "input-small", :value => Time.now.strftime("%r") }%>
+
     <% else %>
-     <%= f.input :time, :as => "string", :label => "Start Time", :input_html => {:value => @pactivity.time.strftime("%r")} %>
+     <%= f.input :time, :label => "Start Time", :input_html => {:class=> "input-small", :value => @pactivity.time.strftime("%r")} %>
     <% end %>
     <%= f.input :duration, :hint => "in minutes" %>
-
+     
 </div>
+
 <div class="form-actions">
     <%= f.button :submit, "Log Activity", :disable_with => "Please wait...", :class=> "btn btn-primary"  %>
     <button data-dismiss="modal" class="btn">Cancel</button>
  </div>
-   
+
 <% end %>
 
-<script>
-  
-  $("#pactivity_time").AnyTime_picker(
-    { format: "%r", 
-      labelTitle: "Start Time",
-      labelHour: "Hours",
-    
-      labelMinute: "Minutes" } );
-</script>

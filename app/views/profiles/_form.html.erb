@@ -1,19 +1,10 @@
-    <%= simple_form_for ([current_user, @profile]) do |p| %>
+    <%= simple_form_for ([current_user, @profile]), :html => { :class => 'form-vertical' } do |p| %>
     <div class="row-fluid">
     <div class="span10">
     
-    <%= p.input :dob, :label => "Date Of Birth" %>
-    <%= p.input :gender, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :default => "Male" %>
-    <%= p.input :about , :input_html => {:class => "input-about"}%>
-  
-    <div class="well">
-    	<h2> Body </h2>
-    	<%= p.input :weight, :input_html => {:class => "span1"} %>
-    	<%= p.input :height, :collection => height_options, :input_html => {:class => "span1"} %>
-    	<%= p.input :waist_circ, :input_html => {:class => "span1"} %>
-    </div>
-    
-    <%= p.button :submit %>
+    <%= p.input :dob, :label => "Date Of Birth", :input_html => {:class=> "input-small"} %>
+    <%= p.input :gender, :input_html => {:class => "input-small"}, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :default => "Male" %>
+    <%= p.input :about, :input_html => { :class => "input-xlarge", :style => "height: 100px;"}%>
     </div>
     <div class="span2">
     	
@@ -21,9 +12,55 @@
     
     <%= p.file_field :avatar %>
   
-    </div>
-    </div>
     
     </div>
+    </div>
+    <div class="well">
+    <div class="row-fluid">
+    <div class="span6">
+    	<h2>Starting Measurements</h2>
+    	<%= p.input :weight, :input_html => {:class => "input-small"} %>
+    	<%= p.input :height, :collection => height_options, :input_html => {:class => "input-small"} %>
+    	<%= p.input :waist_circ, :label => "Waist Circumference", :input_html => {:class => "input-small"} %>
+    </div>
+    <div class="span6">
+    	<p>
+    		These are your starting measurements, they are used for various calculations on the site. 
+    		Your starting measurements are only visible to you.
+    		You can always add new measuresments through the 
+    		<%= link_to "Stats Page",stats_path %>.
+    	</p>
+    	<dl>
+    	    <dt>
+    			Weight
+    			<dd>
+    				Your current weight in pounds.
+    			</dd>
+    		</dt>
+    		<dt>
+    			Height
+    			<dd>
+    				Your current height.
+    			</dd>
+    		</dt>
+    		<dt>
+    			Waist Circumference
+    			<dd>
+    				Your current waist measurement at the navel in inches.
+    			</dd>
+    			<dd>
+    				If you do not have a tape measure, use a length of string, and measure that with a ruler.
+    			</dd>
+    		</dt>
+    	</dl>
+    </div>
+    </div>
+    </div>
+    <div class="form-actions">
+    <%= p.button :submit %>
+    </div>
+  
+ 
+ 
     <% end %>
     

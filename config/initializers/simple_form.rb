@@ -97,16 +97,14 @@ SimpleForm.setup do |config|
   # Default class for buttons
   config.button_class = 'btn'
 
-  # Method used to tidy up errors. Specify any Rails Array method.
-  # :first lists the first message for each field.
-  # Use :to_sentence to list all errors for each field.
+  # Method used to tidy up errors.
   # config.error_method = :first
 
   # Default tag used for error notification helper.
   config.error_notification_tag = :div
 
   # CSS class to add for error notification helper.
-  config.error_notification_class = 'alert alert-error'
+  # config.error_notification_class = 'alert alert-error'
 
   # ID to add for error notification helper.
   # config.error_notification_id = nil
@@ -138,8 +136,8 @@ SimpleForm.setup do |config|
   config.label_class = 'control-label'
 
   # You can define the class to use on all forms. Default is simple_form.
-  # config.form_class = :simple_form
-  config.form_class = 'simple_form'
+  #config.form_class = :simple_form
+
   # You can define which elements should obtain additional classes
   # config.generate_additional_classes_for = [:wrapper, :label, :input]
 
@@ -165,7 +163,7 @@ SimpleForm.setup do |config|
   # config.country_priority = nil
 
   # Default size for text inputs.
-  # config.default_input_size = 50
+  config.default_input_size = 25
 
   # When false, do not use translations for labels.
   # config.translate_labels = true
@@ -175,5 +173,4 @@ SimpleForm.setup do |config|
 
   # Cache SimpleForm inputs discovery
   # config.cache_discovery = !Rails.env.development?
-  require 'simple_form_extensions'
 end

@@ -3,7 +3,7 @@ class Meal < ActiveRecord::Base
   belongs_to :mcategory
   has_many :ingredients, dependent: :destroy
   has_many :foods, :through => :ingredients
-  has_many :activities, :as => :target
+  has_many :activities, :as => :target, dependent: :destroy
   accepts_nested_attributes_for :ingredients
   
   

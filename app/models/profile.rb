@@ -6,6 +6,8 @@ class Profile < ActiveRecord::Base
   
   
   mount_uploader :avatar, AvatarUploader
+  
+  belongs_to :user
  def crop_avatar
     avatar.recreate_versions! if crop_x.present?
  end
@@ -18,18 +20,32 @@ class Profile < ActiveRecord::Base
  end
  
  def weight_kg
-   self.weight*0.45359237
+   cur_weight = self.user.stats.where(:stype => "Weight")
+   if cur_weight.any?
+    weight_kg = cur_weight.last.value * 0.45359237
+   else 
+    self.weight*0.45359237
+   end
  end
  
+ def cur_waist_circ
+   cur_waist = self.user.stats.where(:stype => "Waist Circumference")
+   if cur_waist.any? 
+     cur_waist_circ = cur_waist.last.value
+   else 
+     cur_waist_circ = self.waist_circ
+   end
+   
+ end
  def estimate_bmi
    
-  estimate_bmi = (self.weight / (self.height * self.height)) * 703
+  estimate_bmi = (self.weight_kg / (self.height * self.height)) * 703
    
  end
  
  def estimate_bf
     if self.gender == "male"
-    estimate_bf = (((((self.waist_circ *  4.15)-(self.weight *  1.082)) + 94.42))/ self.weight) * 100
+    estimate_bf = (((((self.cur_waist_circ *  4.15)-(self.weight *  1.082)) + 94.42))/ self.weight) * 100
     
     elsif self.gender == "female"
     res2 = (self.weight * 0.0732) + 8.987
@@ -54,7 +70,7 @@ class Profile < ActiveRecord::Base
     if self.gender == "male"
     mbr = (13.75* self.weight_kg) + (5*self.height_cm) - (6.76* self.age) + 66
     elsif self.gender == "female"
-    mbr = (9.56*(self.weight/0.45359237)) + (1.85*self.height) - (4.68* age) + 655
+    mbr = (9.56*(self.weight_kg/0.45359237)) + (1.85*self.height) - (4.68* age) + 655
     else 
     mbr = 0
     end
