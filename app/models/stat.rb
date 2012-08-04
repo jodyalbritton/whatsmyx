@@ -5,7 +5,7 @@ class Stat < ActiveRecord::Base
   has_many :activities, :as => :target
   paginates_per 5
 
-  validates_presence_of :value, :date
+  validates_presence_of :value, :date, :category_id
  
  include Likeable
  def as_json(options={})

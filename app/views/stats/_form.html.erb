@@ -3,7 +3,13 @@
   	<h2>Track your...</h2>
 </div>
 <div class="modal-body">
-<%= simple_form_for @stat, :remote => true do |f| %>
+	 <% @stat.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+<div id="stat_errors" style="display: none;">
+	<%= render "stats/errors" %>
+</div>
+<%= simple_form_for @stat, :validate => true, :remote => true do |f| %>
       <%= f.input :stype ,:label => "Stat Name (Weight, Blood Glucose, etc)",:placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_stats_path, :update_elements => {:id => "#stat_category_id", :sunit => "#stat_sunit"} %>
 	 
 	  <%= f.input :value %>

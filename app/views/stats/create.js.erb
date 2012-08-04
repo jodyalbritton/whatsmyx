@@ -3,7 +3,7 @@
   $("#flash_notice").hide(300);
 
   /*Update the html of the div stat_errors with the new one*/
-  $("#stat_errors").html("<%= escape_javascript(error_messages_for(@stat))%>");
+  $("#stat_errors").html("<%= escape_javascript(render "stats/errors")%>");
 
   /*Show the div stat_errors*/
   $("#stat_errors").show(300);

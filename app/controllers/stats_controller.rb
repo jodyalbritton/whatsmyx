@@ -72,7 +72,11 @@ class StatsController < ApplicationController
       flash[:notice] = "Successfully created stat."
        @activities = Activity.order("updated_at DESC")
        @stats = @user.stats.order("date DESC").page(params[:page])
+       
+    else 
+      flash[:notice] = "Opps."
     end
+    
   end
 
   # PUT /stats/1

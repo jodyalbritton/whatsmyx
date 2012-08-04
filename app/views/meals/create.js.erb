@@ -21,13 +21,15 @@
   $(":input:not(input[type=submit])").val("");
 
   /*Replace the html of the div note_lists with the updated new one*/
-  $('#meal-form').toggle();
+
+
   $("#meal-summary").html("<%= escape_javascript( render @meals ) %>");
   $("#sidebar-summary").html("<%= escape_javascript( render "nutrition/nut_facts" ) %>");
   $("#sidebar-chart").html("<%= escape_javascript( render "nutrition/pie_chart" ) %>");
   
- 
   
+  
+   $('#meal-form').toggle();
   	
   
  
