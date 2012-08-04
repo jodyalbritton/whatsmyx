@@ -4,5 +4,6 @@
   <%= f.input :category_id, :as => "hidden" %>
   <%= f.input :modifier, :as => "select", :collection =>  ([['Choose One', ''], ['Gain', '+'], ['Lose', '-'], ['Monitor', '']]), :default => "Choose One" %>
   <%= f.input :sunit, :as => "hidden" %>
-  <%= f.button :wrapped, :cancel => goals_path %>
+  <%= f.button :submit, :class=> "btn btn-primary"%>
+  <%= link_to "Cancel", goals_path, :class=> "btn"%>
 <% end %>

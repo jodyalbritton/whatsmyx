@@ -1,7 +1,15 @@
 <% content_for :sidebar do %>
 	<%= render "home/menu" %>
 <% end %>
-
+   <% content_for :top_left do%>
+   
+                
+       
+      
+             	 
+          
+ 
+   <% end %>
    <% content_for :top do %>
    <div id="posts_form">
         	<% @parent = '0'%>
@@ -15,7 +23,7 @@
           
         </div>
         <div id="paginator" class="paginator">
-        <%= link_to_next_page @activities, 'Next Page', :remote => true%>
+        <%= link_to_next_page @activities, 'More Items', :remote => true%>
         </div>
 
  
