@@ -6,7 +6,7 @@ class PactivitiesController < ApplicationController
     @user = User.find(current_user)
     @pactivity = current_user.pactivities.build(params[:pactivity])
    
-    @pactivities = @user.pactivities
+    @pactivities = @user.pactivities.group_by { |p| p.date }
     
     respond_to do |format|
       format.html # index.html.erb
@@ -50,7 +50,7 @@ class PactivitiesController < ApplicationController
    if @pactivity.save
       flash[:notice] = "Successfully created activity."
        @activities = Activity.order("updated_at DESC")
-       @pactivities = @user.pactivities.order("date DESC").page(params[:page])
+       @pactivities = @user.pactivities.group_by { |p| p.date }
    end
    
   end

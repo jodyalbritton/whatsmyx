@@ -24,7 +24,7 @@
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
   
   /*Replace the html of the div pactivity_lists with the updated new one*/
-  $("#pactivities_list").html("<%= escape_javascript( render @pactivities ) %>");
+  $("#pactivity-list").html("<%= escape_javascript( render "pactivities/pactivity" ) %>");
   
   $('#pactivity-modal').modal('hide');
   <% end %>
