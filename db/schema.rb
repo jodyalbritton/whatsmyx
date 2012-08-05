@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120712061325) do
+ActiveRecord::Schema.define(:version => 20120805030058) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -64,16 +64,16 @@ ActiveRecord::Schema.define(:version => 20120712061325) do
   end
 
   create_table "activities", :force => true do |t|
-    t.integer  "user_id",       :null => false
-    t.integer  "activity_type", :null => false
-    t.integer  "target_id",     :null => false
-    t.string   "target_type",   :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "user_id",                      :null => false
+    t.integer  "activity_type",                :null => false
+    t.integer  "target_id",                    :null => false
+    t.string   "target_type",                  :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.integer  "actor_id"
     t.integer  "parent_id"
     t.string   "verb"
-    t.integer  "scope"
+    t.integer  "scope",         :default => 0, :null => false
   end
 
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
@@ -119,6 +119,12 @@ ActiveRecord::Schema.define(:version => 20120712061325) do
     t.integer  "activity_object_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "conversations", :force => true do |t|
+    t.string   "subject",    :default => ""
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "dgoals", :force => true do |t|
@@ -182,57 +188,57 @@ ActiveRecord::Schema.define(:version => 20120712061325) do
   add_index "food_dets", ["ndb"], :name => "INDEX_FOOD_DETS_ON_NDB"
 
   create_table "foods", :force => true do |t|
-    t.integer "NDB_No"
-    t.string  "shrt_desc",     :limit => 60
-    t.decimal "water",                        :precision => 5, :scale => 2, :default => 0.0, :null => false
+    t.integer "ndb"
+    t.string  "short_desc",    :limit => 60
+    t.float   "water",                                                      :default => 0.0, :null => false
     t.float   "calories",                                                   :default => 0.0, :null => false
-    t.float   "protein",       :limit => 4,                                 :default => 0.0, :null => false
-    t.float   "lipid_total",   :limit => 5,                                 :default => 0.0, :null => false
-    t.decimal "ash",                          :precision => 4, :scale => 2
-    t.float   "carbohydrates", :limit => 5,                                 :default => 0.0, :null => false
-    t.float   "fiber",         :limit => 3,                                 :default => 0.0, :null => false
-    t.float   "sugar_total",   :limit => 4,                                 :default => 0.0, :null => false
-    t.integer "calcium"
-    t.decimal "iron",                         :precision => 4, :scale => 2
-    t.integer "magnesium"
-    t.integer "phosphorus"
+    t.float   "protein",                                                    :default => 0.0, :null => false
+    t.float   "lipid_total",                                                :default => 0.0, :null => false
+    t.float   "ash",                                                        :default => 0.0, :null => false
+    t.float   "carbohydrates",                                              :default => 0.0, :null => false
+    t.float   "fiber",                                                      :default => 0.0, :null => false
+    t.float   "sugar_total",                                                :default => 0.0, :null => false
+    t.float   "calcium",                                                    :default => 0.0, :null => false
+    t.float   "iron",                                                       :default => 0.0, :null => false
+    t.float   "magnesium",                                                  :default => 0.0, :null => false
+    t.float   "phosphorus",                                                 :default => 0.0, :null => false
     t.float   "potassium",                                                  :default => 0.0, :null => false
     t.float   "sodium",                                                     :default => 0.0, :null => false
-    t.decimal "zinc",                         :precision => 4, :scale => 2
-    t.string  "copper",        :limit => 9
-    t.decimal "manganese",                    :precision => 6, :scale => 3
-    t.string  "selenium",      :limit => 66
-    t.string  "vit_c",         :limit => 7
-    t.decimal "thiamin",                      :precision => 7, :scale => 3
-    t.string  "riboflavin",    :limit => 47
-    t.string  "niacin",        :limit => 7
-    t.string  "panto_acid",    :limit => 47
-    t.string  "vit_b6",        :limit => 74
-    t.string  "folate_total",  :limit => 62
-    t.string  "folic_acid",    :limit => 49
-    t.string  "food_folate",   :limit => 53
+    t.decimal "zinc",                         :precision => 4, :scale => 2, :default => 0.0, :null => false
+    t.string  "copper",        :limit => 9,                                 :default => "0", :null => false
+    t.decimal "manganese",                    :precision => 6, :scale => 3, :default => 0.0, :null => false
+    t.string  "selenium",      :limit => 66,                                :default => "0", :null => false
+    t.float   "vitamin_c",                                                  :default => 0.0, :null => false
+    t.decimal "thiamin",                      :precision => 7, :scale => 3, :default => 0.0, :null => false
+    t.string  "riboflavin",    :limit => 47,                                :default => "0", :null => false
+    t.string  "niacin",        :limit => 7,                                 :default => "0", :null => false
+    t.string  "panto_acid",    :limit => 53,                                :default => "0", :null => false
+    t.string  "vitamin_b6",    :limit => 74,                                :default => "0", :null => false
+    t.string  "folate_total",  :limit => 62,                                :default => "0", :null => false
+    t.string  "folic_acid",    :limit => 49,                                :default => "0", :null => false
+    t.string  "food_folate",   :limit => 53,                                :default => "0", :null => false
     t.string  "folate_dfe",    :limit => 4
     t.string  "choline_total", :limit => 43
-    t.string  "vit_b12",       :limit => 39
-    t.decimal "vit_a_iu",                     :precision => 8, :scale => 3
-    t.decimal "vit_a_rae",                    :precision => 8, :scale => 3
+    t.string  "vitamin_b12",   :limit => 39,                                :default => "0"
+    t.decimal "vitamin_a",                    :precision => 8, :scale => 3
+    t.decimal "vitamin_a_rae",                :precision => 8, :scale => 3
     t.string  "retinol",       :limit => 48
     t.string  "alpha_carot",   :limit => 26
     t.string  "beta_carot",    :limit => 46
     t.string  "beta_crypt",    :limit => 77
     t.string  "lycopene",      :limit => 123
     t.string  "lut_zea",       :limit => 66
-    t.string  "vit_e",         :limit => 120
-    t.string  "vit_d",         :limit => 82
-    t.string  "vivit_d",       :limit => 113
-    t.string  "vit_k",         :limit => 100
+    t.string  "vitamin_e",     :limit => 120
+    t.string  "vitamin_d_ug",  :limit => 82
+    t.string  "vitamin_d_iu",  :limit => 113
+    t.string  "vitamin_k_ug",  :limit => 100
     t.float   "fa_sat",                                                     :default => 0.0, :null => false
-    t.string  "fa_mono",       :limit => 63
-    t.string  "fa_poly",       :limit => 91
+    t.float   "fa_mono",                                                    :default => 0.0, :null => false
+    t.float   "fa_poly",                                                    :default => 0.0, :null => false
     t.float   "cholesterol",                                                :default => 0.0, :null => false
-    t.string  "gmwt_1",        :limit => 118
-    t.string  "gmwt_desc1",    :limit => 104
-    t.string  "gmwt_2",        :limit => 103
+    t.integer "gmwt_1",                                                     :default => 0,   :null => false
+    t.string  "gmwt_desc",     :limit => 104
+    t.integer "gmwt_2",                                                     :default => 0,   :null => false
     t.string  "gmwt_desc2",    :limit => 131
     t.string  "refuse_pct",    :limit => 99
     t.string  "name",          :limit => 130
@@ -405,6 +411,7 @@ ActiveRecord::Schema.define(:version => 20120712061325) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "avatar"
   end
 
   create_table "ingredients", :force => true do |t|
@@ -477,6 +484,24 @@ ActiveRecord::Schema.define(:version => 20120712061325) do
   end
 
   add_index "mposts", ["user_id"], :name => "index_mposts_on_user_id"
+
+  create_table "notifications", :force => true do |t|
+    t.string   "type"
+    t.text     "body"
+    t.string   "subject",              :default => ""
+    t.integer  "sender_id"
+    t.string   "sender_type"
+    t.integer  "conversation_id"
+    t.boolean  "draft",                :default => false
+    t.datetime "updated_at",                              :null => false
+    t.datetime "created_at",                              :null => false
+    t.integer  "notified_object_id"
+    t.string   "notified_object_type"
+    t.string   "notification_code"
+    t.string   "attachment"
+  end
+
+  add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
 
   create_table "nutr_defs", :force => true do |t|
     t.string  "nutr_no",  :limit => 3,  :null => false
@@ -572,6 +597,20 @@ ActiveRecord::Schema.define(:version => 20120712061325) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "receipts", :force => true do |t|
+    t.integer  "receiver_id"
+    t.string   "receiver_type"
+    t.integer  "notification_id",                                  :null => false
+    t.boolean  "read",                          :default => false
+    t.boolean  "trashed",                       :default => false
+    t.boolean  "deleted",                       :default => false
+    t.string   "mailbox_type",    :limit => 25
+    t.datetime "created_at",                                       :null => false
+    t.datetime "updated_at",                                       :null => false
+  end
+
+  add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
 
   create_table "relationships", :force => true do |t|
     t.integer  "user_id"

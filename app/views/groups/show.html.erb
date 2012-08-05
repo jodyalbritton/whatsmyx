@@ -4,38 +4,30 @@
 
 <div id="group-about">
 	
-	<h2>
-		About
-	</h2>
+	<h3>About</h3>
 	<%= @group.description %>
     <% if current_user == @group.user %>
-	<%= link_to 'Edit', edit_group_path(@group) %> |
+	<%= link_to 'Edit', edit_group_path(@group) %> 
 	<% end %>
 
 </div>
 
 <div id="group-owner">	
-	<h2>
-		Owner
-	</h2>
+	<h3>Owner</h3>
   <%= @group.user.username %>
 </p>
 
 </div>
 
 <div id="group-privacy">
-	<h2>
-		Group Privacy
-	</h2>
+	<h3>Group Privacy</h3>
   <%= @group.privacy_level %>
 </p>
 
 </div>
 
 <div id="group-active">
-  	<h2>
-		Group Status
-	</h2>
+  	<h3>Group Status</h3>
   <% if @group.active == true %>
   Active
   <% else %>
@@ -45,9 +37,7 @@
 </div>
 
 <div id="group-members">
-		<h2>
-		Group Members
-	</h2>
+		<h3>Group Members</h3>
       
      
      <% @members.each do |x| %> 
@@ -63,10 +53,10 @@
 <% content_for :top_left do %>
   <div id="profile-name">
   	           <div class="row-fluid">
-  	           	<div class="span2">
+  	           	<div class="span4">
   	           		<%= image_tag @group.avatar.url(:thumb), :class => "group-pic"%>
   	            </div>
-  	            <div class="span3">
+  	            <div class="span8">
                <h3><%= @group.name %></h3>
 	            <% if @current_memberships == 0 %>
                 <% if user_signed_in? %>
