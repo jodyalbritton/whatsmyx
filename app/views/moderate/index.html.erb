@@ -7,6 +7,7 @@
 		    <td>Email</td>
 		    <td>Confirmation Sent</td>
 		    <td>Confirmed On</td>
+		    <td>Last Sign In</td>
 	   </tr>
 	
 <% @users.each do |user| %>
@@ -15,6 +16,16 @@
 			<td><%= link_to user.email, invite_user_path(user) %></td>
 			<td><%= user.confirmation_sent_at %></td>
 			<td><%= user.confirmed_at %></td>
+			<td><%= user.last_sign_in_at %></td>
+		</tr>
+<% end %>
+<% @current_users.each do |user| %>
+		<tr>
+			<td><%= user.username %></td>
+			<td><%= link_to user.email, invite_user_path(user) %></td>
+			<td><%= user.confirmation_sent_at %></td>
+			<td><%= user.confirmed_at %></td>
+			<td><%= user.last_sign_in_at %></td>
 		</tr>
 <% end %>
 </table>
