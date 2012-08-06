@@ -1,20 +1,32 @@
        <div id="header-date"> 
 	   <div class="span2">
-	       <%= link_to  "<<", {:date => ((@date -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	       <%= link_to  "<<", {:date => ((@somedate -1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
 	     </div>
 	   <div class="span8">
-	    	<h2><%=h @date.strftime("%A %B %d %Y") %><button id="ButtonCreationDemoButton" class="btn btn-primary">
+	      <div class="date-text">
+	      <h3><%= @somedate.strftime("%D") %></h3>
+	      </div>
+	      <div>
+	       <button id="ButtonCreationDemoButton" class="btn btn-primary">
             <img src="assets/calendar.png" alt="[calendar icon] "/>
           </button></h2>
+	      </div>
           <div id="date-form-cont" style="display: none;">
+          	
 	       <%= simple_form_for("", :method => "get" ) do |f| %>
-                <%= f.input :date %>
+	            <% if params[:date]%>
+                <%= f.input :date, :as => 'date',:default => @somedate, :input_html => { :class=>"input-small"}%>
+                <% else %>
+                <%= f.input :date, :as => 'date',:default => @somedate, :input_html => { :class=>"input-small"}%>
+                <% end %>
+             
                 <%= f.button :submit, "GO"%>
             <% end %>
 	       </div>
+	        
 	   </div>
 	   <div class="span2">
-	      <%= link_to  ">>", {:date => ((@date +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
+	      <%= link_to  ">>", {:date => ((@somedate +1).strftime("%Y-%m-%d"))}, :class => "btn btn-primary" %>
 	   </div>
 	   </div>
 	<script>
@@ -24,12 +36,3 @@
         
       } );
     </script>   
-<script>
-  
-  $("#_date").AnyTime_picker(
-    { format: "%Y-%m-%d", 
-      labelTitle: "Choose A Date",
-      labelHour: "Hours",
-    
-      labelMinute: "Minutes" } );
-</script>

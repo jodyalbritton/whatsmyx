@@ -15,12 +15,12 @@
      <% end %>
        <div id="ingredient">
        	<div id="ingredient_from_list", class="ingredient_from_list">
-         <%= link_to_add_association 'add ingredient', f, :ingredients, :class=>"btn btn-primary" %>
+         <%= link_to_add_association '+ Ingredient', f, :ingredients, :class=>"btn btn-mini" %>
         </div>
        </div>
     <div class="form-actions">
-    <%= f.button :submit, :disable_with => "Please wait..." %>
-    <a href="javascript:toggleDiv('meal-form');javascript:toggleDiv('header-date');">Cancel</a>
+    <%= f.button :submit, :disable_with => "Please wait...", :class=> "btn btn-primary"%>
+    <a href="javascript:toggleDiv('meal-form');javascript:toggleDiv('header-date');", class="btn">Cancel</a>
     </div>
   <% end %>
   </div>
