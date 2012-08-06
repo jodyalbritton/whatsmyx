@@ -19,9 +19,10 @@
     <div class="row-fluid">
     <div class="span6">
     	<h2>Starting Measurements</h2>
-    	<%= p.input :weight, :input_html => {:class => "input-small"} %>
-    	<%= p.input :height, :default => @profile.height,:collection => height_options, :input_html => {:class => "input-small"} %>
-    	<%= p.input :waist_circ, :label => "Waist Circumference", :input_html => {:class => "input-small"} %>
+    	<%= p.input :weight,:hint => "pounds", :input_html => {:class => "input-small"} %>
+    	<%= p.input :height, :hint => "inches", :placeholder => "50", :input_html => {:class => "input-small"} %>
+    	
+    	<%= p.input :waist_circ, :hint => "inches", :label => "Waist Circumference", :input_html => {:class => "input-small"} %>
     </div>
     <div class="span6">
     	<p>
