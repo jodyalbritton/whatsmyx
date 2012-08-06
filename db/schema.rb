@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805030058) do
+ActiveRecord::Schema.define(:version => 20120806095226) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -476,32 +476,15 @@ ActiveRecord::Schema.define(:version => 20120805030058) do
     t.datetime "updated_at",                       :null => false
   end
 
-  create_table "mposts", :force => true do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "mposts", ["user_id"], :name => "index_mposts_on_user_id"
-
   create_table "notifications", :force => true do |t|
     t.string   "type"
-    t.text     "body"
-    t.string   "subject",              :default => ""
     t.integer  "sender_id"
     t.string   "sender_type"
-    t.integer  "conversation_id"
-    t.boolean  "draft",                :default => false
-    t.datetime "updated_at",                              :null => false
-    t.datetime "created_at",                              :null => false
-    t.integer  "notified_object_id"
-    t.string   "notified_object_type"
-    t.string   "notification_code"
-    t.string   "attachment"
+    t.integer  "activity_id"
+    t.string   "activity_type"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
-
-  add_index "notifications", ["conversation_id"], :name => "index_notifications_on_conversation_id"
 
   create_table "nutr_defs", :force => true do |t|
     t.string  "nutr_no",  :limit => 3,  :null => false
@@ -598,20 +581,6 @@ ActiveRecord::Schema.define(:version => 20120805030058) do
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
 
-  create_table "receipts", :force => true do |t|
-    t.integer  "receiver_id"
-    t.string   "receiver_type"
-    t.integer  "notification_id",                                  :null => false
-    t.boolean  "read",                          :default => false
-    t.boolean  "trashed",                       :default => false
-    t.boolean  "deleted",                       :default => false
-    t.string   "mailbox_type",    :limit => 25
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
-  end
-
-  add_index "receipts", ["notification_id"], :name => "index_receipts_on_notification_id"
-
   create_table "relationships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "circle_id"
@@ -678,16 +647,6 @@ ActiveRecord::Schema.define(:version => 20120805030058) do
     t.integer  "user_id"
     t.integer  "category_id", :null => false
   end
-
-  create_table "ties", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "circle_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "ties", ["circle_id"], :name => "index_ties_on_circle_id"
-  add_index "ties", ["user_id"], :name => "index_ties_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false
