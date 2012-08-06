@@ -1,6 +1,7 @@
 module ProfilesHelper
   
-  def height_options
+  
+  def height_options 
     height = Hash.new
  
     for n in 48..84
