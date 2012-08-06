@@ -1,9 +1,20 @@
 <%= simple_form_for @goal,  :validate => true, :html => { :class => 'form-horizontal' }, :remote => true do |f| %>
+
+<div class="modal-header">
+  <button class="close" data-dismiss="modal">×</button>
+  <h3>Set a goal</h3>
+</div>
+<div class="modal-body">
   <%= f.input :name, :placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_goals_path, :update_elements => {:id => "#goal_category_id", :sunit => "#goal_sunit"}%>
   <%= f.input :value %>
   <%= f.input :category_id, :as => "hidden" %>
   <%= f.input :modifier, :as => "select", :collection =>  ([['Choose One', ''], ['Gain', '+'], ['Lose', '-'], ['Monitor', '']]), :default => "Choose One" %>
   <%= f.input :sunit, :as => "hidden" %>
+
+</div>
+<div class="modal-footer"> 
   <%= f.button :submit, :class=> "btn btn-primary"%>
-  <%= link_to "Cancel", goals_path, :class=> "btn"%>
+  <button class="btn" data-dismiss="modal">Cancel</button>
+
+</div>
 <% end %>

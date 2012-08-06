@@ -1,3 +1,4 @@
+      <% @goals.each do |goal|%>
        <tr>
         
         <td><%= goal.category.name %></td>
@@ -15,3 +16,4 @@
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
+      <% end %>

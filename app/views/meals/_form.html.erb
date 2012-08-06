@@ -13,12 +13,16 @@
      <%= f.simple_fields_for :ingredients do |f| %>
      	<%= render 'meals/ingredient_fields', :f => f%>
      <% end %>
-       <div id="ingredient">
+       <% ingcount = 0%>
+       <div class="modal-header">
+        Add Ingredients:
+       </div>
+       <div id="ingredient" class="modal-body">
        	<div id="ingredient_from_list", class="ingredient_from_list">
          <%= link_to_add_association '+ Ingredient', f, :ingredients, :class=>"btn btn-mini" %>
         </div>
        </div>
-    <div class="form-actions">
+    <div class="modal-footer">
     <%= f.button :submit, :disable_with => "Please wait...", :class=> "btn btn-primary"%>
     <a href="javascript:toggleDiv('meal-form');javascript:toggleDiv('header-date');", class="btn">Cancel</a>
     </div>

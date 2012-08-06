@@ -23,7 +23,7 @@
   $("#goal_text").val("");
 
   /*Replace the html of the div goals with the updated new one*/
-  $("#goals").html("<%= escape_javascript( render @goals ) %>");
+  $("#goals").html("<%= escape_javascript( render "goals/goal" ) %>");
   
   
   

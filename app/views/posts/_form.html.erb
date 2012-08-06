@@ -16,24 +16,22 @@
   
   
 
- <div class="form-actions" id="form-action-main">
+ <div class="modal-footer" id="form-action-main">
  	
-       <div class="pull-right">
+  
        <% if @parent == '0' %>
  
      	
         <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => false %><%= f.submit "Post", :class => "btn btn-primary" %>
-        <a href="javascript:hideDiv('post-form-small'); javascript:hideDiv('post-form-cont');">Cancel</a>
+        <a href="javascript:hideDiv('post-form-small'); javascript:hideDiv('post-form-cont');" class="btn">Cancel</a>
          <% else %>
 
 
-      <%= f.submit "Post", :class => "btn btn-primary" %><a href="javascript:hideDiv('post-form-small'); javascript:hideDiv('post-form-cont');"> Cancel</a>
+        <%= f.submit "Post", :class => "btn btn-primary" %><a href="javascript:hideDiv('post-form-small'); javascript:hideDiv('post-form-cont');" class="btn"> Cancel</a>
       <% end %>
-      </div>
-         <div class="post-helper">
- 	    About Posting	
- 	   </div>
-      </div>
+ 
+        
+     
    
    </div>
 

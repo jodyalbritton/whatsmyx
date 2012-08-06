@@ -8,15 +8,17 @@
   <h2><%=t '.title', :default => model_class.model_name.human.pluralize %></h2>
 
 <% end %>
-
-<div id="goal-form">
+<% content_for :top_right do%>
+<a class="btn btn-primary" data-toggle="modal" href="#goal-modal">New Goal</a>
+<% end %>
+<div id="goal-modal" class="modal hide fade">
 	
 	<%= render "goals/form" %>
 </div>
 
 
 <table class="table table-striped">
-  <thead>
+
     <tr>
     
       <th><%= model_class.human_attribute_name(:category_id) %></th>
@@ -25,10 +27,10 @@
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
-  </thead>
+  
   <tbody id="goals">
   
-    <%= render @goals %>
+    <%= render "goals/goal" %>
       
    </div>
   </tbody>
