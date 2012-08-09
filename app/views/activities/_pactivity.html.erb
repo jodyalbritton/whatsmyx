@@ -3,7 +3,7 @@
        <div id="activity-sidebar" class="span2 activity-sidebar">
        	     <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
              <h3><%= link_to activity.user.username, activity.user %></h3>
-             <%= time_ago_in_words(activity.created_at) %> ago.
+             <i class="icon-time"></i> <%= time_ago_in_words(activity.created_at) %>
        </div>
               <div id="stat-body" class="span8 activity-body">
              <div class="pactivity-content">
@@ -28,7 +28,7 @@
     </div>
      <div class="span2 activity-logo" >
      	<div class="activity-logo visible-desktop">
-         <i class="icon-time"></i> 
+         <i class="icon-bolt"></i> 
         </div>
     </div>
 </div>
