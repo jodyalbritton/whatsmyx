@@ -1,4 +1,4 @@
- <% @parent = @group.id %>
+<% @parent = @group.id %>
 <% content_for :sidebar do %>
 <div id="groups-sidebar" class="menu">
 
@@ -52,66 +52,46 @@
 <% end %>
 <% content_for :top_left do %>
   <div id="profile-name">
-  	           <div class="row-fluid">
-  	           	<div class="span4">
-  	           		<%= image_tag @group.avatar.url(:thumb), :class => "group-pic"%>
-  	            </div>
-  	            <div class="span8">
-               <h3><%= @group.name %></h3>
-	            <% if @current_memberships == 0 %>
-                <% if user_signed_in? %>
-                <div id="join_group">
-              <%= simple_form_for ([@group, @new_membership]) do |f| %>
-              <%= f.button :submit,  'Join Group', :class => 'btn btn-primary' %>
-              <%= f.input :user_id, :as=> 'hidden', :input_html => {:value => current_user}%>
-
-              <% end %>
+  	  <div class="row-fluid">
+  	      <div class="span4">
+  	       <%= image_tag @group.avatar.url(:thumb), :class => "group-pic"%>
+  	      </div>
+  	      <div class="span8">
+          <h3><%= @group.name %></h3>
+	      <% if @current_memberships == 0 %>
+          <% if user_signed_in? %>
+          <div id="join_group">
+           <%= simple_form_for ([@group, @new_membership]) do |f| %>
+           <%= f.button :submit,  'Join Group', :class => 'btn btn-primary' %>
+           <%= f.input :user_id, :as=> 'hidden', :input_html => {:value => current_user}%>
+           <% end %>
                 
-                </div>
-                <% end %> 
-                <% else %>
-                 <div id="leave_group">
-           
-                 <% @membership.each do |membership| %>
-                 <%= link_to "Leave Group",  ([@group, membership]), confirm: 'Are you sure?', :class=>"btn btn-danger", method: :delete %>
-                 <% end %>
-                 </div>
-                <% end %>
+          </div>
+          <% end %> 
+          <% else %>
+          <div id="leave_group">
+           <% @membership.each do |membership| %>
+           <%= link_to "Leave Group",  ([@group, membership]), confirm: 'Are you sure?', :class=>"btn btn-danger", method: :delete %>
+           <% end %>
+          </div>
+        <% end %>
         </div>
-        </div>
-        </div>
-<% end %>
-<% content_for :top_right do %>
-  <div  id="group-header">
-   
-      
-        <div id="group-merit" class="pull-right visible-desktop">
-        
-         <ul>
-        
-          <li>
-            
-              <strong> <%= @group.memberships.count %> </strong>
-              Members
-            
-
-          </li>
- </div>
+      </div>
   </div>
- <% end %>
+<% end %>
+ <% content_for :top_right do %>
+  <div id="profile-merit">
+  <strong> <%= @group.memberships.count %> </strong> Members
+  </div>
+<% end %>
 <% content_for :top do %>
-<% unless @current_memberships == 0 %>
+<% if @current_memberships %>
 <div id="posts_form"><%= render :partial => 'posts/form' %></div>
-
-
+<% end %>
 <% end %>
 
 
-
-<% end %>
-
-
-<div id="groups-body">
+<div class="row-fluid" id="groups-body">
  
 
 
