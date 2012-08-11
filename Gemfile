@@ -44,7 +44,6 @@ gem 'omniauth-openid'
 gem 'merit', :git => 'git://github.com/tute/merit.git'
 gem "opinio"
 gem 'client_side_validations', :git => 'git://github.com/bcardarella/client_side_validations.git'
-gem 'ancestry'
 gem 'acts_as_follower'
 gem 'whenever', :require => false
 gem 'cocoon'
@@ -54,11 +53,14 @@ gem 'likeable'
 gem 'jquery-ui-themes'
 gem 'ajax-chosen-rails'
 gem 'devise_invitable'
-gem 'thin'
 gem 'kaminari'
+
+group :development do
+gem 'bullet'
 gem 'faker'
-
-
+gem 'faker'
+gem 'thin'
+end
 group :test do 
   gem "rspec-rails", ">= 2.0"
   gem "email_spec", ">= 1.2.1", :group => :test

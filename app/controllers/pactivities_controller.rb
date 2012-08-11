@@ -6,7 +6,7 @@ class PactivitiesController < ApplicationController
     @user = User.find(current_user)
     @pactivity = current_user.pactivities.build(params[:pactivity])
    
-    @pactivities = @user.pactivities.group_by { |p| p.date }
+    @pactivities = Pactivity.where(:user_id => current_user).includes(:exercise).group_by { |p| p.date }
     
     respond_to do |format|
       format.html # index.html.erb

@@ -42,7 +42,7 @@
             <li class="nav-header">
             Groups
             </li>
-            <% current_user.memberships.each do |membership| %>
+            <% @curr_membs.each do |membership| %>
             <li>
                <%= link_to membership.group.name, membership.group %> 
             </li>
