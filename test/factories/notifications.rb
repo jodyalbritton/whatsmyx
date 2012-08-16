@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :notification do
-    type ""
+    activity nil
+    seen false
+    user nil
   end
 end

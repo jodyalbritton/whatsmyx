@@ -1,7 +1,7 @@
 Whatsmyx::Application.routes.draw do
 
   opinio_model
-  
+    resources :notifications
     resources :moderate
     resources  :help
     resources :circles

@@ -12,7 +12,7 @@ class HomeController < ApplicationController
      @user = User.find(current_user)
      @scopes = current_user.circles.map { |r| [r.name, r.id] }
      @scopes.push(["Public", "0"])
-     following = Follow.where(["follower_id = ?", (current_user)])
+     following = current_user.follows
      following_ids = following.collect{|f| f.followable_id}
      mycircles =  current_user.relationships.collect{|g| g.circle_id}
      mycircles.push(0)

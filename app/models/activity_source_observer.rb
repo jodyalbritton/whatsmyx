@@ -19,6 +19,8 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :target_type => target.class.to_s,
       :scope => target.scope,
       :verb => "Posted")
+      
+       
      
       elsif @object == "Comment"
       Activity.create!(

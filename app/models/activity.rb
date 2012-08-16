@@ -6,15 +6,22 @@ class Activity < ActiveRecord::Base
   belongs_to :user
   belongs_to :target, :polymorphic => true
   
+  has_many :notifications
   paginates_per 5
   default_scope :order => 'activities.created_at DESC'
+  
+  after_create :create_notifications
   
   def to_partial_path() 
     "activities/#{target_type.downcase}" 
   end
   
-  def audience
-     self.target.scope
+  def create_notifications
+   self.user.audience.each do |f|
+    self.notifications << Notification.new(:user_id => f.id )
+  end 
   end
+  
+  
 
 end

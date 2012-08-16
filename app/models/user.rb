@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   has_many :groups
   
   has_many :pactivities, dependent: :destroy
-
+  has_many :notifications, dependent: :destroy
   has_many :relationships
   has_many :circles, :foreign_key => :author_id
   has_many :stats, dependent: :destroy
@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_one :dgoal, dependent: :destroy
   has_one :settings, dependent: :destroy
-  
+
  
  
   
@@ -60,6 +60,9 @@ class User < ActiveRecord::Base
       (self.dgoal = Dgoal.new).save
   end
   
+  def audience
+     audience = self.followers
+  end
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
   if user = self.find_by_email(data.email)

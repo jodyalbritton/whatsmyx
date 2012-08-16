@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806095226) do
+ActiveRecord::Schema.define(:version => 20120813040001) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -368,7 +368,7 @@ ActiveRecord::Schema.define(:version => 20120806095226) do
     t.string "footnt_typ",  :limit => 1,                         :null => false
     t.string "nutr_no",     :limit => 3
     t.string "footnt_txt",  :limit => 200,                       :null => false
-    t.string "usda_status", :limit => 0,   :default => "active"
+    t.string "usda_status", :limit => 7,   :default => "active"
   end
 
   add_index "footnotes", ["ndb_no"], :name => "ndb_no"
@@ -477,14 +477,17 @@ ActiveRecord::Schema.define(:version => 20120806095226) do
   end
 
   create_table "notifications", :force => true do |t|
-    t.string   "type"
-    t.integer  "sender_id"
-    t.string   "sender_type"
     t.integer  "activity_id"
-    t.string   "activity_type"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.boolean  "seen"
+    t.integer  "user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "notifiable"
+    t.string   "notifiable_type"
   end
+
+  add_index "notifications", ["activity_id"], :name => "index_notifications_on_activity_id"
+  add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
   create_table "nutr_defs", :force => true do |t|
     t.string  "nutr_no",  :limit => 3,  :null => false
