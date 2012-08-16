@@ -6,7 +6,7 @@ class Activity < ActiveRecord::Base
   belongs_to :user
   belongs_to :target, :polymorphic => true
   
-  has_many :notifications
+  has_many :notifications, dependent: :destroy
   paginates_per 5
   default_scope :order => 'activities.created_at DESC'
   

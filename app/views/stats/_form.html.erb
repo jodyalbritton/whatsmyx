@@ -1,3 +1,4 @@
+<%= simple_form_for @stat, :validate => true, :input_html => {:class => "form-horizontal"}, :remote => true do |f| %>
 <div class="modal-header">
   	<button class="close" data-dismiss="modal">×</button>
   	<h2>Track your...</h2>
@@ -11,7 +12,7 @@
    </div>
    <div class="row-fluid">
       <div class="span8">
-      <%= simple_form_for @stat, :validate => true, :input_html => {:class => "form-horizontal"}, :remote => true do |f| %>
+      
       <%= f.input :stype ,:label => "Stat Name (Weight, Blood Glucose, etc)",:placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_stats_path, :update_elements => {:id => "#stat_category_id", :sunit => "#stat_sunit"} %>
 	  <%= f.input :value %>
 	  <%= f.input :sunit,:input_html => {:class => "input-mini"}, :label => "Units"%>
@@ -37,7 +38,7 @@
    </div>
 </div>
 <div class="modal-footer">
-     <%= f.button :submit, "Track Stat", :class => 'btn-primary', :disable_with => "Please wait..." %>
+     <%= f.button :submit, "Track Stat", :disable_with => "Please wait...", :class => 'btn-primary' %>
      <button class="btn" data-dismiss="modal">Cancel</button>
 </div>
 <% end %>
