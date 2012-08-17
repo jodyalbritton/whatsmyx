@@ -1,9 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :message do
-    subject "MyString"
-    body "MyText"
-    sender 1
+  factory :recipient do
+    message nil
+    user nil
   end
 end

@@ -1,5 +1,7 @@
 Whatsmyx::Application.routes.draw do
 
+  resources :messages
+
   opinio_model
     resources :notifications
     resources :moderate
@@ -136,6 +138,7 @@ Whatsmyx::Application.routes.draw do
       resources :follows, :only => [:create, :destroy]
       resource  :profile
       resource  :settings
+      resource  :mailbox
  
       get 'invite', :on => :member
       

@@ -1,0 +1,20 @@
+<% @sent_messages.each do |message| %>
+<div class="row-fluid message">
+	<div class="span4 message-sidebar">
+		<div class="recipients">
+		to: 
+		<% message.recipients.each do |recipient| %>
+		<%= recipient.user.username %>
+		<% end %>
+		</div>
+	</div>
+    <div class="span8 message-body">
+    <div class="message-subject">
+    	<%= message.subject%>
+    </div>
+    <div class="message-body-text">
+    	<%= message.body%>
+    </div>	
+    </div>
+</div>
+<% end %>

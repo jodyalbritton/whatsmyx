@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120813040001) do
+ActiveRecord::Schema.define(:version => 20120816153455) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -476,6 +476,14 @@ ActiveRecord::Schema.define(:version => 20120813040001) do
     t.datetime "updated_at",                       :null => false
   end
 
+  create_table "messages", :force => true do |t|
+    t.string   "subject"
+    t.text     "body"
+    t.integer  "sender"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "notifications", :force => true do |t|
     t.integer  "activity_id"
     t.boolean  "seen"
@@ -583,6 +591,16 @@ ActiveRecord::Schema.define(:version => 20120813040001) do
   end
 
   add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "recipients", :force => true do |t|
+    t.integer  "message_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "recipients", ["message_id"], :name => "index_recipients_on_message_id"
+  add_index "recipients", ["user_id"], :name => "index_recipients_on_user_id"
 
   create_table "relationships", :force => true do |t|
     t.integer  "user_id"

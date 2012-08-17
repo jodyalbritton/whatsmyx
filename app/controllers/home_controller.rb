@@ -25,7 +25,7 @@ class HomeController < ApplicationController
      @meal = current_user.meals.build
      
      @post = current_user.posts.build
-
+     
    
      
    

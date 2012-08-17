@@ -1,0 +1,10 @@
+<% @messages.each do |message| %>
+<div class="row-fluid message">
+	<div class="span4 message-sidebar">
+		<%= message.user.username %>
+	</div>
+    <div class="span8 message-body">
+    	<%= message.message.body%>
+    </div>
+</div>
+<% end %>
