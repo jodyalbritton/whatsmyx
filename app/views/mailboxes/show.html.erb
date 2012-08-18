@@ -1,7 +1,10 @@
+<% content_for :top_right do %>
+  <a data-toggle="modal" class="btn btn-primary" href="#dm-modal"><i class="icon-envelope"></i></a>
+<% end %>
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#inbox" data-toggle="tab">Inbox</a></li>
-  <li><a href="#sent" data-toggle="tab">Sent</a></li>
-  <li><a href="#notifications" data-toggle="tab">Notifications</a></li>
+  <li class="active"><a href="#inbox" data-toggle="tab">Inbox <span class="badge"><%= @messages.count %></span></a></li>
+  <li><a href="#sent" data-toggle="tab">Sent <span class="badge"><%= @sent_messages.count %> </span></a> </li>
+  <li><a href="#notifications" data-toggle="tab">Notifications <span class="badge"><%= @notifications.count %></span></a></li>
   </ul>
 
   <div class="tab-content">
@@ -17,4 +20,7 @@
   <div class="tab-pane" id="notifications">
         <%= render :partial => "mailboxes/notifications" %>
   </div>
+  </div>
+  <div class="modal hide fade" id="dm-modal">
+       <%= render "messages/form"%>
   </div>

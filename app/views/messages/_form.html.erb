@@ -5,8 +5,13 @@
   <%= f.error_notification %>
 </div>
   <div class="modal-body">
-  	<% if @user %>
+  	<% if @user  %>
+  	<% unless @user == current_user %>
     <%= f.input :user_tokens, :label => "To:", :as => 'string', :input_html => { data: {load: [{:id => @user.id, :name => @user.username } ]}}, :class=> "x-large"%>
+  	<% else %>
+  	<%= f.input :user_tokens, :label => "To:", :as => 'string', :input_html => {  data: {load: @message.users.collect {|user| {:id => user.id, :name => user.username } }}}, :class=> "x-large"%>
+
+  	<% end %>
   	<% else %>
     <%= f.input :user_tokens, :label => "To:", :as => 'string', :input_html => {  data: {load: @message.users.collect {|user| {:id => user.id, :name => user.username } }}}, :class=> "x-large"%>
     <% end %>

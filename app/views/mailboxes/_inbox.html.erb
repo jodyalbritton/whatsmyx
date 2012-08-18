@@ -1,10 +1,35 @@
-<% @messages.each do |message| %>
-<div class="row-fluid message">
-	<div class="span4 message-sidebar">
-		<%= message.user.username %>
-	</div>
-    <div class="span8 message-body">
-    	<%= message.message.body%>
-    </div>
-</div>
-<% end %>
+<table class="table table-striped">
+	<tr>
+			<td>Subject</td>
+			<td>From</td>
+			<td>Date</td>
+			<td>Actions</td>
+		
+    </tr>
+    <% if @messages.count > 0 %>
+	<% @messages.each do |message| %>
+		<tr>
+			
+			<td><%= message.user.username %></td>
+			<td><%= message.message.subject%></td>
+			<td><%= message.message.created_at%></td>
+			<td>
+		    <div style="font-size: 20px;">
+  				<i class="icon-trash"></i>
+  				<i class="icon-eye-open"></i>
+  				<i class="icon-star"></i>
+			</div
+			</td>
+		
+		</tr>
+	<% end %>
+	<% else %>
+	<tr>
+		<td></td>
+		<td>No Messages</td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<% end %>
+</table>
