@@ -5,6 +5,8 @@
   <h3>Set a goal</h3>
 </div>
 <div class="modal-body">
+  <div id="goal-errors">
+  </div>
   <%= f.input :name, :placeholder => "Start Typing....", :as => :autocomplete,  :url => autocomplete_category_name_goals_path, :update_elements => {:id => "#goal_category_id", :sunit => "#goal_sunit"}%>
   <%= f.input :value %>
   <%= f.input :category_id, :as => "hidden" %>

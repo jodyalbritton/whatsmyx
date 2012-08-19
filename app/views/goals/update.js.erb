@@ -1,12 +1,11 @@
-<% if @pactivity.errors.any? -%>
+<% if @goal.errors.any? -%>
   $("#flash_notice").hide(300);
-  $("#flash_errors").html("<%= escape_javascript(error_messages_for(@pactivity))%>");
   $("#flash_errors").show(300);
 <% else -%>
   $("#flash_errors").hide(300);
   $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
   $("#flash_notice").show(300);
   $(":input:not(input[type=submit])").val("");
-  $("#pactivity-list").html("<%= escape_javascript( render "pactivities/pactivity" ) %>");
-  $("#pactivity-modal").modal('toggle')
+  $("#goals").html("<%= escape_javascript( render "goals/goal" ) %>");
+  $("#goal-modal").modal('toggle')
 <% end -%>

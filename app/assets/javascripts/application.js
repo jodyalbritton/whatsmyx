@@ -28,5 +28,31 @@
 
  // Search form.  
 
+$(document).ready(function(){
+    $('textarea').autosize();  
+});
 
+$("input.date_picker").datepicker()
+      .on('show', function(ev){                 
+      var today = new Date();
+      var t = today.getMonth() + "-" + today.getDate() + "-" + today.getFullYear();
+      $('input.date_picker').data({date: t}).datepicker('update');
+  });
   
+  
+function toggleDiv(divId) {
+   $("#"+divId).slideToggle('slow');
+   $("#"+divId+"-form").focus();
+}
+
+function hideDiv(divId) { 
+	$("#"+divId).toggle(); 
+} 
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=267610973277613";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

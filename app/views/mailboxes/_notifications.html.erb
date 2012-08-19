@@ -1,17 +1,53 @@
+<table class="table table-striped">
+	<tr>
+			<td>From</td>
+			<td>Message</td>
+			<td>Actions</td>
+		
+    </tr>
+    <% if @notifications.count > 0 %>
+	<% @notifications.each do |notification| %>
+		<tr>
+			
+			<td><%= notification.activity.user.username %> </td>
+			<td>
+				<% if notification.activity.target_type == "Comment" %>
+    	        <%= notification.activity.verb %> on a <%= link_to notification.activity.target.commentable_type, notification.activity.target.commentable %>
+    	        <% else %>
+    	        <%= notification.activity.verb %> a <%= link_to notification.activity.target_type, notification.activity.target%>
+    	         <% end %>
+			</td>
+			<td>
+		    <div style="font-size: 20px;">
+  				<i class="icon-trash" rel="tooltip" title="Delete Message"></i>
+			</div
+			</td>
+		
+		</tr>
+	<% end %>
+	<% else %>
+	<tr>
+		<td></td>
+		<td>No Notifications</td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<% end %>
+</table>
+
+
+
 <% @notifications.each do |notification|%>
 <div class="row-fluid notification">
 
 
  
     <div>
-    	<%= notification.activity.user.username %> 
+    	
     </div>
     <div>
-    	<% if notification.activity.target_type == "Comment" %>
-    	<%= link_to notification.activity.verb, notification.activity.target.commentable %> on a <%= notification.activity.target.commentable_type %>
-    	<% else %>
-    	<%= link_to notification.activity.verb, notification.activity.target %> a <%= notification.activity.target_type%>
-    	<% end %>
+    	
     </div>
 
   

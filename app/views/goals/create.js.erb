@@ -4,14 +4,14 @@
   $("#flash_notice").hide(300);
 
   /*Update the html of the div post_errors with the new one*/
-  $("#flash_error").append("<%= escape_javascript(error_messages_for (@goal))%>");
+  $("#goal-errors").append("<%= escape_javascript(error_messages_for (@goal))%>");
 
   /*Show the div flash_error*/
-  $("#flash_error").show(300);
+  $("#goal_errors").show(300);
 <% else -%>
   
   /*Hide the div post_errors*/
-  $("#flash_error").hide(300);
+  $("#goal-errors").hide(300);
 
   /*Update the html of the div flash_notice with the new one*/
   $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
@@ -24,7 +24,8 @@
 
   /*Replace the html of the div goals with the updated new one*/
   $("#goals").html("<%= escape_javascript( render "goals/goal" ) %>");
-  
+  $("#goal-modal").modal('toggle')
+
   
   
 
