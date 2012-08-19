@@ -18,7 +18,9 @@
   $("#flash_notice").show(300);
 
   /*Clear the entire form*/
-  $(":input:not(input[type=submit])").val("");
+  
+  $('#new_pactivity')[0].reset();  
+
 
   /*Replace the html of the div pactivity_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");

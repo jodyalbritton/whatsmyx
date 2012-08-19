@@ -18,7 +18,7 @@
   $("#flash_notice").show(300);
 
   /*Clear the entire form*/
-  $(":input:not(input[type=submit])").val("");
+  $('#new_stat')[0].reset();
 
   /*Replace the html of the div stat_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");

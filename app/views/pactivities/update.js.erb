@@ -6,7 +6,9 @@
   $("#flash_errors").hide(300);
   $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
   $("#flash_notice").show(300);
-  $(":input:not(input[type=submit])").val("");
+  
+  
+  $('#edit_pactivity_<%= @pactivity.id %>')[0].reset();
   $("#pactivity-list").html("<%= escape_javascript( render "pactivities/pactivity" ) %>");
   $("#pactivity-modal").modal('toggle')
 <% end -%>

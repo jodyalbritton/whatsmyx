@@ -62,6 +62,7 @@ class PactivitiesController < ApplicationController
     @pactivity = Pactivity.find(params[:id])
     
     if @pactivity.update_attributes(params[:pactivity])
+    
       @user = @pactivity.user
       flash[:notice] = "Successfully updated pactivity."
       @pactivities = Pactivity.where(:user_id => @user ).includes(:exercise).group_by { |p| p.date }
