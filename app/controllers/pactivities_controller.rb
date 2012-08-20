@@ -58,16 +58,18 @@ class PactivitiesController < ApplicationController
   # PUT /pactivities/1
   # PUT /pactivities/1.json
   def update
-    @user = User.find(current_user)
-    @pactivity = Pactivity.find(params[:id])
-    
+   @user = User.find(current_user)
+   @pactivity = @user.pactivities.find params[:id]
+
+    respond_to do |format|
     if @pactivity.update_attributes(params[:pactivity])
-    
-      @user = @pactivity.user
-      flash[:notice] = "Successfully updated pactivity."
-      @pactivities = Pactivity.where(:user_id => @user ).includes(:exercise).group_by { |p| p.date }
+      format.html { redirect_to(@pactivity, :notice => 'User was successfully updated.') }
+      format.json { respond_with_bip(@pactivity) }
+    else
+      format.html { render :action => "edit" }
+      format.json { respond_with_bip(@pactivity) }
     end
-   
+  end
     
   end
 

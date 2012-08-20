@@ -1,6 +1,6 @@
 <% @pactivities.sort.reverse.each do |date, pactivities| %>
   <tr>
-  	<td><h3><%= date %></h3></td>
+  	<td><h4><%= date.strftime("%a, %B, %d, %Y") %></h4></td>
   	<td></td>
   	<td></td>
   	<td></td>
@@ -9,12 +9,14 @@
   <tr id="<%= dom_id(pactivity) %>">
   	
     <td><%= pactivity.exercise.name%></td>
-    <td><%= pactivity.duration %></td>
+    <td><%= best_in_place pactivity, :duration,:html_attrs => {:class=>"input-mini"} %></td>
     <td> <%= pactivity.burned %></td>
    
     <td>
-    <%= link_to 'Edit', edit_pactivity_path(pactivity), :remote => true, :class=> "btn btn-mini"%>
-    <%= link_to 'Destroy', pactivity, confirm: 'Are you sure?', :remote => true, method: :delete , :class=> "btn btn-mini btn-danger"%>
+   
+    <%= link_to pactivity, confirm: 'Are you sure?', :remote => true, method: :delete  do %>
+    <i class="icon-trash"></i>
+    <% end %>
     </td>
   </tr>
   <% end %>

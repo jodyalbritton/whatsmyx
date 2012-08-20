@@ -23,6 +23,7 @@
 //= require cocoon
 //= require rails.validations
 //= require jquery.tokeninput
+//= require best_in_place
 //= require_tree .
 
 

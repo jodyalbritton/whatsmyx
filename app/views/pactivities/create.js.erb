@@ -20,7 +20,7 @@
   /*Clear the entire form*/
   
   $('#new_pactivity')[0].reset();  
-
+ 
 
   /*Replace the html of the div pactivity_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
@@ -29,5 +29,8 @@
   $("#pactivity-list").html("<%= escape_javascript( render "pactivities/pactivity" ) %>");
   
   $('#pactivity-modal').modal('hide');
+  
+  /* Highlight the new comment */
+  $("#pactivity_<%= @pactivity.id %>").effect("highlight", {}, 3000);
   <% end %>
 

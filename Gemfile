@@ -54,6 +54,7 @@ gem 'jquery-ui-themes'
 gem 'ajax-chosen-rails'
 gem 'devise_invitable'
 gem 'kaminari'
+gem 'best_in_place'
 
 group :development do
 gem 'bullet'
