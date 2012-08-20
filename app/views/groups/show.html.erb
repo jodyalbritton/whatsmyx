@@ -50,13 +50,13 @@
             
   </div>    
 <% end %>
-<% content_for :top_left do %>
+
   <div id="profile-name">
   	  <div class="row-fluid">
-  	      <div class="span4">
+  	      <div class="span1">
   	       <%= image_tag @group.avatar.url(:thumb), :class => "group-pic"%>
   	      </div>
-  	      <div class="span8">
+  	      <div class="span9">
           <h3><%= @group.name %></h3>
 	      <% if @current_memberships == 0 %>
           <% if user_signed_in? %>
@@ -76,18 +76,22 @@
           </div>
         <% end %>
         </div>
+        <div id="profile-merit" class="span2">
+         <strong> <%= @group.memberships.count %> </strong> Members
+        </div>
+
       </div>
+      
   </div>
-<% end %>
- <% content_for :top_right do %>
-  <div id="profile-merit">
-  <strong> <%= @group.memberships.count %> </strong> Members
-  </div>
-<% end %>
-<% content_for :top do %>
+
+
+
+
 <% if @current_memberships %>
-<div id="posts_form"><%= render :partial => 'posts/form' %></div>
-<% end %>
+<div id="posts_form">
+	<%= render :partial => 'posts/form' %>
+</div>
+
 <% end %>
 
 

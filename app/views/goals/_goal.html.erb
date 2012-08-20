@@ -2,11 +2,11 @@
        <tr>
         
         <td><%= goal.category.name %></td>
-        <td>goal of <%= goal.value %> <%= goal.category.sunit %></td>
+        <td>goal of <%= best_in_place goal, :value, :html_attrs=>{:class=>"input-mini"} %> <%= goal.category.sunit %></td>
       
      
         <td>
-          <%= link_to 'Edit', edit_goal_path(goal), :remote => true, :class=> "btn btn-mini"%>
+       
 
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       goal_path(goal),

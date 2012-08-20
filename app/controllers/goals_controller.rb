@@ -55,14 +55,18 @@ class GoalsController < ApplicationController
   # PUT /goals/1
   # PUT /goals/1.json
   def update
-    @user = User.find(current_user)
-    @goal = @user.goals.find(params[:id])
-    if @goal.update_attributes(params[:goal])
-      @user = @goal.user
-      flash[:notice] = "Successfully updated goal."
-      @goals = @user.goals
-    end
+     @user = User.find(current_user)
+     @goal = @user.goals.find params[:id]
 
+    respond_to do |format|
+    if @goal.update_attributes(params[:goal])
+      format.html { redirect_to(@goal, :notice => 'Goal was successfully updated.') }
+      format.json { respond_with_bip(@goal) }
+    else
+      format.html { render :action => "edit" }
+      format.json { respond_with_bip(@goal) }
+    end
+    end
     
   end
 

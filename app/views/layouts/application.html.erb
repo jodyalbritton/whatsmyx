@@ -22,13 +22,13 @@
   <!--! collapse nav -->
   <div class="navbar navbar-fixed-top">
        <div class="navbar-inner">
-          <div class="container-fluid">
+          <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/">What's My X?</a>
+    
           <div class="nav-collapse">
           <%= render 'layouts/navigation' %>
           </div>
@@ -36,55 +36,27 @@
           </div>
        </div>
   </div>
-  <% if user_signed_in? %>
-  <div class="container-fluid">
-  <!--! subnav -->
-  <div class="nav subnav-fixed">
-  <div id="sub-nav" class="row-fluid">
-    	 	<div class="span2 top-left">
-    	 	      <%= yield :top_left %>
-    	    </div>
-    	 	<div class="span8 top-bar">
- 	              <%= yield :top %>
- 	        </div>
- 	      
- 	        <div class="span2 top-right">
- 	        	 <%= yield :top_right %>
- 	        </div>
- </div>
- </div>
- </div>
- <% end %>
+
   <div id="wrap">
   <!--! body container -->
-  <div id="main" class="container-fluid clear-top">
+  <div id="main" class="container">
    <div class="row-fluid">
-   	<div class="span2">
-   	<div class="sb-fixed sidebar span2">
+   	<div class="sidebar span3">
+  
+   
    	<%= yield :sidebar %>
-   	</div>
+   
     </div>  
-    <div class="span8 main-content" id="main-content">
-    <%= render 'layouts/messages' %>
+    <div class="span9 main-content" id="main-content">
+  
     <%= yield %>
     <%= render 'layouts/ga'%>
     </div>
-    <div id="right-sidebar" class="span2">
-    </div>
+  
     </div>
    </div>
   </div>
-  <footer class="footer">
-    <div class="container" style="margin:0 auto;">
-        <div class="row-fluid row">
-        	
-        		<a href="#">© Jody Albritton 2012</a> |
-                <a href="/help">Help</a> |
-                <a href="#">Privacy</a>
-           
-        </div>
-    </div>
-</footer>
+
 
 </body>
 <div id="fb-root"></div>

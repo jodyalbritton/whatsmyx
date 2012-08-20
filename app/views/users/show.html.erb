@@ -1,6 +1,28 @@
 <% content_for :sidebar do %>
 <div id="profile-sidebar" class="menu profile-sidebar">
    
+               
+        <div id="profile-name" class="row-fluid">
+        <div id="profile_pic" class="span3">
+	    <%= image_tag @user.profile.avatar.url(:thumb), :class=> "user-pic" %>
+	
+       </div>
+        <div class="span9 user-head-main">
+               <h3><%= @user.username %></h3>
+	        
+                <% if user_signed_in? %>
+                <div id="follows_user">
+             
+           
+                
+          
+        
+                 <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
+          
+                </div>
+                <% end %> 
+                </div>
+        </div>
         
         <div class="points">
         	<div id="profile-level" class="span5">
@@ -51,33 +73,14 @@
  
   </div>
   <% end%>
-  <% content_for :top_left do %>
 
-       
-        <div id="profile-name" class="row-fluid">
-        <div id="profile_pic" class="span3">
-	    <%= image_tag @user.profile.avatar.url(:thumb), :class=> "user-pic" %>
-	
-       </div>
-        <div class="span9 user-head-main">
-               <h3><%= @user.username %></h3>
-	        
-                <% if user_signed_in? %>
-                <div id="follows_user">
-             
-           
-                
-          
-        
-                 <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
-          
-                </div>
-                <% end %> 
-                </div>
-        </div>
-        
-        <% content_for :top_right do %>
-        <div id="profile-merit">
+  
+  
+
+  
+ 
+  <div class="user-header">
+  	 <div id="profile-merit">
         
          <ul>
         
@@ -110,15 +113,7 @@
      
 	
      </div>
-     <% end %>
-
-  <% end %>
-  
-  
-
-  
- 
-   
+  </div>
   <div class="user-controls row-fluid">
   <ul class="nav nav-tabs">
   <li class="active"><a href="#activity-feed" data-toggle="tab">Feed</a></li>

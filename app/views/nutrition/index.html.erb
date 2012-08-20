@@ -1,18 +1,17 @@
 <% content_for :sidebar do %>
-	Menu Needed
+	<%= render "nutrition/nutnav"%>
 <% end %>
 
 
    
-    
-    <% content_for :top do%>
+
     <div class="row-fluid nutri-nav">
     
     <%= render "nutrition/date_picker"%>
 	   
 	</div>
 	
-    <% end %>
+ 
   
 	<div class="row-fluid nutrition-header">
      <%= render "nutrition/header" %>
