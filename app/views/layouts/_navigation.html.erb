@@ -50,14 +50,14 @@
                 	 <% if user_signed_in? %>
                     <li class="dropdown"><a href="#"
                     	class="drowndown-toggle"
-                    	data-toggle="dropdown"><i class="icon-globe icon-white"></i>
-                    	<b class="caret"></b>
+                    	data-toggle="dropdown"><i class="icon-globe icon-white navco"></i>
+                    	
                     	</a>
                     	<ul class="dropdown-menu">
-                    		<% if @notifications %>
+                    		<% if @global_notifications %>
                     		
                     		
-                    		<% @notifications.each do |notification| %>
+                    		<% @global_notifications.each do |notification| %>
                     		<div class="span3">
                     		  <div class="row-fluid">
                                 <li>
@@ -79,31 +79,34 @@
                     		  </div>
                     		   </div>
                     	    <% end %>
-                    	    <li class="divider-horizontal"></li>
+                    	   
+                    	    <% else %>
+                    	    <li>
+                    			
+                    				No New Notfications
+                    		
+                    	    </li>
+                    	    <% end %>
+                    	     <li class="divider-horizontal">
+                    	     	<hr>
+                    	     </li>
                     	    <li>
                             <%= link_to('All Notifications', user_mailbox_path(current_user))%>
                             </li>
-                    	    <% else %>
-                    	    <li>
-                    			<div>
-                    				No New Notfications
-                    			</div>
-                    	    </li>
-                    	    <% end %>
                     	</ul>
                     </li>  
                       <li class="dropdown"><a href="#"
                     	class="drowndown-toggle"
-                    	data-toggle="dropdown"><i class="icon-envelope icon-white"></i>
-                    	<b class="caret"></b>
+                    	data-toggle="dropdown"><i class="icon-envelope icon-white navco"></i>
+                    
                     	</a>
                     	<ul class="dropdown-menu">
                     	
                     		
-                    		<% if @messages %>
+                    		<% if @global_messages %>
                     		
                     		
-                    		<% @messages.each do |message| %>
+                    		<% @global_messages.each do |message| %>
                     		<div class="span3">
                     		  <div class="row-fluid">
                                 <li>
@@ -125,18 +128,21 @@
                     			
                     		
                     	
-                    	         <li class="divider-horizontal"></li>
-                    	    <li>
-                            <%= link_to('All Messages', user_mailbox_path(current_user))%>
-                            </li>
+                    	       
+                    	  
                     	    <% else %>
                     	    <li>
-                    			<div>
+                    		
                     				No New Messages
-                    			</div>
+                    			
                     	    </li>
                     	    <% end %>
-                    	      
+                    	      <li class="divider-horizontal">
+                    	      		<hr>
+                    	      </li>
+                    	     <li>
+                            <%= link_to('All Messages', user_mailbox_path(current_user))%>
+                            </li>   
                     	</ul>
                     </li>   
                     <% end %>

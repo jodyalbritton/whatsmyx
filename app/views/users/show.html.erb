@@ -1,29 +1,24 @@
 <% content_for :sidebar do %>
-<div id="profile-sidebar" class="menu profile-sidebar">
+<div id="profile-sidebar" class="profile-sidebar">
    
-               
+        <div class="well">
         <div id="profile-name" class="row-fluid">
         <div id="profile_pic" class="span3">
 	    <%= image_tag @user.profile.avatar.url(:thumb), :class=> "user-pic" %>
 	
        </div>
         <div class="span9 user-head-main">
-               <h3><%= @user.username %></h3>
+               <h4><%= @user.username %></h4>
 	        
                 <% if user_signed_in? %>
                 <div id="follows_user">
-             
-           
-                
-          
-        
-                 <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
+                <%= render :partial => "follows/follow_user", :locals => {:user => @user} %>
           
                 </div>
                 <% end %> 
                 </div>
         </div>
-        
+        </div>
         <div class="points">
         	<div id="profile-level" class="span5">
              <h4>Level <%= @user.level %></h4>

@@ -42,6 +42,9 @@
   <!--! body container -->
   <div id="main" class="container">
    <div class="row-fluid">
+   	<% if content_for?(:sidebar) %>
+ 
+   
    	<div class="sidebar span3">
   
    
@@ -53,7 +56,13 @@
     <%= yield %>
     <%= render 'layouts/ga'%>
     </div>
+    <% else %>
+    <div class="span12 main-content" id="main-content">
   
+    <%= yield %>
+    <%= render 'layouts/ga'%>
+    </div>
+     <% end %>
     </div>
    </div>
   </div>
