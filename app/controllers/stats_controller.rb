@@ -74,8 +74,13 @@ class StatsController < ApplicationController
     @stat = current_user.stats.build(params[:stat])
     if @stat.save
       flash[:notice] = "Successfully created stat."
-       @activities = Activity.order("updated_at DESC")
-       @stats = @user.stats.order("date DESC").page(params[:page])
+       following = Follow.where(["follower_id = ?", (current_user)])
+     following_ids = following.collect{|f| f.followable_id}
+     mycircles =  current_user.relationships.collect{|g| g.circle_id}
+     mycircles.push(0)
+     aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
+     @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]      
+     @stats = @user.stats.order("date DESC").page(params[:page])
        
     else 
       flash[:notice] = "Opps."
