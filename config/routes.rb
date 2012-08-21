@@ -61,8 +61,13 @@ Whatsmyx::Application.routes.draw do
 
   match "users/auth/:service/callback" => 'services#create'
 
-  devise_for :users, :controllers => { :registrations => 'registrations', :confirmations => "confirmations" }
   
+  devise_for :users, :skip => [:sessions], :controllers => { :registrations => 'registrations', :confirmations => "confirmations" }
+    as :user do
+    get 'signin' => 'devise/sessions#new', :as => :new_user_session
+    post 'signin' => 'devise/sessions#create', :as => :user_session
+    get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    end
   resources :users, :only => [:index]
 
   authenticated :user do
