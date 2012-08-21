@@ -41,7 +41,101 @@
                 </ul>
                </div>
                </div>
+              <ul class="nav">  
+             
+              </ul>  
                 <ul class="nav pull-right">
+                    <li class="dropdown"><a href="#"
+                    	class="drowndown-toggle"
+                    	data-toggle="dropdown"><i class="icon-globe icon-white"></i>
+                    	<b class="caret"></b>
+                    	</a>
+                    	<ul class="dropdown-menu">
+                    		<% if @notifications %>
+                    		
+                    		
+                    		<% @notifications.each do |notification| %>
+                    		<div class="span3">
+                    		  <div class="row-fluid">
+                                <li>
+                                 
+                                 
+                                	<div class="span4">
+                    				 <%= notification.activity.user.username %>
+                    		         </div>
+                    		         <div class="span8">
+                    				<% if notification.activity.target_type == "Comment" %>
+    	        					<%= notification.activity.verb %> on a <%= link_to notification.activity.target.commentable_type, notification.activity.target.commentable %>
+    	   						     <% else %>
+    	      						  <%= notification.activity.verb %> a <%= link_to notification.activity.target_type, notification.activity.target%>
+    	        					 <% end %>
+                    				</div>
+                    			  
+                    			
+                    			</li>
+                    		  </div>
+                    		   </div>
+                    	    <% end %>
+                    	    <li class="divider-horizontal"></li>
+                    	    <li>
+                            <%= link_to('All Notifications', user_mailbox_path(current_user))%>
+                            </li>
+                    	    <% else %>
+                    	    <li>
+                    			<div>
+                    				No New Notfications
+                    			</div>
+                    	    </li>
+                    	    <% end %>
+                    	</ul>
+                    </li>  
+                      <li class="dropdown"><a href="#"
+                    	class="drowndown-toggle"
+                    	data-toggle="dropdown"><i class="icon-envelope icon-white"></i>
+                    	<b class="caret"></b>
+                    	</a>
+                    	<ul class="dropdown-menu">
+                    	
+                    		
+                    		<% if @messages %>
+                    		
+                    		
+                    		<% @messages.each do |message| %>
+                    		<div class="span3">
+                    		  <div class="row-fluid">
+                                <li>
+                                 
+                                 
+                                	<div class="span4">
+                    				<%= message.user.username %>
+                    		         </div>
+                    		         <div class="span8">
+                    				<%= message.message.subject %>
+                    				</div>
+                    			  
+                    			
+                    			</li>
+                    		  </div>
+                    		   </div>
+                    	    <% end %>
+                    	   
+                    			
+                    		
+                    	
+                    	         <li class="divider-horizontal"></li>
+                    	    <li>
+                            <%= link_to('All Messages', user_mailbox_path(current_user))%>
+                            </li>
+                    	    <% else %>
+                    	    <li>
+                    			<div>
+                    				No New Messages
+                    			</div>
+                    	    </li>
+                    	    <% end %>
+                    	      
+                    	</ul>
+                    </li>   
 	                <li class="dropdown">
                     <a href="#"
                           class="dropdown-toggle"
@@ -58,9 +152,7 @@
                     <li>
                     <%= link_to('Edit account', edit_user_registration_path) %>
                     </li>
-                     <li>
-                    <%= link_to('Mailbox', user_mailbox_path(current_user))%>
-                    </li>
+                    
                     <li>
                     <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
                     </li>

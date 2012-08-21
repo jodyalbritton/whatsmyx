@@ -23,7 +23,8 @@ class HomeController < ApplicationController
      @stat = current_user.stats.build 
      @pactivity = current_user.pactivities.build 
      @meal = current_user.meals.build
-     
+     @messages = Recipient.where(:user_id => current_user)
+     @notifications = current_user.notifications
      @post = current_user.posts.build
      
    
