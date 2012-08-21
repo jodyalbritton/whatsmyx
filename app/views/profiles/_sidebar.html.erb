@@ -1,0 +1,17 @@
+<ul class="nav nav-list">
+  <li class="nav-header">
+    Account Settings
+  </li>
+     <li>
+      <%= link_to('Account', edit_user_registration_path(current_user))%>
+    </li>
+   <li>
+      <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
+    </li>
+  <li>
+    <%= link_to('Edit Circles', circles_path)%>
+  </li>
+ <li>
+   <%= link_to('Auth Providers', services_path )%>
+</li>
+</ul>
