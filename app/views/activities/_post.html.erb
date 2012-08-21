@@ -6,7 +6,7 @@
 
      
              <%= image_tag activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
-             <h3><%= link_to activity.user.username, activity.user %></h3>
+             <h4><%= link_to activity.user.username, activity.user %></h4>
              <i class="icon-time"></i> <%= time_ago_in_words(activity.created_at) %>
    
       

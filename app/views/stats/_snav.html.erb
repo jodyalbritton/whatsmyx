@@ -1,27 +1,41 @@
-<ul class="nav nav-list">
-  <li class="nav-header">
-    Stats
-  </li>
+<ul class="nav nav-tabs nav-stacked">
+
   <li>
-  	<a data-toggle="modal" href="#stats-modal">Track Stat</a>
+  	<a data-toggle="modal" href="#stats-modal">Track Stat<i class="icon-chevron-right pull-right"></i></a>
+  	
   </li>
  
   <% if params[:controller] == "stats"%>
   <li class="active">
-    <%= link_to "List", stats_path %>
+ 
+    <%= link_to stats_path  do %>
+    Stats
+    <i class="icon-chevron-right pull-right"></i>
+    <% end %>
+    
   </li>
+  
   <% else %>
     <li>
-    <%= link_to "List", stats_path %>
+    <%= link_to stats_path do %>
+    Stats
+    <i class="icon-chevron-right pull-right"></i>
+    <% end %>
    </li>
    <% end %>
     <% if params[:controller] == "goals"%>
   <li class="active">
-    <%= link_to "Goals", goals_path %>
+    <%= link_to goals_path do %>
+    Goals
+    <i class="icon-chevron-right pull-right"></i>
+    <% end %>
   </li>
   <% else %>
     <li>
-    <%= link_to "Goals", goals_path %>
+    <%= link_to goals_path do %>
+    Goals
+    <i class="icon-chevron-right pull-right"></i>
+    <% end %>
    </li>
    <% end %>
 

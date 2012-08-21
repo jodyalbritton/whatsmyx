@@ -1,17 +1,27 @@
-<ul class="nav nav-list">
-  <li class="nav-header">
-    Account Settings
-  </li>
-     <li>
-      <%= link_to('Account', edit_user_registration_path(current_user))%>
+<ul class="nav nav-tabs nav-stacked">
+
+     <li class="<%='active' if params[:controller] == 'registrations'%>">
+      <%= link_to (edit_user_registration_path(current_user)) do %>
+      Account
+      <i class="icon-chevron-right pull-right"></i>
+      <% end %>
     </li>
-   <li>
-      <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
+   <li class="<%='active' if params[:controller] == 'profiles'%>">
+      <%= link_to(edit_user_profile_path(current_user)) do %>
+      Profile
+      <i class="icon-chevron-right pull-right"></i>
+      <% end %>
     </li>
-  <li>
-    <%= link_to('Edit Circles', circles_path)%>
+  <li class="<%='active' if params[:controller] == 'circles'%>">
+    <%= link_to(circles_path) do%>
+       Circles
+      <i class="icon-chevron-right pull-right"></i>
+      <% end %>
   </li>
- <li>
-   <%= link_to('Auth Providers', services_path )%>
+ <li class="<%='active' if params[:controller] == 'services'%>">
+   <%= link_to(services_path ) do%>
+       Linked Accounts
+      <i class="icon-chevron-right pull-right"></i>
+      <% end %>
 </li>
 </ul>

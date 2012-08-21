@@ -6,7 +6,7 @@
 	<ul class="thumbnails">
 	<% current_user.follows.each do |follow| %>
 	<li class="thumbnail">
-    <div class="user-card draggable row-fluid">
+    <div class="user-card draggable" style="width: 120px;">
     <div class="row-fluid">
 	
 
@@ -28,8 +28,8 @@
 </div>
 </div>
 
-<div class="row">
-<div class="span2">
+<div class="row-fluid">
+<div class="span3">
       <div class="circle-outer">
       <div class="circle">
       <div class="circle-item">
@@ -49,12 +49,12 @@
 
 <% @circles.each do |circle| %>
     
-    <div class="span2">
+    <div class="span3">
       <div class="circle-outer">
       <div class="circle">
       <div class="circle-item">
       <div class="circle-title">
-       <%= link_to circle.name, circle %>
+       <%= link_to circle.name, edit_circle_path(circle) %>
        </div>
        <div class="circle-users">
        <h3> <%= circle.relationships.count %></h3>
@@ -66,7 +66,7 @@
       </div>
     </div>
     <% end %>
-     <div class="span2">
+     <div class="span3">
       <div class="circle-outer">
       <div class="circle">
       <div class="circle-item">

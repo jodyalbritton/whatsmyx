@@ -12,14 +12,15 @@ gem 'mysql2'
 # in production environments by default.
 group :assets do
   
-  gem 'twitter-bootstrap-rails'
+
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platform => :ruby
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'less'
+  gem 'less-rails'
   gem 'jquery-ui-rails'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
 gem 'thinking-sphinx', '2.0.12'

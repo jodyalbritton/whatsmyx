@@ -7,11 +7,8 @@
     <%= render "users/list" %>
   
 </div>
-<div id="paginator full" class="visible-desktop paginator">
+<div id="paginator" class="paginator" style="width:90%; margin-right: auto; margin-left:auto;">
    <%= paginate @users, :window => 3, :left => 0, :right => 0, :remote=> true%>
 </div>
-<div id="paginator-small" class="hidden-desktop">
-    <%= paginate @users, :window => 0, :left => 0, :right => 0, :remote=> true%>
-	
-</div>
+
 
