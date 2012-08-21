@@ -5,7 +5,8 @@ class PactivitiesController < ApplicationController
   def index
     @user = User.find(current_user)
     @pactivity = current_user.pactivities.build(params[:pactivity])
-   
+    @scopes = current_user.circles.map { |r| [r.name, r.id] }
+     @scopes.push(["Public", "0"])
     @pactivities = Pactivity.where(:user_id => current_user).includes(:exercise).group_by { |p| p.date }
     
     respond_to do |format|

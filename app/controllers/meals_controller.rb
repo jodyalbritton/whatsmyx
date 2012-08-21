@@ -49,7 +49,7 @@ class MealsController < ApplicationController
   def create
   
      @meal = current_user.meals.build(params[:meal])
-     
+     @scopes = current_user.circles.map { |r| [r.name, r.id] }
      if @meal.save 
      @user = User.find(current_user)
      flash[:notice] = "Successfully created meal."

@@ -1,26 +1,44 @@
-<%- model_class = @stat.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @stat.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:stype) %>:</strong></dt>
-  <dd><%= @stat.stype %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:value) %>:</strong></dt>
-  <dd><%= @stat.value %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
-  <dd><%= @stat.date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category_id) %>:</strong></dt>
-  <dd><%= @stat.category_id %></dd>
+<div class="row-fluid activity-item">
+	  
+      <div id="activity-sidebar" class="span2 activity-sidebar">
 
-  <dt><strong><%= model_class.human_attribute_name(:sunit) %>:</strong></dt>
-  <dd><%= @stat.sunit %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @stat.user_id %></dd>
-</dl>
-
-<div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              stats_path, :class => 'btn'  %>
- 
+     
+             <%= image_tag @stat.user.profile.avatar.url(:thumb), :class => "avatar" %>
+             <h3><%= link_to @stat.user.username, @stat.user %></h3>
+             <%= time_ago_in_words(@stat.date) %> ago.
+   
+      
+  
+       </div>
+       <div id="post-body" class="span8 activity-body">
+             <div class="post-content">
+             <p>
+              
+              Tracked a <%= link_to @stat.category.name, @stat %> of <%= @stat.value %> <%= @stat.category.sunit %>
+             </p>
+             </div>
+     
+           
+             <%= render "stats/likes", :like_object => @stat %>
+             <div id="comments_list" class="row-fluid">
+          <div id="comments_<%= @stat.id %>">
+          	<%= render_comments @stat, :page => params[:page] %>
+          
+          </div>
+          
+        
+          </div>
+           
+         <div id="comment-form" class="row-fluid">
+          <%= render_comments_form @stat %>
+         
+         </div>
+    </div>
+     <div class="span2 activity-logo" >
+     	<div class="activity-logo visible-desktop">
+         <i class="icon-bar-chart"></i> 
+        </div>
+    </div>
 </div>
+             

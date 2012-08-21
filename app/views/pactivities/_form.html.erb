@@ -10,7 +10,8 @@
     
   
     <%= f.input :name, :placeholder => "Start Typing....",:hint => "Any activity eg; Weight Lifting, Laundry..", :as => :autocomplete,  :url => autocomplete_exercise_name_pactivities_path, :update_elements => {:id => "#pactivity_exercise_id", :category => "#pactivity_category"}, :label => "Activity" %>
-     
+    <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => "Who sees this?" %>
+        
     <%= f.input :exercise_id, :as => "hidden"%>
     <%= f.input :category, :as=> "hidden" %>
     <%= f.input :date, :input_html => {:class=>"input-small"}%>

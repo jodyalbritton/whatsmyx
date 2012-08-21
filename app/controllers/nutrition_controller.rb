@@ -2,7 +2,8 @@
     before_filter :authenticate_user!
   def index
   @meal = current_user.meals.build 
-  
+  @scopes = current_user.circles.map { |r| [r.name, r.id] }
+     @scopes.push(["Public", "0"])
   @user = User.find(current_user)
   
   

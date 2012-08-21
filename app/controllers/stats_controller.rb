@@ -7,6 +7,8 @@ class StatsController < ApplicationController
 
 
   def load
+    @scopes = current_user.circles.map { |r| [r.name, r.id] }
+     @scopes.push(["Public", "0"])
     @user = User.find(current_user)
     @stats = @user.stats.order("date DESC").includes(:category)
     @stats_by_cat = @stats.group_by { |s| s.category }
@@ -67,6 +69,8 @@ class StatsController < ApplicationController
   # stat /stats
   # stat /stats.json
  def create
+    @scopes = current_user.circles.map { |r| [r.name, r.id] }
+     @scopes.push(["Public", "0"])
     @stat = current_user.stats.build(params[:stat])
     if @stat.save
       flash[:notice] = "Successfully created stat."

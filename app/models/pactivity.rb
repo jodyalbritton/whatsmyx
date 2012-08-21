@@ -2,7 +2,7 @@ class Pactivity < ActiveRecord::Base
   belongs_to :user
   belongs_to :exercise
   has_many :activities, :as => :target, dependent: :destroy
-  attr_accessible :duration, :name, :exercise_id, :time, :category, :date
+  attr_accessible :duration, :name, :exercise_id, :time, :category, :date, :scope
   validates_presence_of :duration, :time, :name, :exercise_id, :date
  
   

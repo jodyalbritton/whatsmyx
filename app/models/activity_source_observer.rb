@@ -13,7 +13,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :user => target.user, 
       :target_id => target.id, 
       :activity_type=> target.class.to_s, 
-      :created_at => target.created_at, 
+      :created_at => target.date, 
       :updated_at => target.updated_at,
       :parent_id => target.parent_id,
       :target_type => target.class.to_s,
@@ -38,9 +38,10 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :user => target.user, 
       :target_id => target.id, 
       :activity_type=> target.class.to_s, 
-      :created_at => target.created_at, 
+      :created_at => target.date, 
       :updated_at => target.updated_at,
-      :target_type => target.class.to_s, 
+      :target_type => target.class.to_s,
+      :scope => target.scope,
       :verb => "tracked")
       
       elsif @object == "Meal"
@@ -48,9 +49,10 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :user => target.user, 
       :target_id => target.id, 
       :activity_type=> target.class.to_s, 
-      :created_at => target.created_at, 
+      :created_at => target.date, 
       :updated_at => target.updated_at,
-      :target_type => target.class.to_s, 
+      :target_type => target.class.to_s,
+      :scope => target.scope, 
       :verb => "tracked")
       
       elsif @object == "Pactivity"
@@ -58,9 +60,10 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :user => target.user, 
       :target_id => target.id, 
       :activity_type=> target.class.to_s, 
-      :created_at => target.created_at, 
+      :created_at => target.date, 
       :updated_at => target.updated_at,
-      :target_type => target.class.to_s, 
+      :target_type => target.class.to_s,
+      :scope => target.scope, 
       :verb => "tracked")
       
  

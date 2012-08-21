@@ -5,32 +5,29 @@
              <h4><%= link_to activity.user.username, activity.user %></h4>
              <i class="icon-time"></i> <%= time_ago_in_words(activity.created_at) %>
        </div>
-              <div id="stat-body" class="span8 activity-body">
-             <div class="pactivity-content">
-             Logged <%= link_to "activity", activity.target %> <%= activity.target.name %> for <%= activity.target.duration %> minutes, 
-             burning <%= activity.target.burned %> calories
-           
-             </div>
-     
-           
-           
-             <%= render "activities/likes", :like_object => activity %>
-             
-           <div id="comments_list">
+       <div class="span8 activity-body">
+          <div class="activity-content">
+           Logged <%= link_to "activity", activity.target %> <%= activity.target.name %> for <%= activity.target.duration %> minutes, 
+           burning <%= activity.target.burned %> calories
+          </div>
+          
+          <%= render "activities/likes", :like_object => activity %>
+          <div id="comment-form">
+          <%= render_comments_form activity.target %>
+          </div>  
+          <div id="comments_list">
           <ul id="comments_<%= activity.target.id %>">
           <%= render_comments activity.target %>
           </ul>
           </div>
 
-         <div id="comment-form">
-          <%= render_comments_form activity.target %>
+          
+      </div>
+         <div class="span2 activity-logo" >
+     	  <div class="activity-logo visible-desktop">
+           <i class="icon-bolt"></i> 
+          </div>
          </div>
-    </div>
-     <div class="span2 activity-logo" >
-     	<div class="activity-logo visible-desktop">
-         <i class="icon-bolt"></i> 
-        </div>
-    </div>
 </div>
 
 <% else %>

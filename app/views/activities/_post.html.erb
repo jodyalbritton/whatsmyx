@@ -13,7 +13,7 @@
   
        </div>
        <div id="post-body" class="span8 activity-body">
-             <div class="post-content">
+             <div class="activity-content">
              <p>
               <%= link_to "Posted", activity.target %><%if activity.parent_id > 0%> to a group: <% end %>
               <%= activity.target.text %>
@@ -33,7 +33,11 @@
 
 
 
-
+          <hr>
+          <div id="comment-form" class="row-fluid">
+          <%= render_comments_form activity.target %>
+         
+          </div>
           <div id="comments_list" class="row-fluid">
           <div id="comments_<%= activity.target.id %>">
           	<%= render_comments activity.target, :page => params[:page] %>
@@ -43,10 +47,7 @@
         
           </div>
            
-         <div id="comment-form" class="row-fluid">
-          <%= render_comments_form activity.target %>
          
-         </div>
     </div>
      <div class="span2 activity-logo" >
      	<div class="activity-logo visible-desktop">

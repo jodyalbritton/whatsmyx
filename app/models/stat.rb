@@ -1,5 +1,5 @@
 class Stat < ActiveRecord::Base
-  attr_accessible :name, :stype, :value, :date, :category, :unit, :category_id, :sunit, :stype, :user_id, :stype_id
+  attr_accessible :name, :stype, :value, :date, :category, :unit, :category_id, :sunit, :stype, :user_id, :stype_id, :scope
   belongs_to :user
   belongs_to :category
   has_many :activities, :as => :target, dependent: :destroy
@@ -8,7 +8,8 @@ class Stat < ActiveRecord::Base
   validates_presence_of :value, :date, :category_id, :sunit
   
   validates_length_of :value, :maximum => 5, :too_long => "That number is too big"
- include Likeable
+   include Likeable
+   opinio_subjectum
  def as_json(options={})
     super(:only => [:date,:value],
        

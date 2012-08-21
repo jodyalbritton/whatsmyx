@@ -1,24 +1,46 @@
-<% cals = 0 %>
-<% if @pactivity.user.profile.weight > 0 %>
-  <% cals = (((@pactivity.exercise.mets * 3.5 * (@pactivity.user.profile.weight  / 4.5359237))/200).round * @pactivity.duration) %> 
-<% end %>
-<p id="notice"><%= notice %></p>
+<div class="row-fluid activity-item">
+	  
+      <div id="activity-sidebar" class="span2 activity-sidebar">
 
-
-
-<p>
-  <b>Physical Activity:</b>
-  <%= @pactivity.exercise.name %>
-</p>
-
-<p>
- <b>Duration:</b>
-  <%= @pactivity.duration %> Minutes
- </p>
-
-<b>You Burned</b>
-  <%= cals %> Calories
- </p>
-
-
-<%= link_to 'Back', pactivities_path %>
+     
+             <%= image_tag @pactivity.user.profile.avatar.url(:thumb), :class => "avatar" %>
+             <h3><%= link_to @pactivity.user.username, @pactivity.user %></h3>
+             <%= time_ago_in_words(@pactivity.date) %> ago.
+   
+      
+  
+       </div>
+       <div id="post-body" class="span8 activity-body">
+             <div class="activity-content">
+             <p>
+              
+              Logged <%= link_to "activity", @pactivity %> <%= @pactivity.name %> for <%= @pactivity.duration %> minutes, 
+           burning <%= @pactivity.burned %> calories
+            
+             </p>
+             </div>
+     
+           
+             <%= render "pactivities/likes", :like_object => @pactivity %>
+             <div id="comments_list" class="row-fluid">
+         <div id="comment-form" class="row-fluid">
+          <%= render_comments_form @pactivity %>
+         
+         </div>
+          <div id="comments_<%= @pactivity.id %>">
+          	<%= render_comments @pactivity, :page => params[:page] %>
+          
+          </div>
+          
+        
+          </div>
+           
+         
+    </div>
+     <div class="span2 activity-logo" >
+     	<div class="activity-logo visible-desktop">
+         <i class="icon-bolt"></i> 
+        </div>
+    </div>
+</div>
+             

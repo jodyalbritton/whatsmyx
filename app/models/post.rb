@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
    
-   attr_accessible :text, :user, :parent_id, :scope
+   attr_accessible :text, :user, :parent_id, :scope, :date
    
    belongs_to :user
    has_many :activities, :as => :target, dependent: :destroy

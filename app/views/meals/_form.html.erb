@@ -4,6 +4,8 @@
 
     <div class="control-group">
     <%= f.input :name %>
+    <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => "Who sees this?" %>
+    
     <% if params[:date] %>
     <%= f.input :date, :as => "string", :input_html => {:value => params[:date]} %>
     

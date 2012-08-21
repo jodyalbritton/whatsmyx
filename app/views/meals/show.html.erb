@@ -1,20 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid activity-item">
+	  
+      <div id="activity-sidebar" class="span2 activity-sidebar">
 
-
-
-<p>
-  <b>Name</b>
-  <%= @meal.name %>
-</p>
-
-<p>
-  <b>Ingredients:</b>
-  <% @meal.foods.each do |food| %>
-  <div>
-  <%= food.name %>
-  </div>
-  <% end %>
-</p>
-
-
-<%= link_to 'Back', nutrition_index_path %>
+     
+             <%= image_tag @meal.user.profile.avatar.url(:thumb), :class => "avatar" %>
+             <h3><%= link_to @meal.user.username, @meal.user %></h3>
+             <%= time_ago_in_words(@meal.date) %> ago.
+   
+      
+  
+       </div>
+       <div id="post-body" class="span8 activity-body">
+             <div class="activity-content">
+             <p>
+              
+              Had <%= link_to @meal.name, meal_path(@meal) %> Calories <%= @meal.cals.round %>
+              <% @meal.ingredients.each do |ingredient| %>
+              <div class="meal-ingredient">
+              	<%= ingredient.what_food %>
+              </div>
+              <% end %>
+             </p>
+             </div>
+     
+           
+             <%= render "meals/likes", :like_object => @meal %>
+             <div id="comments_list" class="row-fluid">
+         <div id="comment-form" class="row-fluid">
+          <%= render_comments_form @meal %>
+         
+         </div>
+          <div id="comments_<%= @meal.id %>">
+          	<%= render_comments @meal, :page => params[:page] %>
+          
+          </div>
+          
+        
+          </div>
+           
+         
+    </div>
+     <div class="span2 activity-logo" >
+     	<div class="activity-logo visible-desktop">
+         <i class="icon-lemon"></i> 
+        </div>
+    </div>
+</div>
+             

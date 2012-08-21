@@ -17,6 +17,8 @@
 	  <%= f.input :value %>
 	  <%= f.input :sunit,:input_html => {:class => "input-mini"}, :label => "Units"%>
 	  <%= f.input :date, :input_html => {:class => "input-small"}%>
+	  <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => "Who sees this?" %>
+        
       <%= f.input :category_id, :as => "hidden"%>
       </div>
       <div class="span4">
