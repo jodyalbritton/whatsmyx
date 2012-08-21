@@ -4,7 +4,7 @@
   </li>
   <li><a data-toggle="modal"  href="#pactivity-modal">Log Activity</a>
 </li>
-  <li class="active">
+  <li class="<%= 'active' if params[:controller] == 'pactivities' %>">
     <%= link_to "Activity List", pactivities_path %>
   </li>
  

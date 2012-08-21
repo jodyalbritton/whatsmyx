@@ -4,7 +4,7 @@
 	                <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Feed", root_path %></li>
 	                
 	               
-	                 <li class="dropdown">
+	                 <li class="<%= 'active' if params[:controller] == 'stats' %>">
 	                  <%= link_to "Stats", stats_path %>
 	                
                      </li>
@@ -14,9 +14,11 @@
 	               
                    </li>
 	                
-	                <li><%= link_to "Activities", pactivities_path %></li>
+	                <li class="<%= 'active' if params[:controller] == 'pactivities' %>"><%= link_to "Activities", pactivities_path %></li>
 	            
-	                 <li class="dropdown visible-desktop">
+	                 <li class="dropdown visible-desktop 
+	                 <%= 'active' if params[:controller] == 'users'%>
+	                 <%= 'active' if params[:controller] == 'groups'%>">
 	                 <a href="#"
                           class="dropdown-toggle"
                           data-toggle="dropdown">
@@ -153,19 +155,6 @@
                   <% if user_signed_in? %>
                     <li>
                     <%= link_to('Edit account', edit_user_registration_path) %>
-                    </li>
-                    
-                    <li>
-                    <%= link_to('Edit Profile', edit_user_profile_path(current_user))%>
-                    </li>
-                    <li>
-                    <%= link_to('Edit Circles', circles_path)%>
-                    </li>
-                     <li>
-                    <%= link_to('Change Password', edit_user_registration_path(:anchor => "wordpass"))%>
-                    </li>
-                     <li>
-                    <%= link_to('Auth Providers', services_path )%>
                     </li>
                     <li>
                     <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>  

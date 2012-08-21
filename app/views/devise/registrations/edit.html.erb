@@ -1,5 +1,5 @@
-<% content_for :top_left do %>
-<h2>Your Account</h2>
+<% content_for :sidebar do %>
+<%= render "profiles/sidebar" %>
 <% end %>
 <% resource.build_profile unless resource.profile%>
 <% resource.build_dgoal unless resource.dgoal%>

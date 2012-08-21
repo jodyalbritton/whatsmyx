@@ -1,14 +1,6 @@
-   <% content_for :top_left do %>
-   <h2>Groups</h2>
-   <% end %>
-   <% content_for :top_right do%>
-      <div class="pull-right">
-      	<%= link_to "New", new_group_path, :class=> "btn btn-primary"%>
-      </div>
-   <% end %>
-   <% content_for :sidebar do %>
-    
-   <% end %>
+<% content_for :sidebar do %>
+	<%= render "groups/navigation" %>
+<% end %>
    
       
     
