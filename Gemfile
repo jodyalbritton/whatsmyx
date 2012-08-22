@@ -56,6 +56,7 @@ gem 'ajax-chosen-rails'
 gem 'devise_invitable'
 gem 'kaminari'
 gem 'best_in_place'
+gem 'remotipart'
 
 group :development do
 gem 'bullet'

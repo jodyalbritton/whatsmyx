@@ -16,7 +16,9 @@ class PostsController < ApplicationController
   
  
     @post = current_user.posts.build(params[:post])
-    
+  
+      
+   
      respond_to do |format|
       if @post.save
         format.html { redirect_to root_path, notice: 'Sucessfully created a Post!' }

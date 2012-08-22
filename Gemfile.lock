@@ -247,6 +247,7 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redis (3.0.1)
+    remotipart (1.0.2)
     riddle (1.5.2)
     rmagick (2.13.1)
     rolify (3.1.0)
@@ -346,6 +347,7 @@ DEPENDENCIES
   rails (= 3.2.8)
   rails3-jquery-autocomplete!
   redis
+  remotipart
   rmagick
   rolify
   rspec-rails (>= 2.0)

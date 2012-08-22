@@ -18,10 +18,7 @@ class Post < ActiveRecord::Base
    mount_uploader :attachment, AttachmentUploader
    
   
-   validates :attachment, 
-    :file_size => { 
-      :maximum => 0.5.megabytes.to_i 
-    } 
+  
       
   
     
