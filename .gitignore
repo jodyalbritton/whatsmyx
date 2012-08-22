@@ -18,10 +18,10 @@
 /public/system/users/avatars
 /public/system/profiles/avatars
 /public/system/groups/avatars
-/public/system/meals/attachments
-/public/system/stats/attachments
-/public/system/posts/attachments
-/public/system/pactivities/attachments
+/public/uploads/meals/attachments
+/public/uploads/stats/attachments
+/public/uploads/posts/attachments
+/public/uploads/pactivities/attachments
 
 
 /config/database.yml
