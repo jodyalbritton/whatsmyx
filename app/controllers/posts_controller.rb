@@ -16,8 +16,12 @@ class PostsController < ApplicationController
   
  
     @post = current_user.posts.build(params[:post])
-    if @post.save
-    flash[:notice] = "Successfully created post."
+    
+     respond_to do |format|
+      if @post.save
+        format.html { redirect_to root_path, notice: 'Membership was successfully updated.' }
+        format.js   {
+          flash[:notice] = "Successfully created post."
     if @post.parent_id == 0 
      following = Follow.where(["follower_id = ?", (current_user)])
      following_ids = following.collect{|f| f.followable_id}
@@ -31,7 +35,14 @@ class PostsController < ApplicationController
     @activities = Kaminari.paginate_array( @group.activities.find(:all)).page(params[:page]).per(5)
     end
     @posts = Post.order("updated_at DESC")
-    end
+   
+        }
+      
+      end
+      end
+    
+    
+    
   end
 
   def edit

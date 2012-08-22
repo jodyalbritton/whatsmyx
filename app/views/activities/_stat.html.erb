@@ -14,11 +14,32 @@
           <div id="comment-form">
           <%= render_comments_form activity.target %>
           </div>
-          <div id="comments_list">
-          <ul id="comments_<%= activity.target.id %>">
-          <%= render_comments activity.target %>
-          </ul>
+          <div id="expanded_<%= activity.target.id %>" class="expanded" Style="display:none;">
+         <div class="expanded-menu row-fluid">
+         	<div class="expanded-like-count span2">
+         		<div>
+         		<%= activity.target.likes.count %>
+         		</div>
+         		<div>Props</div>
+         	</div>
+         	<div class="span2">
+         	</div>
+         	
+         	<div class="span8">
+         		
+         		<% activity.target.likes.each do |likeuser| %>
+         		 <%= image_tag likeuser.user.profile.avatar.url(:mini), :class => "avatar" %>
+         		<% end %>
+         	</div>
+         </div>
+         <div id="comments_list">
+         <div id="comments_<%= activity.target.id %>">
+          <%= render_comments activity.target, :page => params[:page] %>
+         </div>
+          
+        
           </div>
+         </div> 
 
           
            

@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
    
-   attr_accessible :text, :user, :parent_id, :scope, :date
+   attr_accessible :text, :user, :parent_id, :scope, :date, :attachment
    
    belongs_to :user
    has_many :activities, :as => :target, dependent: :destroy
@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
  
    opinio_subjectum
    
-   
+   mount_uploader :attachment, AttachmentUploader
    
   
    

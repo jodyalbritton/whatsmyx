@@ -7,7 +7,8 @@ class Meal < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients
   
   
-   attr_accessible :name, :ingredients_attributes, :date, :scope
+   attr_accessible :name, :ingredients_attributes, :date, :scope, :attachment
+   mount_uploader :attachment, AttachmentUploader
    include Likeable
    opinio_subjectum
    validates_presence_of :name, :date
