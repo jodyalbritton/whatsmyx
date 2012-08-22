@@ -1,3 +1,4 @@
+require 'file_size_validator'
 class Post < ActiveRecord::Base
    
    attr_accessible :text, :user, :parent_id, :scope, :date, :attachment
@@ -17,7 +18,10 @@ class Post < ActiveRecord::Base
    mount_uploader :attachment, AttachmentUploader
    
   
-   
+   validates :attachment, 
+    :file_size => { 
+      :maximum => 0.5.megabytes.to_i 
+    } 
       
   
     

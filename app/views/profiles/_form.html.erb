@@ -2,7 +2,7 @@
     <div class="row-fluid">
     <div class="span10">
     
-    <%= p.input :dob, :label => "Date Of Birth", :input_html => {:class=> "input-small"} %>
+    <%= p.input :dob, :label => "Date Of Birth", :start_year => 1900, :input_html => {:class=> "input-small"} %>
     <%= p.input :gender, :input_html => {:class => "input-small"}, :as => "select", :collection =>  ([['Male', 'male'], ['Female', 'female']]), :default => "Male" %>
     <%= p.input :about, :input_html => { :class => "input-xlarge", :style => "height: 100px;"}%>
     </div>

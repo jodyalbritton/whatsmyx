@@ -52,13 +52,13 @@
    
     </div>  
     <div class="span9 main-content" id="main-content">
-  
+    <%= bootstrap_flash %> 
     <%= yield %>
     <%= render 'layouts/ga'%>
     </div>
     <% else %>
     <div class="span12 main-content" id="main-content">
-  
+    <%= bootstrap_flash %> 
     <%= yield %>
     <%= render 'layouts/ga'%>
     </div>

@@ -19,25 +19,26 @@ class PostsController < ApplicationController
     
      respond_to do |format|
       if @post.save
-        format.html { redirect_to root_path, notice: 'Membership was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Sucessfully created a Post!' }
         format.js   {
           flash[:notice] = "Successfully created post."
-    if @post.parent_id == 0 
-     following = Follow.where(["follower_id = ?", (current_user)])
-     following_ids = following.collect{|f| f.followable_id}
-     mycircles =  current_user.relationships.collect{|g| g.circle_id}
-     mycircles.push(0)
-     aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
-     @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]
+          if @post.parent_id == 0 
+          following = Follow.where(["follower_id = ?", (current_user)])
+          following_ids = following.collect{|f| f.followable_id}
+          mycircles =  current_user.relationships.collect{|g| g.circle_id}
+          mycircles.push(0)
+          aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
+          @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]
     
-    else 
-    @group = Group.find(@post.parent_id)
-    @activities = Kaminari.paginate_array( @group.activities.find(:all)).page(params[:page]).per(5)
-    end
-    @posts = Post.order("updated_at DESC")
+          else 
+           @group = Group.find(@post.parent_id)
+           @activities = Kaminari.paginate_array( @group.activities.find(:all)).page(params[:page]).per(5)
+          end
+         @posts = Post.order("updated_at DESC")
    
         }
-      
+      else 
+        format.html { redirect_to root_path, notice: 'Opps Something Went Wrong!' }
       end
       end
     

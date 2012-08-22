@@ -8,9 +8,13 @@
    <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
    <div class="post-form-box">
    <%= f.input :text,  :label => false, :input_html => {:id=>"post-form-cont-form", :class=> "post-input"}%>
-   
-
-   <%= f.input :date, :label=> false, :input_html=>{:class=>"input-small"}%> <%= f.file_field :attachment %>
+   <a href="javascript:toggleDiv('post-date');"> Change Date</a>
+   <div id="post-date" style="display:none;">
+   <%= f.input :date, :label=> false, :input_html=>{:class=>"input-small"}%> 
+   </div>
+   <div>
+   <%= f.file_field :attachment %>
+   </div>
   </div>
      
   

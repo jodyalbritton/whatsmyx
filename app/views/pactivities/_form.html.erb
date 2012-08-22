@@ -16,12 +16,7 @@
     <%= f.input :category, :as=> "hidden" %>
     <%= f.input :date, :input_html => {:class=>"input-small"}%>
 
-    <% if @pactivity.time == nil %>
-    <%= f.input :time, :label => "Start Time", :input_html => {:class => "input-small", :value => Time.now.strftime("%r") }%>
-
-    <% else %>
-     <%= f.input :time, :label => "Start Time", :input_html => {:class=> "input-small", :value => @pactivity.time.strftime("%r")} %>
-    <% end %>
+    
     <%= f.input :duration, :hint => "in minutes" %>
      
 </div>
