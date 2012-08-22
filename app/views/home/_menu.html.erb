@@ -1,9 +1,7 @@
 
          <div class="home-menu">
          <ul class="nav nav-tabs nav-stacked">
-            <li class="nav-header ">
-             Dashboard Menu
-            </li>
+            
          
             <li>
                 <a data-toggle="modal" href="#stats-modal" ><i class="icon-bar-chart"></i>Track Stat</a>
@@ -17,44 +15,13 @@
             </li>
            
          </ul>
-       <ul class="nav nav-list hidden-desktop">
-    
-            
-         
-          <li>
-                <a data-toggle="modal" href="#stats-modal" ><i class="icon-bar-chart"></i>Stat</a>
-            </li>
-            <li>
-                 <a data-toggle="modal" href="#pactivity-modal" ><i class="icon-time"></i>Activity</a>
-            </li>
-            <li>
-             	  <a href="<%=nutrition_index_path%>"><i class="icon-lemon"></i>Nutrition</a> 
-          
-            </li>
-           
-         </ul>
+        </div>
     
          
          
          
          
-         <ul class="nav nav-list visible-desktop">
-            <li class="nav-header">
-            Groups
-            </li>
-            <% @curr_membs.each do |membership| %>
-            <li>
-               <%= link_to membership.group.name, membership.group %> 
-            </li>
-            <% end %>
-            <li>
-            	<hr>
-            </li>
-            <li>
-            	<%= link_to 'New Group', new_group_path %>
-            </li>
-              </ul>
-              </div>
+       
        
      <div class="modal hide fade" id="pactivity-modal">
        <%= render "pactivities/form"%>
