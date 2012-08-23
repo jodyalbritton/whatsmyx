@@ -1,20 +1,15 @@
-<% content_for :top_left do %>
-<h1>Help</h1>
-
-<% end %>
-
-  <div class="span10">
-    <p> The site is currently in very early beta. Please send all bug reports and feature requests to the emaill address below. You can follow
-	me on the system to get updates related to the site. Please send me feedback and feature requests. Love it or hate it your feedback will help me make a better site. Thanks</p>
-    <a href="/jodyalbritton">Jody Albritton</a>
-
-     
-     <div class="help">
-     <%= mail_to "help@whatsmyx.com", "help@whatsmyx.com"%>
-     </div>
-                    
-                 
-     <div class="fb-like" data-href="http://whatsmyx.com" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div>
+<% content_for :sidebar do %>
+<ul class="navhelp nav nav-tabs nav-stacked">
+  <li><a href="#help-main">Main </a></li>
+  <li><a href="#help-circles">Circles </a></li>
+  <li><a href="#help-posts">Posts </a></li>
+  <li><a href="#help-stats">Stats </a></li>
+  <li><a href="#help-meals">Meals </a></li>
+  <li><a href="#help-activities">Activities </a></li>
+  <li><a href="#help-messages">Messages </a></li>
+</ul>
+<h4>Contact Us</h4>
+<div class="fb-like" data-href="http://whatsmyx.com" data-send="true" data-width="250" data-show-faces="true" data-font="arial"></div>
 	 <div>
 	 	<a href="https://www.facebook.com/pages/Whats-My-X/134733929996740?ref=hl">Find us on Facebook
 	 </div>
@@ -28,7 +23,77 @@
 	 	
 	 	<a href="https://plus.google.com/101897103984595628551" rel="publisher">Find us on Google+</a>
 	 </div>
-</div>
+<% end %>
+
+  <div id="help-body"  data-spy="scroll" data-target="navhelp">
+  	<h2>Getting Help</h2>
+    <p> The site is currently in very early beta. Please send all bug reports and feature requests to the emaill address below. You can follow
+	me on the system to get updates related to the site. Please send me feedback and feature requests. Love it or hate it your feedback will help me make a better site. Thanks</p>
+    <a href="/jodyalbritton">Jody Albritton</a>
+
+     
+     <div class="help-main">
+     <%= mail_to "help@whatsmyx.com", "help@whatsmyx.com"%>
+     </div>
+                    
+                 
+     
+    
+
+     <div id="help-circles" >
+     <h2>Circles</h2>
+     <p>
+     	Circles are used to define groups of relations between users. Your can visit your circles page at <%= link_to "Circles", circles_path %>.
+     	All circles created will have you in them by default. By default every object on the site is posted to the public circle. To have privacy 
+     	create a circle called "Private". By default you are the only member of a new circle. If you do not add members to this circle, only you will
+     	see objects that have this circle as a target audience. 
+     </p>
+     <h4>Some Examples</h4>
+     <p>
+     	You may want to create seperate circles for advisers, friends, and everyone else. You can target each group of relationships with different 
+     	data. 
+     	
+     </p>
+     </div>
+     <div id="help-posts" >
+     <h2>Posts</h2>
+     <p>
+     	Posts are dynamic objects on WMX. A post can be a communication to other users of the site, or it can be a note about the days activities. A 
+     	post can include a picture, and other meta data. WMX supports the use of hash tags within the post text. By default a post will have the current day's
+     	date. You can change the date of a post to reflect the date of a particular event. 
+     </p>
+     <h4>Post Dates</h4>
+     <p>
+     	WMX posts do not have static dates. The feed is meant to be timeline of activities in the order they happned, not the order you were able to enter them in. 
+        This feature comes in handy for entering data about events that have already happened. 
+     </p>
+     </div>
+     <div id="help-stats" >
+     <h2>Stats</h2>
+     <p>
+     	What is a stat? A stat is any stastistic you wish to measure over time. As of now a stat can be anything that can be measured with a numeric value. 
+        
+     </p>
+     </div>
+     <div id="help-meals" >
+     <h2>Meals</h2>
+     <p>
+     	Meals are collections of food items. WMX uses the USDA food database, and intends to aqquire a more extensive food list once more users come on board. 
+     	
+     </p>
+     </div>
+     <div id="help-activities" >
+     <h2>Activities</h2>
+     <p>
+        Activities are measured in minutes.
+     </p>
+     </div>
+     <div id="help-messages" >
+     <h2>Messages</h2>
+     <p>Messages can be sent to any other user of the system. A message may have many recipients.</p>
+     </div>
+     </div>
+
 
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 <script type="text/javascript">
