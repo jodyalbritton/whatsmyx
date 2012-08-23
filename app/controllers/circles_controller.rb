@@ -5,10 +5,6 @@ class CirclesController < ApplicationController
     @user = User.find(current_user)
     @circles = @user.circles.all
     @circle = current_user.circles.build(params[:circle])
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @circles }
-    end
   end
 
   # GET /circles/1
@@ -35,7 +31,10 @@ class CirclesController < ApplicationController
 
   # GET /circles/1/edit
   def edit
-    @circle = Circle.find(params[:id])
+   
+    @user = User.find(current_user)
+     @circles = @user.circles
+    @circle = @user.circles.find(params[:id])
   end
 
   # POST /circles
@@ -76,10 +75,5 @@ class CirclesController < ApplicationController
   def destroy
     @circle = Circle.find(params[:id])
     @circle.destroy
-
-    respond_to do |format|
-      format.html { redirect_to circles_url }
-      format.json { head :no_content }
-    end
   end
 end

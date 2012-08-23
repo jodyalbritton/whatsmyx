@@ -1,3 +1,4 @@
-$("#circle-modal").modal('toggle')
-$("#circle-modal").html("<%= escape_javascript(render "circles/form")%>");
 
+
+
+$("#circle-modal-<%= @circle.id %>").modal('toggle')

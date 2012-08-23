@@ -1,6 +1,6 @@
-<h1>Editing circle</h1>
+<% content_for :sidebar do %>
+<%= render "circles/sidebar" %>
+<% end %>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @circle %> |
-<%= link_to 'Back', circles_path %>
+<%= render "circles/form"%>

@@ -56,7 +56,9 @@
   <% @circles.each do |circtab| %>
    <div class="tab-pane inbox" id="circle-tab-<%= circtab.id %>">
     <div class="circle-header">
-	  <%= circtab.name %> <%= link_to "Edit", edit_circle_path(circtab), :remote => true %>
+	  <%= circtab.name %> <%= link_to edit_circle_path(circtab) do %>
+	  <i class="icon-cogs"></i>
+	  <% end %>
      </div>
      <% circtab.users.each do |user| %>
      <div class="user-card row-fluid">
@@ -70,6 +72,9 @@
     	<%= render :partial => "follows/follow_user", :locals => {:user => user } %>
     </div>
     </div>
+    
+   
+    
     <% end %>
 	
   </div>
@@ -77,9 +82,28 @@
 </div>
         
  
-<div class="modal hide fade" id="circle-modal">
-       <%= render "circles/form"%>
+ <div class="modal hide" id="circle-modal">
+    	<%= simple_form_for @circle, :remote => true do |f| %>
+        <div class="modal-header">
+
+        <%= f.error_notification %>
+        </div>
+        <div class="modal-body">
+  
+        <div class="form-inputs">
+        <%= f.input :name %>
+        <%= f.input :user_tokens, :label => "Circle Members", :as => 'string', :input_html => {  data: {load: @circle.users.collect {|user| {:id => user.id, :name => user.username } }}}, :class=> "x-large"%>
+
+    <%= f.input :description %>
+  </div>
 </div>
+<div class="modal-footer">
+ 
+    <%= f.button :submit %>
+
+</div>
+<% end %>
+    </div>
 
 
 
