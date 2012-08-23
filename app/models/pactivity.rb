@@ -3,7 +3,7 @@ class Pactivity < ActiveRecord::Base
   belongs_to :exercise
   has_many :activities, :as => :target, dependent: :destroy
   attr_accessible :duration, :name, :exercise_id, :time, :category, :date, :scope, :attachment
-  validates_presence_of :duration, :time, :name, :exercise_id, :date
+  validates_presence_of :duration, :name, :exercise_id, :date
  
   mount_uploader :attachment, AttachmentUploader
   include Likeable

@@ -3,6 +3,14 @@
 <% end %>
 
 
+<div class="stats-top row-fluid">
+	<div class="span10">
+	</div>
+	<div class="span2">
+	<a class="btn btn-primary" data-toggle="modal" href="#circle-modal">New Circle <i class="icon-upload"></i></a>
+	</div>
+	
+</div>
 
 <div class="tab-content">
  
@@ -48,7 +56,7 @@
   <% @circles.each do |circtab| %>
    <div class="tab-pane inbox" id="circle-tab-<%= circtab.id %>">
     <div class="circle-header">
-	  <%= circtab.name %>
+	  <%= circtab.name %> <%= link_to "Edit", edit_circle_path(circtab), :remote => true %>
      </div>
      <% circtab.users.each do |user| %>
      <div class="user-card row-fluid">
@@ -69,7 +77,9 @@
 </div>
         
  
-
+<div class="modal hide fade" id="circle-modal">
+       <%= render "circles/form"%>
+</div>
 
 
 

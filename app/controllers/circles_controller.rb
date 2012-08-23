@@ -4,7 +4,7 @@ class CirclesController < ApplicationController
   def index
     @user = User.find(current_user)
     @circles = @user.circles.all
-
+    @circle = current_user.circles.build(params[:circle])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @circles }

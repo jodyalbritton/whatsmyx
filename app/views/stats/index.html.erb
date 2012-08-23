@@ -4,7 +4,14 @@
 <% end %>
 
 
-
+<div class="stats-top row-fluid">
+	<div class="span10">
+	</div>
+	<div class="span2">
+	<a class="btn btn-primary" data-toggle="modal" href="#stats-modal">Track Stat <i class="icon-bar-chart"></i></a>
+	</div>
+	
+</div>
 <div class="modal hide fade" id="stats-modal">
   <%= render "stats/form"%>
 </div>
@@ -13,7 +20,7 @@
  
 
 
-  <div class="well span11">
+  <div class="well">
   <div class="row-fluid">
   <div class="span3">
    <h3><%= category.name %></h3>
