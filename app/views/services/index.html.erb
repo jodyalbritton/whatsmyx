@@ -1,12 +1,12 @@
-  <% content_for :sidebar do %>
+<% content_for :sidebar do %>
 <%= render "profiles/sidebar" %>
 <% end %>
    <section id="deviseauth">
-    <div class= "row">
+    <div class= "row-fluid">
     <div class = "header">
-    <h2>Authentication Settings</h2>
+    <h2>Linked Services</h2>
     <div id="currservices">
-        <h3>The following <%= @services.count == 1 ? 'account is' : 'accounts are' %> connected with your local account at Whats My X:</h3>
+        <h3>The following <%= @services.count == 1 ? 'account is' : 'accounts are' %> linked to your local account:</h3>
     </div>
         <% @services.each do |service| %>  
      

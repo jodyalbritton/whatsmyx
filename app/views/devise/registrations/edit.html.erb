@@ -8,7 +8,7 @@
 <ul class="nav nav-tabs" id="myTab">
   <li class="active"><a href="#account"data-toggle="tab">Account</a></li>
   
-  <li><a href="#dgoal" data-toggle="tab">Diet Goals</a></li>
+  
   <li><a href="#wordpass" data-toggle="tab">Password</a></li>
   <li><a href="#settings" data-toggle="tab">Settings</a></li>
   <li><a href="#cancel_account" data-toggle="tab">Cancel Account</a></li>
@@ -16,7 +16,7 @@
  
 <div class="tab-content">
   <div class="tab-pane active" id="account">
-  <div class="inputs">
+  <div class="regis-inputs">
     <%= f.input :username, :required => true %>
     <%= f.input :name, :required => true %>
     <%= f.input :email, :required => true, :autofocus => true %>
@@ -24,27 +24,27 @@
 
   </div>
 
-   <div class="tab-pane regis" id="dgoal">
-   	<%= f.simple_fields_for :dgoal do |d| %>
-    	<%= d.input :calories %>
-   	    <%= d.input :protein, :label => "Protein(g)", :placeholder => "50"%>
-   	    <%= d.input :fat, :label => "Fats(g)", :placeholder => "50" %>
-   	    <%= d.input :carbs, :label => "Carbohydrate(g)", :placeholder => "300" %>	
-   	<% end %>
+   <div class="tab-pane regis" id="settings">
+   <div class="regis-inputs">
+   <%= f.input :privacy, :hint => "Account hidden in search?"%>
+   <%= f.input :notify_by_email, :label => "E-mail Notifications"%>
+   <%= f.input :opt_in, :label=> "Updates", :hint=> "Updates via email from WMX" %>
    
   </div>
+  </div>
   <div class="tab-pane regis" id="wordpass">
+  <div class="regis-inputs">
     <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
     <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
   </div>
-  <div class="tab-pane regis" id="settings">
-
   </div>
   <div class="tab-pane regis" id="cancel_account">
+  <div class="regis-inputs">
   <h3>Cancel my account</h3>
 
    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure??", :method => :delete %>.</p>
+  </div>
   </div>
 </div>
   
