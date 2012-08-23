@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120822032236) do
+ActiveRecord::Schema.define(:version => 20120823081838) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -443,7 +443,7 @@ ActiveRecord::Schema.define(:version => 20120822032236) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.string   "name"
-    t.date     "date"
+    t.datetime "date"
     t.integer  "scope",        :default => 0
     t.string   "attachment"
   end
@@ -537,7 +537,7 @@ ActiveRecord::Schema.define(:version => 20120822032236) do
     t.datetime "updated_at",                 :null => false
     t.time     "time"
     t.string   "category"
-    t.date     "date"
+    t.datetime "date"
     t.integer  "scope",       :default => 0
     t.string   "attachment"
   end
@@ -552,9 +552,18 @@ ActiveRecord::Schema.define(:version => 20120822032236) do
     t.text     "text"
     t.integer  "parent_id"
     t.integer  "scope",      :default => 0, :null => false
-    t.date     "date"
+    t.datetime "date"
     t.string   "attachment"
+    t.string   "tag_list"
   end
+
+  create_table "posts_tags", :force => true do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
+  end
+
+  add_index "posts_tags", ["post_id"], :name => "index_posts_tags_on_post_id"
+  add_index "posts_tags", ["tag_id"], :name => "index_posts_tags_on_tag_id"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
@@ -676,6 +685,14 @@ ActiveRecord::Schema.define(:version => 20120822032236) do
     t.integer  "scope",       :default => 0
     t.string   "attachment"
   end
+
+  create_table "tags", :force => true do |t|
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tags", ["content"], :name => "index_tags_on_content", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                :default => "", :null => false

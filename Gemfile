@@ -57,6 +57,7 @@ gem 'devise_invitable'
 gem 'kaminari'
 gem 'best_in_place'
 gem 'remotipart'
+gem 'girl_friday'
 
 group :development do
 gem 'bullet'

@@ -1,4 +1,6 @@
 <% content_for :sidebar do %>
+<div data-spy="affix">
+<div class="span11">
 <ul class="navhelp nav nav-tabs nav-stacked">
   <li><a href="#help-main">Main </a></li>
   <li><a href="#help-circles">Circles </a></li>
@@ -23,16 +25,20 @@
 	 	
 	 	<a href="https://plus.google.com/101897103984595628551" rel="publisher">Find us on Google+</a>
 	 </div>
+</div>
+</div>
+
 <% end %>
 
   <div id="help-body"  data-spy="scroll" data-target="navhelp">
+  	<div class="help-main">
   	<h2>Getting Help</h2>
     <p> The site is currently in very early beta. Please send all bug reports and feature requests to the emaill address below. You can follow
 	me on the system to get updates related to the site. Please send me feedback and feature requests. Love it or hate it your feedback will help me make a better site. Thanks</p>
     <a href="/jodyalbritton">Jody Albritton</a>
 
      
-     <div class="help-main">
+     
      <%= mail_to "help@whatsmyx.com", "help@whatsmyx.com"%>
      </div>
                     
@@ -85,7 +91,8 @@
      <div id="help-activities" >
      <h2>Activities</h2>
      <p>
-        Activities are measured in minutes.
+        Activities are measured in minutes. WMX uses a taylor code database containing thousdands of activtities. Once we have moderator, user created activites 
+        will be added to this database. WMX uses METs to determine how many calories are burned for a minute of a particular activity.  
      </p>
      </div>
      <div id="help-messages" >
