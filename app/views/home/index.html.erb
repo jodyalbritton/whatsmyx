@@ -22,15 +22,33 @@
           <%= render "activities/index" %>
           
         </div>
-        <div id="paginator" class="paginator next">
-        <%= link_to_next_page @activities, 'More Items', :remote => true%>
-        </div>
+      
+        <%= will_paginate @activities %>
+      
 
  
       
 
     </div>
+    
+    <div id="rt-modal" class="modal hide">
+    	<%= simple_form_for @post, :remote=> true, :html_options => {:class=> "form-horizontal"} do |f| %>
+    	<div class="modal-header">
+    		<h3>Reply</h3>
+    	</div>
+    	<div class="modal-body">
+    	     <div class="form-controls">
+    		<%= f.input :text, :as => 'text', :label => false, :input_html => {:class=> "text_area"}%>
+    		<%= f.input :reply_to_id, :as => 'hidden' %>
+    		<%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
+    		</div>
+    	</div>
+    	<div class="modal-footer">
+    		<%= f.button :submit, "Reply"%>
+    	</div>
+    	<% end %>
+    </div>
 
 
 
-
+    

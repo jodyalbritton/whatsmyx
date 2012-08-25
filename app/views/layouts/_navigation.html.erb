@@ -1,6 +1,8 @@
                 <div class="nav">
+              
                 <ul class="nav pull-left">
 	                 <% if user_signed_in? %>
+	                
 	                <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Feed", root_path %></li>
 	                
 	               

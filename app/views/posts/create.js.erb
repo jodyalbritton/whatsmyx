@@ -26,6 +26,9 @@
   /*Replace the html of the div post_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
   
+  <% if @post.in_reply_to %>
+  $("#rt-modal").modal('toggle')
+  <% end %>
   
   
 

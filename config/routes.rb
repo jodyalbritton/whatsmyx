@@ -2,7 +2,7 @@ Whatsmyx::Application.routes.draw do
 
   resources :messages
 
-  opinio_model
+  
     resources :notifications
     resources :moderate
     resources  :help
@@ -10,15 +10,15 @@ Whatsmyx::Application.routes.draw do
     resources :activities
     resources :contacts
     resources :meals do
-      opinio
+     
     end
     resources :categories 
     resources :pactivities do
-    opinio
+    
       get :autocomplete_exercise_name, :on => :collection
     end
     resources :stats do 
-      opinio
+      
       get :autocomplete_category_name, :on => :collection
     end
     resources :goals do
@@ -36,7 +36,7 @@ Whatsmyx::Application.routes.draw do
     resources :community
     
     resources :posts do
-    opinio
+    
     end 
     resources :mcategories
     resources :nutrition

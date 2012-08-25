@@ -3,14 +3,13 @@ class Stat < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many :activities, :as => :target, dependent: :destroy
-  paginates_per 5
    
   validates_presence_of :value, :date, :category_id, :sunit
   
   validates_length_of :value, :maximum => 5, :too_long => "That number is too big"
-   mount_uploader :attachment, AttachmentUploader
+  mount_uploader :attachment, AttachmentUploader
    include Likeable
-   opinio_subjectum
+   
  def as_json(options={})
     super(:only => [:date,:value],
        

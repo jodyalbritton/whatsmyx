@@ -25,9 +25,7 @@
      
              
              <%= render "activities/likes", :like_object => activity %>
-              <div id="comment-form">
-              <%= render_comments_form activity.target %>
-              </div>
+             
               <div id="expanded_<%= activity.id %>" class="expanded" Style="display:none;">
          <div class="expanded-menu row-fluid">
          	<div class="expanded-like-count span2">
@@ -46,13 +44,7 @@
          		<% end %>
          	</div>
          </div>
-         <div id="comments_list">
-         <div id="comments_<%= activity.target.id %>">
-          <%= render_comments activity.target, :page => params[:page] %>
-         </div>
-          
-        
-          </div>
+         
          </div> 
 
         

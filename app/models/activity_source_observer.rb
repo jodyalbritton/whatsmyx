@@ -2,7 +2,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
  
  
  
- observe :post, :comment, :stat, :pactivity, :meal
+ observe :post, :stat, :pactivity, :meal
 
   def after_create(target)
    @object = target.class.to_s
@@ -22,16 +22,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       
        
      
-      elsif @object == "Comment"
-      Activity.create!(
-      :user => target.owner, 
-      :target_id => target.id, 
-      :activity_type=> target.class.to_s, 
-      :created_at => target.created_at, 
-      :updated_at => target.updated_at,
-      :target_type => target.class.to_s,
-      :parent_id => target.commentable_id,
-      :verb => "commented")
+     
       
       elsif @object == "Stat"
       Activity.create!(

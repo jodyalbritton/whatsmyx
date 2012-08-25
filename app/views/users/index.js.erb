@@ -1,3 +1,6 @@
-$('#users-list').html('<%= escape_javascript render "users/list" %>');
-$('#paginator').html('<%= escape_javascript(paginate(@users, :remote => true, :window => 2).to_s) %>');
-$('#paginator-small').html('<%= escape_javascript(paginate(@users, :remote => true, :window => 0).to_s) %>');
+$('#users-list').append('<%= j render("users/list") %>');
+<% if @users.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@users) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

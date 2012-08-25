@@ -34,10 +34,7 @@
 
 
      
-          <div id="comment-form" class="row-fluid">
-          <%= render_comments_form activity.target %>
-         
-          </div>
+        
           
          <div id="expanded_<%= activity.id %>" class="expanded" Style="display:none;">
          <div class="expanded-menu row-fluid">
@@ -62,13 +59,28 @@
          	 <%= image_tag activity.target.attachment.url(:medium), :class => "img-polaroid attachment" %>
          	<% end %>
          </div>
-         <div id="comments_list">
-         <div id="comments_<%= activity.target.id %>">
-          <%= render_comments activity.target, :page => params[:page] %>
+         <div class="reply-list">
+         	<% activity.replies.each do |reply| %>
+         	  <div class="row-fluid">
+         	  	<div class="span1 reply-sidebar">
+         	  		<%= image_tag reply.user.profile.avatar.url(:mini), :class=> "avatar" %>
+         	  	</div>
+         	  	<div class="span8">
+         	  	<div class="reply-header">
+         	  	<div class="reply-time pull-right">
+         	  		<i class="icon-time"></i> <%= time_ago_in_words(reply.created_at) %>
+         	  	</div>
+         	  	<% self_posted = reply.user == current_user %>
+         	  	<%= self_posted ? "You" : link_to(reply.user.username) %> said:
+         	    
+         	  	</div>
+         	  	<div class="reply-body">
+         	  	<%= reply.text %>
+         	  	</div>
+         	  	</div>
+         	  </div>
+         	<% end %>
          </div>
-          
-        
-          </div>
          </div>  
          
     </div>

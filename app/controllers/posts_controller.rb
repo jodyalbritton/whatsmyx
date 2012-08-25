@@ -11,6 +11,10 @@ class PostsController < ApplicationController
   def index
  
   end
+  
+  def new
+    @rtpost = Activity.find(params[:reply_to_id])
+  end
 
   def create
   
@@ -51,6 +55,8 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
   end
+  
+ 
 
   def update
     @post = Post.find(params[:id])

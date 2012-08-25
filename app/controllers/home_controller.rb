@@ -17,7 +17,7 @@ class HomeController < ApplicationController
      mycircles =  current_user.relationships.collect{|g| g.circle_id}
      mycircles.push(0)
      aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles).includes(:target, :user, :target => :user)
-     @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]
+     @activities = aoi.where(:user_id => [following_ids, current_user] ).page(params[:page])
  
      @curr_membs = @user.memberships.includes(:group)
      @stat = current_user.stats.build 

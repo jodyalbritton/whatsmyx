@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823095719) do
+ActiveRecord::Schema.define(:version => 20120823141122) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -551,10 +551,11 @@ ActiveRecord::Schema.define(:version => 20120823095719) do
     t.datetime "updated_at"
     t.text     "text"
     t.integer  "parent_id"
-    t.integer  "scope",      :default => 0, :null => false
+    t.integer  "scope",       :default => 0, :null => false
     t.datetime "date"
     t.string   "attachment"
     t.string   "tag_list"
+    t.integer  "reply_to_id"
   end
 
   create_table "posts_tags", :force => true do |t|

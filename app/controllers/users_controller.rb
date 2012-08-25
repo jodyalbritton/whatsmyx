@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def index
     @user = User.find(current_user)
     
-    @users = User.page(params[:page]).per(24)
+    @users = User.where(:privacy=> false).page(params[:page])
   end
 
   def show

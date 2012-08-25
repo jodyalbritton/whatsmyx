@@ -6,12 +6,12 @@ class Activity < ActiveRecord::Base
   belongs_to :user
   belongs_to :target, :polymorphic => true
   
+  has_many :replies, :class_name => "Post", :foreign_key => "reply_to_id"
   has_many :notifications, dependent: :destroy
-  paginates_per 5
   default_scope :order => 'activities.created_at DESC'
-  
+  self.per_page = 10
   after_create :create_notifications
-  
+ 
   def to_partial_path() 
     "activities/#{target_type.downcase}" 
   end

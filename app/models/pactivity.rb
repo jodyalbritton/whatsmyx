@@ -7,7 +7,7 @@ class Pactivity < ActiveRecord::Base
  
   mount_uploader :attachment, AttachmentUploader
   include Likeable
-  opinio_subjectum
+  
 
   
   def burned

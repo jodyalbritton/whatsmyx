@@ -1,12 +1,13 @@
 require 'file_size_validator'
 class Post < ActiveRecord::Base
    
-   attr_accessible :text, :user, :parent_id, :scope, :date, :attachment
+   attr_accessible :text, :user, :parent_id, :scope, :date, :attachment, :reply_to_id
    
    belongs_to :user
    has_and_belongs_to_many :tags
    has_many :activities, :as => :target, dependent: :destroy
- 
+   
+   belongs_to :in_reply_to, :class_name => "Activity", :foreign_key => "reply_to_id"
    validates_presence_of :text
    serialize :tag_list
    before_save :generate_taglist
@@ -16,7 +17,7 @@ class Post < ActiveRecord::Base
   
     include Likeable
  
-   opinio_subjectum
+   
    
    mount_uploader :attachment, AttachmentUploader
    
