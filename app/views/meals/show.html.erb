@@ -25,19 +25,7 @@
      
            
              <%= render "meals/likes", :like_object => @meal %>
-             <div id="comments_list" class="row-fluid">
-         <div id="comment-form" class="row-fluid">
-          <%= render_comments_form @meal %>
-         
-         </div>
-          <div id="comments_<%= @meal.id %>">
-          	<%= render_comments @meal, :page => params[:page] %>
-          
-          </div>
-          
-        
-          </div>
-           
+             
          
     </div>
      <div class="span2 activity-logo" >

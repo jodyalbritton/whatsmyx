@@ -4,11 +4,9 @@
   	<h2>Track your...</h2>
 </div>
 <div class="modal-body">
-	<% @stat.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-    <% end %>
-   <div id="stat_errors" style="display: none;">
-	  <%= render "stats/errors" %>
+	
+   <div id="stat_errors">
+	  
    </div>
    <div class="row-fluid">
       <div class="span8">

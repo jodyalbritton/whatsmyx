@@ -2,7 +2,7 @@
   	<input type="text" placeholder="What's New ?" class="input-xlarge"> 
   </div>
   <div  id="post-form-cont" style="display:none;">
-  <%= simple_form_for @post , :remote => true, :validate => true do |f| %>
+  <%= simple_form_for @post , :remote => true, :validate => false do |f| %>
 
    
    <%= f.input :parent_id, :as => 'hidden', :input_html =>{:value => @parent}%>
@@ -31,7 +31,7 @@
          <% else %>
 
 
-        <%= f.submit "Post", :class => "btn btn-primary" %><a href="javascript:hideDiv('post-form-small'); javascript:hideDiv('post-form-cont');" class="btn"> Cancel</a>
+        <%= f.submit "Post", :disable_with => "Please wait...", :class => "btn btn-primary" %><a href="javascript:hideDiv('post-form-small'); javascript:hideDiv('post-form-cont');" class="btn"> Cancel</a>
       <% end %>
  
         

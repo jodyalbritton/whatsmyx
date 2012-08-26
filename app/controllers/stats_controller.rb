@@ -15,18 +15,7 @@ class StatsController < ApplicationController
     @stat = Stat.new
   end
   
-  def chart
-  @user = User.find(current_user)
-   
-   #@stats_by_category = @user.stats.find(:all).group_by { |s| s.category}
-   @category =  Category.find(params[:category])
-   @stats_by_category = @user.stats.where(:category_id => params[:category]) 
   
-   #@stats_by_bs = @user.stats.where(:category_id => "3")
-   #@stats_by_bp = @user.stats.where(:category_id => "4") 
-   #@stats_by_bf = @user.stats.where(:category_id => "5") 
-   # @stats_by_ti = @user.stats.where(:category_id => "6") 
-  end 
   def index
      
    
@@ -72,8 +61,13 @@ class StatsController < ApplicationController
     @scopes = current_user.circles.map { |r| [r.name, r.id] }
      @scopes.push(["Public", "0"])
     @stat = current_user.stats.build(params[:stat])
+    
+    respond_to do |format|
     if @stat.save
+       format.html { redirect_to root_path, notice: 'Successfully created a Stat!' }
+      format.js   {
       flash[:notice] = "Successfully created stat."
+      flash.discard
        following = Follow.where(["follower_id = ?", (current_user)])
      following_ids = following.collect{|f| f.followable_id}
      mycircles =  current_user.relationships.collect{|g| g.circle_id}
@@ -81,11 +75,13 @@ class StatsController < ApplicationController
      aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
      @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]      
      @stats = @user.stats.order("date DESC").page(params[:page])
-       
+     }
     else 
-      flash[:notice] = "Opps."
+      format.js   {flash[:error] = "Error"
+          flash.discard }
+          format.html { redirect_to root_path, notice: 'Errors prevented you from entering the stat' }
     end
-    
+    end 
   end
 
   # PUT /stats/1

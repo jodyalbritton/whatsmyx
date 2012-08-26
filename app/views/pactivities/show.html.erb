@@ -22,18 +22,7 @@
      
            
              <%= render "pactivities/likes", :like_object => @pactivity %>
-             <div id="comments_list" class="row-fluid">
-         <div id="comment-form" class="row-fluid">
-          <%= render_comments_form @pactivity %>
-         
-         </div>
-          <div id="comments_<%= @pactivity.id %>">
-          	<%= render_comments @pactivity, :page => params[:page] %>
-          
-          </div>
-          
-        
-          </div>
+       
            
          
     </div>

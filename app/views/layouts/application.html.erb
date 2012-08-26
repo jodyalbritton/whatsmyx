@@ -53,7 +53,9 @@
    
     </div>  
     <div class="span9 main-content" id="main-content">
- 
+    <div id="messages">
+    <%= render 'layouts/messages'%>
+    </div>
     <%= yield %>
     <%= render 'layouts/ga'%>
     </div>

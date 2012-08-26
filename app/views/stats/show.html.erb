@@ -21,20 +21,8 @@
      
            
              <%= render "stats/likes", :like_object => @stat %>
-             <div id="comments_list" class="row-fluid">
-          <div id="comments_<%= @stat.id %>">
-          	<%= render_comments @stat, :page => params[:page] %>
-          
-          </div>
-          
-        
-          </div>
-           
-         <div id="comment-form" class="row-fluid">
-          <%= render_comments_form @stat %>
-         
-         </div>
-    </div>
+       
+     </div>
      <div class="span2 activity-logo" >
      	<div class="activity-logo visible-desktop">
          <i class="icon-bar-chart"></i> 

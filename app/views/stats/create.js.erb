@@ -1,25 +1,11 @@
-
-  /*Hide the flash notice div*/
-  $("#flash_notice").hide(300);
-
-  /*Update the html of the div stat_errors with the new one*/
-  $("#stat_errors").html("<%= escape_javascript(render "stats/errors") %>");
-
-  /*Show the div stat_errors*/
-  $("#stat_errors").show(300);
-
-  /*Hide the div stat_errors*/
-  $("#stat_errors").hide(300);
-
-  /*Update the html of the div flash_notice with the new one*/
-  $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
-
-  /*Show the flash_notice div*/
-  $("#flash_notice").show(300);
-
+  <% if @stat.errors.any? %>
+  $("#stat_errors").html("<%= escape_javascript( render "stats/errors", :locals => { :post => @stat }) %>");
+  <% end %>
+  
+   $("#messages").html("<%= escape_javascript( render "layouts/messages") %>");
   /*Clear the entire form*/
   $('#new_stat')[0].reset();
-
+  
   /*Replace the html of the div stat_lists with the updated new one*/
   $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
   
