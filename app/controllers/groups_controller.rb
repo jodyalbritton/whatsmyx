@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
   # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
-    @activities = Kaminari.paginate_array( @group.activities.find(:all)).page(params[:page]).per(5)
+    @activities = @group.activities.page(params[:page])
  
     @current_memberships = current_user.memberships.where(:group_id => @group.id).count
     @new_membership = @group.memberships.build

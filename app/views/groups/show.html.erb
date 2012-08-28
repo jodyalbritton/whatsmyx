@@ -38,10 +38,12 @@
 
 <div id="group-members">
 		<h3>Group Members</h3>
-      
      
      <% @members.each do |x| %> 
-      <a href="/<%= x.user.slug%>"  rel="popover" data-content="Test" data-original-title="<%=x.user.username %>"><%= image_tag x.user.profile.avatar.url(:mini) %></a>
+     <%=link_to x.user, :rel => "popover", :data=>{:trigger=> "hover", :html=> true,:content=> (render "groups/popover"), :title=> x.user.username } do %>
+  
+     <%= image_tag x.user.profile.avatar.url(:mini) %>
+     <% end %>
  
     
      <% end %>

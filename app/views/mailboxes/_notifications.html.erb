@@ -11,11 +11,9 @@
 			
 			<td><%= notification.activity.user.username %> </td>
 			<td>
-				<% if notification.activity.target_type == "Comment" %>
-    	        <%= notification.activity.verb %> on a <%= link_to notification.activity.target.commentable_type, notification.activity.target.commentable %>
-    	        <% else %>
+				
     	        <%= notification.activity.verb %> a <%= link_to notification.activity.target_type, notification.activity.target%>
-    	         <% end %>
+    	     
 			</td>
 			<td>
 		    <div style="font-size: 20px;">
