@@ -50,7 +50,13 @@
   
    
    	<%= yield :sidebar %>
-   
+   	<% unless params[:controller] == 'help'%>
+   	<div class="sidebar-bottom">
+    <div class="well sidebar-bottom-content">
+    	<%= render "layouts/side_footer" %>
+    </div>
+    </div>
+    <% end %>
     </div>  
     <div class="span9 main-content" id="main-content">
     <div id="messages">

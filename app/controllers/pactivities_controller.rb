@@ -4,10 +4,10 @@ class PactivitiesController < ApplicationController
   # GET /pactivities.json
   def index
     @user = User.find(current_user)
-    @pactivity = current_user.pactivities.build(params[:pactivity])
+    @pactivity = @user.pactivities.build(params[:pactivity])
     @scopes = current_user.circles.map { |r| [r.name, r.id] }
-     @scopes.push(["Public", "0"])
-    @pactivities = Pactivity.where(:user_id => current_user).includes(:exercise).group_by { |p| p.date }
+    @scopes.push(["Public", "0"])
+    @pactivities = @user.pactivities.includes(:exercise).group_by { |p| p.date }
     
     respond_to do |format|
       format.html # index.html.erb
@@ -49,14 +49,15 @@ class PactivitiesController < ApplicationController
     @pactivity = @user.pactivities.build(params[:pactivity])
 
    if @pactivity.save
-      flash[:notice] = "Successfully created activity."
-       following = Follow.where(["follower_id = ?", (current_user)])
+     flash[:notice] = "Successfully created activity."
+     following = Follow.where(["follower_id = ?", (current_user)])
      following_ids = following.collect{|f| f.followable_id}
      mycircles =  current_user.relationships.collect{|g| g.circle_id}
      mycircles.push(0)
      aoi = Activity.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
      @activities = aoi.where(:user_id => [following_ids, current_user] ).page params[:page]
-       @pactivities = @user.pactivities.group_by { |p| p.date }
+     @pactivities = @user.pactivities.includes(:exercise).group_by { |p| p.date }
+     flash.discard
    end
    
   end
