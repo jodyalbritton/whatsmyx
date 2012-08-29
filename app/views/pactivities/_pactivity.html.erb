@@ -1,29 +1,24 @@
 <% @pactivities.sort.reverse.each do |date, pactivities| %>
-  <tr>
-  	<td><h4><%= date.strftime("%a, %B, %d, %Y") %></h4></td>
-  	<td></td>
-  	<td></td>
-  	<td></td>
-  </tr>
+  
+  <div>
+  <h4><%= date.strftime("%a, %B, %d, %Y") %></h4>
+ 
   <% for pactivity in pactivities %>
-  <tr id="<%= dom_id(pactivity) %>">
+  <div class="pactivity-item row-fluid" id="<%= dom_id(pactivity) %>">
   	
-    <td><%= pactivity.exercise.name%></td>
-    <td><%= best_in_place pactivity, :duration,:html_attrs => {:class=>"input-mini"} %></td>
-    <td> <%= pactivity.burned %></td>
+    <div class="span6"><%= pactivity.exercise.name%></div>
+    <div class="span2"><%= best_in_place pactivity, :duration,:html_attrs => {:class=>"input-mini"} %></div>
+    <div class="span2"> <%= pactivity.burned %></div>
    
-    <td>
+    <div class="span2">
    
     <%= link_to pactivity, confirm: 'Are you sure?', :remote => true, method: :delete  do %>
     <i class="icon-trash"></i>
     <% end %>
-    </td>
-  </tr>
+    </div>
+  </div>
   <% end %>
-  <tr>
-  	<td><b>Totals</b></td>
-  	<td><b><%= pactivities.sum { |pactivity| pactivity.duration } %></b></td>
-  	<td><b><%= pactivities.sum { |pactivity| pactivity.burned } %></b></td>
-  	<td></td>
-  </tr>
-  <% end %>
+  
+  </div>
+
+ <% end %>

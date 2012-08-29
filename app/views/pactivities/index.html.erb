@@ -7,34 +7,24 @@
 
 
 <div class="stats-top row-fluid">
-	<div class="span10">
-	</div>
-	<div class="span2">
+	<div>
+	<div class="pull-right">
 	<a class="btn btn-primary" data-toggle="modal" href="#pactivity-modal">Track Activity <i class="icon-bolt"></i></a>
+	</div>
 	</div>
 	
 </div>
-<table class="table table-striped">
 
-  <tr>
-   
-    <th>Physical Activity</th>
-    <th>Duration</th>
-    <th>Calories Burned</th>
-    <th>Controls</th>
-
-
-  </tr>
-<tbody id="pactivity-list">
+<div class="row-fluid" id="pactivity-list">
 	
     <%= render "pactivities/pactivity"%>
     
-</tbody>
+</div>
 
      
 
-</table>
-   <div class="modal hide fade" id="pactivity-modal">
+
+   <div class="modal hide" id="pactivity-modal">
        <%= render "pactivities/form"%>
   </div>
 

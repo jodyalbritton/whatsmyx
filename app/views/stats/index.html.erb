@@ -26,7 +26,7 @@
    <h3><%= category.name %></h3>
    </div>
    <div class="stat-controls">
-   <a href="javascript:toggleDiv('stat-values-<%= category.id %>');" class="btn btn-mini">Last 10</a>
+   <a href="javascript:toggleDiv('stat-values-<%= category.id %>');" class="btn btn-mini">List</a>
    <a  href="javascript:toggleDiv('chart_container_toggle_<%= category.id %>');" class="btn btn-mini">Chart</a>
 
   </div>
@@ -63,12 +63,11 @@
   <% for stat in stats %>
   <div class="stat-item">
   <div class="row-fluid">
-  <div class="span4">
+  <div class="span10">
   I recorded a <%= link_to stat.category.name, stat_path(stat) %> of <%= stat.value %> on <%= stat.date.strftime("%B %d, %Y") %>
   </div>
-  <div class="span4">
-  	 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_stat_path(stat), :class => 'btn btn-mini' %>
+  <div class="span2">
+  	 
      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       stat_path(stat),
                       :method => :delete,
