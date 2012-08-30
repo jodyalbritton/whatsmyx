@@ -2,7 +2,10 @@
  
   
   <li class="<%= 'active' if params[:controller] == 'pactivities' %>">
-    <%= link_to "Activity List", pactivities_path %>
+    <%= link_to pactivities_path do  %>
+    Activity List
+    <i class="icon-chevron-right pull-right"></i>
+    <% end %>
   </li>
  
  

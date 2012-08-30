@@ -1,23 +1,22 @@
-                <div class="nav">
+              
               
                 <ul class="nav pull-left">
 	                 <% if user_signed_in? %>
 	                
-	                <li class="<%= 'active' if params[:controller] == 'home' %>"><%= link_to "Feed", root_path %></li>
 	                
-	               
+	                 <li class="divider-vertical"></li>
 	                 <li class="<%= 'active' if params[:controller] == 'stats' %>">
 	                  <%= link_to "Stats", stats_path %>
 	                
                      </li>
-            
+                     <li class="divider-vertical"></li>
 	               <li class="dropdown visible-desktop <%= 'active' if params[:controller] == 'nutrition' %>">
 	               	 <%= link_to "Food Diary", nutrition_index_path %>
 	               
                    </li>
-	                
+	                <li class="divider-vertical"></li>
 	                <li class="<%= 'active' if params[:controller] == 'pactivities' %>"><%= link_to "Activities", pactivities_path %></li>
-	            
+	                <li class="divider-vertical"></li>
 	                 <li class="dropdown
 	                 <%= 'active' if params[:controller] == 'users'%>
 	                 <%= 'active' if params[:controller] == 'groups'%>">
@@ -27,7 +26,7 @@
                           Community
                           <b class="caret"></b>
                     </a>
-                    <ul class="dropdown-menu" data-no-collapse="true">
+                    <ul class="dropdown-menu">
                     	
                      	<li>
                         <%= link_to('Users', users_path) %>
@@ -38,14 +37,12 @@
                         </li>
                         </ul>
                   </li>
-                 
+                   <li class="divider-vertical"></li>
 	                <%end%>
                 </ul>
-               </div>
-               </div>
-              <ul class="nav">  
              
-              </ul>  
+              
+                
                 <ul class="nav pull-right">
                 	 
                     
@@ -87,4 +84,4 @@
                   </ul>
                   </li>
                 </ul>
-               </div>
+             

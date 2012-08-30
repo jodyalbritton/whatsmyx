@@ -1,7 +1,14 @@
 <% @pactivities.sort.reverse.each do |date, pactivities| %>
   
   <div>
+  <div class="pactivity-header row-fluid">
+  <div class="span6">
   <h4><%= date.strftime("%a, %B, %d, %Y") %></h4>
+  </div>
+  <div class="span2"><h4>Duration</h4></div>
+  <div class="span2"><h4>Burned</h4></div>
+  <div class="span2"><h4>Controls</h4></div>
+  </div>
  
   <% for pactivity in pactivities %>
   <div class="pactivity-item row-fluid" id="<%= dom_id(pactivity) %>">
