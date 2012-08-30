@@ -1,18 +1,23 @@
+
  <table class="table table-striped">
     <tbody>
     
 
       <tr>
       <td>
-      <div class="span10">
+      <div>
    	  <h2>
        <%= link_to meal.name,(meal) %>
-      <h2>
+      </h2>
+       <%= link_to meal, confirm: 'Are you sure?', method: :delete do %>
+       	<i class="icon-trash"></i>
+       <% end %>
       </div>
-      <div class="meal-remove pull-right">
     
-      <%= link_to 'Destroy', meal, confirm: 'Are you sure?', method: :delete, :class=>"btn btn-danger" %></td>
-     </div>
+    
+    
+      </td>
+
      </td>
      <td>
      	

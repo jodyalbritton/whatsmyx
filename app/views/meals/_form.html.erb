@@ -27,7 +27,7 @@
        </div>
        <div id="ingredient">
        	<div id="ingredient_from_list", class="ingredient_from_list">
-         <%= link_to_add_association '+ Ingredient', f, :ingredients, :class=>"btn btn-mini" %>
+         <%= link_to_add_association '+ Ingredient', f, :ingredients, :class=>"btn btn-mini", :partial => 'meals/ingredient_fields'%>
         </div>
        </div>
     <div class="form-actions">

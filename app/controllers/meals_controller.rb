@@ -50,11 +50,18 @@ class MealsController < ApplicationController
   
      @meal = current_user.meals.build(params[:meal])
      @scopes = current_user.circles.map { |r| [r.name, r.id] }
+     
+     respond_to do |format|
      if @meal.save 
+     
+     format.js   {
+     
+     
      @user = User.find(current_user)
-     flash[:notice] = "Successfully created meal."
+     
      if @meal.date == Date.today
      
+    
      @date_for = Date.today
      @meals = @user.meals.where(:date => Date.today).order("created_at ASC")
      @tot_cals = @meals.sum { |meal| meal.cals }
@@ -67,7 +74,7 @@ class MealsController < ApplicationController
      @tot_sodi = @meals.sum { |meal| meal.sodi }
      @tot_fibr = @meals.sum { |meal| meal.fibr }
      @tot_satf = @meals.sum { |meal| meal.satf }
-    
+     flash[:notice] = "Successfully created meal."
  
      else
      @date_for = @meal.date
@@ -82,13 +89,13 @@ class MealsController < ApplicationController
      @tot_sodi = @meals.sum { |meal| meal.sodi }
      @tot_fibr = @meals.sum { |meal| meal.fibr }
      @tot_satf = @meals.sum { |meal| meal.satf }
+     flash[:notice] = "Successfully created meal."
      end 
+     flash.discard
+     }
      
      end 
-      
-  
-  
-  
+     end
   end
 
   # PUT /meals/1

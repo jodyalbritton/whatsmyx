@@ -51,7 +51,7 @@
          <div id="profile-followers">
           <h3> Followers </h3>
 	      <% @followers.each do |follower| %>
-	      <a href="/<%=follower.slug%>"  rel="popover" data-content="Test" data-original-title="<%=follower.username %>"><%= image_tag follower.profile.avatar.url(:mini) %></a>
+	      <a href="/<%=follower.slug%>"  rel="popover" data-trigger="hover" data-content="Test" data-title="<%=follower.username %>"><%= image_tag follower.profile.avatar.url(:mini) %></a>
 	
 	      <% end %>
          </div>
