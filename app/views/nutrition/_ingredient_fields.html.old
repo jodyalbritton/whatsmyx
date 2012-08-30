@@ -1,0 +1,21 @@
+   <div class="nested-fields control-group">
+   <div class="form-header">
+   <%= link_to_remove_association "x",f,:class=> "btn close" %>
+   </div>
+   
+   <%= f.input :what_food, :as => :autocomplete, :url => autocomplete_food_name_ingredients_path, :input_html => {:class=> "span3"}, :placeholder => "Start typing a food name" %>
+   <%= f.input :food_id,:input_html => {:class=>"food-id" }, :as => "hidden" %>
+ 
+    
+   
+      <div class="food-serv-desc"></div>
+          <div class="form-controls">
+          <%= f.input :serving_size, :label => "Grams", :input_html => { :class=> "servings-id input-small"}%> 
+   	   
+   	   
+   
+   	      <%= f.input :servings, :hint => "How Many?", :input_html => {:value => "1", :class=> "input-small"} %>
+          </div>
+  
+     
+     </div>
