@@ -7,20 +7,15 @@
    <%= f.input :food_id,:input_html => {:class=>"food-id" }, :as => "hidden" %>
  
     
-     <div class="weight_select">
-     	 
-     </div>
-      <div class="food-serv-desc"></div>
-      <div class="row-fluid">
-      	<div class="span1">
-          <%= f.input :serving_size, :label => "Grams", :input_html => { :class=> "servings-id input-small"}%> 
-   	    </div>
-   	    <div class="span1" style="text-align: center; padding-top: 20px;">
-   	      <h3>X<h3>
-   	    </div>
-   	    <div class="span1">
-   	      <%= f.input :servings, :hint => "How Many?", :input_html => {:value => "1", :class=> "input-small"} %>
-       </div>
-  
    
-</div>
+      <div class="food-serv-desc"></div>
+          <div class="form-controls">
+          <%= f.input :serving_size, :label => "Grams", :input_html => { :class=> "servings-id input-small"}%> 
+   	   
+   	   
+   
+   	      <%= f.input :servings, :hint => "How Many?", :input_html => {:value => "1", :class=> "input-small"} %>
+          </div>
+  
+     
+     </div>

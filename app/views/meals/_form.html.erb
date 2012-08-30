@@ -3,29 +3,34 @@
 
 
     <div class="control-group">
+    <div class="row-fluid">
+    <div class="span6">
     <%= f.input :name %>
+    </div>
+    <div class="span6">
     <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => "Who sees this?" %>
-    
+    </div>
+    </div>
     <% if params[:date] %>
-    <%= f.input :date, :as => "string", :input_html => {:value => params[:date]} %>
+    <%= f.input :date, :as => "hidden", :input_html => {:value => params[:date]} %>
     
     <% else %>
-    <%= f.input :date, :as => "string", :input_html => {:value => Date.today} %>
+    <%= f.input :date, :as => "hidden", :input_html => {:value => Date.today} %>
     <% end %>
  
      <%= f.simple_fields_for :ingredients do |f| %>
      	<%= render 'meals/ingredient_fields', :f => f%>
      <% end %>
        <% ingcount = 0%>
-       <div class="modal-header">
+       <div>
         Add Ingredients:
        </div>
-       <div id="ingredient" class="modal-body">
+       <div id="ingredient">
        	<div id="ingredient_from_list", class="ingredient_from_list">
          <%= link_to_add_association '+ Ingredient', f, :ingredients, :class=>"btn btn-mini" %>
         </div>
        </div>
-    <div class="modal-footer">
+    <div class="form-actions">
     <%= f.button :submit, :disable_with => "Please wait...", :class=> "btn btn-primary"%>
     <a href="javascript:toggleDiv('meal-form');javascript:toggleDiv('header-date');", class="btn">Cancel</a>
     </div>

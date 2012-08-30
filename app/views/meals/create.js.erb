@@ -1,12 +1,5 @@
 <% if @meal.errors.any? -%>
-  /*Hide the flash notice div*/
-  $("#flash_notice").hide(300);
-
-  /*Update the html of the div note_errors with the new one*/
-  $("#flash_errors").append("<%= escape_javascript(error_messages_for(@meal))%>");
-
-  /*Show the div note_errors*/
-  $("#flash_errors").show(300);
+ $("#messages").html("<%= escape_javascript( render "meals/errors", :locals => { :meal => @meal }) %>");
 <% else -%>
   /*Hide the div note_errors*/
   $("#flash_errors").hide(300);

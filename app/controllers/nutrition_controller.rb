@@ -22,8 +22,8 @@
     
 
   
-  @meals = @user.meals.where(:date => @somedate).order("created_at ASC")
-  @meals_tot = @user.meals.where(:date => @somedate)
+  @meals = @user.meals.where('date BETWEEN ? AND ?', @somedate.beginning_of_day, @somedate.end_of_day).all
+  @meals_tot = @user.meals.where('date BETWEEN ? AND ?', @somedate.beginning_of_day, @somedate.end_of_day)
   @daily_activities = @user.pactivities.where(:date => @somedate)
    
     
