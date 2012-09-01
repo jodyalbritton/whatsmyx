@@ -1,0 +1,17 @@
+  <ul class="nav nav-tabs nav-stacked">
+
+  
+  
+  <li class="<%= 'active' if params[:controller] == 'stats' %>">
+	<%= link_to "Stats", stats_path %>
+	                
+  </li>
+  <li class="<%= 'active' if params[:controller] == 'pactivities' %>">
+ 	<%= link_to "Activities", pactivities_path %></li>
+
+ 
+  <li class="dropdown visible-desktop <%= 'active' if params[:controller] == 'nutrition' %>">
+  <%= link_to "Food Diary", nutrition_index_path %>
+	               
+  </li>
+  </ul>

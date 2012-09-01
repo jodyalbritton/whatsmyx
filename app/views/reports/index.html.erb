@@ -1,0 +1,58 @@
+<div id="chart_container_header">
+</div>
+ <script type="text/javascript">
+    
+ /**
+ * Gray theme for Highcharts JS
+ * @author Torstein Hønsi
+ */
+
+
+
+  $(function() {
+    new Highcharts.Chart({
+      chart: {
+        renderTo: "chart_container_header",
+        type: 'column',
+        zoomType: 'x'
+
+      },
+      title: {
+        text: false
+      },
+    
+     xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: {
+          second: '%e. %b',
+          minute: '%e. %b',
+          hour: '%e. %B',
+          day: '%e. %b',
+          week: '%e. %b',
+          month: '%Y %b %e.',
+          year: '%y %e. %b'
+        }
+    },	
+      yAxis: {
+        title: {
+          text: "Data Points"
+        }
+      },
+      tooltip: {
+      formatter: function () {
+        return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + Highcharts.numberFormat(this.y, 2) + " Data Points";
+      }
+    }, 
+
+      series: [{
+         
+          name: "Activities by Date",
+           pointInterval: <%= 1.day * 1000 %>,
+            pointStart: <%= 52.weeks.ago.at_midnight.to_i * 1000 %>,
+          data:  <%= (52.weeks.ago.to_date..Date.today).map { |date| @user.activities.total_on(date).to_f}.inspect %>	
+        }]
+   
+    })
+  })
+
+     </script>

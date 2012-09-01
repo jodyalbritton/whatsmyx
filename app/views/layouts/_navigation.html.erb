@@ -5,18 +5,23 @@
 	                
 	                
 	                 <li class="divider-vertical"></li>
-	                 <li class="<%= 'active' if params[:controller] == 'stats' %>">
-	                  <%= link_to "Stats", stats_path %>
-	                
-                     </li>
+	                 <% if params[:controller] == 'stats' %>
+	                 <li class="active">
+	                 <% elsif params[:controller] == 'pactivities' %>
+	                 <li class="active">
+	                 <% elsif params[:controller] == 'nutrition' %>
+	                 <li class="active">
+	                 <% else %>
+	                 <li>
+	                 <% end %>
+	                  <%= link_to "Track", stats_path %>
+	                 </li>
                      <li class="divider-vertical"></li>
-	               <li class="dropdown visible-desktop <%= 'active' if params[:controller] == 'nutrition' %>">
-	               	 <%= link_to "Food Diary", nutrition_index_path %>
-	               
-                   </li>
-	                <li class="divider-vertical"></li>
-	                <li class="<%= 'active' if params[:controller] == 'pactivities' %>"><%= link_to "Activities", pactivities_path %></li>
-	                <li class="divider-vertical"></li>
+	                 
+	                 <li class="<%= 'active' if params[:controller] == 'reports' %>">
+	                  <%= link_to "Analyze", user_reports_path(current_user) %>
+	                 </li>
+                     <li class="divider-vertical"></li>
 	                 <li class="dropdown
 	                 <%= 'active' if params[:controller] == 'users'%>
 	                 <%= 'active' if params[:controller] == 'groups'%>">

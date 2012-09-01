@@ -147,6 +147,7 @@ Whatsmyx::Application.routes.draw do
   # match ':controller(/:action(/:id))(.:format)'
     resources :users, :only => [:show], :path => '/' do 
       resources :follows, :only => [:create, :destroy]
+      resources :reports 
       resource  :profile
       resource  :settings
       resource  :mailbox

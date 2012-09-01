@@ -22,6 +22,10 @@ class Activity < ActiveRecord::Base
   end 
   end
   
+  def self.total_on(date)
+    where("date(created_at) = ?",date).count
+  end
+  
   
 
 end

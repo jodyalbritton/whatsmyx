@@ -2,39 +2,18 @@
 
 
  
-  <% if params[:controller] == "stats"%>
-  <li class="active">
- 
-    <%= link_to stats_path  do %>
-    Stats
-    <i class="icon-chevron-right pull-right"></i>
-    <% end %>
-    
-  </li>
-  
-  <% else %>
-    <li>
-    <%= link_to stats_path do %>
-    Stats
-    <i class="icon-chevron-right pull-right"></i>
-    <% end %>
-   </li>
-   <% end %>
-    <% if params[:controller] == "goals"%>
-  <li class="active">
-    <%= link_to goals_path do %>
-    Goals
-    <i class="icon-chevron-right pull-right"></i>
-    <% end %>
-  </li>
-  <% else %>
-    <li>
-    <%= link_to goals_path do %>
-    Goals
-    <i class="icon-chevron-right pull-right"></i>
-    <% end %>
-   </li>
-   <% end %>
 
+
+  
+
+
+    <li class="<%= 'active' if params[:controller] == 'goals' %>">
+    <%= link_to goals_path do %>
+    Goals
+    <i class="icon-chevron-right pull-right"></i>
+    <% end %>
+    </li>
+ 
+    
  
 </ul>
