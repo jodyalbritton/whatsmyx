@@ -13,8 +13,9 @@
        <div id="post-body" class="span8 activity-body">
              <div class="post-content">
              <p>
-              <%if @post.parent_id > 0%> to a group: <% end %>
-              <%= @post.text %>
+              <% if @post.parent_id > 0%> to a group: <% end %>
+              <% if @post.reply_to_id  %> in reply to: <% end %>
+              <%= (mention_linker(@post.text)).html_safe %> 
              </p>
              </div>
      

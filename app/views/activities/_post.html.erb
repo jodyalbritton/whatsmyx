@@ -16,7 +16,8 @@
              <div class="activity-content">
              <p>
               <%= link_to "Posted", activity.target %><%if activity.parent_id > 0%> to a group: <% end %>
-              <%= activity.target.text %> <% if activity.target.attachment? %> -Photo Attached <% end%>
+              <% if activity.target.reply_to_id  %> in reply to: <% end %>
+              <%= (mention_linker(activity.target.text)).html_safe %> <% if activity.target.attachment? %> -Photo Attached <% end%>
              </p>
              </div>
      

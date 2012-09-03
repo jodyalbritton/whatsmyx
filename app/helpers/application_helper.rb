@@ -10,6 +10,16 @@ module ApplicationHelper
        "#{base_title} | #{page_title}"
      end
   end
-
+  
+  def mention_linker(text)
+    text.gsub(/\B@(\w*[A-Za-z0-9_]+\w*)/) do
+    linker = User.where(:username => $1)
+     if linker.any?
+      link_to $1, user_path($1)
+     else 
+       $1
+     end 
+    end
+  end
   
 end
