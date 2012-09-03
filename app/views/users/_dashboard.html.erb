@@ -51,16 +51,17 @@
 
 	</li>
 	</ul>
+	<ul class="thumbnails">
 	<% @user.badges.each do |badge| %>
 	   
-	<div class="span2">
+	    <li>
 		<div class="badge-item">
 			<div class="badge-content">
 			<%= badge.name %>
 			</div>
 	    </div>
-	</div>
+    </li>
 	<% end %>
-	
+    </ul>
 </div>
 </div>
