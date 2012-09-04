@@ -57,6 +57,7 @@ gem 'will_paginate'
 gem 'best_in_place'
 gem 'remotipart'
 gem 'girl_friday'
+gem 'fitgem'
 
 group :development do
 gem 'bullet'
