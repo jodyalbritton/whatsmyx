@@ -62,6 +62,10 @@ class User < ActiveRecord::Base
       (self.settings = Settings.new).save
       (self.dgoal = Dgoal.new).save
   end
+  #fitbit integration 
+  def fb_client_data
+     FitgemClientWrapper.new(self.fitbitaccount)
+  end
   
   def linked?
     if self.fitbitaccount.nil?
@@ -74,6 +78,7 @@ class User < ActiveRecord::Base
   def audience
      audience = self.followers
   end
+  
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
   data = access_token.extra.raw_info
   if user = self.find_by_email(data.email)
@@ -81,9 +86,9 @@ class User < ActiveRecord::Base
   else # Create a user with a stub password. 
     self.create(:email => data.email, :password => Devise.friendly_token[0,20]) 
   end
-end
+  end
 
- def self.new_with_session(params, session)
+  def self.new_with_session(params, session)
     super.tap do |user|
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"]
@@ -97,7 +102,7 @@ end
   errors.add(:username, "must have at least one letter and contain only letters, digits, or underscores") unless (has_one_letter and all_valid_characters)
   end
   
-   def update_with_password(params={})
+  def update_with_password(params={})
         current_password = params.delete(:current_password)
 
         if params[:password].blank?
@@ -140,22 +145,22 @@ end
   end
   
   # new function to set the password
-def attempt_set_password(params)
-  p = {}
-  p[:password] = params[:password]
-  p[:password_confirmation] = params[:password_confirmation]
-  update_attributes(p)
-end
+  def attempt_set_password(params)
+    p = {}
+    p[:password] = params[:password]
+    p[:password_confirmation] = params[:password_confirmation]
+    update_attributes(p)
+  end
 
-# new function to determine whether a password has been set
-def has_no_password?
-  self.encrypted_password.blank?
-end
+  # new function to determine whether a password has been set
+  def has_no_password?
+    self.encrypted_password.blank?
+  end
 
-# new function to provide access to protected method pending_any_confirmation
-def only_if_unconfirmed
-  pending_any_confirmation {yield}
-end
+  # new function to provide access to protected method pending_any_confirmation
+  def only_if_unconfirmed
+   pending_any_confirmation {yield}
+  end
   private
 
   def send_welcome_email
