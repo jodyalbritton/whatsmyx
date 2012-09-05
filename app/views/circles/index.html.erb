@@ -1,5 +1,7 @@
 <% content_for :sidebar do %>
+<div id="circle_sidebar">
 <%= render "circles/sidebar" %>
+</div>
 <% end %>
 
 
@@ -16,7 +18,7 @@
  
   <div class="tab-pane active inbox" id="following-tab">
     <div class="circle-header">
-	  People I follow.
+	  <h2>People I follow</h2>
      </div>
      <% current_user.follows.each do |follow| %>
      <div class="user-card row-fluid">
@@ -35,7 +37,7 @@
   </div>
   <div class="tab-pane inbox" id="followers-tab">
     <div class="circle-header">
-	  My Followers
+	  <h2>Followers</h2> 
      </div>
      <% current_user.followings.each do |follow| %>
      <div class="user-card row-fluid">
@@ -56,9 +58,14 @@
   <% @circles.each do |circtab| %>
    <div class="tab-pane inbox" id="circle-tab-<%= circtab.id %>">
     <div class="circle-header">
+      <h2>
 	  <%= circtab.name %> <%= link_to edit_circle_path(circtab) do %>
 	  <i class="icon-cogs"></i>
 	  <% end %>
+	  <%= link_to circtab, confirm: 'Are you sure?', method: :delete  do %>
+	  <i class="icon-trash"></i>
+	  <% end %>
+	  </h2>
      </div>
      <% circtab.users.each do |user| %>
      <div class="user-card row-fluid">
@@ -85,7 +92,7 @@
  <div class="modal hide" id="circle-modal">
     	<%= simple_form_for @circle, :remote => true do |f| %>
         <div class="modal-header">
-
+        <h2>Create Circle</h2>
         <%= f.error_notification %>
         </div>
         <div class="modal-body">

@@ -40,13 +40,16 @@ class CirclesController < ApplicationController
   # POST /circles
   # POST /circles.json
   def create
-   
+    @user = User.find(current_user)
     @circle = current_user.circles.build(params[:circle])
 
     respond_to do |format|
       if @circle.save
         format.html { redirect_to @circle, notice: 'Circle was successfully created.' }
         format.json { render json: @circle, status: :created, location: @circle }
+        format.js { 
+          @circles = @user.circles
+          flash[:notice] = "Successfully created post" }
       else
         format.html { render action: "new" }
         format.json { render json: @circle.errors, status: :unprocessable_entity }
@@ -75,5 +78,6 @@ class CirclesController < ApplicationController
   def destroy
     @circle = Circle.find(params[:id])
     @circle.destroy
+    redirect_to circles_path
   end
 end
