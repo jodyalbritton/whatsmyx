@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
-  after_create :initialize_profile, :create_fitbitaccount
+ 
+    
   include Likeable::UserMethods
   has_merit
   extend FriendlyId
@@ -26,6 +27,7 @@ class User < ActiveRecord::Base
   :settings_attributes, :dgoal_attributes, :opt_in, :privacy, :notify_by_email
   validates_confirmation_of :password
  
+  after_create :initialize_profile, :create_fitbitaccount
  #assoications 
   has_many :activities, dependent: :destroy
   
@@ -122,52 +124,13 @@ class User < ActiveRecord::Base
         clean_up_passwords
         result
       end
-  after_create :send_welcome_email
-   # override Devise method
-  # no password is required when the account is created; validate password when the user sets one
- 
-  def password_required?
-    if !persisted? 
-      false
-    else
-      !password.nil? || !password_confirmation.nil?
-    end
-  end
-  
-  # override Devise method
-  def confirmation_required?
-    false
-  end
-  
-  # override Devise method
-  def active_for_authentication?
-    confirmed? || confirmation_period_valid?
-  end
-  
-  # new function to set the password
-  def attempt_set_password(params)
-    p = {}
-    p[:password] = params[:password]
-    p[:password_confirmation] = params[:password_confirmation]
-    update_attributes(p)
-  end
 
-  # new function to determine whether a password has been set
-  def has_no_password?
-    self.encrypted_password.blank?
-  end
-
-  # new function to provide access to protected method pending_any_confirmation
-  def only_if_unconfirmed
-   pending_any_confirmation {yield}
-  end
+   
+  
   private
 
-  def send_welcome_email
-    unless self.email.include?('@example.com') && Rails.env != 'test'
-      UserMailer.welcome_email(self).deliver
-    end
-  end
+  
+
   
   def create_fitbitaccount
     self.fitbitaccount = Fitbitaccount.new

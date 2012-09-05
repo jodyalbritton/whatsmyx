@@ -5,6 +5,7 @@ Whatsmyx::Application.routes.draw do
   get "static_pages/privacy"
 
   get "static_pages/terms"
+  get "static_pages/thanks"
     
     scope "/fitbit" do
      get "connect", :controller => "oauth/fitbit", :action => :index, :as => :fitbit_connect
