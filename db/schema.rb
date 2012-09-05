@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120823141122) do
+ActiveRecord::Schema.define(:version => 20120905124729) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -154,6 +154,20 @@ ActiveRecord::Schema.define(:version => 20120823141122) do
     t.string  "category", :limit => 22
     t.string  "name",     :limit => 223
   end
+
+  create_table "fitbitaccounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "request_token"
+    t.string   "request_secret"
+    t.string   "access_token"
+    t.string   "access_secret"
+    t.string   "verifier"
+    t.string   "fb_user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "fitbitaccounts", ["user_id"], :name => "index_fitbitaccounts_on_user_id"
 
   create_table "follows", :force => true do |t|
     t.integer  "followable_id",                      :null => false

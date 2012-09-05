@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  after_create :initialize_profile
+  after_create :initialize_profile, :create_fitbit_account
   include Likeable::UserMethods
   has_merit
   extend FriendlyId
@@ -46,6 +46,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_one :dgoal, dependent: :destroy
   has_one :settings, dependent: :destroy
+  has_one :fitbitaccount, dependent: :destroy
 
  
  
@@ -62,6 +63,14 @@ class User < ActiveRecord::Base
       (self.dgoal = Dgoal.new).save
   end
   
+  def linked?
+    if self.fitbitaccount.nil?
+      false
+    else
+      self.fitbitaccount.verified?
+    end
+  end
+
   def audience
      audience = self.followers
   end
@@ -155,6 +164,10 @@ end
     end
   end
   
+  def create_fitbitaccount
+    self.fitbitaccount = Fitbitaccount.new
+    save
+  end
  
       
      

@@ -5,8 +5,16 @@ Whatsmyx::Application.routes.draw do
   get "static_pages/privacy"
 
   get "static_pages/terms"
+    
+    scope "/fitbit" do
+     get "connect", :controller => "oauth/fitbit", :action => :index, :as => :fitbit_connect
+     post "start", :controller => "oauth/fitbit", :action => :start, :as => :fitbit_start
+     get "verify", :controller => "oauth/fitbit", :action => :verify, :as => :fitbit_verify
+     get "unlink", :controller => "oauth/fitbit", :action => :unlink, :as => :fitbit_unlink
+     post "disconnect", :controller => "oauth/fitbit", :action => :disconnect, :as => :fitbit_disconnect
+   end
 
-  resources :messages
+    resources :messages
 
   
     resources :notifications
