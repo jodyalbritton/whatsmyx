@@ -77,7 +77,7 @@ Whatsmyx::Application.routes.draw do
   match "users/auth/:service/callback" => 'services#create'
 
   
-  devise_for :users, :skip => [:sessions], :controllers => { :registrations => 'registrations', :confirmations => "confirmations" }
+  devise_for :users, :skip => [:sessions], :controllers => { :registrations => 'registrations' }
     as :user do
     get 'signin' => 'devise/sessions#new', :as => :new_user_session
     post 'signin' => 'devise/sessions#create', :as => :user_session
@@ -89,7 +89,7 @@ Whatsmyx::Application.routes.draw do
   root :to => 'home#index'
   end
   devise_scope :user do
-  root :to => "devise/registrations#new"
+  root :to => "StaticPages#index"
   match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   
   end

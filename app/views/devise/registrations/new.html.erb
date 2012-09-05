@@ -1,97 +1,20 @@
-<div class="main-logo">
-	<h1>Whats My X?</h1>
-</div>
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item">
-    	<%= image_tag ("sc_01.png"), :class=> "car-img"%>
-    </div>
-    <div class="item">
-        <%= image_tag ("sc_02.png"), :class=> "car-img"%>
-    </div>
-    <div class="item">
-    	 <%= image_tag ("sc_03.png"), :class=> "car-img"%>
-    </div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
-<div id="romance-copy" class="hero-unit">
-   <div class="beta-button"  style="text-align: center;">
-   <h3>
-   	Track anything. Find your quantified self. 
-   </h3>
+<h2>Sign up</h2>
 
-   <p>
-   <a data-toggle="modal" href="#rquest-invite" class="btn btn-primary btn-large">Create Account</a>
-   </p>
-   </div>
-  
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
 
-  </div>
-<div class="row-fluid">
-	
-<div class="span4" id="call-to-action">
-	<h2>Contact Us</h2>
-	 <div class="fb-like" data-href="http://whatsmyx.com" data-send="true" data-width="300" data-show-faces="true" data-font="arial"></div>
-	 <div>
-	 	<a href="https://www.facebook.com/pages/Whats-My-X/134733929996740?ref=hl">Find us on Facebook
-	 </div>
-	 <div>
-	 	<a href="https://twitter.com/whatsmyx" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-lang="en">Follow @whatsmyx</a>
-	 </div>
-	 <div class="g-plusone" data-annotation="inline" data-width="300"></div>
-	 <div>
-	 	
-	 	<a href="https://plus.google.com/101897103984595628551" rel="publisher">Find us on Google+</a>
-	 </div>
-</div>
-<div class="span4">
-	<h2>What Is It?</h2>
-	<p>An app to help you track anything, and find your quantified self.</p>
-</div>
-<div class="span4">
-	<h2>Who Uses It?</h2>
-    <p>
-    	Anyone who wants to know more about themselves. If you are keeping logs of your weight or blood pressure in a journal, this app will make your life easier.
-    </p>
-</div>
-</div>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	<div id="rquest-invite" class="modal hide fade">
-	<%= simple_form_for(resource,:validate => true , :as => resource_name, :url => registration_path(resource_name),:html => {:class => 'form-horizontal' }) do |f| %>
-	<div class="modal-header">
-		<button class="close" data-dismiss="modal">×</button>
-  			<h3> Create Account </h3>
-	</div>
-    <div class="modal-body">
-	<%= f.error_notification %> 
-	<%= f.input :email, :placeholder => 'user@example.com', :required => true %> 
+  <div class="form-inputs">
+  	<%= f.input :email, :placeholder => 'user@example.com', :required => true, :autofocus => true %> 
 	<%= f.input :name, :required => true  %>
     <%= f.input :username, :required => true, :autofocus => true %>
-	<%= f.input :password %>
-	  <%= f.input :password_confirmation, :required => true %>
-    <p>
-    	Sign up for infrequent updates about whatsmyx. Don't worry, we hate spam just as much as you do
-    </P>
-    <%= f.input :opt_in, :label =>"Allow Updates" %> 
-    </div>
-    <div class="modal-footer">
-	<%= f.button :submit, :label=>"Create Account", :class => 'btn-primary', :disable_with => "Please wait..." %>
+    
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+  </div>
 
-    <button class="btn" data-dismiss="modal">Cancel</button>
-    </div>
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up" %>
+  </div>
 <% end %>
-</div>	
-	
-</div>
 
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
+<%= render "devise/shared/links" %>
