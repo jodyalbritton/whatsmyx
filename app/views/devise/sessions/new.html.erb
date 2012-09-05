@@ -1,15 +1,63 @@
-<h2>Sign in</h2>
+<div class="row">
+<div class="span3">
+	<h1>
+	Use This 
+	</h1>
+</div>
+<div class="span5 signup-header">
+ <ul class="provider-links">
+  <li><%= image_tag "facebook_64.png", :size => "64x64", :alt => "Google" %><%= link_to "Facebook", "/users/auth/facebook" %> </li>
+  <li><%= image_tag "google_64.png", :size => "64x64", :alt => "Google" %><%= link_to "Google", "/users/auth/google" %> </li>
+  <li><%= image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter" %><%= link_to "Twitter", "/users/auth/twitter" %> </li>
+ </ul>
+</div>
+</div>
+<div class="row">
+<div class="span3">
+ <h1>
+  Or This 
+</h1>
+ 
+  
+</div>
+  
 
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+
+<div class="span5 well">
+    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
     <%= f.input :email, :required => false, :autofocus => true %>
     <%= f.input :password, :required => false %>
-    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
+   
+     <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+     <div class="form-actions">
+     <%= f.button :submit, "Sign in", :class => 'btn btn-primary'%>
+     </div>
+  
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
-<% end %>
+ 
+  
+    
 
-<%= render "devise/shared/links" %>
+          <% end %>
+ </div>
+</div>
+<div class="row">
+	<div class="span3">
+    <h1>
+	No Account?
+	</h1>
+    </div>
+    <div class="span5 signup-footer">
+	<div>
+	<%= link_to "Sign up", new_registration_path(resource_name), :class => "btn" %>
+	</div>
+    <div>
+    <%= render "devise/shared/links" %>
+    </div>
+    </div>
+
+</div>
+
+
