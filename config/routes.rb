@@ -78,10 +78,10 @@ Whatsmyx::Application.routes.draw do
 
   
   devise_for :users, :skip => [:sessions], :controllers => { :registrations => 'registrations' }
-    as :user do
-    get 'signin' => 'devise/sessions#new', :as => :new_user_session
-    post 'signin' => 'devise/sessions#create', :as => :user_session
-    get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+   as :user do
+    get 'users/sign_in' => 'devise/sessions#new', :as => :new_user_session
+    post 'users/sign_in' => 'devise/sessions#create', :as => :user_session
+    get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
     end
   resources :users, :only => [:index]
 
