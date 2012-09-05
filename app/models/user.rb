@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  after_create :initialize_profile, :create_fitbit_account
+  after_create :initialize_profile, :create_fitbitaccount
   include Likeable::UserMethods
   has_merit
   extend FriendlyId
