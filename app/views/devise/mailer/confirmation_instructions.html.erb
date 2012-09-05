@@ -1,5 +1,16 @@
-<p>Welcome <%= @resource.email %>!</p>
-
+<p>Welcome to Whats My X beta <%= @resource.username %>, </p>
+<p>
+Please use the account menu to set up your profile after confirming your account. Be advised the system is in very early beta at the moment.
+Menus are missing and some things will misbehave. If you run into problems you can send email to help@whatsmyx.com 
+Thank you for your help testing the software. 
+</p>
+<p>
+Regards, 
+Jody Albritton
+</p>
 <p>You can confirm your account email through the link below:</p>
+
+After you click the link you will be asked to set a new password. 
+Once your password is set, you can edit your profile via the account menu at the top-right of the screen.
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
