@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120905124729) do
+ActiveRecord::Schema.define(:version => 20120910012955) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -154,6 +154,39 @@ ActiveRecord::Schema.define(:version => 20120905124729) do
     t.string  "category", :limit => 22
     t.string  "name",     :limit => 223
   end
+
+  create_table "fb_collectors", :force => true do |t|
+    t.integer  "fitbitaccount_id"
+    t.integer  "user_id"
+    t.datetime "last_run"
+    t.boolean  "enabled"
+    t.boolean  "calories_in"
+    t.boolean  "calories_out"
+    t.boolean  "water"
+    t.boolean  "steps"
+    t.boolean  "distance"
+    t.boolean  "floors"
+    t.boolean  "elevation"
+    t.boolean  "minutes_sedentary"
+    t.boolean  "minutes_lightly_active"
+    t.boolean  "minutes_fairly_active"
+    t.boolean  "activity_score"
+    t.boolean  "activity_calories"
+    t.boolean  "time_in_bed"
+    t.boolean  "bed_time"
+    t.boolean  "start_time"
+    t.boolean  "minutes_asleep"
+    t.boolean  "minutes_to_sleep"
+    t.boolean  "sleep_efficiency"
+    t.boolean  "weight"
+    t.boolean  "bmi"
+    t.boolean  "fat"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+  end
+
+  add_index "fb_collectors", ["fitbitaccount_id"], :name => "index_fb_collectors_on_fitbitaccount_id"
+  add_index "fb_collectors", ["user_id"], :name => "index_fb_collectors_on_user_id"
 
   create_table "fitbitaccounts", :force => true do |t|
     t.integer  "user_id"

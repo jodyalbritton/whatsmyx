@@ -41,9 +41,9 @@ class Oauth::FitbitController < ApplicationController
   end
 
   def disconnect
-    current_user.fitbit_account.clear!
+    current_user.fitbitaccount.clear!
     flash[:notice] = "Your Fitbitclient.com account has been unlinked from your Fitbit account"
-    redirect_to user_profile_path
+    redirect_to edit_registration_path(current_user)
   end
 
 end

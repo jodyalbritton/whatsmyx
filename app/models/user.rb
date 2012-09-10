@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
- 
+  require 'fitbit_client_wrapper'
     
   include Likeable::UserMethods
   has_merit
@@ -49,6 +49,7 @@ class User < ActiveRecord::Base
   has_one :dgoal, dependent: :destroy
   has_one :settings, dependent: :destroy
   has_one :fitbitaccount, dependent: :destroy
+  has_one :fb_collector, dependent: :destroy
 
  
  
@@ -136,6 +137,7 @@ class User < ActiveRecord::Base
     self.fitbitaccount = Fitbitaccount.new
     save
   end
+
  
       
      

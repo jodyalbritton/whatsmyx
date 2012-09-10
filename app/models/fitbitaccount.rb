@@ -3,8 +3,11 @@ class Fitbitaccount < ActiveRecord::Base
   attr_accessible :access_secret, :access_token, :fb_user_id, :request_secret, :request_token, :verifier
   
   belongs_to :user
+  has_one :fb_collector
   
   before_save :default_user_id
+  
+  after_create :create_collector
   
   def set_request_token(token, secret)
     self.request_token = token
@@ -39,10 +42,16 @@ class Fitbitaccount < ActiveRecord::Base
     self.verifier = nil
     save
   end
-  
+  def create_collector
+      FbCollector.create!(
+      :user => self.user,
+      :fitbitaccount => self )
+  end
   protected
   
   def default_user_id
     self.fb_user_id = '-' if self.fb_user_id.nil?
   end
+  
+  
 end
