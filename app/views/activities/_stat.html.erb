@@ -7,8 +7,10 @@
        </div>
        <div id="stat-body" class="span8 activity-body">
              <div class="activity-content">
-             Tracked a <%= link_to activity.target.category.name, activity.target %> of <%= activity.target.value %> <%= activity.target.category.sunit %>
-           
+             <p>
+             Tracked a <%= link_to activity.target.category.name, activity.target %> of <%= activity.target.value %>
+             <%= activity.target.category.sunit %> <%if activity.target.source?%> via <%= activity.target.source %><% else %> via WMX<% end %>
+             </p>
              </div>
              <%= render "activities/likes", :like_object => activity %>
          

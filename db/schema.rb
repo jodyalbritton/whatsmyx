@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910012955) do
+ActiveRecord::Schema.define(:version => 20120910062520) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -587,6 +587,10 @@ ActiveRecord::Schema.define(:version => 20120910012955) do
     t.datetime "date"
     t.integer  "scope",       :default => 0
     t.string   "attachment"
+    t.float    "value"
+    t.float    "calories"
+    t.string   "source"
+    t.string   "verb"
   end
 
   add_index "pactivities", ["exercise_id"], :name => "index_pactivities_on_exercise_id"
@@ -732,6 +736,7 @@ ActiveRecord::Schema.define(:version => 20120910012955) do
     t.integer  "category_id",                :null => false
     t.integer  "scope",       :default => 0
     t.string   "attachment"
+    t.string   "source"
   end
 
   create_table "tags", :force => true do |t|

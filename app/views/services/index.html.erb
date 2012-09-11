@@ -40,11 +40,11 @@
     <h3>You can pull data from these services:</h3>
     <div class="well">
         	 <h2>Fitbit</h2>
-        	 <% if current_user.linked? %>
+        	 <% if current_user.fb_linked? %>
               
                <p>Click the button below to detach your unlink this account from your
                   fitbit.com account.</p>
-             <%= link_to "Unlink Accounts", fitbit_unlink_path, :class => 'btn btn-danger' %>
+             <%= link_to "Unlink Accounts", fitbit_unlink_path, :class => 'btn btn-danger' %> <%= link_to "Edit Settings", edit_fb_collector_path %>
              <% else %>
              <h4>Link Fitbit.com Account</h4>
              <p>Click the button below to link this account to your fitbit.com account and

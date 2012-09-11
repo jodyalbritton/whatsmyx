@@ -1,0 +1,88 @@
+<h1>Fitbit Import Settings</h1>
+
+
+
+<%= simple_form_for (@fb_collector), :html => { :class => 'form-horizontal' } do |f| %>
+<div class="form-controls">
+ <div class="well">
+ <h3>Daily Import</h3>
+ <%= f.input :enabled %>
+ </div>
+  <div class="well">
+  	<h3>Body</h3>
+    <div class="row-fluid">
+  	<div class="span6">
+   <%= f.input :weight %>
+ 
+   
+   <%= f.input :fat %>
+
+  
+   <%= f.input :bmi %>
+         </div>
+         <div class="span6">
+
+   <%= f.input :calories_in %>
+
+
+   <%= f.input :calories_out %>
+  </div>
+  </div>
+  </div>
+  <div class="well">
+  	 <h3>Activities</h3>
+  	<div class="row-fluid">
+  		
+  		<div class="span6">
+  	     
+  
+           <%= f.input :steps %>
+
+  
+           <%= f.input :distance %>
+
+           <%= f.input :floors %>
+           <%= f.input :elevation %>
+         </div>
+       <div class="span6">
+          
+          <%= f.input :minutes_sedentary %>
+
+          <%= f.input :minutes_lightly_active, :as => 'boolean' %>
+
+          <%= f.input :minutes_fairly_active %>
+          <%= f.input :activity_score %>
+        </div>
+       </div>
+    </div>
+    <div class="well">
+  	 <h3>Sleep</h3>
+  	<div class="row-fluid">
+  		
+  		<div class="span6">
+  	     
+  
+           <%= f.input :time_in_bed %>
+
+  
+           <%= f.input :start_time %>
+
+      
+         
+         </div>
+         <div class="span6">
+          
+          <%= f.input :minutes_to_sleep %>
+
+          <%= f.input :minutes_asleep, :as => 'boolean' %>
+
+        
+        </div>
+       </div>
+    </div>
+ 
+  </div>
+<div class="form-actions">
+<%= f.button :submit, "Update Settings",  :class=>"btn btn-primary"%>
+</div>
+<% end %>

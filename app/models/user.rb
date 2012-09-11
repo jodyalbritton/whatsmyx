@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
      FitgemClientWrapper.new(self.fitbitaccount)
   end
   
-  def linked?
+  def fb_linked?
     if self.fitbitaccount.nil?
       false
     else

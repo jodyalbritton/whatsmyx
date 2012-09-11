@@ -7,8 +7,15 @@
        </div>
        <div class="span8 activity-body">
           <div class="activity-content">
+           <% if activity.target.source == nil %>
            Logged <%= link_to "activity", activity.target %> <%= activity.target.name %> for <%= activity.target.duration %> minutes, 
            burning <%= activity.target.burned %> calories
+           <% else %>
+           <p>
+           <%= activity.target.verb %> <%= activity.target.value.round %> <%= activity.target.exercise.name %> via <%= activity.target.source %>
+          
+           </p>
+           <% end %>
           </div>
           
           <%= render "activities/likes", :like_object => activity %>

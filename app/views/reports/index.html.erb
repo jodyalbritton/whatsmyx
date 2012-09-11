@@ -48,8 +48,8 @@
          
           name: "Activities by Date",
            pointInterval: <%= 1.day * 1000 %>,
-            pointStart: <%= 52.weeks.ago.at_midnight.to_i * 1000 %>,
-          data:  <%= (52.weeks.ago.to_date..Date.today).map { |date| @user.activities.total_on(date).to_f}.inspect %>	
+            pointStart: <%= 12.weeks.ago.at_midnight.to_i * 1000 %>,
+          data:  <%= (12.weeks.ago.to_date..Date.today).map { |date| @user.activities.total_on(date).to_f}.inspect %>	
         }]
    
     })

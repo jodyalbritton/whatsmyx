@@ -1,5 +1,9 @@
 Whatsmyx::Application.routes.draw do
 
+  
+
+  get "collectors/fitbit"
+
   get "static_pages/about"
 
   get "static_pages/privacy"
@@ -24,6 +28,8 @@ Whatsmyx::Application.routes.draw do
     resources :circles
     resources :activities
     resources :contacts
+    resource  :fb_collector
+
     resources :meals do
      
     end
