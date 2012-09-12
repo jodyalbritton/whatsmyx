@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   has_many :activities, dependent: :destroy
   
   has_many :groups
-  
+  has_many :mental_activities, dependent: :destroy
   has_many :physical_activities, dependent: :destroy
   has_many :notifications, dependent: :destroy
   has_many :relationships, dependent: :destroy

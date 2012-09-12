@@ -2,9 +2,8 @@ Whatsmyx::Application.routes.draw do
 
   
 
-  resources :mental_activity_types
+  
 
-  resources :mental_activities
 
   get "collectors/fitbit"
 
@@ -26,6 +25,7 @@ Whatsmyx::Application.routes.draw do
     resources :messages
 
     resources :physical_activity_types
+    resources :mental_activity_types
     resources :notifications
     resources :moderate
     resources :help
@@ -39,12 +39,13 @@ Whatsmyx::Application.routes.draw do
     end
     resources :categories 
     resources :physical_activities do
-    
-      get :autocomplete_physical_activity_type_name, :on => :collection
+     get :autocomplete_physical_activity_type_name, :on => :collection
+    end
+    resources :mental_activities do 
+     get :autocomplete_mental_activity_type_name, :on => :collection
     end
     resources :stats do 
-      
-      get :autocomplete_category_name, :on => :collection
+     get :autocomplete_category_name, :on => :collection
     end
     resources :goals do
       get :autocomplete_category_name, :on => :collection

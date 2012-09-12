@@ -1,0 +1,14 @@
+<% if @mental_activity.errors.any? -%>
+  $("#flash_notice").hide(300);
+  $("#flash_errors").html("<%= escape_javascript(error_messages_for(@mental_activity))%>");
+  $("#flash_errors").show(300);
+<% else -%>
+  $("#flash_errors").hide(300);
+  $("#flash_notice").append("<%= escape_javascript(flash[:notice])%>");
+  $("#flash_notice").show(300);
+  
+  
+  $('#edit_mental_activity_<%= @mental_activity.id %>')[0].reset();
+  $("#mental_activity-list").html("<%= escape_javascript( render "mental_activities/mental_activity" ) %>");
+  $("#mental_activity-modal").modal('toggle')
+<% end -%>

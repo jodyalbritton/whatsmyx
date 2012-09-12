@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912045743) do
+ActiveRecord::Schema.define(:version => 20120912064025) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -514,6 +514,12 @@ ActiveRecord::Schema.define(:version => 20120912045743) do
     t.integer  "duration"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.string   "name"
+    t.integer  "scope"
+    t.string   "verb"
+    t.string   "source"
+    t.string   "category"
+    t.string   "attachment"
   end
 
   add_index "mental_activities", ["mental_activity_type_id"], :name => "index_mental_activities_on_mental_activity_type_id"
@@ -525,6 +531,7 @@ ActiveRecord::Schema.define(:version => 20120912045743) do
     t.integer  "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "category"
   end
 
   create_table "merit_actions", :force => true do |t|

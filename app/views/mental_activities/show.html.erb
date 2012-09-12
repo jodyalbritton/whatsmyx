@@ -1,35 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid activity-item">
+	  
+      <div id="activity-sidebar" class="span2 activity-sidebar">
 
-<p>
-  <b>User:</b>
-  <%= @mental_activity.user %>
-</p>
-
-<p>
-  <b>Mental activity type:</b>
-  <%= @mental_activity.mental_activity_type %>
-</p>
-
-<p>
-  <b>Value:</b>
-  <%= @mental_activity.value %>
-</p>
-
-<p>
-  <b>Date:</b>
-  <%= @mental_activity.date %>
-</p>
-
-<p>
-  <b>Time:</b>
-  <%= @mental_activity.time %>
-</p>
-
-<p>
-  <b>Duration:</b>
-  <%= @mental_activity.duration %>
-</p>
-
-
-<%= link_to 'Edit', edit_mental_activity_path(@mental_activity) %> |
-<%= link_to 'Back', mental_activities_path %>
+     
+             <%= image_tag @mental_activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
+             <h3><%= link_to @mental_activity.user.username, @mental_activity.user %></h3>
+             <%= time_ago_in_words(@mental_activity.date) %> ago.
+   
+      
+  
+       </div>
+       <div id="post-body" class="span8 activity-body">
+             <div class="activity-content">
+             <p>
+              
+              Logged <%= link_to "activity", @mental_activity %> <%= @mental_activity.name %> for <%= @mental_activity.duration %> minutes, 
+           burning <%= @mental_activity.burned %> calories
+            
+             </p>
+             </div>
+     
+           
+             <%= render "mental_activities/likes", :like_object => @mental_activity %>
+       
+           
+         
+    </div>
+     <div class="span2 activity-logo" >
+     	<div class="activity-logo visible-desktop">
+         <i class="icon-bolt"></i> 
+        </div>
+    </div>
+</div>
+             

@@ -16,12 +16,13 @@ class HomeController < ApplicationController
      following_ids = following.collect{|f| f.followable_id}
      mycircles =  current_user.relationships.collect{|g| g.circle_id}
      mycircles.push(0)
-     aoi = Activity.where(:target_type => ["Post", "Stat", "PhysicalActivity", "Meal"], :scope => mycircles).includes(:target, :user, :target => :user)
+     aoi = Activity.where(:target_type => ["Post", "Stat", "PhysicalActivity", "Meal", "MentalActivity"], :scope => mycircles).includes(:target, :user, :target => :user)
      @activities = aoi.where(:user_id => [following_ids, current_user] ).page(params[:page])
  
      @curr_membs = @user.memberships.includes(:group)
      @stat = current_user.stats.build 
      @physical_activity = current_user.physical_activities.build 
+     @mental_activity = current_user.mental_activities.build 
      @meal = current_user.meals.build
     
      @post = current_user.posts.build
