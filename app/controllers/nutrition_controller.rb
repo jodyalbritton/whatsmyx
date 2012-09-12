@@ -24,7 +24,7 @@
   
   @meals = @user.meals.where('date BETWEEN ? AND ?', @somedate.beginning_of_day, @somedate.end_of_day).all
   @meals_tot = @user.meals.where('date BETWEEN ? AND ?', @somedate.beginning_of_day, @somedate.end_of_day)
-  @daily_activities = @user.pactivities.where(:date => @somedate)
+  @daily_activities = @user.physical_activities.where(:date => @somedate)
    
     
       if  @user.profile == nil

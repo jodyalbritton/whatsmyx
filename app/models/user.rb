@@ -33,9 +33,9 @@ class User < ActiveRecord::Base
   
   has_many :groups
   
-  has_many :pactivities, dependent: :destroy
+  has_many :physical_activities, dependent: :destroy
   has_many :notifications, dependent: :destroy
-  has_many :relationships
+  has_many :relationships, dependent: :destroy
   has_many :messages, :foreign_key => :sender_id
   has_many :circles, :foreign_key => :author_id
   has_many :stats, dependent: :destroy

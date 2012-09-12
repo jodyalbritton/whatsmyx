@@ -2,6 +2,10 @@ Whatsmyx::Application.routes.draw do
 
   
 
+  resources :mental_activity_types
+
+  resources :mental_activities
+
   get "collectors/fitbit"
 
   get "static_pages/about"
@@ -11,20 +15,20 @@ Whatsmyx::Application.routes.draw do
   get "static_pages/terms"
   get "static_pages/thanks"
     
-    scope "/fitbit" do
+     scope "/fitbit" do
      get "connect", :controller => "oauth/fitbit", :action => :index, :as => :fitbit_connect
      post "start", :controller => "oauth/fitbit", :action => :start, :as => :fitbit_start
      get "verify", :controller => "oauth/fitbit", :action => :verify, :as => :fitbit_verify
      get "unlink", :controller => "oauth/fitbit", :action => :unlink, :as => :fitbit_unlink
      post "disconnect", :controller => "oauth/fitbit", :action => :disconnect, :as => :fitbit_disconnect
-   end
+     end
 
     resources :messages
 
-  
+    resources :physical_activity_types
     resources :notifications
     resources :moderate
-    resources  :help
+    resources :help
     resources :circles
     resources :activities
     resources :contacts
@@ -34,9 +38,9 @@ Whatsmyx::Application.routes.draw do
      
     end
     resources :categories 
-    resources :pactivities do
+    resources :physical_activities do
     
-      get :autocomplete_exercise_name, :on => :collection
+      get :autocomplete_physical_activity_type_name, :on => :collection
     end
     resources :stats do 
       

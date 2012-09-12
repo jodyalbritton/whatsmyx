@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @mental_activity_type.name %>
+</p>
+
+<p>
+  <b>Attributes:</b>
+  <%= @mental_activity_type.attributes %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @mental_activity_type.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_mental_activity_type_path(@mental_activity_type) %> |
+<%= link_to 'Back', mental_activity_types_path %>

@@ -1,0 +1,60 @@
+<% unless activity.target.nil? %>
+<div class="row-fluid activity-item">
+       <div id="activity-sidebar" class="span2 activity-sidebar">
+       	     <%= image_tag activity.user.profile.avatar.url(:thumb), :class=> 'avatar' %>
+             <h4><%= link_to activity.user.username, activity.user %></h4>
+             <i class="icon-time"></i> <%= time_ago_in_words(activity.created_at) %>
+       </div>
+       <div class="span8 activity-body">
+          <div class="activity-content">
+           <% if activity.target.source == nil %>
+           Logged <%= link_to "activity", activity.target %> <%= activity.target.name %> for <%= activity.target.duration %> minutes, 
+           burning <%= activity.target.burned %> calories
+           <% else %>
+           <p>
+           <%= activity.target.verb %> <%= activity.target.value.round %> <%= activity.target.physical_activity_type.name %> via <%= activity.target.source %>
+          
+           </p>
+           <% end %>
+          </div>
+          
+          <%= render "activities/likes", :like_object => activity %>
+         
+          <div id="expanded_<%= activity.id %>" class="expanded" Style="display:none;">
+          <div class="expanded-menu row-fluid">
+         	<div class="expanded-like-count span2">
+         		<div>
+         		<%= activity.target.likes.count %>
+         		</div>
+         		<div>Props</div>
+         	</div>
+         	<div class="span2">
+         	</div>
+         	
+         	<div class="span8">
+         		
+         		<% activity.target.likes.each do |likeuser| %>
+         		 <%= image_tag likeuser.user.profile.avatar.url(:mini), :class => "avatar" %>
+         		<% end %>
+         	</div>
+         </div>
+        
+         </div> 
+
+          
+      </div>
+         <div class="span2 activity-logo" >
+     	  <div class="activity-logo visible-desktop">
+           <i class="icon-bolt"></i> 
+          </div>
+         </div>
+</div>
+
+<% else %>
+
+<div class="content-removed">
+
+</div>
+
+<% end %>
+

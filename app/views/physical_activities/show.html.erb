@@ -1,0 +1,35 @@
+<div class="row-fluid activity-item">
+	  
+      <div id="activity-sidebar" class="span2 activity-sidebar">
+
+     
+             <%= image_tag @physical_activity.user.profile.avatar.url(:thumb), :class => "avatar" %>
+             <h3><%= link_to @physical_activity.user.username, @physical_activity.user %></h3>
+             <%= time_ago_in_words(@physical_activity.date) %> ago.
+   
+      
+  
+       </div>
+       <div id="post-body" class="span8 activity-body">
+             <div class="activity-content">
+             <p>
+              
+              Logged <%= link_to "activity", @physical_activity %> <%= @physical_activity.name %> for <%= @physical_activity.duration %> minutes, 
+           burning <%= @physical_activity.burned %> calories
+            
+             </p>
+             </div>
+     
+           
+             <%= render "physical_activities/likes", :like_object => @physical_activity %>
+       
+           
+         
+    </div>
+     <div class="span2 activity-logo" >
+     	<div class="activity-logo visible-desktop">
+         <i class="icon-bolt"></i> 
+        </div>
+    </div>
+</div>
+             

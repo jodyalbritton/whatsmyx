@@ -1,0 +1,35 @@
+<%= simple_form_for @physical_activity,:input_html=> {:class=> "form-horizontal"}, :validate => true, :remote => true do |f| %>
+<div class="modal-header">
+  	<button class="close" data-dismiss="modal">×</button>
+  	<h2>Log an activity</h2>
+</div>
+
+<div class="modal-body">
+
+  
+    
+    <div class="control-group">
+    <%= f.input :name, :placeholder => "Start Typing....",:hint => "Any activity eg; Weight Lifting, Laundry..", :as => :autocomplete,  :url => autocomplete_physical_activity_type_name_physical_activities_path, :update_elements => {:id => "#physical_activity_physical_activity_type_id", :category => "#physical_activity_category"}, :label => "Activity" %>
+    
+        
+    <%= f.input :physical_activity_type_id, :as => "hidden"%>
+    <%= f.input :category, :as=> "hidden" %>
+    <%= f.input :duration, :placeholder => "in minutes" %>
+    <%= f.input :scope, :as => 'select', :collection => @scopes, :include_blank => false, :label => "Who sees this?" %>
+    </div>
+    <a href="javascript:toggleDiv('physical_activity-date');"> Change Date</a>
+    <div id="physical_activity-date" class="physical_activity-date" style="display: none;">
+    <%= f.input :date,:ampm => true, :input_html => {:class=>"input-small"}%>
+    </div>
+    
+    
+     
+</div>
+
+<div class="modal-footer">
+    <%= f.button :submit, "Log Activity", :disable_with => "Please wait...", :class=> "btn btn-primary"  %>
+    <button data-dismiss="modal" class="btn">Cancel</button>
+ </div>
+
+<% end %>
+

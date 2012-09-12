@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120910062520) do
+ActiveRecord::Schema.define(:version => 20120912045743) do
 
   create_table "DATA_SRC", :id => false, :force => true do |t|
     t.string "DataSrc_ID",  :limit => 6,   :null => false
@@ -148,19 +148,12 @@ ActiveRecord::Schema.define(:version => 20120910062520) do
 
   add_index "embedded_ojects", ["embeddable_id"], :name => "index_embedded_ojects_on_embeddable_id"
 
-  create_table "exercises", :force => true do |t|
-    t.integer "code"
-    t.decimal "mets",                    :precision => 4, :scale => 2
-    t.string  "category", :limit => 22
-    t.string  "name",     :limit => 223
-  end
-
   create_table "fb_collectors", :force => true do |t|
     t.integer  "fitbitaccount_id"
     t.integer  "user_id"
     t.datetime "last_run"
-    t.boolean  "enabled"
-    t.boolean  "calories_in"
+    t.boolean  "enabled",                :default => true, :null => false
+    t.boolean  "calories_in",            :default => true, :null => false
     t.boolean  "calories_out"
     t.boolean  "water"
     t.boolean  "steps"
@@ -181,8 +174,8 @@ ActiveRecord::Schema.define(:version => 20120910062520) do
     t.boolean  "weight"
     t.boolean  "bmi"
     t.boolean  "fat"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
   end
 
   add_index "fb_collectors", ["fitbitaccount_id"], :name => "index_fb_collectors_on_fitbitaccount_id"
@@ -512,6 +505,28 @@ ActiveRecord::Schema.define(:version => 20120910062520) do
   add_index "memberships", ["group_id"], :name => "index_memberships_on_group_id"
   add_index "memberships", ["user_id"], :name => "index_memberships_on_user_id"
 
+  create_table "mental_activities", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "mental_activity_type_id"
+    t.float    "value"
+    t.date     "date"
+    t.time     "time"
+    t.integer  "duration"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "mental_activities", ["mental_activity_type_id"], :name => "index_mental_activities_on_mental_activity_type_id"
+  add_index "mental_activities", ["user_id"], :name => "index_mental_activities_on_user_id"
+
+  create_table "mental_activity_types", :force => true do |t|
+    t.string   "name"
+    t.string   "attributes"
+    t.integer  "value"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "merit_actions", :force => true do |t|
     t.integer  "user_id"
     t.string   "action_method"
@@ -575,26 +590,35 @@ ActiveRecord::Schema.define(:version => 20120910062520) do
     t.string  "CC",            :limit => 1
   end
 
-  create_table "pactivities", :force => true do |t|
+  create_table "physical_activities", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "exercise_id"
+    t.integer  "physical_activity_type_id"
     t.float    "duration"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.time     "time"
     t.string   "category"
-    t.datetime "date"
-    t.integer  "scope",       :default => 0
+    t.date     "date"
+    t.integer  "scope",                     :default => 0
     t.string   "attachment"
-    t.float    "value"
+    t.integer  "value"
     t.float    "calories"
     t.string   "source"
     t.string   "verb"
   end
 
-  add_index "pactivities", ["exercise_id"], :name => "index_pactivities_on_exercise_id"
-  add_index "pactivities", ["user_id"], :name => "index_pactivities_on_user_id"
+  add_index "physical_activities", ["physical_activity_type_id"], :name => "index_pactivities_on_exercise_id"
+  add_index "physical_activities", ["user_id"], :name => "index_pactivities_on_user_id"
+
+  create_table "physical_activity_types", :force => true do |t|
+    t.integer  "code"
+    t.decimal  "mets",                      :precision => 4, :scale => 2
+    t.string   "category",   :limit => 22
+    t.string   "name",       :limit => 223
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"

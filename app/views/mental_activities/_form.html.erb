@@ -1,0 +1,16 @@
+<%= simple_form_for(@mental_activity) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.association :mental_activity_type %>
+    <%= f.input :value %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+    <%= f.input :duration %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

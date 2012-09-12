@@ -1,0 +1,24 @@
+  <% if @physical_activity.errors.any? %>
+  /*Update the html of the div post_errors with the new one*/
+   $("#messages").html("<%= escape_javascript( render "physical_activities/errors", :locals => { :physical_activity => @physical_activity }) %>");
+  <% else -%>
+  
+  /*Replace the html of the div physical_activity_lists with the updated new one*/
+  $("#messages").html("<%= escape_javascript( render "layouts/messages" ) %>");
+  /*Clear the entire form*/
+  
+  $('#new_physical_activity')[0].reset();  
+ 
+
+  /*Replace the html of the div physical_activity_lists with the updated new one*/
+  $("#activity_feed").html("<%= escape_javascript( render "activities/index" ) %>");
+  
+  /*Replace the html of the div physical_activity_lists with the updated new one*/
+  $("#physical_activity-list").html("<%= escape_javascript( render "physical_activities/physical_activity" ) %>");
+  
+  $('#physical_activity-modal').modal('hide');
+  
+  /* Highlight the new comment */
+  $("#physical_activity_<%= @physical_activity.id %>").effect("highlight", {}, 3000);
+  <% end %>
+

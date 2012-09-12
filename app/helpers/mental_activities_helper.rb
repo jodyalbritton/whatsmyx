@@ -1,0 +1,2 @@
+module MentalActivitiesHelper
+end

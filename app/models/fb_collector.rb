@@ -93,7 +93,7 @@ class FbCollector < ActiveRecord::Base
   def import_calories
     if self.user.fb_linked?
       category = Category.where(:name => "Calories Out")
-      fb_calories = self.user.fb_client_data.data_by_time_range("/activities/log/calories", {:base_date => Date.today, :period => "max"})["activities-log-calories"]
+      fb_calories = self.user.fb_client_data.data_by_time_range("/activities/log/calories", {:base_date => Date.yesterday, :period => "max"})["activities-log-calories"]
 
 
         fb_calories.each do |calorie|
@@ -115,16 +115,16 @@ class FbCollector < ActiveRecord::Base
   
    def import_minutes_sedentary
     if self.user.fb_linked?
-      exercise = Exercise.where(:name => "Sedentary Minutes")
-      fb_minsed = self.user.fb_client_data.data_by_time_range("/activities/log/minutesSedentary", {:base_date => Date.today, :period => "max"})["activities-log-minutesSedentary"]
+      physical_activity_type = PhysicalActivityType.where(:name => "Sedentary Minutes")
+      fb_minsed = self.user.fb_client_data.data_by_time_range("/activities/log/minutesSedentary", {:base_date => Date.yesterday, :period => "max"})["activities-log-minutesSedentary"]
 
 
         fb_minsed.each do |minsed|
-         Stat.find_or_create_by_date_and_value(
+         PhysicalActivity.find_or_create_by_date_and_value(
          :user_id => self.user.id,
          :date => minsed["dateTime"],
          :value => minsed["value"] ,
-         :exercise_id => exercise.last.id,
+         :physical_activity_type_id => physical_activity_type.last.id,
          :source => "Fitbit",
          :verb => "Logged")
         end
@@ -138,16 +138,16 @@ class FbCollector < ActiveRecord::Base
   
   def import_steps
     if self.user.fb_linked?
-      exercise = Exercise.where(:name => "Steps")
-      fb_steps = self.user.fb_client_data.data_by_time_range("/activities/log/steps", {:base_date => Date.today, :period => "max"})["activities-log-steps"]
+      physical_activity_type = PhysicalActivityType.where(:name => "Steps")
+      fb_steps = self.user.fb_client_data.data_by_time_range("/activities/log/steps", {:base_date => Date.yesterday, :period => "max"})["activities-log-steps"]
 
 
         fb_steps.each do |step|
-         Pactivity.find_or_create_by_date_and_value(
+         PhysicalActivity.find_or_create_by_date_and_value(
          :user_id => self.user.id,
          :date => step["dateTime"],
          :value => step["value"] ,
-         :exercise_id => exercise.last.id,
+         :physical_activity_type_id => physical_activity_type.last.id,
          :source => "Fitbit",
          :verb => "Logged")
         end

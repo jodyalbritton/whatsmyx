@@ -1,0 +1,30 @@
+<% content_for :sidebar do %>
+    <%= render "shared/track_nav"%>
+    <%= render "physical_activities/pnav"%>
+<% end %>
+
+
+
+
+<div class="stats-top row-fluid">
+	<div>
+	<div class="pull-right">
+	<a class="btn btn-primary" data-toggle="modal" href="#physical_activity-modal">Track Activity <i class="icon-bolt"></i></a>
+	</div>
+	</div>
+	
+</div>
+
+<div class="row-fluid" id="physical_activity-list">
+	
+    <%= render "physical_activities/physical_activity"%>
+    
+</div>
+
+     
+
+
+   <div class="modal hide" id="physical_activity-modal">
+       <%= render "physical_activities/form"%>
+  </div>
+

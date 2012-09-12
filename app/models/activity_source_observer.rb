@@ -2,7 +2,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
  
  
  
- observe :post, :stat, :pactivity, :meal
+ observe :post, :stat, :physical_activity, :meal
 
   def after_create(target)
    @object = target.class.to_s
@@ -46,7 +46,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :scope => target.scope, 
       :verb => "tracked")
       
-      elsif @object == "Pactivity"
+      elsif @object == "PhysicalActivity"
       Activity.create!(
       :user => target.user, 
       :target_id => target.id, 

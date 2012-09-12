@@ -1,0 +1,32 @@
+<% @physical_activities.sort.reverse.each do |date, physical_activities| %>
+  
+  <div>
+  <div class="physical_activity-header row-fluid">
+  <div class="span6">
+  <h4><%= date.strftime("%a, %B, %d, %Y") %></h4>
+  </div>
+  </div>
+ 
+  <% for physical_activity in physical_activities %>
+  <div class="physical_activity-item row-fluid" id="<%= dom_id(physical_activity) %>">
+  	<% if physical_activity.source == nil %>
+    <div class="span6"><%= physical_activity.physical_activity_type.name%></div>
+    <div class="span2"> Burned </div>
+    <div class="span2"> <%= physical_activity.burned %> Kcals</div>
+    <% else %>
+    <div class="span6"><%= physical_activity.physical_activity_type.name%></div>
+    <div class="span2"> <%= physical_activity.verb %></div>
+    <div class="span2"><%= best_in_place physical_activity, :value,:html_attrs => {:class=>"input-mini"} %> <%= physical_activity.physical_activity_type.name %></div>
+    <% end %>
+    <div class="span2">
+   
+    <%= link_to physical_activity, confirm: 'Are you sure?', :remote => true, method: :delete  do %>
+    <i class="icon-trash"></i>
+    <% end %>
+    </div>
+  </div>
+  <% end %>
+  
+  </div>
+
+ <% end %>

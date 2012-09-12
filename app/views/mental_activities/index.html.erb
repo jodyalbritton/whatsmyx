@@ -1,0 +1,33 @@
+<h1>Listing mental_activities</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Mental activity type</th>
+    <th>Value</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Duration</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mental_activities.each do |mental_activity| %>
+  <tr>
+    <td><%= mental_activity.user %></td>
+    <td><%= mental_activity.mental_activity_type %></td>
+    <td><%= mental_activity.value %></td>
+    <td><%= mental_activity.date %></td>
+    <td><%= mental_activity.time %></td>
+    <td><%= mental_activity.duration %></td>
+    <td><%= link_to 'Show', mental_activity %></td>
+    <td><%= link_to 'Edit', edit_mental_activity_path(mental_activity) %></td>
+    <td><%= link_to 'Destroy', mental_activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mental activity', new_mental_activity_path %>
