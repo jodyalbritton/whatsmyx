@@ -8,11 +8,10 @@
        <div class="span8 activity-body">
           <div class="activity-content">
            <% if activity.target.source == nil %>
-           Logged <%= link_to "activity", activity.target %> <%= activity.target.name %> for <%= activity.target.duration %> minutes, 
-           burning <%= activity.target.burned %> calories
+           Logged <%= link_to "Physical Activity", activity.target %> <%= activity.target.name %> for <%= activity.target.duration %> minutes via WMX
            <% else %>
            <p>
-           <%= activity.target.verb %> <%= activity.target.value.round %> <%= activity.target.physical_activity_type.name %> via <%= activity.target.source %>
+           <%= activity.target.verb %> <%= link_to "Physical Activity", activity.target %> <%= activity.target.value.round %> <%= activity.target.physical_activity_type.name %> via <%= activity.target.source %>
           
            </p>
            <% end %>

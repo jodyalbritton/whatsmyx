@@ -10,25 +10,67 @@
       
   
        </div>
-       <div id="post-body" class="span8 activity-body">
+       <div id="physical_activity-body" class="span8 activity-body">
              <div class="activity-content">
              <p>
               
-              Logged <%= link_to "activity", @physical_activity %> <%= @physical_activity.name %> for <%= @physical_activity.duration %> minutes, 
-           burning <%= @physical_activity.burned %> calories
-            
+              Logged <%= link_to "activity", @physical_activity %> <%= @physical_activity.name %> for <%= @physical_activity.duration %> minutes            
              </p>
              </div>
      
            
-             <%= render "physical_activities/likes", :like_object => @physical_activity %>
+     
        
-           
+         <div id="expanded_<%= @physical_activity.id %>" class="expanded">
+         <div class="expanded-menu row-fluid">
+         	<div class="expanded-like-count span2">
+         	
+         		<%= render "physical_activities/likes", :like_object => @physical_activity%>
          
-    </div>
+         	</div>
+         	<div class="span2">
+         	</div>
+         	
+         	<div class="span8">
+         		<% @physical_activity.activities.each do |activity| %>
+         		<% activity.target.likes.each do |likeuser| %>
+         		 <%= image_tag likeuser.user.profile.avatar.url(:mini), :class => "avatar" %>
+         		<% end %>
+         	</div>
+         </div>
+         <div class="attachment">
+         	<% if activity.target.attachment? %>
+         	 <%= image_tag activity.target.attachment.url(:medium), :class => "img-polaroid attachment" %>
+         	<% end %>
+         </div>
+         <div class="reply-list">
+         	<% activity.replies.each do |reply| %>
+         	  <div class="row-fluid">
+         	  	<div class="span1 reply-sidebar">
+         	  		<%= image_tag reply.user.profile.avatar.url(:mini), :class=> "avatar" %>
+         	  	</div>
+         	  	<div class="span8">
+         	  	<div class="reply-header">
+         	  	<div class="reply-time pull-right">
+         	  		<i class="icon-time"></i> <%= time_ago_in_words(reply.created_at) %>
+         	  	</div>
+         	  	<% self_physical_activity = reply.user == current_user %>
+         	  	<%= self_physical_activity ? "You" : link_to(reply.user.username) %> said:
+         	    
+         	  	</div>
+         	  	<div class="reply-body">
+         	  	<%= reply.text %>
+         	  	</div>
+         	  	</div>
+         	  </div>
+         	<% end %>
+         	<% end %>
+         </div>
+         </div> 
+     </div>
      <div class="span2 activity-logo" >
      	<div class="activity-logo visible-desktop">
-         <i class="icon-bolt"></i> 
+         <i class="icon-book"></i> 
         </div>
     </div>
 </div>
