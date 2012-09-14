@@ -1,30 +1,25 @@
 <% @mental_activities.sort.reverse.each do |date, mental_activities| %>
-  
-  <div>
+ 
   <div class="mental_activity-header row-fluid">
-  <div class="span6">
-  <h4><%= date.strftime("%a, %B, %d, %Y") %></h4>
+  	<div class="mental_activity-date">
+  	<h4><%= date.strftime("%a, %B, %d, %Y") %></h4>
+  	</div>
   </div>
-  </div>
- 
   <% for mental_activity in mental_activities %>
-  <div class="mental_activity-item row-fluid" id="<%= dom_id(mental_activity) %>">
-  	<% if mental_activity.source == nil %>
-    <div class="span6"><%= mental_activity.mental_activity_type.name%></div>
-    <div class="span2"></div>
-    <div class="span2"></div>
-    <% else %>
- 
-    <% end %>
-    <div class="span2">
-   
-    <%= link_to mental_activity, confirm: 'Are you sure?', :remote => true, method: :delete  do %>
-    <i class="icon-trash"></i>
-    <% end %>
+    <div class="item-enclosure">
+  	<div class="mental_activity-item row-fluid" id="<%= dom_id(mental_activity) %>">
+  		<% if mental_activity.source == nil %>
+    	<div class="mental_activity-row span6"><%= mental_activity.mental_activity_type.name%></div>
+    	<div class="mental_activity-row span2"></div>
+    	<div class="mental_activity-row span2"></div>
+    	<% else %>
+    	<% end %>
+   		<div class="mental_activity-controls span2">
+    		<%= link_to mental_activity, confirm: 'Are you sure?', :remote => true, method: :delete  do %>
+    		<i class="icon-trash"></i>
+    		<% end %>
+    	</div>
     </div>
-  </div>
+    </div>
   <% end %>
-  
-  </div>
-
- <% end %>
+<% end %>

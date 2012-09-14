@@ -3,15 +3,12 @@
   
   
   <li class="<%= 'active' if params[:controller] == 'stats' %>">
-	<%= link_to "Stats", stats_path %>
-	                
-  </li>
-  <li class="<%= 'active' if params[:controller] == 'pactivities' %>">
- 	<%= link_to "Activities", physical_activities_path %></li>
-
+	<%= link_to "Stats", stats_path %></li>
+  <li class="<%= 'active' if params[:controller] == 'physical_activities' %>">
+ 	<%= link_to "Physcial Activities", physical_activities_path %></li>
+  <li class="<%= 'active' if params[:controller] == 'mental_activities' %>">
+   <%= link_to "Mental Activities", mental_activities_path %></li>
+  <li class="<%= 'active' if params[:controller] == 'nutriton' %>">
+  <%= link_to "Food Diary", nutrition_index_path %></li>
  
-  <li class="dropdown visible-desktop <%= 'active' if params[:controller] == 'nutrition' %>">
-  <%= link_to "Food Diary", nutrition_index_path %>
-	               
-  </li>
   </ul>

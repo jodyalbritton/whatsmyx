@@ -55,7 +55,10 @@
  
  
   </div>
+  <div id="spark_line_<%=category.id %>" class="sparkline span4">
   
+  </div>
+  	
   </div>
   
 
@@ -86,6 +89,12 @@
     
     <div class="row-fluid" style="display:none;" id="chart_container_toggle_<%=category.id%>">
     <div class="span8" style="min-height: 400px;" id="chart_container_<%=category.id %>">
+    <script type="text/javascript">
+    $("#spark_line_<%= category.id %>").sparkline(<%= stat.by_category.map{ |f| [f.date.to_datetime.to_i* 1000, f.value.to_i] }.sort.inspect %>, {
+    width: '265',
+    height: '60',
+    type: 'line'});
+  	</script>
     <script type="text/javascript">
     
 

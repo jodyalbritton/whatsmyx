@@ -83,7 +83,7 @@ class MentalActivitiesController < ApplicationController
   # DELETE /mental_activities/1
   # DELETE /mental_activities/1.json
   def destroy
-    @mental_activity = Mental_activity.find(params[:id])
+    @mental_activity = MentalActivity.find(params[:id])
     @mental_activity.destroy
 
    

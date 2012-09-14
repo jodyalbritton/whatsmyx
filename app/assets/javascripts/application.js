@@ -23,6 +23,7 @@
 //= require highcharts
 //= require cocoon
 //= require rails.validations
+//= require jquery.sparkline
 //= require jquery.tokeninput
 //= require best_in_place
 //= require_tree .

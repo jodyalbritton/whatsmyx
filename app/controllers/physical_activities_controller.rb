@@ -83,7 +83,7 @@ class PhysicalActivitiesController < ApplicationController
   # DELETE /physical_activities/1
   # DELETE /physical_activities/1.json
   def destroy
-    @physical_activity = Physical_activity.find(params[:id])
+    @physical_activity = PhysicalActivity.find(params[:id])
     @physical_activity.destroy
 
    
