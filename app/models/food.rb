@@ -30,11 +30,4 @@ class Food < ActiveRecord::Base
     tokens.split(',')
   end
   
-  define_index do
-    indexes name
-
-  
-
-   
-    end
  end

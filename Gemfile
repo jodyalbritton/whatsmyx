@@ -23,7 +23,7 @@ group :assets do
   gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 end
 
-gem 'thinking-sphinx', '2.0.12'
+
  
 gem 'jquery-rails'
 
