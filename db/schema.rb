@@ -13,67 +13,23 @@
 
 ActiveRecord::Schema.define(:version => 20120912064025) do
 
-  create_table "DATA_SRC", :id => false, :force => true do |t|
-    t.string "DataSrc_ID",  :limit => 6,   :null => false
-    t.string "Authors"
-    t.string "Title",                      :null => false
-    t.string "Year",        :limit => 4
-    t.string "Journal",     :limit => 135
-    t.string "Vol_City",    :limit => 16
-    t.string "Issue_State", :limit => 5
-    t.string "Start_Page",  :limit => 5
-    t.string "End_Page",    :limit => 5
-  end
-
-  create_table "DERIV_CD", :id => false, :force => true do |t|
-    t.string "Deriv_Cd",   :limit => 4,   :null => false
-    t.string "Deriv_Desc", :limit => 120
-  end
-
-  create_table "FD_GROUP", :id => false, :force => true do |t|
-    t.string "FdGrp_Cd",   :limit => 4,  :null => false
-    t.string "FdGrp_Desc", :limit => 60, :null => false
-  end
-
-  create_table "FOOTNOTE", :id => false, :force => true do |t|
-    t.string "NDB_No",     :limit => 5,   :null => false
-    t.string "Footnt_No",  :limit => 4,   :null => false
-    t.string "Footnt_Typ", :limit => 1,   :null => false
-    t.string "Nutr_No",    :limit => 3
-    t.string "Footnt_Txt", :limit => 200, :null => false
-  end
-
-  create_table "LANGDESC", :id => false, :force => true do |t|
-    t.string "Factor_Code", :limit => 5,   :null => false
-    t.string "Description", :limit => 140, :null => false
-  end
-
-  create_table "LANGUAL", :id => false, :force => true do |t|
-    t.string "NDB_No",      :limit => 5, :null => false
-    t.string "Factor_Code", :limit => 5, :null => false
-  end
-
-  create_table "SRC_CD", :id => false, :force => true do |t|
-    t.string "Src_Cd",     :limit => 2,  :null => false
-    t.string "SrcCd_Desc", :limit => 60, :null => false
-  end
-
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "activities", :force => true do |t|
-    t.integer  "user_id",                      :null => false
-    t.integer  "activity_type",                :null => false
-    t.integer  "target_id",                    :null => false
-    t.string   "target_type",                  :null => false
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.integer  "user_id",       :null => false
+    t.integer  "activity_type", :null => false
+    t.integer  "target_id",     :null => false
+    t.string   "target_type",   :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "actor_id"
+    t.integer  "object_id"
     t.integer  "parent_id"
     t.string   "verb"
-    t.integer  "scope",         :default => 0, :null => false
+    t.integer  "scope"
   end
 
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
@@ -111,22 +67,6 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
 
   add_index "circles", ["user_id"], :name => "index_circles_on_user_id"
 
-  create_table "comments", :force => true do |t|
-    t.integer  "owner_id",           :null => false
-    t.integer  "commentable_id",     :null => false
-    t.string   "commentable_type",   :null => false
-    t.text     "body",               :null => false
-    t.integer  "activity_object_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  create_table "conversations", :force => true do |t|
-    t.string   "subject",    :default => ""
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
   create_table "dgoals", :force => true do |t|
     t.integer  "user_id"
     t.float    "calories"
@@ -139,21 +79,12 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
 
   add_index "dgoals", ["user_id"], :name => "index_dgoals_on_user_id"
 
-  create_table "embedded_ojects", :force => true do |t|
-    t.integer  "embeddable_id"
-    t.string   "embeddable_type"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
-  add_index "embedded_ojects", ["embeddable_id"], :name => "index_embedded_ojects_on_embeddable_id"
-
   create_table "fb_collectors", :force => true do |t|
     t.integer  "fitbitaccount_id"
     t.integer  "user_id"
     t.datetime "last_run"
-    t.boolean  "enabled",                :default => true, :null => false
-    t.boolean  "calories_in",            :default => true, :null => false
+    t.boolean  "enabled"
+    t.boolean  "calories_in"
     t.boolean  "calories_out"
     t.boolean  "water"
     t.boolean  "steps"
@@ -174,8 +105,8 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.boolean  "weight"
     t.boolean  "bmi"
     t.boolean  "fat"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
   add_index "fb_collectors", ["fitbitaccount_id"], :name => "index_fb_collectors_on_fitbitaccount_id"
@@ -207,25 +138,6 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
 
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
-
-  create_table "food_dets", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
-    t.string  "longdesc",    :limit => 200,                               :null => false
-    t.string  "shortdesc",   :limit => 60,                                :null => false
-    t.string  "comname",     :limit => 100
-    t.string  "manufacname", :limit => 65
-    t.string  "survey",      :limit => 1
-    t.string  "ref_desc",    :limit => 135
-    t.integer "refuse"
-    t.string  "SciName",     :limit => 65
-    t.decimal "n_factor",                   :precision => 4, :scale => 2
-    t.decimal "pro_factor",                 :precision => 4, :scale => 2
-    t.decimal "fat_factor",                 :precision => 4, :scale => 2
-    t.decimal "cho_factor",                 :precision => 4, :scale => 2
-  end
-
-  add_index "food_dets", ["ndb"], :name => "INDEX_FOOD_DETS_ON_NDB"
 
   create_table "foods", :force => true do |t|
     t.integer "ndb"
@@ -284,139 +196,10 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.string  "name",          :limit => 130
   end
 
-  create_table "foods_bak", :force => true do |t|
-    t.string  "name"
-    t.float   "water"
-    t.float   "calories"
-    t.float   "protein"
-    t.float   "lipid_total"
-    t.float   "ash"
-    t.float   "carbohydrates"
-    t.float   "fiber"
-    t.float   "sugar_total"
-    t.float   "calcium"
-    t.float   "iron"
-    t.float   "magnesium"
-    t.float   "phosphorus"
-    t.float   "potassium"
-    t.float   "sodium"
-    t.float   "zinc"
-    t.float   "copper"
-    t.float   "manganese"
-    t.float   "selenium"
-    t.float   "vit_c"
-    t.float   "thiamin"
-    t.float   "riboflavin"
-    t.float   "niacin"
-    t.float   "panto_acid"
-    t.float   "vit_b6"
-    t.float   "folate_total"
-    t.float   "folic_acid"
-    t.float   "food_folate"
-    t.float   "folate_dfe"
-    t.float   "choline_total"
-    t.float   "vit_b12"
-    t.float   "vit_a_iu"
-    t.float   "vit_a_rae"
-    t.float   "retinol"
-    t.float   "alpha_carotene"
-    t.float   "beta_carotene"
-    t.float   "beta_crypt"
-    t.float   "lycopene"
-    t.float   "lut_zea"
-    t.float   "vit_e"
-    t.float   "vit_d_mcg"
-    t.float   "vit_d_iu"
-    t.float   "vit_k"
-    t.float   "fa_sat"
-    t.float   "fa_mono"
-    t.float   "fa_poly"
-    t.float   "cholesterol"
-    t.float   "weight_1_gms"
-    t.string  "weight_1_desc"
-    t.float   "weight_2_gms"
-    t.string  "weight_2_desc"
-    t.float   "refuse_pct"
-    t.integer "umd",            :default => 0
-    t.integer "user_id"
-  end
-
-  create_table "foods_older", :force => true do |t|
-    t.integer "user_id"
-    t.integer "ndb"
-    t.string  "name",          :limit => 60
-    t.float   "water"
-    t.float   "calories",                                                   :default => 0.0,   :null => false
-    t.float   "protein",                                                    :default => 0.0,   :null => false
-    t.float   "lipid_total",                                                :default => 0.0,   :null => false
-    t.float   "ash"
-    t.float   "carbohydrates"
-    t.float   "fiber",                                                      :default => 0.0,   :null => false
-    t.float   "sugar_total",                                                :default => 0.0,   :null => false
-    t.float   "calcium",                                                    :default => 0.0,   :null => false
-    t.decimal "iron",                        :precision => 4,  :scale => 2
-    t.integer "magnesium"
-    t.integer "phosphorus"
-    t.float   "potassium",                                                  :default => 0.0,   :null => false
-    t.integer "sodium"
-    t.decimal "zinc",                        :precision => 4,  :scale => 2
-    t.string  "copper",        :limit => 9
-    t.decimal "manganese",                   :precision => 6,  :scale => 3
-    t.decimal "selenium",                    :precision => 5,  :scale => 1
-    t.float   "vit_c"
-    t.decimal "thiamin",                     :precision => 7,  :scale => 3
-    t.string  "riboflavin",    :limit => 47
-    t.string  "niacin",        :limit => 9
-    t.decimal "panto_acid",                  :precision => 8,  :scale => 3
-    t.decimal "vitamin_b6",                  :precision => 6,  :scale => 3
-    t.string  "folate_total",  :limit => 5
-    t.integer "folic_acid"
-    t.decimal "food_folate",                 :precision => 5,  :scale => 2
-    t.string  "folate_dfe",    :limit => 6
-    t.decimal "choline_total",               :precision => 6,  :scale => 3
-    t.decimal "vitamin_b12",                 :precision => 8,  :scale => 3
-    t.decimal "vitamin_a",                   :precision => 8,  :scale => 3
-    t.decimal "vitamin_a_rae",               :precision => 8,  :scale => 3
-    t.string  "retinol",       :limit => 23
-    t.string  "alpha_carot",   :limit => 26
-    t.string  "beta_carot",    :limit => 40
-    t.string  "beta_crypt",    :limit => 29
-    t.string  "lycopene",      :limit => 44
-    t.string  "lut_zea",       :limit => 33
-    t.string  "vitamin_e",     :limit => 52
-    t.string  "vitamin_d_ug",  :limit => 44
-    t.string  "vitamin_d_iu",  :limit => 33
-    t.string  "vitamin_k_ug",  :limit => 16
-    t.float   "fa_sat",                                                     :default => 0.0,   :null => false
-    t.decimal "fa_mono",                     :precision => 30, :scale => 0
-    t.float   "fa_poly"
-    t.float   "cholesterol",                                                :default => 0.0,   :null => false
-    t.string  "gmwt_1",        :limit => 77
-    t.string  "gmwt_desc",     :limit => 80
-    t.float   "serving_grams"
-    t.string  "gmwt_desc2",    :limit => 79
-    t.integer "refuse_pct"
-    t.boolean "umd",                                                        :default => false, :null => false
-    t.string  "slug"
-  end
-
-  add_index "foods_older", ["slug"], :name => "index_foods_on_slug", :unique => true
-
-  create_table "footnotes", :force => true do |t|
-    t.string "ndb_no",      :limit => 5,                         :null => false
-    t.string "footnt_no",   :limit => 4,                         :null => false
-    t.string "footnt_typ",  :limit => 1,                         :null => false
-    t.string "nutr_no",     :limit => 3
-    t.string "footnt_txt",  :limit => 200,                       :null => false
-    t.string "usda_status", :limit => 7,   :default => "active"
-  end
-
-  add_index "footnotes", ["ndb_no"], :name => "ndb_no"
-
   create_table "gcategories", :force => true do |t|
-    t.string   "name",       :limit => 10
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "glevels", :force => true do |t|
@@ -458,14 +241,12 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.string   "what_food"
     t.integer  "servings"
     t.integer  "food_id"
-    t.decimal  "serving_size",    :precision => 11, :scale => 0
-    t.datetime "created_at",                                     :null => false
-    t.datetime "updated_at",                                     :null => false
-    t.integer  "meal_id"
+    t.integer  "serving_size"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.integer  "user_id"
     t.date     "date"
     t.integer  "mcategory_id"
-    t.integer  "serving_size_id"
     t.integer  "serv_size_id"
   end
 
@@ -483,7 +264,7 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.string   "name"
-    t.datetime "date"
+    t.date     "date"
     t.integer  "scope",        :default => 0
     t.string   "attachment"
   end
@@ -527,7 +308,7 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
 
   create_table "mental_activity_types", :force => true do |t|
     t.string   "name"
-    t.string   "attributes"
+    t.string   "attribs"
     t.integer  "value"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -568,35 +349,6 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
   add_index "notifications", ["activity_id"], :name => "index_notifications_on_activity_id"
   add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
-  create_table "nutr_defs", :force => true do |t|
-    t.string  "nutr_no",  :limit => 3,  :null => false
-    t.string  "units",    :limit => 7,  :null => false
-    t.string  "tagname",  :limit => 20
-    t.string  "nutrdesc", :limit => 60, :null => false
-    t.string  "num_dec",  :limit => 1,  :null => false
-    t.integer "sr_order",               :null => false
-  end
-
-  create_table "nutrients", :force => true do |t|
-    t.integer "ndb",                                                        :null => false
-    t.string  "nutr_no",       :limit => 3,                                 :null => false
-    t.decimal "nutr_val",                    :precision => 10, :scale => 3, :null => false
-    t.decimal "num_data_pts",                :precision => 5,  :scale => 0, :null => false
-    t.decimal "Std_Error",                   :precision => 8,  :scale => 3
-    t.string  "Src_Cd",        :limit => 2,                                 :null => false
-    t.string  "Deriv_Cd",      :limit => 4
-    t.string  "Ref_NDB_No",    :limit => 5
-    t.string  "Add_Nutr_Mark", :limit => 1
-    t.integer "Num_Studies"
-    t.decimal "Min",                         :precision => 10, :scale => 3
-    t.decimal "Max",                         :precision => 10, :scale => 3
-    t.integer "DF"
-    t.decimal "Low_EB",                      :precision => 10, :scale => 3
-    t.decimal "Up_EB",                       :precision => 10, :scale => 3
-    t.string  "Stat_cmt",      :limit => 10
-    t.string  "CC",            :limit => 1
-  end
-
   create_table "physical_activities", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -609,7 +361,7 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.date     "date"
     t.integer  "scope",                     :default => 0
     t.string   "attachment"
-    t.integer  "value"
+    t.float    "value"
     t.float    "calories"
     t.string   "source"
     t.string   "verb"
@@ -629,12 +381,13 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
 
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "text"
+    t.integer  "activity_object_id"
+    t.text     "content"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "parent_id"
-    t.integer  "scope",       :default => 0, :null => false
-    t.datetime "date"
+    t.integer  "scope"
+    t.date     "date"
     t.string   "attachment"
     t.string   "tag_list"
     t.integer  "reply_to_id"
@@ -673,9 +426,9 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.string   "fname"
     t.string   "lname"
     t.string   "name"
-    t.float    "weight",                       :default => 0.0, :null => false
-    t.integer  "height",                       :default => 0,   :null => false
-    t.float    "waist_circ",                   :default => 0.0, :null => false
+    t.float    "weight"
+    t.float    "height"
+    t.float    "waist_circ"
     t.float    "kneck_circ"
     t.float    "shoulders_circ"
     t.float    "chest_circ"
@@ -759,15 +512,14 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.string   "name"
     t.string   "stype"
     t.integer  "value"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.date     "date"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "sunit"
     t.integer  "user_id"
-    t.integer  "category_id",                :null => false
-    t.integer  "scope",       :default => 0
+    t.integer  "scope",      :default => 0
     t.string   "attachment"
     t.string   "source"
+    t.date     "date",                      :null => false
   end
 
   create_table "tags", :force => true do |t|
@@ -805,8 +557,6 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.integer  "sash_id"
     t.integer  "points",                               :default => 0
     t.integer  "level",                                :default => 0
-    t.integer  "actor_id"
-    t.string   "activity_stream_token"
     t.string   "invitation_token",       :limit => 60
     t.datetime "invitation_sent_at"
     t.datetime "invitation_accepted_at"
@@ -818,7 +568,6 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.boolean  "notify_by_email",                      :default => true
   end
 
-  add_index "users", ["actor_id"], :name => "index_users_on_actor_id"
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token"
@@ -832,15 +581,5 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
-
-  create_table "weights", :force => true do |t|
-    t.integer "ndb",                                                      :null => false
-    t.string  "seq",          :limit => 2,                                :null => false
-    t.decimal "amount",                     :precision => 5, :scale => 3, :null => false
-    t.string  "msre_desc",    :limit => 80,                               :null => false
-    t.decimal "gm_wgt",                     :precision => 7, :scale => 1, :null => false
-    t.integer "num_data_pts"
-    t.decimal "std_dev",                    :precision => 7, :scale => 3
-  end
 
 end
