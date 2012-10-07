@@ -1,14 +1,16 @@
 class Tag < ActiveRecord::Base
-  attr_accessible :content
+  extend FriendlyId
+  friendly_id :content, use: :slugged
   
-  has_and_belongs_to_many :posts
+  attr_accessible :content
+  has_and_belongs_to_many :activities
   
 
-  def self.process_tags(post_id)
-    p = Post.find(post_id)
+  def self.process_tags(activity_id)
+    p = Activity.find(activity_id)
     p.tag_list.each do |tag|
       t = find_or_initialize_by_content(tag)
-      t.posts << p
+      t.activities << p
       t.save
     end
   end

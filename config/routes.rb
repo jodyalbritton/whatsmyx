@@ -4,7 +4,7 @@ Whatsmyx::Application.routes.draw do
 
   
 
-
+  
   get "collectors/fitbit"
 
   get "static_pages/about"
@@ -98,14 +98,16 @@ Whatsmyx::Application.routes.draw do
 
   authenticated :user do
   root :to => 'home#index'
+  
   end
   devise_scope :user do
   root :to => "StaticPages#index"
   match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   
   end
- 
+   
   resources :services, :only => [:index, :create, :destroy]
+  get 'tags/:tag', to: 'home#index', as: :tag
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

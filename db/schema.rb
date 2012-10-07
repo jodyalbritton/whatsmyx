@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912064025) do
+ActiveRecord::Schema.define(:version => 20121007034344) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -30,10 +30,19 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.integer  "parent_id"
     t.string   "verb"
     t.integer  "scope"
+    t.string   "tag_list"
   end
 
   add_index "activities", ["target_id", "target_type"], :name => "index_activities_on_target_id_and_target_type"
   add_index "activities", ["user_id"], :name => "index_activities_on_user_id"
+
+  create_table "activities_tags", :force => true do |t|
+    t.integer "activity_id"
+    t.integer "tag_id"
+  end
+
+  add_index "activities_tags", ["activity_id"], :name => "index_activities_tags_on_activity_id"
+  add_index "activities_tags", ["tag_id"], :name => "index_activities_tags_on_tag_id"
 
   create_table "badges_sashes", :id => false, :force => true do |t|
     t.integer  "badge_id"
@@ -248,6 +257,7 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.date     "date"
     t.integer  "mcategory_id"
     t.integer  "serv_size_id"
+    t.integer  "meal_id",      :null => false
   end
 
   add_index "ingredients", ["food_id"], :name => "index_ingredients_on_food_id"
@@ -391,6 +401,7 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.string   "attachment"
     t.string   "tag_list"
     t.integer  "reply_to_id"
+    t.text     "text",               :null => false
   end
 
   create_table "posts_tags", :force => true do |t|
@@ -512,20 +523,22 @@ ActiveRecord::Schema.define(:version => 20120912064025) do
     t.string   "name"
     t.string   "stype"
     t.integer  "value"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.string   "sunit"
     t.integer  "user_id"
-    t.integer  "scope",      :default => 0
+    t.integer  "scope",       :default => 0
     t.string   "attachment"
     t.string   "source"
-    t.date     "date",                      :null => false
+    t.date     "date",                       :null => false
+    t.integer  "category_id",                :null => false
   end
 
   create_table "tags", :force => true do |t|
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "slug"
   end
 
   add_index "tags", ["content"], :name => "index_tags_on_content", :unique => true
