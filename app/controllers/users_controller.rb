@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @message = current_user.messages.build(params[:message])
      mycircles =  current_user.relationships.collect{|g| g.circle_id}
      mycircles.push(0)
-     @activities = @user.activities.where(:target_type => ["Post", "Stat", "Pactivity", "Meal"], :scope => mycircles )
+     @activities = @user.activities.where(:target_type => ["Post", "Stat", "PhysicalActivity", "Meal", "MentalActivity"], :scope => mycircles )
     
     @post = Post.new
     @followers = @user.followers

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121007034344) do
+ActiveRecord::Schema.define(:version => 20121008041112) do
 
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20121007034344) do
     t.datetime "updated_at", :null => false
     t.string   "slug"
     t.string   "sunit"
+    t.string   "tag_list"
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
@@ -258,6 +259,7 @@ ActiveRecord::Schema.define(:version => 20121007034344) do
     t.integer  "mcategory_id"
     t.integer  "serv_size_id"
     t.integer  "meal_id",      :null => false
+    t.string   "tag_list"
   end
 
   add_index "ingredients", ["food_id"], :name => "index_ingredients_on_food_id"
@@ -323,6 +325,7 @@ ActiveRecord::Schema.define(:version => 20121007034344) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "category"
+    t.string   "tag_list"
   end
 
   create_table "merit_actions", :force => true do |t|
@@ -387,6 +390,7 @@ ActiveRecord::Schema.define(:version => 20121007034344) do
     t.string   "name",       :limit => 223
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "tag_list"
   end
 
   create_table "posts", :force => true do |t|

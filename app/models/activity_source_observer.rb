@@ -29,7 +29,8 @@ class ActivitySourceObserver < ActiveRecord::Observer
       Activity.create!(
       :user => target.user, 
       :target_id => target.id, 
-      :activity_type=> target.class.to_s, 
+      :activity_type=> target.class.to_s,
+      :tag_list => target.category.tag_list,
       :created_at => target.date, 
       :updated_at => target.updated_at,
       :target_type => target.class.to_s,
@@ -51,7 +52,8 @@ class ActivitySourceObserver < ActiveRecord::Observer
       Activity.create!(
       :user => target.user, 
       :target_id => target.id, 
-      :activity_type=> target.class.to_s, 
+      :activity_type=> target.class.to_s,
+      :tag_list => target.physical_activity.types.tag_list, 
       :created_at => target.date, 
       :updated_at => target.updated_at,
       :target_type => target.class.to_s,
@@ -63,6 +65,7 @@ class ActivitySourceObserver < ActiveRecord::Observer
       :user => target.user, 
       :target_id => target.id, 
       :activity_type=> target.class.to_s, 
+      :tag_list => target.mental_activity.types.tag_list, 
       :created_at => target.date, 
       :updated_at => target.updated_at,
       :target_type => target.class.to_s,

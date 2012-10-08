@@ -8,7 +8,6 @@
   	<fieldset>
   		<legend>
   			Create Account
-            
         </legend>
     <div class="control-group">
     <%= f.error_notification %>
@@ -19,7 +18,10 @@
     	Sign up to receive infrequent notifications from WMX. Don't worry, we hate spam as much as you do. 
     	
     </p>
-    <%= f.input :opt_in, :label => "Updates" %>
+
+         <%= f.input :opt_in,:label=> false, :inline_label => t('Updates')%> 
+    
+   
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
     </div>
@@ -30,8 +32,6 @@
    </fieldset>
   </div>
   <% end %>
-  </div>
-  <div class="span8">
   </div>
 </div>
 
