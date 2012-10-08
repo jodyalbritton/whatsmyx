@@ -4,5 +4,5 @@ stderr_path "/var/src/whatsmyx/log/unicorn.log"
 stdout_path "/var/src/whatsmyx/log/unicorn.log"
 
 listen "/tmp/unicorn.wmx.sock"
-worker_processes 2
+worker_processes 3
 timeout 30
