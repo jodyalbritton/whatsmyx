@@ -13,23 +13,68 @@
 
 ActiveRecord::Schema.define(:version => 20121008041112) do
 
+  create_table "DATA_SRC", :id => false, :force => true do |t|
+    t.string "DataSrc_ID",  :limit => 6,   :null => false
+    t.string "Authors"
+    t.string "Title",                      :null => false
+    t.string "Year",        :limit => 4
+    t.string "Journal",     :limit => 135
+    t.string "Vol_City",    :limit => 16
+    t.string "Issue_State", :limit => 5
+    t.string "Start_Page",  :limit => 5
+    t.string "End_Page",    :limit => 5
+  end
+
+  create_table "DERIV_CD", :id => false, :force => true do |t|
+    t.string "Deriv_Cd",   :limit => 4,   :null => false
+    t.string "Deriv_Desc", :limit => 120
+  end
+
+  create_table "FD_GROUP", :id => false, :force => true do |t|
+    t.string "FdGrp_Cd",   :limit => 4,  :null => false
+    t.string "FdGrp_Desc", :limit => 60, :null => false
+  end
+
+  create_table "FOOTNOTE", :id => false, :force => true do |t|
+    t.string "NDB_No",     :limit => 5,   :null => false
+    t.string "Footnt_No",  :limit => 4,   :null => false
+    t.string "Footnt_Typ", :limit => 1,   :null => false
+    t.string "Nutr_No",    :limit => 3
+    t.string "Footnt_Txt", :limit => 200, :null => false
+  end
+
+  create_table "LANGDESC", :id => false, :force => true do |t|
+    t.string "Factor_Code", :limit => 5,   :null => false
+    t.string "Description", :limit => 140, :null => false
+  end
+
+  create_table "LANGUAL", :id => false, :force => true do |t|
+    t.string "NDB_No",      :limit => 5, :null => false
+    t.string "Factor_Code", :limit => 5, :null => false
+  end
+
+  create_table "SRC_CD", :id => false, :force => true do |t|
+    t.string "Src_Cd",     :limit => 2,  :null => false
+    t.string "SrcCd_Desc", :limit => 60, :null => false
+  end
+
   create_table "abilities", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "activities", :force => true do |t|
-    t.integer  "user_id",       :null => false
-    t.integer  "activity_type", :null => false
-    t.integer  "target_id",     :null => false
-    t.string   "target_type",   :null => false
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.integer  "user_id",                      :null => false
+    t.integer  "activity_type",                :null => false
+    t.integer  "target_id",                    :null => false
+    t.string   "target_type",                  :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.integer  "actor_id"
     t.integer  "object_id"
     t.integer  "parent_id"
     t.string   "verb"
-    t.integer  "scope"
+    t.integer  "scope",         :default => 0, :null => false
     t.string   "tag_list"
   end
 
@@ -66,6 +111,14 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug", :unique => true
 
+  create_table "checklists", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.date     "date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "circles", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -77,14 +130,23 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
 
   add_index "circles", ["user_id"], :name => "index_circles_on_user_id"
 
+  create_table "comments", :force => true do |t|
+    t.integer  "owner_id",         :null => false
+    t.integer  "commentable_id",   :null => false
+    t.string   "commentable_type", :null => false
+    t.text     "body",             :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "dgoals", :force => true do |t|
     t.integer  "user_id"
-    t.float    "calories"
-    t.float    "protein"
-    t.float    "fat"
-    t.float    "carbs"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.float    "calories",   :default => 0.0, :null => false
+    t.float    "protein",    :default => 0.0, :null => false
+    t.float    "fat",        :default => 0.0, :null => false
+    t.float    "carbs",      :default => 0.0, :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   add_index "dgoals", ["user_id"], :name => "index_dgoals_on_user_id"
@@ -206,6 +268,23 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.string  "name",          :limit => 130
   end
 
+  create_table "foods_old", :force => true do |t|
+    t.integer "ndb",                                                      :null => false
+    t.string  "fdgrp_cd",    :limit => 4,                                 :null => false
+    t.string  "longdesc",    :limit => 200,                               :null => false
+    t.string  "shortdesc",   :limit => 60,                                :null => false
+    t.string  "comname",     :limit => 100
+    t.string  "manufacname", :limit => 65
+    t.string  "survey",      :limit => 1
+    t.string  "ref_desc",    :limit => 135
+    t.integer "refuse"
+    t.string  "SciName",     :limit => 65
+    t.decimal "n_factor",                   :precision => 4, :scale => 2
+    t.decimal "pro_factor",                 :precision => 4, :scale => 2
+    t.decimal "fat_factor",                 :precision => 4, :scale => 2
+    t.decimal "cho_factor",                 :precision => 4, :scale => 2
+  end
+
   create_table "gcategories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -254,11 +333,11 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.integer  "serving_size"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "meal_id"
     t.integer  "user_id"
     t.date     "date"
     t.integer  "mcategory_id"
     t.integer  "serv_size_id"
-    t.integer  "meal_id",      :null => false
     t.string   "tag_list"
   end
 
@@ -276,7 +355,7 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.string   "name"
-    t.date     "date"
+    t.datetime "date"
     t.integer  "scope",        :default => 0
     t.string   "attachment"
   end
@@ -362,6 +441,35 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
   add_index "notifications", ["activity_id"], :name => "index_notifications_on_activity_id"
   add_index "notifications", ["user_id"], :name => "index_notifications_on_user_id"
 
+  create_table "nutr_defs", :force => true do |t|
+    t.string  "nutr_no",  :limit => 3,  :null => false
+    t.string  "units",    :limit => 7,  :null => false
+    t.string  "tagname",  :limit => 20
+    t.string  "nutrdesc", :limit => 60, :null => false
+    t.string  "num_dec",  :limit => 1,  :null => false
+    t.integer "sr_order",               :null => false
+  end
+
+  create_table "nutrients", :force => true do |t|
+    t.integer "ndb",                                                        :null => false
+    t.string  "nutr_no",       :limit => 3,                                 :null => false
+    t.decimal "nutr_val",                    :precision => 10, :scale => 3, :null => false
+    t.decimal "num_data_pts",                :precision => 5,  :scale => 0, :null => false
+    t.decimal "Std_Error",                   :precision => 8,  :scale => 3
+    t.string  "Src_Cd",        :limit => 2,                                 :null => false
+    t.string  "Deriv_Cd",      :limit => 4
+    t.string  "Ref_NDB_No",    :limit => 5
+    t.string  "Add_Nutr_Mark", :limit => 1
+    t.integer "Num_Studies"
+    t.decimal "Min",                         :precision => 10, :scale => 3
+    t.decimal "Max",                         :precision => 10, :scale => 3
+    t.integer "DF"
+    t.decimal "Low_EB",                      :precision => 10, :scale => 3
+    t.decimal "Up_EB",                       :precision => 10, :scale => 3
+    t.string  "Stat_cmt",      :limit => 10
+    t.string  "CC",            :limit => 1
+  end
+
   create_table "physical_activities", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -396,62 +504,59 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "activity_object_id"
-    t.text     "content"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "text"
     t.integer  "parent_id"
-    t.integer  "scope"
-    t.date     "date"
+    t.integer  "scope",              :default => 0, :null => false
+    t.datetime "date"
     t.string   "attachment"
     t.string   "tag_list"
     t.integer  "reply_to_id"
-    t.text     "text",               :null => false
   end
 
-  create_table "posts_tags", :force => true do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
-  end
-
-  add_index "posts_tags", ["post_id"], :name => "index_posts_tags_on_post_id"
-  add_index "posts_tags", ["tag_id"], :name => "index_posts_tags_on_tag_id"
+  add_index "posts", ["activity_object_id"], :name => "index_posts_on_activity_object_id"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "organization",   :limit => 45
-    t.string   "phone",          :limit => 45
-    t.string   "mobile",         :limit => 45
-    t.string   "fax",            :limit => 45
+    t.string   "organization",        :limit => 45
+    t.string   "phone",               :limit => 45
+    t.string   "mobile",              :limit => 45
+    t.string   "fax",                 :limit => 45
     t.string   "address"
     t.string   "city"
-    t.string   "zipcode",        :limit => 45
-    t.string   "province",       :limit => 45
-    t.string   "country",        :limit => 45
+    t.string   "zipcode",             :limit => 45
+    t.string   "province",            :limit => 45
+    t.string   "country",             :limit => 45
     t.integer  "prefix_key"
     t.string   "description"
     t.string   "experience"
     t.string   "website"
-    t.string   "skype",          :limit => 45
-    t.string   "im",             :limit => 45
+    t.string   "skype",               :limit => 45
+    t.string   "im",                  :limit => 45
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.text     "about"
     t.date     "dob"
     t.string   "fname"
     t.string   "lname"
     t.string   "name"
-    t.float    "weight"
-    t.float    "height"
-    t.float    "waist_circ"
-    t.float    "kneck_circ"
-    t.float    "shoulders_circ"
-    t.float    "chest_circ"
-    t.float    "hips_circ"
-    t.float    "bicep_circ"
-    t.float    "thigh_circ"
-    t.float    "calf_circ"
-    t.float    "forearm_circ"
+    t.float    "weight",                            :default => 0.0, :null => false
+    t.float    "height",                            :default => 0.0, :null => false
+    t.float    "waist_circ",                        :default => 0.0, :null => false
+    t.float    "kneck_circ",                        :default => 0.0, :null => false
+    t.float    "shoulders_circ",                    :default => 0.0, :null => false
+    t.float    "chest_circ",                        :default => 0.0, :null => false
+    t.float    "hips_circ",                         :default => 0.0, :null => false
+    t.float    "bicep_circ",                        :default => 0.0, :null => false
+    t.float    "thigh_circ",                        :default => 0.0, :null => false
+    t.float    "calf_circ",                         :default => 0.0, :null => false
+    t.float    "forearm_circ",                      :default => 0.0, :null => false
     t.string   "gender"
     t.string   "avatar"
   end
@@ -529,13 +634,14 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.integer  "value"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.date     "date"
+    t.integer  "category_id"
+    t.integer  "stype_id"
     t.string   "sunit"
     t.integer  "user_id"
     t.integer  "scope",       :default => 0
     t.string   "attachment"
     t.string   "source"
-    t.date     "date",                       :null => false
-    t.integer  "category_id",                :null => false
   end
 
   create_table "tags", :force => true do |t|
@@ -561,10 +667,6 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.datetime "created_at",                                              :null => false
     t.datetime "updated_at",                                              :null => false
     t.string   "name"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "username"
     t.string   "slug"
     t.string   "confirmation_token"
@@ -574,6 +676,7 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.integer  "sash_id"
     t.integer  "points",                               :default => 0
     t.integer  "level",                                :default => 0
+    t.string   "activity_stream_token"
     t.string   "invitation_token",       :limit => 60
     t.datetime "invitation_sent_at"
     t.datetime "invitation_accepted_at"
@@ -598,5 +701,15 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "weight", :force => true do |t|
+    t.integer "ndb",                                                      :null => false
+    t.string  "seq",          :limit => 2,                                :null => false
+    t.decimal "amount",                     :precision => 5, :scale => 3, :null => false
+    t.string  "msre_desc",    :limit => 80,                               :null => false
+    t.decimal "gm_wgt",                     :precision => 7, :scale => 1, :null => false
+    t.integer "num_data_pts"
+    t.decimal "std_dev",                    :precision => 7, :scale => 3
+  end
 
 end
