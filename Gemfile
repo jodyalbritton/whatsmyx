@@ -47,11 +47,9 @@ gem 'client_side_validations', :git => 'git://github.com/bcardarella/client_side
 gem 'acts_as_follower'
 gem 'whenever', :require => false
 gem 'cocoon'
-gem 'chosen-rails'
 gem 'redis'
 gem 'likeable'
 gem 'jquery-ui-themes'
-gem 'ajax-chosen-rails'
 gem 'devise_invitable'
 gem 'will_paginate'
 gem 'best_in_place'
