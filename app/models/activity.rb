@@ -1,4 +1,4 @@
-.class Activity < ActiveRecord::Base
+class Activity < ActiveRecord::Base
 #feilds accesible 
  attr_accessible :user, :actor_id, :target_id, :activity_type, :created_at, :updated_at, :target_type, :parent_id, :verb, :scope, :tag_list
 
