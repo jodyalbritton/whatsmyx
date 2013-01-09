@@ -21,27 +21,6 @@
 	                 <li class="<%= 'active' if params[:controller] == 'reports' %>">
 	                  <%= link_to "Analyze", user_reports_path(current_user) %>
 	                 </li>
-                     <li class="divider-vertical"></li>
-	                 <li class="dropdown
-	                 <%= 'active' if params[:controller] == 'users'%>
-	                 <%= 'active' if params[:controller] == 'groups'%>">
-	                 <a href="#"
-                          class="dropdown-toggle"
-                          data-toggle="dropdown">
-                          Community
-                          <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                    	
-                     	<li>
-                        <%= link_to('Users', users_path) %>
-                      
-                        </li>
-                        <li>
-                        <%= link_to('Groups', groups_path) %>
-                        </li>
-                        </ul>
-                  </li>
                    <li class="divider-vertical"></li>
 	                <%end%>
                 </ul>
