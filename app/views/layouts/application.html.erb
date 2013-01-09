@@ -18,6 +18,7 @@
 	<meta property="og:site_name" content="What&#039;s My X?" />
 	<meta property="fb:admins" content="1662205271" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>
  </head>
  <body>
   <!--! collapse nav -->
@@ -38,34 +39,36 @@
           </div>
        </div>
   </div>
-
-  <div id="wrap">
+  <div class="jumbotron masthead">
+  		
+  		<%= yield :jumbotron %>  		
+ 
+  </div> 		
+	  
+ 
   <!--! body container -->
   <div id="main" class="container">
    <div class="row-fluid">
    	<% if content_for?(:sidebar) %>
- 
-   
-   	<div class="sidebar span3">
-  
-   
-   	<%= yield :sidebar %>
-   	<% unless params[:controller] == 'help'%>
-   	<div class="sidebar-bottom">
-    <div class="well sidebar-bottom-content">
-    	<%= render "layouts/side_footer" %>
-    </div>
-    </div>
-    <% end %>
-    </div>  
-    <div class="span9 main-content" id="main-content">
-    <div id="messages">
-    <%= render 'layouts/messages'%>
-    </div>
-    <%= yield %>
-    <%= render 'layouts/ga'%>
-    </div>
-    <% else %>
+
+   		<div class="sidebar span3">
+   			<%= yield :sidebar %>
+   			<% unless params[:controller] == 'help'%>
+   					<div class="sidebar-bottom">
+    					<div class="well sidebar-bottom-content">
+    						<%= render "layouts/side_footer" %>
+   	 					</div>
+    				</div>
+    			<% end %>
+    	</div>  
+    	<div class="span9 main-content" id="main-content">
+    		<div id="messages">
+    			<%= render 'layouts/messages'%>
+    		</div>
+    			<%= yield %>
+    		<%= render 'layouts/ga'%>
+    		</div>
+    		<% else %>
     <div class="span12 main-content" id="main-content">
     
     <%= yield %>
@@ -74,9 +77,9 @@
      <% end %>
     </div>
    </div>
-  </div>
+
 
 
 </body>
-<div id="fb-root"></div>
+
 </html>

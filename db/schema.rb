@@ -149,63 +149,6 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
   add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
   add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
 
-  create_table "foods", :force => true do |t|
-    t.integer "ndb"
-    t.string  "short_desc",    :limit => 60
-    t.float   "water",                                                      :default => 0.0, :null => false
-    t.float   "calories",                                                   :default => 0.0, :null => false
-    t.float   "protein",                                                    :default => 0.0, :null => false
-    t.float   "lipid_total",                                                :default => 0.0, :null => false
-    t.float   "ash",                                                        :default => 0.0, :null => false
-    t.float   "carbohydrates",                                              :default => 0.0, :null => false
-    t.float   "fiber",                                                      :default => 0.0, :null => false
-    t.float   "sugar_total",                                                :default => 0.0, :null => false
-    t.float   "calcium",                                                    :default => 0.0, :null => false
-    t.float   "iron",                                                       :default => 0.0, :null => false
-    t.float   "magnesium",                                                  :default => 0.0, :null => false
-    t.float   "phosphorus",                                                 :default => 0.0, :null => false
-    t.float   "potassium",                                                  :default => 0.0, :null => false
-    t.float   "sodium",                                                     :default => 0.0, :null => false
-    t.decimal "zinc",                         :precision => 4, :scale => 2, :default => 0.0, :null => false
-    t.string  "copper",        :limit => 9,                                 :default => "0", :null => false
-    t.decimal "manganese",                    :precision => 6, :scale => 3, :default => 0.0, :null => false
-    t.string  "selenium",      :limit => 66,                                :default => "0", :null => false
-    t.float   "vitamin_c",                                                  :default => 0.0, :null => false
-    t.decimal "thiamin",                      :precision => 7, :scale => 3, :default => 0.0, :null => false
-    t.string  "riboflavin",    :limit => 47,                                :default => "0", :null => false
-    t.string  "niacin",        :limit => 7,                                 :default => "0", :null => false
-    t.string  "panto_acid",    :limit => 53,                                :default => "0", :null => false
-    t.string  "vitamin_b6",    :limit => 74,                                :default => "0", :null => false
-    t.string  "folate_total",  :limit => 62,                                :default => "0", :null => false
-    t.string  "folic_acid",    :limit => 49,                                :default => "0", :null => false
-    t.string  "food_folate",   :limit => 53,                                :default => "0", :null => false
-    t.string  "folate_dfe",    :limit => 4
-    t.string  "choline_total", :limit => 43
-    t.string  "vitamin_b12",   :limit => 39,                                :default => "0"
-    t.decimal "vitamin_a",                    :precision => 8, :scale => 3
-    t.decimal "vitamin_a_rae",                :precision => 8, :scale => 3
-    t.string  "retinol",       :limit => 48
-    t.string  "alpha_carot",   :limit => 26
-    t.string  "beta_carot",    :limit => 46
-    t.string  "beta_crypt",    :limit => 77
-    t.string  "lycopene",      :limit => 123
-    t.string  "lut_zea",       :limit => 66
-    t.string  "vitamin_e",     :limit => 120
-    t.string  "vitamin_d_ug",  :limit => 82
-    t.string  "vitamin_d_iu",  :limit => 113
-    t.string  "vitamin_k_ug",  :limit => 100
-    t.float   "fa_sat",                                                     :default => 0.0, :null => false
-    t.float   "fa_mono",                                                    :default => 0.0, :null => false
-    t.float   "fa_poly",                                                    :default => 0.0, :null => false
-    t.float   "cholesterol",                                                :default => 0.0, :null => false
-    t.integer "gmwt_1",                                                     :default => 0,   :null => false
-    t.string  "gmwt_desc",     :limit => 104
-    t.integer "gmwt_2",                                                     :default => 0,   :null => false
-    t.string  "gmwt_desc2",    :limit => 131
-    t.string  "refuse_pct",    :limit => 99
-    t.string  "name",          :limit => 130
-  end
-
   create_table "gcategories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -258,7 +201,6 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.date     "date"
     t.integer  "mcategory_id"
     t.integer  "serv_size_id"
-    t.integer  "meal_id",      :null => false
     t.string   "tag_list"
   end
 
@@ -405,19 +347,14 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.string   "attachment"
     t.string   "tag_list"
     t.integer  "reply_to_id"
-    t.text     "text",               :null => false
   end
-
-  create_table "posts_tags", :force => true do |t|
-    t.integer "post_id"
-    t.integer "tag_id"
-  end
-
-  add_index "posts_tags", ["post_id"], :name => "index_posts_tags_on_post_id"
-  add_index "posts_tags", ["tag_id"], :name => "index_posts_tags_on_tag_id"
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
+    t.string   "name"
+    t.string   "fname"
+    t.string   "lname"
+    t.text     "about"
     t.date     "birthday"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -436,11 +373,6 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.string   "website"
     t.string   "skype",          :limit => 45
     t.string   "im",             :limit => 45
-    t.text     "about"
-    t.date     "dob"
-    t.string   "fname"
-    t.string   "lname"
-    t.string   "name"
     t.float    "weight"
     t.float    "height"
     t.float    "waist_circ"
@@ -456,7 +388,7 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.string   "avatar"
   end
 
-  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id", :unique => true
 
   create_table "recipients", :force => true do |t|
     t.integer  "message_id"
@@ -527,15 +459,13 @@ ActiveRecord::Schema.define(:version => 20121008041112) do
     t.string   "name"
     t.string   "stype"
     t.integer  "value"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "sunit"
     t.integer  "user_id"
-    t.integer  "scope",       :default => 0
+    t.integer  "scope",      :default => 0
     t.string   "attachment"
     t.string   "source"
-    t.date     "date",                       :null => false
-    t.integer  "category_id",                :null => false
   end
 
   create_table "tags", :force => true do |t|
