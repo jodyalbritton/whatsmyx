@@ -15,6 +15,7 @@
 /tmp
 
 # Ignore all avatars
+/db/schema.rb
 /public/system/users/avatars
 /public/system/profiles/avatars
 /public/system/groups/avatars
