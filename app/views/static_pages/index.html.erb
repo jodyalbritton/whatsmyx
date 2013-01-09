@@ -1,75 +1,57 @@
-<div class="main-logo">
-	<h1>Whats My X?</h1>
-</div>
-<div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="active item">
-    	<%= image_tag ("sc_01.png"), :class=> "car-img"%>
-    </div>
-    <div class="item">
-        <%= image_tag ("sc_02.png"), :class=> "car-img"%>
-    </div>
-    <div class="item">
-    	 <%= image_tag ("sc_03.png"), :class=> "car-img"%>
-    </div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
-<div id="romance-copy" class="hero-unit">
-   <div class="beta-button"  style="text-align: center;">
-   <h3>
-   	Track anything. Find your quantified self. 
-   </h3>
+<% content_for :jumbotron do %>
+	<div class="container">
+		<div class="main-logo">
+	      <h1>What's My X?</h1>
+	         <div class="beta-button"  style="text-align: center;">
+   				<h2>
+   					Track anything. Find your quantified self. 
+   				</h2>
 
-   <p>
-    <a data-toggle="modal" href="/users/sign_in" class="btn btn-primary btn-large">Sign In</a>
-    Or 
-    <a data-toggle="modal" href="/users/sign_up" class="btn btn-primary btn-large">Create Account</a>
-   </p>
-   </div>
-  
+   					<p>
+    				<a data-toggle="modal" href="/users/sign_up" class="btn btn-primary btn-large">Get Started</a>
+   					</p>
+   			 </div>
+	     </div>
+	</div>
+<% end %>
 
-  </div>
-<div class="row-fluid">
+    <div class="row-fluid">
+	<div class="social-bar">
+		<a href="https://twitter.com/whatsmyx" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-lang="en">Follow @whatsmyx</a>
+        <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+        <div class="fb-like" data-href="http://whatsmyx.com" data-send="true" data-width="300" data-show-faces="true" data-font="arial"></div>
+	</div>
+	</div>
+
+<div class="row-fluid action-row">
 	
-<div class="span4" id="call-to-action">
-	<h2>Contact Us</h2>
-	 <div class="fb-like" data-href="http://whatsmyx.com" data-send="true" data-width="300" data-show-faces="true" data-font="arial"></div>
-	 <div>
-	 	<a href="https://www.facebook.com/pages/Whats-My-X/134733929996740?ref=hl">Find us on Facebook
-	 </div>
-	 <div>
-	 	<a href="https://twitter.com/whatsmyx" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false" data-lang="en">Follow @whatsmyx</a>
-	 </div>
-	 <div class="g-plusone" data-annotation="inline" data-width="300"></div>
-	 <div>
-	 	
-	 	<a href="https://plus.google.com/101897103984595628551" rel="publisher">Find us on Google+</a>
-	 </div>
+<div class="span4">
+	<object data="assets/heart-full.svg" type="image/svg+xml" class="paper" ></object>
+	<h2>Track Yourself</h2>
+    <p>Track anything. WMX supports manual entry and automated tracking with devices like the Fitbit and WiThings Scales.</p>
+
+
 </div>
 <div class="span4">
-	<h2>What Is It?</h2>
-	<p>An app to help you track anything, and find your quantified self.</p>
+	<object data="assets/watch.svg" type="image/svg+xml" class="paper" ></object>
+	<h2>Discovery</h2>
+	<p>You can view your data with charts and graphs. Coming in 2013 WMX will have an analysis engine for even greater insight.</p>
 </div>
 <div class="span4">
-	<h2>Who Uses It?</h2>
+	<object data="assets/user-3.svg" type="image/svg+xml" class="paper"></object>
+	<h2>Social</h2>
     <p>
-    	Anyone who wants to know more about themselves. If you are keeping logs of your weight or blood pressure in a journal, this app will make your life easier.
+    	Social tracking enables you to gain insight from others. Get motivation or share your knowledge with others. 
     </p>
 </div>
 </div>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 	
-</div>
-
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/plusone.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
+		 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		 <script type="text/javascript">
+  			(function() {
+    		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    		po.src = 'https://apis.google.com/js/plusone.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  			})();
 </script>

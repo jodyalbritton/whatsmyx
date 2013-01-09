@@ -88,12 +88,8 @@ Whatsmyx::Application.routes.draw do
   match "users/auth/:service/callback" => 'services#create'
 
   
-  devise_for :users, :skip => [:sessions], :controllers => { :registrations => 'registrations' }
-   as :user do
-    get 'users/sign_in' => 'devise/sessions#new', :as => :new_user_session
-    post 'users/sign_in' => 'devise/sessions#create', :as => :user_session
-    get 'sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
-    end
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+
   resources :users, :only => [:index]
 
   authenticated :user do

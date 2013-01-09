@@ -1,9 +1,13 @@
-class CreateActivities < ActiveRecord::Migration
+class CreateProfiles < ActiveRecord::Migration
  
 
     create_table "profiles" do |t|
       t.references :user
       t.integer  "user_id"
+      t.string   "name"
+      t.string   "fname"
+      t.string   "lname"
+      t.text     "about"
       t.date     "birthday"
       t.datetime "created_at"
       t.datetime "updated_at"
@@ -24,7 +28,7 @@ class CreateActivities < ActiveRecord::Migration
       t.string   "im",           :limit => 45
     end
 
-    add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+     add_index :profiles, :user_id, :unique => true
 
    
 end
