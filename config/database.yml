@@ -33,10 +33,10 @@ test:
 
 production:
   adapter: mysql2
+  host: 173.255.197.5
   encoding: utf8
   reconnect: false
   database: whatsmyx_production
   pool: 5
   username: root
   password: vvktx1999
-  socket: /var/run/mysqld/mysqld.sock
