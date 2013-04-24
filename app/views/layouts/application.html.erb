@@ -5,20 +5,20 @@
   	<!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   	<![endif]-->
-  	 <%= favicon_link_tag 'favicon.ico' %> 
+   <%= favicon_link_tag 'favicon.ico' %> 
  	 <%= stylesheet_link_tag    "application", :media => "all" %>
  	 <%= javascript_include_tag "application" %>
  
  	 <%= csrf_meta_tags %>
  	<!--! facebook metatags -->
     <meta property="og:title" content="What&#039;s My X?" />
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="http://whatsmyx.com" />
-	<meta property="og:image" content="http://whatsmyx.com/assets/x_logo_facebook.jpg" />
-	<meta property="og:site_name" content="What&#039;s My X?" />
-	<meta property="fb:admins" content="1662205271" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>
+  	<meta property="og:type" content="website" />
+  	<meta property="og:url" content="http://whatsmyx.com" />
+  	<meta property="og:image" content="http://whatsmyx.com/assets/x_logo_facebook.jpg" />
+  	<meta property="og:site_name" content="What&#039;s My X?" />
+  	<meta property="fb:admins" content="1662205271" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>
  </head>
  <body>
   <!--! collapse nav -->
@@ -39,13 +39,13 @@
           </div>
        </div>
   </div>
+  <% if params[:controller] == 'static_pages'%>
   <div class="jumbotron masthead">
   		
   		<%= yield :jumbotron %>  		
  
   </div> 		
-	  
- 
+	<% end %>
   <!--! body container -->
   <div id="main" class="container">
    <div class="row-fluid">

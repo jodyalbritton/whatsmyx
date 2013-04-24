@@ -15,7 +15,8 @@ group :assets do
 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platform => :ruby
+  gem 'execjs'
+  gem 'therubyracer'
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'less-rails'
