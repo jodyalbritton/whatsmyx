@@ -1,11 +1,11 @@
 development:
-  fitbit_consumer_key: 85083c5532d048cdbd49ca15af123319
-  fitbit_consumer_secret: be5e373803934740a558741b5d190e2f
+  fitbit_consumer_key: 
+  fitbit_consumer_secret: 
   
 test:
-  fitbit_consumer_key: 85083c5532d048cdbd49ca15af123319
-  fitbit_consumer_secret: be5e373803934740a558741b5d190e2f
+  fitbit_consumer_key: 
+  fitbit_consumer_secret: 
   
 production:
-  fitbit_consumer_key: c77e3f6948da47ef9bc96a5243f9a74b
-  fitbit_consumer_secret: e20a49e11f034630a16870029f2919db
+  fitbit_consumer_key: 
+  fitbit_consumer_secret: 
